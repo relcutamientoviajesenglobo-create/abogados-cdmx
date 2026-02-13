@@ -106,6 +106,13 @@ p { margin-bottom: 1em; }
   background: var(--color-secondary); margin-top: 24px;
 }
 
+/* ═══ MARQUEE TRUST BAR ═══ */
+.marquee-section { background: var(--color-primary); padding: 18px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
+.marquee-track { overflow: hidden; }
+.marquee-content { display: flex; gap: 0; align-items: center; animation: marquee-scroll 30s linear infinite; white-space: nowrap; width: max-content; }
+.marquee-item { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.5); padding: 0 20px; text-transform: uppercase; letter-spacing: 2px; }
+.marquee-dot { color: var(--color-secondary); font-size: 10px; }
+
 /* REVEAL ANIMATION */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(35px); }
