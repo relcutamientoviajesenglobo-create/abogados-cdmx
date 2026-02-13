@@ -83,7 +83,7 @@ p { margin-bottom: 1em; }
 
 /* ═══ HERO PILLAR — INTERIOR PAGES ═══ */
 .hero-pillar {
-  position: relative; padding: 0 0 80px; overflow: hidden;
+  position: relative; padding: 160px 0 80px; overflow: hidden;
   background: var(--color-primary);
 }
 .hero-pillar::before {
