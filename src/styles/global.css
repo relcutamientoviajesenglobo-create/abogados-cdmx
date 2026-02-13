@@ -57,6 +57,11 @@ p { margin-bottom: 1em; }
 
 /* SECTION PADDING */
 .section-padding { padding-top: 110px; padding-bottom: 110px; }
+.text-white { color: var(--color-white) !important; }
+.text-white-soft { color: rgba(255,255,255,.7) !important; }
+.text-center { text-align: center; }
+.mb-50 { margin-bottom: 50px; }
+.max-w-746 { max-width: 746px; margin-left: auto; margin-right: auto; }
 
 /* BUTTONS */
 .btn-primary-wrap {
