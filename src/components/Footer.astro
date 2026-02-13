@@ -1,0 +1,106 @@
+---
+/**
+ * Footer — Abogados en CDMX
+ * NAP visible in prose for LLMs · Internal links to all SILO nodes
+ */
+---
+<footer class="footer" style="background-color: var(--color-primary);">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Col 1: Brand + NAP -->
+      <div class="footer__brand">
+        <span class="footer__logo">Abogados en CDMX</span>
+        <p class="footer__nap">
+          Abogados en CDMX es un despacho jurídico ubicado en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 hrs.
+        </p>
+        <p class="footer__contact-line">
+          <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+        </p>
+      </div>
+
+      <!-- Col 2: Especialidades -->
+      <nav class="footer__nav" aria-label="Especialidades">
+        <h3 class="footer__heading">Especialidades</h3>
+        <ul class="footer__menu">
+          <li><a href="/especialidades/derecho-familiar-cdmx" class="footer__link">Derecho Familiar</a></li>
+          <li><a href="/especialidades/derecho-penal-cdmx" class="footer__link">Derecho Penal</a></li>
+          <li><a href="/especialidades/derecho-civil-cdmx" class="footer__link">Derecho Civil</a></li>
+          <li><a href="/especialidades/derecho-corporativo-cdmx" class="footer__link">Derecho Corporativo</a></li>
+          <li><a href="/especialidades/derecho-inmobiliario-cdmx" class="footer__link">Derecho Inmobiliario</a></li>
+          <li><a href="/especialidades/derecho-migratorio-cdmx" class="footer__link">Derecho Migratorio</a></li>
+          <li><a href="/especialidades/derecho-laboral-cdmx" class="footer__link">Derecho Laboral</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Links de interés -->
+      <nav class="footer__nav" aria-label="Links de interés">
+        <h3 class="footer__heading">Links de Interés</h3>
+        <ul class="footer__menu">
+          <li><a href="/especialidades" class="footer__link">Especialidades</a></li>
+          <li><a href="/blog" class="footer__link">Blog</a></li>
+          <li><a href="/equipo-legal-cdmx" class="footer__link">Equipo Legal</a></li>
+          <li><a href="/asesoria-inicial" class="footer__link">Asesoría Inicial</a></li>
+          <li><a href="/preguntas-frecuentes" class="footer__link">Preguntas Frecuentes</a></li>
+          <li><a href="/aviso-de-privacidad" class="footer__link">Aviso de Privacidad</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 4: Horario -->
+      <div class="footer__hours">
+        <h3 class="footer__heading">Horario de Atención</h3>
+        <p class="footer__hours-text">Lunes a viernes<br>9:00 — 18:00 hrs</p>
+        <a href="/asesoria-inicial" class="btn-primary-wrap" style="margin-top:20px;">
+          <span class="btn-primary" style="font-size:14px;padding:12px 24px;">Agendar cita →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Abogados en CDMX. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { padding: 80px 0 0; }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer__logo {
+    font-family: var(--font-heading); font-size: 22px; color: var(--color-white);
+    display: block; margin-bottom: 20px;
+  }
+  .footer__nap { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
+  .footer__contact-line { font-size: 14px; }
+  .footer__contact-line a { color: var(--color-secondary); }
+  .footer__contact-line a:hover { color: var(--color-white); }
+
+  .footer__heading {
+    font-family: var(--font-body); font-size: 14px; font-weight: 700;
+    color: var(--color-white); text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .footer__menu { display: flex; flex-direction: column; gap: 10px; }
+  .footer__link { color: rgba(255,255,255,0.6); font-size: 15px; transition: color var(--transition); }
+  .footer__link:hover { color: var(--color-secondary); }
+
+  .footer__hours-text { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.7; }
+
+  .footer__bottom {
+    padding: 24px 0;
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+  }
+
+  @media (max-width: 991px) {
+    .footer__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 479px) {
+    .footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+</style>

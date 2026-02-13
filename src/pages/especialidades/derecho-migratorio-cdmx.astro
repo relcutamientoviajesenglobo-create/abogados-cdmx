@@ -1,0 +1,162 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados de Derecho Migratorio en CDMX — Visas, Residencia y Naturalización | Abogados en CDMX';
+const description = 'Abogados migratorios en la Ciudad de México. Visas de trabajo y reunificación familiar, residencia temporal y permanente, naturalización mexicana y regularización migratoria.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-migratorio-cdmx';
+
+const schema = {
+  "@context": "https://schema.org", "@type": "Service",
+  "name": "Derecho Migratorio en CDMX",
+  "description": "Asesoría migratoria: visas de trabajo, residencia temporal y permanente, naturalización, regularización migratoria y recursos contra resoluciones del INM.",
+  "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com", "telephone": "+525564655501", "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" } },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }, "serviceType": "Derecho Migratorio"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', desc: 'Divorcios, custodia y trámites familiares con componente migratorio.' },
+  { nombre: 'Derecho Corporativo', href: '/especialidades/derecho-corporativo-cdmx', desc: 'Constitución de empresas y permisos para inversión extranjera.' },
+  { nombre: 'Derecho Laboral', href: '/especialidades/derecho-laboral-cdmx', desc: 'Contratos laborales y derechos de trabajadores extranjeros en México.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+  <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Migratorio'}]} /></div></section>
+
+  <!-- BRACKET 1: CONCEPTUAL — Declaración definicional -->
+  <section class="section-padding">
+    <div class="container"><div class="cluster-intro reveal">
+      <p class="section-tag">Derecho Migratorio</p>
+      <h1>Abogados de derecho migratorio en la Ciudad de México</h1>
+      <p class="lead">Abogados en CDMX es un despacho jurídico que ofrece asesoría migratoria especializada a personas extranjeras, familias binacionales y empresas que necesitan gestionar trámites ante el Instituto Nacional de Migración en la Ciudad de México. El derecho migratorio es la rama jurídica que regula el ingreso, estancia, salida y retorno de personas extranjeras en territorio mexicano, así como los derechos y obligaciones de los extranjeros residentes. En México, la materia migratoria se rige por la Ley de Migración, su Reglamento, la Ley de Nacionalidad y las disposiciones del Instituto Nacional de Migración.</p>
+      <p>Nuestro <a href="/equipo-legal-cdmx">equipo de abogados migratorios</a> conoce los procedimientos, requisitos y tiempos de cada trámite ante las oficinas del INM en la Ciudad de México — tanto la Delegación Federal en la Alcaldía Benito Juárez como la oficina central en Avenida Ejército Nacional. Acompañamos al cliente desde la solicitud inicial hasta la obtención del documento migratorio correspondiente, incluyendo la preparación de expedientes, traducción de documentos y seguimiento administrativo. Atendemos a ciudadanos de todas las nacionalidades, con experiencia particular en trámites para ciudadanos de Estados Unidos, Canadá, España, Colombia, Venezuela, Argentina y Centro América.</p>
+      <p>Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México — una zona con alta concentración de residentes extranjeros. Llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com para agendar una <a href="/asesoria-inicial">consulta migratoria</a>.</p>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL — Servicios específicos -->
+
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;"><p class="section-tag">Servicios</p><h2>Trámites migratorios que gestionamos</h2></div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Visas de trabajo</h3>
+          <p>Gestionamos visas de residente temporal con permiso para realizar actividades remuneradas ante el Instituto Nacional de Migración. La visa de trabajo requiere una oferta de empleo de una empresa establecida en México que debe presentar la solicitud ante el INM. Asesoramos tanto a la empresa empleadora como al trabajador extranjero en la preparación de la documentación, el seguimiento del trámite y la obtención de la tarjeta de residente temporal.</p>
+        </div>
+        <div class="service-block">
+          <h3>Residencia temporal y permanente</h3>
+          <p>Tramitamos la residencia temporal (1 a 4 años) y la residencia permanente para extranjeros que desean establecerse en México. La residencia temporal procede por vínculo familiar, oferta de empleo, inversión, actividades humanitarias o razones de interés público. La residencia permanente puede obtenerse por reunificación familiar con mexicano, por haber completado 4 años como residente temporal, por razones humanitarias o por jubilación con ingresos suficientes conforme a los criterios del INM.</p>
+        </div>
+        <div class="service-block">
+          <h3>Naturalización mexicana</h3>
+          <p>Acompañamos a extranjeros residentes que desean obtener la nacionalidad mexicana por naturalización. El trámite se gestiona ante la Secretaría de Relaciones Exteriores y requiere, entre otros requisitos, acreditar un mínimo de 5 años de residencia legal en México (2 años para cónyuges de mexicanos), demostrar conocimientos de español, historia y cultura mexicana, y rendir un examen de naturalización. Preparamos al solicitante y gestionamos toda la documentación necesaria.</p>
+        </div>
+        <div class="service-block">
+          <h3>Regularización migratoria</h3>
+          <p>Asistimos a personas extranjeras que se encuentran en situación migratoria irregular en México. La regularización permite obtener un documento migratorio válido sin necesidad de salir del país, siempre que se cumplan los supuestos previstos en la Ley de Migración: vínculo familiar con mexicano o residente permanente, razones humanitarias, ser víctima de delito en territorio mexicano u otros supuestos que el INM determine. La regularización evita sanciones administrativas y el riesgo de deportación.</p>
+        </div>
+        <div class="service-block">
+          <h3>Reunificación familiar</h3>
+          <p>Gestionamos la reunificación familiar de personas extranjeras con sus familiares que ya residen legalmente en México o que son mexicanos por nacimiento. Los vínculos familiares que permiten la reunificación incluyen cónyuge, concubino/a, hijos menores, hijos mayores dependientes y padres. Tramitamos las autorizaciones ante el INM y asistimos al familiar en la obtención de su visa y tarjeta de residente en la Ciudad de México.</p>
+        </div>
+        <div class="service-block">
+          <h3>Recursos contra resoluciones del INM</h3>
+          <p>Interponemos recursos de revisión y juicios de nulidad contra resoluciones del Instituto Nacional de Migración que nieguen, revoquen o cancelen documentos migratorios. Cuando el INM rechaza una solicitud de visa, residencia o regularización, el solicitante tiene derecho a impugnar la decisión mediante los recursos administrativos previstos en la Ley Federal de Procedimiento Administrativo y, en su caso, mediante juicio contencioso ante el Tribunal Federal de Justicia Administrativa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container"><div class="faq-layout">
+      <div class="reveal"><p class="section-tag">Preguntas Frecuentes</p><h2>Dudas comunes sobre trámites migratorios</h2></div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary class="faq-item__q">¿Cuánto tiempo toma obtener la residencia temporal en México?</summary><div class="faq-item__a"><p>El trámite de residencia temporal ante el Instituto Nacional de Migración en la Ciudad de México toma aproximadamente de 20 a 40 días hábiles una vez presentada la solicitud completa. Sin embargo, el tiempo total puede ser mayor si se considera la etapa previa de obtención de visa en el consulado mexicano en el país de origen, que puede tomar entre 10 y 30 días hábiles adicionales dependiendo de la demanda del consulado.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Puedo trabajar en México con visa de turista?</summary><div class="faq-item__a"><p>No. La condición de visitante sin permiso para realizar actividades remuneradas (visa de turista) prohíbe expresamente el empleo remunerado en México. Trabajar sin la autorización migratoria correspondiente constituye una infracción a la Ley de Migración que puede resultar en sanciones administrativas, cancelación de la estancia y restricciones para futuros trámites migratorios. Si necesita trabajar en México, debe obtener una visa de residente temporal con permiso para actividades remuneradas.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Qué pasa si mi documento migratorio venció?</summary><div class="faq-item__a"><p>Si su tarjeta de residente temporal o permanente venció, tiene un plazo de 60 días naturales para solicitar su renovación sin caer en situación migratoria irregular. Si han transcurrido más de 60 días, deberá iniciar un trámite de regularización migratoria ante el INM, acreditando alguno de los supuestos previstos en la ley. Es importante actuar con rapidez para evitar complicaciones y posibles sanciones. Nuestros abogados evalúan su situación y determinan la mejor vía para regularizarla.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Mi cónyuge mexicano puede ayudarme a obtener la residencia?</summary><div class="faq-item__a"><p>Sí. El vínculo matrimonial o de concubinato con un ciudadano mexicano es uno de los supuestos que permiten obtener la residencia temporal por reunificación familiar. Su cónyuge mexicano debe presentar una solicitud ante el INM acreditando el vínculo y su capacidad económica. Además, el matrimonio con mexicano reduce a 2 años el requisito de residencia legal para solicitar la naturalización mexicana, en lugar de los 5 años que se requieren por la vía ordinaria.</p></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados migratorios en la Ciudad de México</h2>
+        <p>A diferencia de gestores y tramitadores sin título profesional, Abogados en CDMX ofrece representación legal formal ante el Instituto Nacional de Migración. Nuestros abogados migratorios están autorizados para presentar recursos administrativos, amparos y demandas de nulidad cuando las autoridades niegan o demoran un trámite migratorio sin fundamento legal. Esta capacidad de litigio nos distingue de las agencias de servicios migratorios que solo pueden gestionar trámites ordinarios.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Representación legal formal</h4><p>Como despacho de abogados, podemos presentar recursos de revisión, amparos indirectos y juicios de nulidad ante el Tribunal Federal de Justicia Administrativa cuando el INM niega, revoca o demora un trámite sin fundamento. Un gestor o tramitador no puede hacerlo.</p></div>
+        <div class="diff-card"><h4>Enfoque integral</h4><p>Los trámites migratorios frecuentemente involucran aspectos de <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a> (reunificación, matrimonios binacionales), <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> (permisos de trabajo) y <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a> (visas empresariales). Nuestro despacho resuelve todas estas dimensiones.</p></div>
+        <div class="diff-card"><h4>Ubicación estratégica</h4><p>Nuestras oficinas en Colonia Roma Norte se ubican en una de las zonas con mayor concentración de residentes extranjeros en la Ciudad de México, cerca de las oficinas del INM y de los consulados acreditados en la capital. Conocemos el contexto local de primera mano.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO: ESPECIALIDADES RELACIONADAS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;"><p class="section-tag">Especialidades Relacionadas</p><h2>Áreas vinculadas al derecho migratorio</h2>
+      <p>Los asuntos migratorios se conectan con múltiples ramas del derecho. Nuestro despacho atiende cada dimensión jurídica de su situación migratoria desde un solo equipo.</p></div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (<a href={h.href} class="related-card"><h4>{h.nombre}</h4><p>{h.desc}</p><span class="related-arrow">Ver especialidad →</span></a>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Información adicional sobre derecho migratorio</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Consulte nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a>, donde respondemos las dudas más comunes sobre visas, residencia permanente y permisos de trabajo en México. Los extranjeros que buscan establecerse en la Ciudad de México frecuentemente necesitan asesoría simultánea en derecho migratorio y <a href="/especialidades/derecho-laboral-cdmx">laboral</a> o <a href="/especialidades/derecho-inmobiliario-cdmx">inmobiliario</a> — nuestro modelo multidisciplinario atiende todas estas necesidades desde un solo despacho.</p>
+        <p style="font-size:16px;line-height:1.8;">Visite <a href="/quienes-somos">quiénes somos</a> para conocer nuestra experiencia con clientes extranjeros y <a href="/que-ofrecemos">qué ofrecemos</a> para el panorama completo de servicios. Nuestro <a href="/blog">blog jurídico</a> publica artículos sobre temas migratorios relevantes para residentes y solicitantes en México.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Necesita resolver un trámite migratorio?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados migratorios gestionan su visa, residencia o naturalización ante el INM. Visítenos en Guanajuato 224, Roma Norte, o llame al 55 6465 5501.</p>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados migratorios le guían en cada paso del proceso para que obtenga su documento migratorio de manera segura y eficiente.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; } .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; } .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; } .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; } .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; } .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; } .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

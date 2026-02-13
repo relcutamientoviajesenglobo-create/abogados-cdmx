@@ -1,0 +1,310 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Blog Jurídico — Artículos Legales y Noticias | Abogados en CDMX';
+const description = 'Blog de Abogados en CDMX. Artículos sobre derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Información legal actualizada para la Ciudad de México en 2026.';
+const canonical = 'https://abogadosencdmx.com/blog';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog Jurídico — Abogados en CDMX",
+  "description": "Publicaciones sobre derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral aplicable en la Ciudad de México.",
+  "url": "https://abogadosencdmx.com/blog",
+  "publisher": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  }
+};
+
+/* Categorías del sidebar — mapean a las 7 especialidades */
+const categorias = [
+  { nombre: 'Derecho Familiar', slug: 'derecho-familiar', icono: '⚖️', descripcion: 'Divorcios, custodia, pensiones alimenticias y violencia familiar.' },
+  { nombre: 'Derecho Penal', slug: 'derecho-penal', icono: '🛡️', descripcion: 'Defensa penal, amparos, recursos y procedimientos penales.' },
+  { nombre: 'Derecho Civil', slug: 'derecho-civil', icono: '📋', descripcion: 'Contratos, daños, responsabilidad civil y sucesiones.' },
+  { nombre: 'Derecho Corporativo', slug: 'derecho-corporativo', icono: '🏢', descripcion: 'Constitución de empresas, fusiones y compliance.' },
+  { nombre: 'Derecho Inmobiliario', slug: 'derecho-inmobiliario', icono: '🏠', descripcion: 'Compraventa, arrendamiento y regularización de inmuebles.' },
+  { nombre: 'Derecho Migratorio', slug: 'derecho-migratorio', icono: '🌎', descripcion: 'Visas, residencia temporal/permanente y naturalización.' },
+  { nombre: 'Derecho Laboral', slug: 'derecho-laboral', icono: '👷', descripcion: 'Despidos injustificados, liquidaciones y demandas laborales.' },
+];
+
+/* Artículos de muestra — se reemplazarán con Astro Content Collections */
+const articulos = [
+  {
+    titulo: 'Nuevo Código Nacional de Procedimientos Civiles y Familiares 2026: lo que debe saber',
+    slug: 'nuevo-codigo-procedimientos-civiles-familiares-2026',
+    extracto: 'El Código Nacional de Procedimientos Civiles y Familiares, vigente desde 2026, unifica los procedimientos en materia civil y familiar en todo México. Este artículo explica los cambios más relevantes para quienes tienen procesos legales activos o planean iniciar uno en la Ciudad de México.',
+    categoria: 'Derecho Familiar',
+    fecha: '2026-01-15',
+    fechaDisplay: '15 de enero de 2026',
+    autor: 'Lic. Tania Mendoza',
+    imagen: '/images/blog/codigo-nacional-2026.jpg',
+  },
+  {
+    titulo: 'Guía completa para tramitar un divorcio en CDMX en 2026',
+    slug: 'guia-divorcio-cdmx-2026',
+    extracto: 'Tramitar un divorcio en la Ciudad de México implica elegir entre las vías administrativa, voluntaria e incausada. En esta guía detallamos los requisitos, costos aproximados, plazos y documentos necesarios para cada tipo de divorcio disponible en 2026.',
+    categoria: 'Derecho Familiar',
+    fecha: '2026-01-28',
+    fechaDisplay: '28 de enero de 2026',
+    autor: 'Lic. Luciana Valle',
+    imagen: '/images/blog/divorcio-cdmx-2026.jpg',
+  },
+  {
+    titulo: 'Derechos del inquilino en CDMX: lo que todo arrendatario debe conocer',
+    slug: 'derechos-inquilino-cdmx-2026',
+    extracto: 'El Código Civil de la Ciudad de México establece derechos específicos para los inquilinos que muchos desconocen. Desde la duración mínima del contrato hasta los procedimientos en caso de desalojo, esta guía cubre los aspectos fundamentales que todo arrendatario necesita saber.',
+    categoria: 'Derecho Inmobiliario',
+    fecha: '2026-02-05',
+    fechaDisplay: '5 de febrero de 2026',
+    autor: 'Lic. Ian Montiel',
+    imagen: '/images/blog/derechos-inquilino-cdmx.jpg',
+  },
+  {
+    titulo: '¿Qué hacer si lo detienen en la Ciudad de México? Guía de derechos del detenido',
+    slug: 'derechos-detenido-cdmx',
+    extracto: 'Toda persona detenida en la Ciudad de México tiene derechos constitucionales que las autoridades están obligadas a respetar. Conozca cuáles son, cómo ejercerlos y en qué momento debe solicitar la presencia de un abogado defensor.',
+    categoria: 'Derecho Penal',
+    fecha: '2026-02-10',
+    fechaDisplay: '10 de febrero de 2026',
+    autor: 'Lic. Tania Mendoza',
+    imagen: '/images/blog/derechos-detenido-cdmx.jpg',
+  },
+  {
+    titulo: 'Despido injustificado en CDMX 2026: qué le corresponde y cómo demandar',
+    slug: 'despido-injustificado-cdmx-2026',
+    extracto: 'El despido injustificado otorga al trabajador una indemnización constitucional de tres meses, 20 días por año, prima de antigüedad y salarios caídos. Conozca cómo calcular su liquidación y los plazos legales para demandar ante el CEFRAMEL y los tribunales laborales de la Ciudad de México.',
+    categoria: 'Derecho Laboral',
+    fecha: '2026-02-12',
+    fechaDisplay: '12 de febrero de 2026',
+    autor: 'Lic. Luciana Valle',
+    imagen: '/images/blog/despido-injustificado-cdmx.jpg',
+  },
+  {
+    titulo: 'Cómo obtener la residencia permanente en México 2026: guía completa',
+    slug: 'residencia-permanente-mexico-2026',
+    extracto: 'La residencia permanente permite vivir y trabajar en México indefinidamente. Esta guía detalla las cinco vías de acceso — vínculo familiar, conversión de temporal, jubilación, razones humanitarias y solvencia económica — con requisitos, documentos y costos actualizados.',
+    categoria: 'Derecho Migratorio',
+    fecha: '2026-02-12',
+    fechaDisplay: '12 de febrero de 2026',
+    autor: 'Lic. Tania Mendoza',
+    imagen: '/images/blog/residencia-permanente-mexico.jpg',
+  },
+  {
+    titulo: 'Cómo constituir una empresa en México 2026: tipos de sociedad, costos y trámites',
+    slug: 'constituir-empresa-mexico-2026',
+    extracto: 'Constituir una empresa en la Ciudad de México requiere elegir entre S.A. de C.V., S. de R.L. de C.V. o S.A.S., cada una con ventajas distintas. Esta guía compara los tres tipos de sociedad y detalla el proceso completo paso a paso.',
+    categoria: 'Derecho Corporativo',
+    fecha: '2026-02-12',
+    fechaDisplay: '12 de febrero de 2026',
+    autor: 'Lic. Ian Montiel',
+    imagen: '/images/blog/constituir-empresa-mexico.jpg',
+  },
+  {
+    titulo: 'Sucesiones y herencias en CDMX 2026: guía completa del juicio sucesorio',
+    slug: 'sucesiones-herencias-cdmx-2026',
+    extracto: 'El juicio sucesorio en la Ciudad de México tiene cuatro etapas: denuncia, inventario, administración y partición. Esta guía explica la diferencia entre sucesión testamentaria e intestamentaria, costos, plazos y cuándo es posible tramitar la herencia por vía notarial.',
+    categoria: 'Derecho Civil',
+    fecha: '2026-02-12',
+    fechaDisplay: '12 de febrero de 2026',
+    autor: 'Lic. Tania Mendoza',
+    imagen: '/images/blog/sucesiones-herencias-cdmx.jpg',
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- BREADCRUMB -->
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container">
+      <Breadcrumb items={[{label:'Blog'}]} />
+    </div>
+  </section>
+
+  <!-- BRACKET 1: CONCEPTUAL — Declaración definicional del blog -->
+  <section class="section-padding" style="padding-bottom:40px;">
+    <div class="container">
+      <div class="blog-hero reveal">
+        <p class="section-tag">Blog Jurídico</p>
+        <h1>Artículos legales y guías prácticas para la Ciudad de México</h1>
+        <p class="lead">Abogados en CDMX es un despacho jurídico ubicado en la Colonia Roma Norte, Ciudad de México, cuyo blog publica artículos redactados por abogados en ejercicio sobre temas de derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Cada publicación aborda situaciones legales reales que enfrentan las personas y empresas en la capital, con información verificada conforme a la legislación vigente en 2026.</p>
+        <p style="font-size:16px;line-height:1.8;margin-top:16px;">Nuestros artículos cubren las siete <a href="/especialidades">áreas de especialidad</a> del despacho: <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a> (divorcios, custodia, pensiones), <a href="/especialidades/derecho-penal-cdmx">derecho penal</a> (defensa, amparos), <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> (contratos, sucesiones), <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a> (empresas, compliance), <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a> (compraventa, arrendamiento), <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> (despidos, liquidaciones) y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a> (visas, residencia). Los artículos son escritos por los abogados de nuestro <a href="/equipo-legal-cdmx">equipo legal</a> y revisados por el director del despacho. Si tiene preguntas generales, consulte nuestras <a href="/preguntas-frecuentes">preguntas frecuentes</a> o agende una <a href="/asesoria-inicial">asesoría inicial</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: CONTENT — Grid de artículos + sidebar -->
+  <section class="section-padding" style="padding-top:0;">
+    <div class="container">
+      <div class="blog-layout">
+        <!-- ARTÍCULOS -->
+        <div class="blog-articles">
+          {articulos.map((art) => (
+            <article class="blog-card reveal">
+              <div class="blog-card__img">
+                <img src={art.imagen} alt={art.titulo} width="600" height="340" loading="lazy" style="width:100%;height:100%;object-fit:cover;background:var(--color-light);">
+              </div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta">
+                  <span class="blog-card__cat">{art.categoria}</span>
+                  <time datetime={art.fecha}>{art.fechaDisplay}</time>
+                </div>
+                <h2 class="blog-card__title">
+                  <a href={`/blog/${art.slug}`}>{art.titulo}</a>
+                </h2>
+                <p class="blog-card__excerpt">{art.extracto}</p>
+                <div class="blog-card__footer">
+                  <span class="blog-card__author">Por {art.autor}</span>
+                  <a href={`/blog/${art.slug}`} class="blog-card__read">Leer artículo →</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+          <div class="sidebar-block reveal">
+            <h3>Categorías</h3>
+            <ul class="sidebar-cats">
+              {categorias.map((cat) => (
+                <li>
+                  <a href={`/especialidades/${cat.slug}-cdmx`} class="sidebar-cat">
+                    <span class="sidebar-cat__icon" aria-hidden="true">{cat.icono}</span>
+                    <div>
+                      <strong>{cat.nombre}</strong>
+                      <p>{cat.descripcion}</p>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="sidebar-block sidebar-cta reveal">
+            <h3>¿Tiene un caso legal?</h3>
+            <p>Nuestros abogados le ofrecen una asesoría inicial para evaluar su situación y definir la mejor estrategia jurídica para proteger sus derechos.</p>
+            <a href="/asesoria-inicial" class="btn-primary-wrap" style="width:100%;justify-content:center;">Solicitar asesoría →</a>
+          </div>
+
+          <div class="sidebar-block reveal">
+            <h3>Contacto</h3>
+            <p><strong>Abogados en CDMX</strong></p>
+            <p>Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México.</p>
+            <p><a href="tel:+525564655501" style="color:var(--color-secondary);font-weight:600;">55 6465 5501</a></p>
+            <p><a href="mailto:contacto@abogadosencdmx.com" style="color:var(--color-secondary);">contacto@abogadosencdmx.com</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">Manténgase informado sobre sus derechos</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Si tiene dudas sobre algún tema legal que le afecta directamente, nuestro equipo puede orientarle con un diagnóstico profesional de su caso.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag {
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; }
+  .blog-hero { max-width: 800px; }
+  .blog-hero h1 { margin-bottom: 20px; }
+
+  .blog-layout { display: grid; grid-template-columns: 1fr 380px; gap: 50px; align-items: start; }
+
+  /* ARTICLE CARDS */
+  .blog-articles { display: flex; flex-direction: column; gap: 40px; }
+  .blog-card { display: grid; grid-template-columns: 280px 1fr; gap: 0; border: 1px solid var(--color-border); overflow: hidden; background: var(--color-white); }
+  .blog-card__img { min-height: 220px; background: var(--color-light); }
+  .blog-card__body { padding: 28px 30px; display: flex; flex-direction: column; }
+  .blog-card__meta { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; font-size: 13px; }
+  .blog-card__cat {
+    background: var(--color-secondary); color: var(--color-white);
+    padding: 3px 10px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .blog-card__meta time { color: var(--color-paragraph); }
+  .blog-card__title { font-size: 24px; margin-bottom: 12px; line-height: 1.3; }
+  .blog-card__title a { color: var(--color-primary); transition: color var(--transition); }
+  .blog-card__title a:hover { color: var(--color-secondary); }
+  .blog-card__excerpt { font-size: 15px; line-height: 1.7; flex: 1; margin-bottom: 16px; }
+  .blog-card__footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--color-border); }
+  .blog-card__author { font-size: 13px; font-weight: 600; color: var(--color-primary); }
+  .blog-card__read { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .blog-card__read:hover { text-decoration: underline; }
+
+  /* SIDEBAR */
+  .blog-sidebar { position: sticky; top: 100px; }
+  .sidebar-block { background: var(--color-light); padding: 28px; margin-bottom: 24px; }
+  .sidebar-block h3 { font-size: 22px; margin-bottom: 16px; }
+  .sidebar-block p { font-size: 15px; line-height: 1.6; }
+
+  .sidebar-cats { display: flex; flex-direction: column; gap: 0; }
+  .sidebar-cats li { border-bottom: 1px solid var(--color-border); }
+  .sidebar-cats li:last-child { border-bottom: none; }
+  .sidebar-cat {
+    display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;
+    transition: color var(--transition);
+  }
+  .sidebar-cat:hover strong { color: var(--color-secondary); }
+  .sidebar-cat__icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .sidebar-cat strong { display: block; font-size: 15px; color: var(--color-primary); margin-bottom: 2px; }
+  .sidebar-cat p { font-size: 13px; color: var(--color-paragraph); margin: 0; line-height: 1.5; }
+
+  .sidebar-cta { background: var(--color-primary); }
+  .sidebar-cta h3 { color: var(--color-white); }
+  .sidebar-cta p { color: rgba(255,255,255,.7); }
+
+  @media (max-width: 991px) {
+    .blog-layout { grid-template-columns: 1fr; }
+    .blog-sidebar { position: static; }
+    .blog-card { grid-template-columns: 1fr; }
+    .blog-card__img { min-height: 200px; }
+  }
+  @media (max-width: 767px) {
+    .blog-layout { gap: 32px; }
+    .blog-articles { gap: 28px; }
+    .blog-card__body { padding: 20px; }
+    .blog-card__title { font-size: 21px; }
+    .blog-card__excerpt { font-size: 14px; }
+    .lead { font-size: 18px; }
+    .sidebar-block { padding: 22px; }
+  }
+  @media (max-width: 479px) {
+    .blog-card__img { min-height: 160px; }
+    .blog-card__title { font-size: 19px; }
+    .blog-card__body { padding: 16px; }
+    .blog-card__meta { gap: 10px; }
+    .blog-card__excerpt { font-size: 14px; line-height: 1.6; }
+    .blog-hero h1 { font-size: 32px; }
+    .lead { font-size: 16px; }
+  }
+</style>

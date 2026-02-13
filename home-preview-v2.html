@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abogados en CDMX — Despacho Jurídico Especializado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-heading: 'Prata', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --color-primary: #001d3d;
+  --color-secondary: #a97b54;
+  --color-light: #f7f5f0;
+  --color-white: #ffffff;
+  --color-paragraph: #555;
+  --color-border: rgba(0, 29, 61, .12);
+  --ease: cubic-bezier(.25, .46, .45, .94);
+  --transition: .3s var(--ease);
+  --container: min(90%, 1280px);
+  --topbar-h: 40px;
+  --header-h: 80px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--color-paragraph); background: var(--color-white); overflow-x: hidden; }
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--color-primary); font-weight: 400; line-height: 1.15; }
+h1 { font-size: 62px; } h2 { font-size: 50px; } h3 { font-size: 38px; } h4 { font-size: 30px; }
+p { margin-bottom: 1em; }
+.container { width: var(--container); margin: 0 auto; }
+.section-padding { padding: 110px 0; }
+
+/* ═══ BUTTONS ═══ */
+.btn-primary-wrap { display: inline-flex; align-items: center; gap: 10px; background: var(--color-primary); color: var(--color-white); padding: 16px 32px; font-weight: 600; font-size: 16px; font-family: var(--font-body); transition: all var(--transition); border: none; cursor: pointer; }
+.btn-primary-wrap:hover { background: #8e6543; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(169,123,84,.35); }
+.btn-secondary-wrap { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--color-white); padding: 16px 32px; border: 1px solid rgba(255,255,255,.3); font-weight: 600; font-size: 16px; font-family: var(--font-body); transition: all var(--transition); cursor: pointer; }
+.btn-secondary-wrap:hover { background: var(--color-white); color: var(--color-primary); }
+
+/* ═══ SECTION UTILS ═══ */
+.section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+.section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+.section-header h2 { margin-bottom: 16px; }
+.section-sub { font-size: 18px; color: var(--color-paragraph); }
+.text-link { font-weight: 600; color: var(--color-secondary); font-size: 16px; transition: color var(--transition); }
+.text-link:hover { color: var(--color-primary); text-decoration: underline; }
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(0,29,61,.5); } 50% { box-shadow: 0 0 0 14px rgba(0,29,61,0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: all .7s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════
+   TOP BAR
+   ═══════════════════════════════════════ */
+.topbar {
+  background: var(--color-primary);
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+  animation: slideDown .6s var(--ease) both;
+}
+.topbar__inner {
+  display: flex; justify-content: space-between; align-items: center;
+  width: var(--container); margin: 0 auto;
+}
+.topbar__left, .topbar__right { display: flex; align-items: center; gap: 24px; }
+.topbar__item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: rgba(255,255,255,.55); font-weight: 500;
+}
+.topbar__item svg { width: 14px; height: 14px; opacity: .6; }
+.topbar__item a { color: rgba(255,255,255,.7); transition: color var(--transition); }
+.topbar__item a:hover { color: var(--color-secondary); }
+.topbar__divider { width: 1px; height: 16px; background: rgba(255,255,255,.12); }
+.topbar__cta {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--color-secondary);
+  transition: color var(--transition);
+}
+.topbar__cta:hover { color: #c99b6d; }
+.topbar__cta svg { width: 16px; height: 16px; }
+
+/* ═══════════════════════════════════════
+   HEADER — GLASSMORPHISM
+   ═══════════════════════════════════════ */
+.header {
+  position: fixed; top: var(--topbar-h); left: 0; right: 0; z-index: 100;
+  height: var(--header-h);
+  background: rgba(0, 29, 61, 0.15);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: all .4s var(--ease);
+  animation: slideDown .6s var(--ease) .1s both;
+}
+.header.scrolled {
+  background: rgba(0, 29, 61, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0,0,0,.2);
+}
+.header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100%; width: var(--container); margin: 0 auto;
+}
+
+/* Logo with isotipo */
+.header__logo { display: flex; align-items: center; gap: 12px; }
+.header__isotipo {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--color-secondary);
+  padding: 6px;
+  transition: all var(--transition);
+}
+.header__logo:hover .header__isotipo { background: var(--color-primary); }
+.header__isotipo svg { width: 24px; height: 24px; }
+.header__logo:hover .header__isotipo svg path { fill: var(--color-white); }
+.header__brand { display: flex; flex-direction: column; line-height: 1.1; }
+.header__brand-name { font-family: var(--font-heading); font-size: 20px; color: var(--color-white); }
+.header__brand-sub { font-size: 10px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; }
+
+.header__nav { display: flex; align-items: center; gap: 32px; }
+.header__menu { display: flex; gap: 28px; }
+.header__link {
+  color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500;
+  transition: color var(--transition); position: relative;
+}
+.header__link::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
+  height: 2px; background: var(--color-primary); transition: width var(--transition);
+}
+.header__link:hover { color: var(--color-white); }
+.header__link:hover::after { width: 100%; }
+.header__cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--color-primary); color: var(--color-white);
+  padding: 12px 24px; font-weight: 600; font-size: 14px;
+  font-family: var(--font-body); transition: all var(--transition);
+}
+.header__cta-btn:hover { background: #8e6543; transform: translateY(-1px); }
+.header__phone {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--color-white); font-size: 15px; font-weight: 600;
+  transition: color var(--transition);
+}
+.header__phone svg { width: 16px; height: 16px; }
+.header__phone:hover { color: var(--color-secondary); }
+
+/* Burger */
+.header__burger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 24px; position: relative; z-index: 200;
+}
+.header__burger span {
+  position: absolute; left: 0; width: 100%; height: 2px;
+  background: var(--color-white); transition: all .3s ease;
+}
+.header__burger span:nth-child(1) { top: 0; }
+.header__burger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.header__burger span:nth-child(3) { bottom: 0; }
+
+/* ═══ MOBILE OVERLAY ═══ */
+.nav-overlay {
+  position: fixed; inset: 0; z-index: 150;
+  background: var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .4s var(--ease);
+}
+.nav-overlay.open { opacity: 1; pointer-events: all; }
+.nav-overlay__menu { display: flex; flex-direction: column; gap: 20px; text-align: center; }
+.nav-overlay__link {
+  font-family: var(--font-heading); font-size: 32px; color: var(--color-white);
+  transition: color var(--transition);
+}
+.nav-overlay__link:hover { color: var(--color-secondary); }
+.nav-overlay__contact { margin-top: 32px; text-align: center; }
+.nav-overlay__contact p { color: rgba(255,255,255,.6); font-size: 15px; }
+.nav-overlay__contact a { color: var(--color-secondary); }
+
+/* ═══ WHATSAPP FLOAT ═══ */
+.whatsapp-float {
+  position: fixed; bottom: 28px; left: 28px; z-index: 200;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--color-primary); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,29,61,.5);
+  animation: pulseGlow 2s infinite;
+  transition: transform var(--transition);
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float svg { width: 30px; height: 30px; }
+
+/* ═══ HERO ═══ */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.hero__bg { position: absolute; inset: 0; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+.hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,29,61,.92) 0%, rgba(0,29,61,.7) 50%, rgba(0,29,61,.45) 100%); }
+.hero__content { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-top: 160px; padding-bottom: 80px; }
+.hero__text { max-width: 720px; }
+.hero__tag { font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+.hero h1 { color: var(--color-white); margin-bottom: 24px; }
+.hero__accent { color: var(--color-secondary); }
+.hero__desc { color: rgba(255,255,255,.75); font-size: 18px; line-height: 1.7; margin-bottom: 32px; max-width: 600px; }
+.hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero__badge-inner { background: var(--color-primary); padding: 32px; text-align: center; min-width: 180px; }
+.hero__badge-num { display: block; font-family: var(--font-heading); font-size: 52px; color: var(--color-white); line-height: 1; }
+.hero__badge-label { display: block; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.85); margin-top: 8px; }
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,.4); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  animation: fadeUp 1s var(--ease) 1s both;
+}
+.hero__scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--color-secondary), transparent); animation: scrollPulse 2s infinite; }
+@keyframes scrollPulse { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+
+/* ═══ MARQUEE ═══ */
+.marquee-section { background: var(--color-primary); padding: 18px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
+.marquee-track { overflow: hidden; }
+.marquee-content { display: flex; align-items: center; animation: marquee-scroll 30s linear infinite; white-space: nowrap; width: max-content; }
+.marquee-item { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.5); padding: 0 20px; text-transform: uppercase; letter-spacing: 2px; }
+.marquee-dot { color: var(--color-secondary); font-size: 10px; }
+.marquee-section--gold { background: var(--color-primary); padding: 24px 0; }
+.marquee-item-lg { font-family: var(--font-heading); font-size: 48px; color: var(--color-white); padding: 0 40px; }
+.marquee-dot-lg { color: var(--color-white); font-size: 18px; opacity: .5; }
+
+/* ═══ POR QUÉ ═══ */
+.porque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.porque-left h2 { margin-bottom: 20px; }
+.porque-right { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.porque-card { background: var(--color-light); padding: 28px; border-left: 3px solid var(--color-secondary); transition: all var(--transition); }
+.porque-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,29,61,.08); }
+.porque-num { font-family: var(--font-heading); font-size: 36px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+.porque-card h4 { font-size: 20px; margin-bottom: 8px; }
+.porque-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+/* ═══ AREAS ═══ */
+.areas-section { background: var(--color-light); }
+.areas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.areas-grid > :last-child { grid-column: 2 / 4; }
+.area-card { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); transition: all var(--transition); display: block; position: relative; overflow: hidden; }
+.area-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.area-card:hover::before { transform: scaleX(1); }
+.area-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,29,61,.1); }
+.area-icon { font-size: 32px; display: block; margin-bottom: 16px; }
+.area-name { font-size: 20px; margin-bottom: 8px; }
+.area-desc { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+.area-arrow { font-size: 20px; color: var(--color-secondary); font-weight: 700; transition: transform var(--transition); display: inline-block; }
+.area-card:hover .area-arrow { transform: translateX(6px); }
+
+/* ═══ ABOUT ═══ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-img { position: relative; overflow: hidden; }
+.about-img img { width: 100%; height: 500px; object-fit: cover; transition: transform .6s var(--ease); }
+.about-img:hover img { transform: scale(1.03); }
+.about-img__overlay { position: absolute; bottom: 0; left: 0; background: var(--color-primary); padding: 20px 28px; }
+.about-img__years { font-family: var(--font-heading); font-size: 22px; color: var(--color-white); }
+.about-highlights { display: flex; gap: 40px; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--color-border); }
+.about-hl { display: flex; align-items: center; gap: 12px; }
+.about-hl__num { font-family: var(--font-heading); font-size: 42px; color: var(--color-secondary); line-height: 1; }
+.about-hl__text { font-size: 15px; font-weight: 600; color: var(--color-primary); max-width: 120px; }
+
+/* ═══ SERVICIOS ═══ */
+.servicios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.servicio-card { border: 1px solid rgba(255,255,255,.1); padding: 32px; transition: all var(--transition); position: relative; overflow: hidden; }
+.servicio-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--color-primary); transition: height .4s var(--ease); }
+.servicio-card:hover::before { height: 100%; }
+.servicio-card:hover { border-color: var(--color-secondary); background: rgba(255,255,255,.04); }
+.servicio-num { font-family: var(--font-heading); font-size: 36px; color: var(--color-secondary); display: block; margin-bottom: 12px; line-height: 1; }
+.servicio-card h4 { font-size: 20px; color: var(--color-white); margin-bottom: 10px; }
+.servicio-card p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.6; margin-bottom: 0; }
+
+/* ═══ TESTIMONIOS ═══ */
+.testimonios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.testimonio-card { background: var(--color-light); padding: 28px; display: flex; flex-direction: column; transition: all var(--transition); }
+.testimonio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,29,61,.08); }
+.testimonio-stars { color: var(--color-secondary); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+.testimonio-text { font-size: 15px; line-height: 1.65; flex: 1; margin-bottom: 20px; font-style: italic; }
+.testimonio-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--color-border); }
+.testimonio-avatar { width: 40px; height: 40px; background: var(--color-primary); color: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.testimonio-name { display: block; font-size: 15px; color: var(--color-primary); font-weight: 600; }
+.testimonio-area { font-size: 13px; color: var(--color-secondary); font-weight: 500; }
+
+/* ═══ EQUIPO ═══ */
+.equipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.equipo-card { display: block; }
+.equipo-img { position: relative; overflow: hidden; aspect-ratio: 4/5; }
+.equipo-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.equipo-card:hover .equipo-img img { transform: scale(1.05); }
+.equipo-hover { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,29,61,.8) 0%, transparent 60%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 24px; opacity: 0; transition: opacity var(--transition); }
+.equipo-card:hover .equipo-hover { opacity: 1; }
+.equipo-hover span { color: var(--color-white); font-weight: 600; font-size: 16px; padding: 12px 24px; border: 1px solid rgba(255,255,255,.4); backdrop-filter: blur(8px); }
+.equipo-info { padding: 20px 0; }
+.equipo-info h3 { font-size: 24px; margin-bottom: 4px; }
+.equipo-info p { font-size: 15px; color: var(--color-secondary); font-weight: 500; margin-bottom: 0; }
+
+/* ═══ STATS ═══ */
+.stats-section { background: var(--color-primary); padding: 70px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.stat__num { display: block; font-family: var(--font-heading); font-size: 56px; color: var(--color-white); line-height: 1; margin-bottom: 8px; }
+.stat__label { font-size: 16px; color: rgba(255,255,255,.85); font-weight: 500; }
+.stats-grid .stat { position: relative; }
+.stats-grid .stat:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background: rgba(255,255,255,.2); }
+
+/* ═══ BLOG PREVIEW ═══ */
+.blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+.blog-header h2 { margin-bottom: 0; }
+.blog-preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.blog-preview { display: block; border: 1px solid var(--color-border); overflow: hidden; transition: all var(--transition); }
+.blog-preview:hover { border-color: var(--color-secondary); box-shadow: 0 16px 40px rgba(0,29,61,.08); transform: translateY(-4px); }
+.blog-preview__img { height: 240px; overflow: hidden; }
+.blog-preview__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.blog-preview:hover .blog-preview__img img { transform: scale(1.05); }
+.blog-preview__body { padding: 28px; }
+.blog-preview__cat { font-size: 12px; font-weight: 700; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 1.5px; }
+.blog-preview__body h3 { font-size: 24px; margin: 10px 0 12px; line-height: 1.3; }
+.blog-preview__body p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+.blog-preview__read { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+
+/* ═══ CTA FINAL ═══ */
+.cta-final { position: relative; min-height: 520px; display: flex; align-items: center; }
+.cta-final__bg { position: absolute; inset: 0; }
+.cta-final__bg img { width: 100%; height: 100%; object-fit: cover; }
+.cta-final__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,29,61,.93) 0%, rgba(0,29,61,.8) 100%); }
+.cta-final__content { position: relative; z-index: 2; max-width: 700px; text-align: center; margin: 0 auto; }
+.cta-final__content h2 { color: var(--color-white); margin-bottom: 20px; }
+.cta-final__content p { color: rgba(255,255,255,.7); font-size: 18px; margin-bottom: 32px; }
+.cta-final__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ═══ FOOTER ═══ */
+.footer { background: var(--color-primary); padding: 80px 0 40px; color: rgba(255,255,255,.7); }
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.footer__logo { font-family: var(--font-heading); font-size: 22px; color: var(--color-white); display: block; margin-bottom: 16px; }
+.footer__heading { font-size: 16px; color: var(--color-white); margin-bottom: 20px; font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.footer__menu { display: flex; flex-direction: column; gap: 12px; }
+.footer__link { color: rgba(255,255,255,.6); font-size: 15px; transition: color var(--transition); }
+.footer__link:hover { color: var(--color-secondary); }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 30px; display: flex; justify-content: space-between; font-size: 14px; }
+.footer__bottom a { color: var(--color-secondary); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 991px) {
+  h1 { font-size: 48px; } h2 { font-size: 42px; }
+  .topbar { display: none; }
+  .header { top: 0; }
+  .hero__content { flex-direction: column; align-items: flex-start; padding-top: 120px; }
+  .porque-grid { grid-template-columns: 1fr; gap: 40px; }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .areas-grid > :last-child { grid-column: auto; }
+  .about-grid { grid-template-columns: 1fr; }
+  .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonios-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .stats-grid .stat::after { display: none; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .header__nav { display: none; }
+  .header__burger { display: block; }
+  .header__phone { display: none; }
+}
+@media (max-width: 479px) {
+  h1 { font-size: 34px; } h2 { font-size: 32px; }
+  .porque-right { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: 1fr; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .equipo-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .blog-preview-grid { grid-template-columns: 1fr; }
+  .marquee-item-lg { font-size: 28px; padding: 0 24px; }
+  .footer__grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Lunes a viernes · 9:00 – 18:00
+      </span>
+      <span class="topbar__divider"></span>
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+      </span>
+      <span class="topbar__divider"></span>
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Colonia Roma Norte, CDMX
+      </span>
+    </div>
+    <div class="topbar__right">
+      <a href="tel:+525564655501" class="topbar__cta">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863q-2.5-2.5-3.862-5.55T3 4.05q0-.45.3-.75T4.05 3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3z"/></svg>
+        55 6465 5501
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HEADER GLASSMORPHISM ═══ -->
+<header class="header" id="mainHeader">
+  <div class="header__inner">
+    <a href="/" class="header__logo">
+      <div class="header__isotipo">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2L4 8v4h24V8L16 2zM6 14v10h4V14H6zm8 0v10h4V14h-4zm8 0v10h4V14h-4zM2 26v4h28v-4H2z" fill="#a97b54"/></svg>
+      </div>
+      <div class="header__brand">
+        <span class="header__brand-name">Abogados en CDMX</span>
+        <span class="header__brand-sub">Despacho Jurídico</span>
+      </div>
+    </a>
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li><a href="#" class="header__link">Servicios</a></li>
+        <li><a href="#" class="header__link">Especialidades</a></li>
+        <li><a href="#" class="header__link">Nosotros</a></li>
+        <li><a href="#" class="header__link">Equipo</a></li>
+        <li><a href="#" class="header__link">Blog</a></li>
+        <li><a href="#" class="header__link">Contacto</a></li>
+      </ul>
+      <a href="#" class="header__cta-btn">Asesoría inicial →</a>
+    </nav>
+    <button class="header__burger" aria-label="Abrir menú" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="nav-overlay" id="navOverlay">
+  <div>
+    <ul class="nav-overlay__menu">
+      <li><a href="#" class="nav-overlay__link">Inicio</a></li>
+      <li><a href="#" class="nav-overlay__link">Servicios</a></li>
+      <li><a href="#" class="nav-overlay__link">Especialidades</a></li>
+      <li><a href="#" class="nav-overlay__link">Nosotros</a></li>
+      <li><a href="#" class="nav-overlay__link">Equipo Legal</a></li>
+      <li><a href="#" class="nav-overlay__link">Blog</a></li>
+      <li><a href="#" class="nav-overlay__link">Contacto</a></li>
+    </ul>
+    <div style="text-align:center;margin-top:24px;"><a href="#" class="btn-primary-wrap" style="width:100%;justify-content:center;">Asesoría inicial →</a></div>
+    <div class="nav-overlay__contact">
+      <p><a href="tel:+525564655501">55 6465 5501</a></p>
+      <p>contacto@abogadosencdmx.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WHATSAPP FLOAT ═══ -->
+<a href="https://wa.me/525564655501?text=Hola%2C%20necesito%20asesoría%20legal" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" width="30" height="30"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- ═══ S1: HERO ═══ -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=1080&fit=crop" alt="Despacho jurídico profesional en la Ciudad de México" width="1920" height="1080">
+    <div class="hero__overlay"></div>
+  </div>
+  <div class="container hero__content">
+    <div class="hero__text reveal">
+      <p class="hero__tag">Despacho Jurídico en Ciudad de México</p>
+      <h1>Protegemos sus derechos con <span class="hero__accent">estrategia legal</span> y resultados comprobables</h1>
+      <p class="hero__desc">Abogados en CDMX es un despacho jurídico ubicado en la Colonia Roma Norte, especializado en derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Brindamos representación legal integral a personas y empresas en la Ciudad de México.</p>
+      <div class="hero__cta">
+        <a href="#" class="btn-primary-wrap">Solicitar asesoría gratuita →</a>
+        <a href="#" class="btn-secondary-wrap">Ver especialidades →</a>
+      </div>
+    </div>
+    <div class="hero__badge reveal">
+      <div class="hero__badge-inner">
+        <span class="hero__badge-num">300+</span>
+        <span class="hero__badge-label">Casos resueltos en CDMX</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    <span>Explorar</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ S2: MARQUEE TRUST ═══ -->
+<section class="marquee-section">
+  <div class="marquee-track"><div class="marquee-content">
+    <span class="marquee-item">Tribunal Superior de Justicia CDMX</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Juzgados Familiares</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Juzgados Penales</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">CEFRAMEL</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Instituto Nacional de Migración</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Registro Público de la Propiedad</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Tribunal Superior de Justicia CDMX</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Juzgados Familiares</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Juzgados Penales</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">CEFRAMEL</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Instituto Nacional de Migración</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Registro Público de la Propiedad</span><span class="marquee-dot">✦</span>
+  </div></div>
+</section>
+
+<!-- ═══ S3: POR QUÉ ELEGIRNOS ═══ -->
+<section class="section-padding">
+  <div class="container">
+    <div class="porque-grid">
+      <div class="porque-left reveal">
+        <p class="section-tag">¿Por qué elegirnos?</p>
+        <h2>Un despacho que entiende su caso y defiende sus intereses</h2>
+        <p>Abogados en CDMX combina conocimiento jurídico especializado con atención personalizada. No somos un despacho de volumen: cada caso recibe la estrategia y el tiempo que merece. Nuestros clientes saben quién es su abogado, conocen el estado de su expediente y participan en las decisiones clave de su proceso.</p>
+        <a href="#" class="text-link">Conozca nuestra historia →</a>
+      </div>
+      <div class="porque-right">
+        <div class="porque-card reveal"><span class="porque-num">01</span><h4>Especialistas por área</h4><p>Cada caso es atendido por un abogado especialista en la materia, no por un generalista que improvisa.</p></div>
+        <div class="porque-card reveal"><span class="porque-num">02</span><h4>Comunicación directa</h4><p>Usted habla directamente con su abogado titular. Respondemos llamadas y correos en menos de 24 horas.</p></div>
+        <div class="porque-card reveal"><span class="porque-num">03</span><h4>Estrategia antes de acción</h4><p>Evaluamos cada caso antes de actuar. Le explicamos opciones, riesgos y costos reales para que decida con información.</p></div>
+        <div class="porque-card reveal"><span class="porque-num">04</span><h4>Resultados comprobables</h4><p>Más de 300 casos resueltos en 7 áreas del derecho con clientes que nos refieren por la calidad de nuestra representación.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S4: ÁREAS ═══ -->
+<section class="section-padding areas-section">
+  <div class="container">
+    <div class="section-header reveal"><p class="section-tag">Especialidades</p><h2>7 áreas del derecho para resolver su caso</h2><p class="section-sub">Cada área cuenta con abogados dedicados exclusivamente a esa materia, con conocimiento actualizado de la legislación vigente en la Ciudad de México.</p></div>
+    <div class="areas-grid">
+      <a href="#" class="area-card reveal"><span class="area-icon">⚖️</span><h3 class="area-name">Derecho Familiar</h3><p class="area-desc">Divorcios, custodia, pensión alimenticia y violencia familiar.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">🛡️</span><h3 class="area-name">Derecho Penal</h3><p class="area-desc">Defensa penal, amparos, recursos y asesoría a víctimas.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">📋</span><h3 class="area-name">Derecho Civil</h3><p class="area-desc">Contratos, daños, responsabilidad civil y sucesiones.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">🏢</span><h3 class="area-name">Derecho Corporativo</h3><p class="area-desc">Constitución de sociedades, fusiones y compliance.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">🏠</span><h3 class="area-name">Derecho Inmobiliario</h3><p class="area-desc">Compraventa, arrendamiento y regularización de propiedad.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">🌎</span><h3 class="area-name">Derecho Migratorio</h3><p class="area-desc">Visas, residencia temporal y permanente, naturalización.</p><span class="area-arrow">→</span></a>
+      <a href="#" class="area-card reveal"><span class="area-icon">👷</span><h3 class="area-name">Derecho Laboral</h3><p class="area-desc">Despidos, liquidaciones, demandas y acoso laboral.</p><span class="area-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S5: SOBRE NOSOTROS ═══ -->
+<section class="section-padding">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Oficinas de Abogados en CDMX en Colonia Roma Norte" width="800" height="600">
+        <div class="about-img__overlay"><span class="about-img__years">Desde 2014</span></div>
+      </div>
+      <div class="about-text reveal">
+        <p class="section-tag">Sobre nosotros</p>
+        <h2>Un despacho con raíces en la Roma Norte y visión de excelencia</h2>
+        <p>Abogados en CDMX opera desde Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Nuestro despacho nació con la convicción de que la asesoría legal profesional debe ser accesible, clara y orientada a resultados concretos.</p>
+        <p>A lo largo de los años hemos consolidado un equipo de abogados especializados en 7 áreas del derecho, cada uno con experiencia comprobable ante los tribunales de la Ciudad de México.</p>
+        <div class="about-highlights">
+          <div class="about-hl"><span class="about-hl__num">7</span><span class="about-hl__text">Áreas de especialización</span></div>
+          <div class="about-hl"><span class="about-hl__num">20+</span><span class="about-hl__text">Profesionales del derecho</span></div>
+        </div>
+        <a href="#" class="btn-primary-wrap" style="margin-top:24px;">Conozca nuestro despacho →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S6: SERVICIOS ═══ -->
+<section class="section-padding" style="background:var(--color-primary);color:var(--color-white);">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:50px;" class="reveal"><p class="section-tag" style="color:var(--color-secondary);">Nuestros servicios</p><h2 style="color:var(--color-white);">Lo acompañamos en cada etapa de su proceso legal</h2></div>
+    <div class="servicios-grid">
+      <div class="servicio-card reveal"><span class="servicio-num">01</span><h4>Asesoría legal inicial</h4><p>Evaluamos su caso, identificamos las opciones legales y le presentamos una estrategia clara antes de tomar cualquier decisión.</p></div>
+      <div class="servicio-card reveal"><span class="servicio-num">02</span><h4>Representación en tribunales</h4><p>Litigamos ante juzgados civiles, familiares, penales, laborales y tribunales federales de la Ciudad de México.</p></div>
+      <div class="servicio-card reveal"><span class="servicio-num">03</span><h4>Negociación y mediación</h4><p>Buscamos resoluciones eficientes fuera de juicio cuando es posible. No todo requiere un litigio.</p></div>
+      <div class="servicio-card reveal"><span class="servicio-num">04</span><h4>Gestión documental</h4><p>Tramitamos documentos, escrituras, contratos, actas y registros ante notarios e instituciones gubernamentales.</p></div>
+      <div class="servicio-card reveal"><span class="servicio-num">05</span><h4>Consultoría preventiva</h4><p>Asesoramos a empresas y personas para prevenir conflictos legales con contratos claros y cumplimiento regulatorio.</p></div>
+      <div class="servicio-card reveal"><span class="servicio-num">06</span><h4>Seguimiento post-resolución</h4><p>No desaparecemos después de la sentencia. Ejecutamos resoluciones y protegemos sus derechos a largo plazo.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:50px;" class="reveal"><a href="#" class="btn-secondary-wrap">Explorar todos los servicios →</a></div>
+  </div>
+</section>
+
+<!-- ═══ S7: TESTIMONIOS ═══ -->
+<section class="section-padding">
+  <div class="container">
+    <div class="section-header reveal"><p class="section-tag">Testimonios</p><h2>Lo que dicen nuestros clientes</h2><p class="section-sub">Las experiencias de quienes confiaron en nuestro despacho para resolver sus asuntos legales en la Ciudad de México.</p></div>
+    <div class="testimonios-grid">
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Cuando me encontré en una situación legal inesperada, el equipo actuó con rapidez y profesionalismo. Mi abogado penalista me mantuvo informado en cada etapa."</p><div class="testimonio-author"><div class="testimonio-avatar">J</div><div><strong class="testimonio-name">Jorge Ramírez</strong><span class="testimonio-area">Derecho Penal</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Necesitaba regularizar una propiedad heredada sin escrituras. El despacho me guió en todo el proceso de usucapión. Hoy el inmueble está a mi nombre."</p><div class="testimonio-author"><div class="testimonio-avatar">M</div><div><strong class="testimonio-name">Mariana Rivas</strong><span class="testimonio-area">Derecho Inmobiliario</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Contraté al despacho para estructurar la fusión de dos empresas. Su equipo corporativo manejó el due diligence con un nivel de detalle impecable."</p><div class="testimonio-author"><div class="testimonio-avatar">R</div><div><strong class="testimonio-name">Roberto Ayala</strong><span class="testimonio-area">Derecho Corporativo</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Mi proceso de divorcio parecía imposible. Los abogados familiaristas lograron un convenio justo que protegió los intereses de mis hijos."</p><div class="testimonio-author"><div class="testimonio-avatar">L</div><div><strong class="testimonio-name">Lucia Torres</strong><span class="testimonio-area">Derecho Familiar</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Como extranjera casada con mexicano, necesitaba regularizar mi situación migratoria. El equipo me acompañó hasta obtener mi residencia permanente."</p><div class="testimonio-author"><div class="testimonio-avatar">L</div><div><strong class="testimonio-name">Laura Stein</strong><span class="testimonio-area">Derecho Migratorio</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Tuve un problema con un inquilino moroso. El despacho inició el juicio de desocupación y en pocos meses recuperé mi propiedad."</p><div class="testimonio-author"><div class="testimonio-avatar">E</div><div><strong class="testimonio-name">Ernesto Salas</strong><span class="testimonio-area">Derecho Inmobiliario</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"La pelea por la custodia de mi hijo fue lo más difícil. Mi abogada presentó las pruebas correctas y el juez falló a mi favor."</p><div class="testimonio-author"><div class="testimonio-avatar">C</div><div><strong class="testimonio-name">Carlos Mendoza</strong><span class="testimonio-area">Derecho Familiar</span></div></div></div>
+      <div class="testimonio-card reveal"><div class="testimonio-stars">★★★★★</div><p class="testimonio-text">"Constituimos nuestra empresa con el despacho y desde entonces manejan nuestros contratos. Su compliance nos ha evitado varios problemas."</p><div class="testimonio-author"><div class="testimonio-avatar">R</div><div><strong class="testimonio-name">Rodrigo Cervantes</strong><span class="testimonio-area">Derecho Corporativo</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S8: EQUIPO ═══ -->
+<section class="section-padding" style="background:var(--color-light);">
+  <div class="container">
+    <div class="section-header reveal"><p class="section-tag">Nuestro equipo</p><h2>Abogados especializados a su servicio</h2><p class="section-sub">Conozca a los profesionales del derecho que lideran cada área de práctica en nuestro despacho.</p></div>
+    <div class="equipo-grid">
+      <a href="#" class="equipo-card reveal"><div class="equipo-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&crop=face" alt="Lic. Tania Mendoza" width="600" height="750"><div class="equipo-hover"><span>Ver perfil →</span></div></div><div class="equipo-info"><h3>Lic. Tania Mendoza</h3><p>Derecho Inmobiliario</p></div></a>
+      <a href="#" class="equipo-card reveal"><div class="equipo-img"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=750&fit=crop&crop=face" alt="Lic. Luciana Valle" width="600" height="750"><div class="equipo-hover"><span>Ver perfil →</span></div></div><div class="equipo-info"><h3>Lic. Luciana Valle</h3><p>Derecho Laboral</p></div></a>
+      <a href="#" class="equipo-card reveal"><div class="equipo-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&crop=face" alt="Lic. Ian Montiel" width="600" height="750"><div class="equipo-hover"><span>Ver perfil →</span></div></div><div class="equipo-info"><h3>Lic. Ian Montiel</h3><p>Derecho Corporativo</p></div></a>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal"><a href="#" class="btn-primary-wrap">Ver equipo completo →</a></div>
+  </div>
+</section>
+
+<!-- ═══ S9: STATS ═══ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal"><span class="stat__num">20+</span><span class="stat__label">Profesionales del derecho</span></div>
+      <div class="stat reveal"><span class="stat__num">7</span><span class="stat__label">Áreas de especialización</span></div>
+      <div class="stat reveal"><span class="stat__num">300+</span><span class="stat__label">Casos resueltos exitosamente</span></div>
+      <div class="stat reveal"><span class="stat__num">100+</span><span class="stat__label">Clientes que nos recomiendan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S10: BLOG PREVIEW ═══ -->
+<section class="section-padding">
+  <div class="container">
+    <div class="blog-header reveal"><div><p class="section-tag">Blog jurídico</p><h2>Artículos legales recientes</h2></div><a href="#" class="text-link">Ver todos los artículos →</a></div>
+    <div class="blog-preview-grid">
+      <a href="#" class="blog-preview reveal"><div class="blog-preview__img"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop" alt="Nuevo Código 2026" width="700" height="420"></div><div class="blog-preview__body"><span class="blog-preview__cat">Derecho Familiar</span><h3>Nuevo Código Nacional de Procedimientos Civiles y Familiares 2026</h3><p>Los cambios más relevantes del nuevo código para quienes tienen procesos legales activos en la Ciudad de México.</p><span class="blog-preview__read">Leer artículo →</span></div></a>
+      <a href="#" class="blog-preview reveal"><div class="blog-preview__img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop" alt="Guía divorcio CDMX" width="700" height="420"></div><div class="blog-preview__body"><span class="blog-preview__cat">Derecho Familiar</span><h3>Guía completa para tramitar un divorcio en CDMX en 2026</h3><p>Requisitos, costos, plazos y documentos para cada tipo de divorcio disponible en la Ciudad de México.</p><span class="blog-preview__read">Leer artículo →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ S11: MARQUEE 2 ═══ -->
+<section class="marquee-section marquee-section--gold">
+  <div class="marquee-track"><div class="marquee-content">
+    <span class="marquee-item-lg">Obtener cita</span><span class="marquee-dot-lg">✦</span>
+    <span class="marquee-item-lg">Contáctenos</span><span class="marquee-dot-lg">✦</span>
+    <span class="marquee-item-lg">Obtener asesoría</span><span class="marquee-dot-lg">✦</span>
+    <span class="marquee-item-lg">Obtener cita</span><span class="marquee-dot-lg">✦</span>
+    <span class="marquee-item-lg">Contáctenos</span><span class="marquee-dot-lg">✦</span>
+    <span class="marquee-item-lg">Obtener asesoría</span><span class="marquee-dot-lg">✦</span>
+  </div></div>
+</section>
+
+<!-- ═══ S12: CTA FINAL ═══ -->
+<section class="cta-final">
+  <div class="cta-final__bg">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=800&fit=crop" alt="Ciudad de México panorámica" width="1920" height="800">
+    <div class="cta-final__overlay"></div>
+  </div>
+  <div class="container cta-final__content reveal">
+    <h2>Resuelva su situación legal con el respaldo de abogados especialistas</h2>
+    <p>Agende su asesoría inicial y obtenga un diagnóstico profesional de su caso. Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 horas.</p>
+    <div class="cta-final__actions">
+      <a href="#" class="btn-primary-wrap">Solicitar asesoría →</a>
+      <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__logo">Abogados en CDMX</span>
+        <p style="font-size:15px;margin-top:8px;">Abogados en CDMX es un despacho jurídico ubicado en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 hrs.</p>
+        <p style="font-size:15px;margin-top:12px;"><a href="tel:+525564655501" style="color:var(--color-secondary);">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com" style="color:rgba(255,255,255,.6);">contacto@abogadosencdmx.com</a></p>
+      </div>
+      <nav><h3 class="footer__heading">Especialidades</h3><ul class="footer__menu"><li><a href="#" class="footer__link">Derecho Familiar</a></li><li><a href="#" class="footer__link">Derecho Penal</a></li><li><a href="#" class="footer__link">Derecho Civil</a></li><li><a href="#" class="footer__link">Derecho Corporativo</a></li><li><a href="#" class="footer__link">Derecho Inmobiliario</a></li><li><a href="#" class="footer__link">Derecho Migratorio</a></li><li><a href="#" class="footer__link">Derecho Laboral</a></li></ul></nav>
+      <nav><h3 class="footer__heading">Links</h3><ul class="footer__menu"><li><a href="#" class="footer__link">Especialidades</a></li><li><a href="#" class="footer__link">Blog</a></li><li><a href="#" class="footer__link">Equipo Legal</a></li><li><a href="#" class="footer__link">Asesoría Inicial</a></li><li><a href="#" class="footer__link">Preguntas Frecuentes</a></li><li><a href="#" class="footer__link">Aviso de Privacidad</a></li></ul></nav>
+      <nav><h3 class="footer__heading">Contacto</h3><p style="font-size:15px;">Guanajuato 224, Roma Nte.,<br>Cuauhtémoc, 06700<br>Ciudad de México, CDMX</p><p style="font-size:15px;margin-top:16px;"><strong style="color:var(--color-white);">55 6465 5501</strong></p></nav>
+    </div>
+    <div class="footer__bottom">
+      <p>© Abogados en CDMX 2026 — Todos los derechos reservados.</p>
+      <p>Sitio creado por <a href="https://seosecreto.com">SEO Secreto</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll → header solid
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Mobile burger
+const burger = document.getElementById('burgerBtn');
+const overlay = document.getElementById('navOverlay');
+burger?.addEventListener('click', () => {
+  overlay.classList.toggle('open');
+  burger.setAttribute('aria-expanded', overlay.classList.contains('open'));
+});
+overlay?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+</script>
+</body>
+</html>

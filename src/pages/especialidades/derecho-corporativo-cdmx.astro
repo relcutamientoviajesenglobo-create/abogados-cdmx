@@ -1,0 +1,195 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados de Derecho Corporativo en CDMX — Empresas, Fusiones y Compliance | Abogados en CDMX';
+const description = 'Abogados corporativos en la Ciudad de México. Constitución de sociedades, fusiones, adquisiciones, compliance regulatorio y gobierno corporativo. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-corporativo-cdmx';
+
+const schema = {
+  "@context": "https://schema.org", "@type": "Service",
+  "name": "Derecho Corporativo en CDMX",
+  "description": "Asesoría jurídica corporativa: constitución de sociedades, fusiones y adquisiciones, compliance, gobierno corporativo y contratos comerciales en la Ciudad de México.",
+  "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com", "telephone": "+525564655501", "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" } },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }, "serviceType": "Derecho Corporativo"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Inmobiliario', href: '/especialidades/derecho-inmobiliario-cdmx', desc: 'Compraventa, arrendamiento y regularización de inmuebles corporativos.' },
+  { nombre: 'Derecho Migratorio', href: '/especialidades/derecho-migratorio-cdmx', desc: 'Visas de trabajo y residencia para ejecutivos y personal extranjero.' },
+  { nombre: 'Derecho Laboral', href: '/especialidades/derecho-laboral-cdmx', desc: 'Cumplimiento laboral, contratos colectivos y relaciones obrero-patronales.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Corporativo'}]} /></div>
+  </section>
+
+  <!-- BRACKET 1: CONCEPTUAL -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="cluster-intro reveal">
+        <p class="section-tag">Derecho Corporativo</p>
+        <h1>Abogados de derecho corporativo en la Ciudad de México</h1>
+        <p class="lead">El derecho corporativo es la rama del derecho mercantil que regula la constitución, organización, operación, transformación y disolución de las sociedades mercantiles, así como las relaciones jurídicas entre socios, administradores y terceros. En México, el marco normativo principal lo constituyen la Ley General de Sociedades Mercantiles, la Ley del Mercado de Valores, el Código de Comercio y las disposiciones fiscales aplicables.</p>
+        <p>Abogados en CDMX es un despacho jurídico que asesora a empresas nacionales y extranjeras que operan en la Ciudad de México en todas las etapas de su ciclo corporativo: desde la constitución de la sociedad hasta operaciones complejas como fusiones, adquisiciones, escisiones y reestructuraciones. Nuestro equipo de abogados corporativos combina experiencia en litigio mercantil con conocimiento regulatorio para ofrecer soluciones jurídicas que protejan el patrimonio empresarial y faciliten el crecimiento del negocio.</p>
+        <p>Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Para agendar una consulta corporativa, llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;">
+        <p class="section-tag">Servicios</p>
+        <h2>Servicios jurídicos corporativos</h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Constitución de sociedades</h3>
+          <p>Asesoramos en la elección del tipo societario más conveniente — S.A. de C.V., S. de R.L. de C.V., S.A.S., S.A.P.I. — conforme a los objetivos del negocio, el perfil de los socios y las implicaciones fiscales. Redactamos los estatutos sociales, gestionamos la protocolización ante notario público, la inscripción en el Registro Público de Comercio y los trámites ante el SAT, IMSS e INFONAVIT necesarios para iniciar operaciones legalmente.</p>
+        </div>
+        <div class="service-block">
+          <h3>Fusiones y adquisiciones</h3>
+          <p>Acompañamos a empresas compradoras y vendedoras en procesos de fusión, adquisición y escisión. Realizamos auditoría legal (due diligence), identificamos contingencias, negociamos los términos de la transacción, redactamos los contratos de compraventa de acciones o activos y gestionamos las autorizaciones regulatorias necesarias, incluyendo las que requiere la Comisión Federal de Competencia Económica cuando la operación supera los umbrales de notificación.</p>
+        </div>
+        <div class="service-block">
+          <h3>Compliance y gobierno corporativo</h3>
+          <p>Diseñamos e implementamos programas de cumplimiento regulatorio adaptados a la normatividad mexicana: prevención de lavado de dinero (Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita), protección de datos personales (Ley Federal de Protección de Datos Personales), normatividad anticorrupción y cumplimiento fiscal. Establecemos estructuras de gobierno corporativo con comités de auditoría, códigos de ética y políticas internas alineadas a mejores prácticas.</p>
+        </div>
+        <div class="service-block">
+          <h3>Contratos comerciales</h3>
+          <p>Redactamos, revisamos y negociamos contratos mercantiles de toda naturaleza: distribución, franquicia, suministro, joint ventures, licencias de propiedad intelectual, contratos de servicios tecnológicos y acuerdos de confidencialidad. Cada contrato se diseña para proteger los intereses de nuestro cliente, anticipar contingencias y establecer mecanismos claros de resolución de controversias.</p>
+        </div>
+        <div class="service-block">
+          <h3>Reestructuración y disolución</h3>
+          <p>Asesoramos en procesos de reestructuración societaria, transformación de tipo social, reducción y aumento de capital, disolución y liquidación de sociedades mercantiles. Cuando una empresa enfrenta dificultades financieras, evaluamos las alternativas disponibles — incluyendo el concurso mercantil regulado por la Ley de Concursos Mercantiles — para proteger el patrimonio de los socios y cumplir con las obligaciones frente a acreedores y trabajadores.</p>
+        </div>
+        <div class="service-block">
+          <h3>Asambleas y actas corporativas</h3>
+          <p>Preparamos y asistimos en la celebración de asambleas ordinarias y extraordinarias de socios o accionistas. Redactamos las actas de asamblea, verificamos el cumplimiento de los quórums legales y estatutarios, y gestionamos la protocolización ante notario público e inscripción en el Registro Público de Comercio cuando la ley así lo exige para que las resoluciones surtan efectos frente a terceros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="reveal">
+          <p class="section-tag">Preguntas Frecuentes</p>
+          <h2>Dudas comunes sobre derecho corporativo</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuál es el mejor tipo de sociedad para mi negocio?</summary>
+            <div class="faq-item__a"><p>Depende del tamaño de la operación, el número de socios, las necesidades de financiamiento y las implicaciones fiscales. La S.A. de C.V. es la estructura más utilizada en México para negocios medianos y grandes por su flexibilidad y responsabilidad limitada de los accionistas. La S. de R.L. de C.V. es común en negocios familiares y empresas con pocos socios. La S.A.S. — Sociedad por Acciones Simplificada — es ideal para emprendedores que inician con bajo capital, ya que se constituye en línea sin necesidad de notario. Nuestros abogados analizan su caso particular para recomendar la estructura más conveniente.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuánto tiempo toma constituir una empresa en CDMX?</summary>
+            <div class="faq-item__a"><p>El tiempo varía según el tipo societario. Una S.A.S. puede constituirse en línea en 24 a 48 horas a través del portal de la Secretaría de Economía. Una S.A. de C.V. o S. de R.L. de C.V. requiere protocolización ante notario público, lo que toma entre 2 y 4 semanas considerando la autorización de denominación ante la Secretaría de Economía, la firma de la escritura constitutiva, la inscripción en el Registro Público de Comercio y los trámites fiscales ante el SAT.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué es un due diligence y cuándo se necesita?</summary>
+            <div class="faq-item__a"><p>El due diligence — o auditoría legal — es una revisión exhaustiva de la situación jurídica de una empresa. Se realiza antes de una fusión, adquisición, inversión significativa o asociación estratégica. La auditoría cubre aspectos corporativos, laborales, fiscales, regulatorios, contractuales, de propiedad intelectual y litigios pendientes. Su objetivo es identificar contingencias y riesgos que podrían afectar la valuación del negocio o generar responsabilidades para el comprador o inversionista.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Es obligatorio tener un programa de compliance en México?</summary>
+            <div class="faq-item__a"><p>Depende del sector y las actividades de la empresa. Las empresas que realizan actividades vulnerables conforme a la Ley Antilavado están obligadas a implementar controles específicos de prevención de lavado de dinero. Las empresas que tratan datos personales deben cumplir con la Ley Federal de Protección de Datos Personales. Aunque no todas las empresas tienen una obligación legal expresa de tener un programa de compliance integral, implementar uno reduce significativamente los riesgos legales, regulatorios y reputacionales, y puede constituir un atenuante en caso de procedimientos administrativos o penales.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados corporativos en Roma Norte</h2>
+        <p>Abogados en CDMX se especializa en atender a pequeñas y medianas empresas, emprendedores y startups que operan en la Ciudad de México. A diferencia de grandes firmas que priorizan clientes corporativos multinacionales, nuestro despacho ofrece atención personalizada con acceso directo a los abogados responsables del caso. Nuestra ubicación en Colonia Roma Norte nos posiciona en el corazón del ecosistema emprendedor de la Ciudad de México.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Atención a PyMEs y startups</h4><p>Entendemos las necesidades de empresas en crecimiento. Ofrecemos esquemas flexibles que se adaptan al presupuesto de pequeñas y medianas empresas sin sacrificar la calidad del servicio jurídico. Nuestros clientes tienen acceso directo a sus abogados, no a pasantes.</p></div>
+        <div class="diff-card"><h4>Soluciones integrales</h4><p>Las empresas necesitan apoyo legal en múltiples frentes: <a href="/especialidades/derecho-laboral-cdmx">relaciones laborales</a>, <a href="/especialidades/derecho-inmobiliario-cdmx">contratos inmobiliarios</a>, <a href="/especialidades/derecho-civil-cdmx">obligaciones civiles</a> y cumplimiento regulatorio. Un solo despacho, un solo equipo, una estrategia coherente.</p></div>
+        <div class="diff-card"><h4>Enfoque preventivo</h4><p>Nuestro objetivo es evitar conflictos antes de que surjan. Revisamos contratos, estructuramos operaciones y diseñamos protocolos de gobierno corporativo para que su empresa opere con seguridad jurídica permanente. Cuando el litigio es inevitable, nuestro <a href="/equipo-legal-cdmx">equipo litigante</a> actúa con contundencia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;">
+        <p class="section-tag">Especialidades Relacionadas</p>
+        <h2>Áreas jurídicas vinculadas al derecho corporativo</h2>
+        <p>La operación empresarial involucra múltiples ramas del derecho. Nuestro despacho las integra para ofrecer un servicio jurídico completo desde nuestras oficinas en Guanajuato 224, Roma Norte.</p>
+      </div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (
+          <a href={h.href} class="related-card"><h4>{h.nombre}</h4><p>{h.desc}</p><span class="related-arrow">Ver especialidad →</span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Recursos para empresas en la Ciudad de México</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Si está considerando constituir una empresa o necesita asesoría corporativa, consulte nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a>, donde respondemos las dudas más comunes sobre tipos de sociedades, costos de constitución y estructura empresarial. Nuestro <a href="/blog">blog jurídico</a> publica artículos sobre temas corporativos, incluyendo compliance, contratos mercantiles y regulación de PyMEs.</p>
+        <p style="font-size:16px;line-height:1.8;">Las empresas que operan en la Ciudad de México frecuentemente requieren asesoría simultánea en derecho corporativo y <a href="/especialidades/derecho-laboral-cdmx">laboral</a>. Visite <a href="/quienes-somos">quiénes somos</a> para conocer nuestra experiencia con empresas capitalinas y <a href="/que-ofrecemos">qué ofrecemos</a> para el panorama completo de nuestros servicios jurídicos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Necesita asesoría corporativa para su empresa?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados corporativos protegen su negocio con soluciones jurídicas precisas. Visítenos en Guanajuato 224, Roma Norte, o llame al 55 6465 5501.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; } .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; }
+  .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; } .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; }
+  .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Aviso de Privacidad — Abogados en CDMX';
+const description = 'Aviso de privacidad de Abogados en CDMX conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP). Conozca cómo protegemos su información.';
+const canonical = 'https://abogadosencdmx.com/aviso-de-privacidad';
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Aviso de Privacidad'}]} />
+      <div class="hero-pillar__content reveal">
+        <h1 class="text-white">Aviso de Privacidad</h1>
+        <p class="text-white-soft" style="font-size:18px; max-width:700px;">Última actualización: febrero de 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <article class="legal-content">
+
+        <h2>1. Identidad y domicilio del responsable</h2>
+        <p>Abogados en CDMX, con domicilio en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México, es responsable del tratamiento de sus datos personales conforme a lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y su Reglamento.</p>
+        <p>Para cualquier asunto relacionado con el tratamiento de sus datos personales, puede contactarnos a través de los siguientes medios:</p>
+        <ul>
+          <li>Correo electrónico: <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a></li>
+          <li>Teléfono: <a href="tel:+525564655501">55 6465 5501</a></li>
+          <li>Dirección: Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México</li>
+        </ul>
+
+        <h2>2. Datos personales que recabamos</h2>
+        <p>Abogados en CDMX podrá recabar los siguientes datos personales para la prestación de servicios legales y la atención de consultas:</p>
+        <ul>
+          <li>Datos de identificación: nombre completo, fecha de nacimiento, nacionalidad, estado civil, CURP, RFC</li>
+          <li>Datos de contacto: domicilio, correo electrónico, número telefónico</li>
+          <li>Datos laborales: ocupación, lugar de trabajo, ingresos (cuando sea relevante para el caso)</li>
+          <li>Datos jurídicos: información relacionada con su caso legal, expedientes, documentos judiciales y antecedentes procesales</li>
+        </ul>
+        <p>Le informamos que para las finalidades señaladas en este aviso de privacidad no tratamos datos personales sensibles.</p>
+
+        <h2>3. Finalidades del tratamiento</h2>
+        <p>Los datos personales que recabamos serán utilizados para las siguientes finalidades primarias, necesarias para la prestación de nuestros servicios:</p>
+        <ul>
+          <li>Evaluar y diagnosticar su caso legal durante la asesoría inicial</li>
+          <li>Prestar servicios de representación legal y asesoría jurídica</li>
+          <li>Elaborar y gestionar expedientes, contratos y documentos legales</li>
+          <li>Comparecer ante tribunales, juzgados e instituciones gubernamentales en su representación</li>
+          <li>Comunicarnos con usted para informarle sobre el avance de su caso</li>
+          <li>Emitir facturas y comprobantes fiscales</li>
+        </ul>
+        <p>Adicionalmente, sus datos podrán ser utilizados para las siguientes finalidades secundarias:</p>
+        <ul>
+          <li>Enviarle información sobre actualizaciones legales relevantes para su caso</li>
+          <li>Realizar encuestas de satisfacción sobre nuestros servicios</li>
+          <li>Invitarle a eventos o seminarios organizados por el despacho</li>
+        </ul>
+        <p>Si usted no desea que sus datos personales sean tratados para las finalidades secundarias, puede comunicarlo al correo electrónico contacto@abogadosencdmx.com. La negativa para el uso de sus datos personales para finalidades secundarias no será motivo para negarle la prestación de servicios legales.</p>
+
+        <h2>4. Transferencia de datos personales</h2>
+        <p>Abogados en CDMX podrá transferir sus datos personales a terceros sin requerir su consentimiento en los siguientes supuestos previstos por la LFPDPPP:</p>
+        <ul>
+          <li>Cuando la transferencia sea necesaria para el cumplimiento de una obligación legal (comparecencia ante tribunales, notificaciones judiciales)</li>
+          <li>Cuando la transferencia sea necesaria para la prestación del servicio legal contratado (presentación de documentos ante autoridades)</li>
+          <li>Cuando sea requerida por autoridad competente en ejercicio de sus funciones</li>
+        </ul>
+        <p>Fuera de estos supuestos, no compartimos sus datos personales con terceros sin su consentimiento expreso.</p>
+
+        <h2>5. Derechos ARCO</h2>
+        <p>Usted tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales (derechos ARCO). Para ejercer cualquiera de estos derechos, envíe su solicitud al correo electrónico contacto@abogadosencdmx.com o preséntela por escrito en nuestro domicilio en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México.</p>
+        <p>Su solicitud deberá contener:</p>
+        <ul>
+          <li>Nombre completo y domicilio o correo electrónico para comunicarle la respuesta</li>
+          <li>Copia de su identificación oficial vigente</li>
+          <li>Descripción clara y precisa de los datos personales respecto de los cuales busca ejercer alguno de sus derechos ARCO</li>
+          <li>Cualquier documento o información que facilite la localización de sus datos personales</li>
+        </ul>
+        <p>Daremos respuesta a su solicitud en un plazo máximo de 20 días hábiles a partir de la fecha en que se reciba la solicitud completa.</p>
+
+        <h2>6. Uso de cookies y tecnologías de rastreo</h2>
+        <p>Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido. Las cookies que utilizamos son:</p>
+        <ul>
+          <li>Cookies esenciales: necesarias para el funcionamiento del sitio web</li>
+          <li>Cookies analíticas: nos permiten entender cómo interactúan los visitantes con el sitio</li>
+        </ul>
+        <p>Puede desactivar las cookies a través de la configuración de su navegador. La desactivación de cookies esenciales puede afectar la funcionalidad del sitio.</p>
+
+        <h2>7. Modificaciones al aviso de privacidad</h2>
+        <p>Abogados en CDMX se reserva el derecho de modificar el presente aviso de privacidad para adaptarlo a cambios legislativos, políticas internas o nuevos requisitos para la prestación de servicios. Cualquier modificación será publicada en esta página y, en caso de cambios sustanciales, se lo notificaremos a través de los medios de contacto que tengamos registrados.</p>
+
+        <h2>8. Consentimiento</h2>
+        <p>Al proporcionar sus datos personales a través de nuestros formularios de contacto, correo electrónico, teléfono o de forma presencial, usted consiente el tratamiento de sus datos personales conforme a los términos de este aviso de privacidad.</p>
+
+        <h2>9. Autoridad competente</h2>
+        <p>Si considera que su derecho a la protección de datos personales ha sido vulnerado, puede interponer una queja o denuncia ante el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI). Para más información visite <a href="https://home.inai.org.mx" target="_blank" rel="noopener">www.inai.org.mx</a>.</p>
+
+      </article>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container" style="max-width:800px;">
+      <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Este aviso de privacidad fue actualizado en febrero de 2026 por Abogados en CDMX, despacho jurídico ubicado en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México.</p>
+      <p style="font-size:16px;line-height:1.8;">Si tiene dudas sobre el tratamiento de sus datos personales o sobre nuestros servicios legales, puede consultar nuestra página de <a href="/contacto">contacto</a>, agendar una <a href="/asesoria-inicial">asesoría inicial</a>, conocer a nuestro <a href="/equipo-legal-cdmx">equipo de abogados</a>, revisar nuestras <a href="/especialidades">áreas de especialidad</a> o consultar las <a href="/preguntas-frecuentes">preguntas frecuentes</a> del despacho.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .legal-content { max-width: 800px; }
+  .legal-content h2 { font-size: 28px; margin: 48px 0 16px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .legal-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .legal-content p { font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+  .legal-content ul { margin: 0 0 20px 24px; list-style: disc; }
+  .legal-content li { font-size: 16px; line-height: 1.75; margin-bottom: 8px; }
+  .legal-content a { color: var(--color-secondary); text-decoration: underline; }
+</style>

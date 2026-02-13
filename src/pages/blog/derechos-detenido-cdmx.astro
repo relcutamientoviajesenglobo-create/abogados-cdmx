@@ -1,0 +1,120 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = '¿Qué Hacer si lo Detienen en la Ciudad de México? Guía de Derechos del Detenido | Abogados en CDMX';
+const description = 'Guía completa sobre los derechos del detenido en CDMX. Qué hacer ante una detención, derechos constitucionales, plazo de retención, audiencia inicial y cuándo llamar a un abogado.';
+const canonical = 'https://abogadosencdmx.com/blog/derechos-detenido-cdmx';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Qué hacer si lo detienen en la Ciudad de México? Guía de derechos del detenido",
+  "description": description,
+  "url": canonical,
+  "datePublished": "2026-02-10",
+  "dateModified": "2026-02-11",
+  "author": { "@type": "Person", "name": "Tania Mendoza", "url": "https://abogadosencdmx.com/despacho-juridico/tania-mendoza" },
+  "publisher": {
+    "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "mainEntityOfPage": canonical
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+  <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Blog', href:'/blog'},{label:'Derechos del Detenido'}]} /></div></section>
+
+  <article class="section-padding">
+    <div class="container">
+      <div class="article-layout">
+        <div class="article-content">
+          <div class="article-meta reveal">
+            <span class="article-cat">Derecho Penal</span>
+            <time datetime="2026-02-10">10 de febrero de 2026</time>
+            <span class="article-author">Por <a href="/despacho-juridico/tania-mendoza">Lic. Tania Mendoza</a></span>
+          </div>
+
+          <h1 class="reveal">¿Qué hacer si lo detienen en la Ciudad de México? Guía de derechos del detenido</h1>
+
+          <p class="lead reveal">Una detención puede ocurrir en cualquier momento y en cualquier punto de la Ciudad de México — en la calle, en el transporte público, en un retén vehicular o en su propio domicilio. Conocer sus derechos constitucionales en ese momento puede marcar la diferencia entre una detención legal que respeta sus garantías y una violación a sus derechos fundamentales. Esta guía, elaborada por los <a href="/especialidades/derecho-penal-cdmx">abogados penalistas</a> de Abogados en CDMX, explica paso a paso lo que debe saber y hacer ante una detención en la capital.</p>
+
+          <h2 class="reveal">Sus derechos constitucionales desde el momento de la detención</h2>
+          <p class="reveal">El artículo 20 de la Constitución Política de México y el Código Nacional de Procedimientos Penales establecen derechos fundamentales para toda persona detenida. Estos derechos son irrenunciables y las autoridades están obligadas a respetarlos desde el primer instante de la detención, no después.</p>
+
+          <p class="reveal">Usted tiene derecho a guardar silencio — cualquier declaración que haga puede ser utilizada en su contra y no está obligado a responder preguntas de la policía ni del Ministerio Público sin la presencia de su abogado. Tiene derecho a conocer el motivo de su detención — la autoridad debe informarle inmediatamente por qué lo detiene y los hechos que se le imputan. Tiene derecho a comunicarse con un familiar o persona de su confianza para informarle de su situación y ubicación. Y tiene derecho a contar con un abogado defensor desde el primer momento — si no tiene uno, el Estado debe proporcionarle un defensor público, pero un <a href="/equipo-legal-cdmx">abogado particular</a> siempre ofrecerá una defensa más personalizada.</p>
+
+          <h2 class="reveal">¿Cuánto tiempo pueden retenerlo?</h2>
+          <p class="reveal">La Constitución establece plazos máximos de retención ante el Ministerio Público. Para delitos comunes, el plazo máximo es de 48 horas contadas desde el momento de la detención. Para delitos de delincuencia organizada, el plazo se extiende hasta 96 horas. Si al vencer estos plazos el Ministerio Público no lo pone a disposición de un juez de control, la retención se convierte en ilegal y usted tiene derecho a ser liberado inmediatamente. El incumplimiento de estos plazos por parte de la autoridad puede dar lugar a la nulidad de las actuaciones y a sanciones para los servidores públicos responsables.</p>
+
+          <h2 class="reveal">La audiencia inicial ante el juez de control</h2>
+          <p class="reveal">Si el Ministerio Público decide ejercer acción penal, usted será puesto a disposición de un juez de control en una audiencia inicial. En esta audiencia — que se celebra en los juzgados penales de la Ciudad de México — el juez verifica la legalidad de la detención, le informa formalmente de los cargos, escucha al Ministerio Público y a la defensa, y decide sobre la medida cautelar (si será puesto en libertad con condiciones o si se solicita prisión preventiva). La presencia de un abogado defensor en esta audiencia es crucial porque las decisiones que se toman en ese momento afectan todo el proceso posterior.</p>
+
+          <h2 class="reveal">Lo que nunca debe hacer durante una detención</h2>
+          <p class="reveal">Ante una detención en la Ciudad de México, hay acciones que pueden perjudicar gravemente su situación legal. No oponga resistencia física — la resistencia a la autoridad puede generar cargos adicionales. No firme ningún documento sin leerlo y sin la presencia de su abogado — hay casos donde personas detenidas firman declaraciones autoinculpatorias que después son difíciles de revocar. No acepte ningún "arreglo" informal con la policía — cualquier pago o acuerdo fuera del proceso legal puede constituir cohecho y complicar su defensa. Y no hable con otros detenidos sobre su caso — lo que diga puede ser utilizado en su contra por testigos.</p>
+
+          <h2 class="reveal">¿Cuándo llamar a un abogado penalista?</h2>
+          <p class="reveal">La respuesta es inmediata — desde el primer momento de la detención, usted o su familiar deben contactar a un abogado penalista. La intervención temprana de un abogado puede lograr que la detención sea declarada ilegal (si no cumple los requisitos constitucionales), que no se dicte prisión preventiva, que se obtengan medidas cautelares menos restrictivas (como presentación periódica ante el juez) y que se preserve evidencia favorable para su defensa.</p>
+
+          <p class="reveal">Abogados en CDMX es un despacho jurídico cuyos <a href="/especialidades/derecho-penal-cdmx">abogados penalistas</a> atienden llamadas de emergencia por detenciones. Estamos ubicados en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México — cerca de la Fiscalía General de Justicia de la Ciudad de México y los juzgados penales del Reclusorio Oriente, Norte y Sur. Llame al 55 6465 5501 en caso de emergencia.</p>
+
+          <h2 class="reveal">Recursos legales si sus derechos fueron violados</h2>
+          <p class="reveal">Si durante la detención se violaron sus derechos constitucionales — tortura, incomunicación, retención ilegal, falta de defensor, coacción para declarar — usted puede promover un amparo indirecto ante un juez federal, presentar una queja ante la Comisión de Derechos Humanos de la Ciudad de México, denunciar ante la Fiscalía de Asuntos Internos y solicitar la nulidad de las pruebas obtenidas ilegalmente. Nuestros abogados tienen experiencia en la tramitación de estos recursos y en la defensa de los derechos fundamentales de los detenidos en la Ciudad de México.</p>
+
+          <p class="reveal">Si usted o un familiar fue detenido, no pierda tiempo. Agende una <a href="/asesoria-inicial">asesoría de emergencia</a> o llame directamente al 55 6465 5501. También puede consultar nuestras <a href="/preguntas-frecuentes">preguntas frecuentes</a> sobre derecho penal o conocer los <a href="/que-ofrecemos">servicios legales</a> que ofrecemos.</p>
+
+          <div class="article-cta reveal">
+            <p><strong>¿Usted o un familiar fue detenido en la Ciudad de México?</strong></p>
+            <p>Nuestros abogados penalistas atienden emergencias. Llame ahora al 55 6465 5501 para asistencia inmediata.</p>
+            <a href="tel:+525564655501" class="btn-primary-wrap">Llamar ahora →</a>
+          </div>
+        </div>
+
+        <aside class="article-sidebar reveal">
+          <div class="sidebar-card"><h4>Artículos relacionados</h4><ul>
+            <li><a href="/blog/nuevo-codigo-procedimientos-civiles-familiares-2026">Nuevo Código Nacional 2026</a></li>
+            <li><a href="/blog/guia-divorcio-cdmx-2026">Guía de divorcio en CDMX</a></li>
+            <li><a href="/blog/derechos-inquilino-cdmx-2026">Derechos del inquilino en CDMX</a></li>
+          </ul></div>
+          <div class="sidebar-card"><h4>Especialidades</h4><ul>
+            <li><a href="/especialidades/derecho-penal-cdmx">Derecho Penal</a></li>
+            <li><a href="/especialidades/derecho-familiar-cdmx">Derecho Familiar</a></li>
+          </ul></div>
+          <div class="sidebar-card sidebar-contact"><h4>Emergencia penal</h4><p>Guanajuato 224, Roma Norte<br>C.P. 06700, CDMX</p><p><a href="tel:+525564655501" style="font-size:20px;font-weight:700;">55 6465 5501</a></p><a href="/contacto">Contactar despacho →</a></div>
+        </aside>
+      </div>
+    </div>
+  </article>
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; }
+  .article-content { max-width: 750px; }
+  .article-meta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; font-size: 14px; color: #666; }
+  .article-cat { font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+  .article-author a { color: var(--color-secondary); }
+  .article-content h1 { font-size: 40px; line-height: 1.2; margin-bottom: 24px; }
+  .lead { font-size: 20px; line-height: 1.7; color: var(--color-primary); font-weight: 500; margin-bottom: 32px; }
+  .article-content h2 { font-size: 28px; margin: 40px 0 16px; }
+  .article-content p { font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .article-content a { color: var(--color-secondary); text-decoration: underline; }
+  .article-cta { background: var(--color-light); padding: 32px; margin-top: 40px; border-left: 4px solid var(--color-secondary); }
+  .article-cta p { margin-bottom: 12px; } .article-cta p:last-of-type { margin-bottom: 20px; }
+  .article-sidebar { position: sticky; top: 140px; }
+  .sidebar-card { background: var(--color-light); padding: 24px; margin-bottom: 20px; }
+  .sidebar-card h4 { font-size: 18px; margin-bottom: 12px; }
+  .sidebar-card ul { list-style: none; padding: 0; } .sidebar-card li { margin-bottom: 10px; }
+  .sidebar-card li a { font-size: 15px; color: var(--color-primary); text-decoration: none; } .sidebar-card li a:hover { color: var(--color-secondary); }
+  .sidebar-contact { background: var(--color-primary); color: var(--color-white); }
+  .sidebar-contact h4 { color: var(--color-white); } .sidebar-contact p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 8px; }
+  .sidebar-contact a { color: var(--color-secondary); }
+  @media (max-width: 991px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; } }
+  @media (max-width: 767px) { .article-layout { gap: 32px; } .article-content h2 { font-size: 24px; } .article-content h3 { font-size: 20px; } .lead { font-size: 18px; } .article-cta { padding: 24px; } .sidebar-card { padding: 20px; } }
+  @media (max-width: 479px) { .article-content h1 { font-size: 30px; } .article-cta { padding: 20px; } .lead { font-size: 16px; } }
+</style>

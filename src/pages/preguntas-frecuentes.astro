@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Preguntas Frecuentes — Abogados en CDMX | Despacho Jurídico';
+const description = 'Respuestas a las preguntas más frecuentes sobre servicios legales, costos, plazos y procedimientos en Abogados en CDMX. Derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral.';
+const canonical = 'https://abogadosencdmx.com/preguntas-frecuentes';
+
+const categorias = [
+  {
+    nombre: 'Sobre el despacho',
+    preguntas: [
+      { q: '¿Dónde se ubica Abogados en CDMX?', a: 'Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Nuestras oficinas están a una cuadra de la Glorieta de los Insurgentes, con acceso directo por Metrobús y Metro Insurgentes.' },
+      { q: '¿Cuál es el horario de atención?', a: 'Atendemos de lunes a viernes de 9:00 a 18:00 horas. Para emergencias legales fuera de horario, puede comunicarse al 55 6465 5501 y nuestro equipo evaluará la urgencia de su caso.' },
+      { q: '¿La asesoría inicial tiene costo?', a: 'La asesoría inicial en Abogados en CDMX es sin costo. Durante esta consulta evaluamos su caso, identificamos las opciones legales disponibles y le presentamos una estrategia clara con un presupuesto definido antes de cualquier compromiso. Puede agendar su cita en nuestra sección de <a href="/asesoria-inicial">asesoría inicial</a>.' },
+      { q: '¿Cómo puedo agendar una cita?', a: 'Puede agendar su cita a través de nuestra página de <a href="/asesoria-inicial">asesoría inicial</a>, llamando al 55 6465 5501, enviando un correo a contacto@abogadosencdmx.com o escribiendo por WhatsApp. Consulte nuestra página de <a href="/contacto">contacto</a> para todas las vías de comunicación. Le confirmaremos fecha y hora en menos de 24 horas.' },
+      { q: '¿Manejan casos fuera de la Ciudad de México?', a: 'Nuestro despacho se especializa en asuntos legales dentro de la Ciudad de México y su zona metropolitana. Para casos que involucren jurisdicciones estatales o federales, evaluamos la viabilidad durante la asesoría inicial y le informamos si podemos representarle.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Familiar',
+    preguntas: [
+      { q: '¿Cuánto tarda un divorcio en CDMX?', a: 'El tiempo varía según el tipo. Un divorcio administrativo puede resolverse en aproximadamente 15 días. Un divorcio voluntario judicial tarda entre 2 y 4 meses. Un divorcio incausado contencioso puede extenderse de 6 meses a más de un año, dependiendo de la complejidad del caso. Nuestros <a href="/especialidades/derecho-familiar-cdmx">abogados familiaristas</a> le orientan sobre la vía más conveniente.' },
+      { q: '¿Cómo se determina la pensión alimenticia?', a: 'No existe un porcentaje fijo por ley. El juez familiar considera la capacidad económica del deudor y las necesidades reales del acreedor. En la práctica judicial de la Ciudad de México, los montos suelen oscilar entre el 15% y el 40% de los ingresos netos del deudor.' },
+      { q: '¿Qué documentos necesito para iniciar un proceso de custodia?', a: 'Necesita acta de nacimiento del menor, identificación oficial, comprobante de domicilio, acta de matrimonio o documento que acredite el parentesco, y evidencia de las condiciones que ofrece para el menor. En la asesoría inicial le indicamos los documentos específicos para su caso.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Penal',
+    preguntas: [
+      { q: '¿Qué hago si me detienen en la Ciudad de México?', a: 'Tiene derecho a guardar silencio, a no autoincriminarse, a conocer el motivo de su detención, a comunicarse con un familiar y a contar con un abogado defensor desde el primer momento. No firme ningún documento sin la presencia de su abogado. Llame al 55 6465 5501 para asistencia inmediata de nuestros <a href="/especialidades/derecho-penal-cdmx">abogados penalistas</a>.' },
+      { q: '¿Cuánto tiempo puede durar un proceso penal?', a: 'Con el sistema penal acusatorio vigente, la etapa de investigación complementaria tiene un plazo máximo de 2 meses para delitos con pena menor a 2 años y de 6 meses para delitos más graves. El juicio oral puede durar de semanas a meses dependiendo de las pruebas y la complejidad del caso.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Civil',
+    preguntas: [
+      { q: '¿Qué puedo hacer si alguien incumple un contrato?', a: 'Puede demandar el cumplimiento forzoso del contrato o su rescisión más el pago de daños y perjuicios. El primer paso es enviar un requerimiento formal por escrito. Si no hay respuesta satisfactoria, se inicia la vía judicial ante los juzgados civiles de la Ciudad de México. Nuestros <a href="/especialidades/derecho-civil-cdmx">abogados civilistas</a> le asisten en todo el proceso.' },
+      { q: '¿Cuánto tiempo tengo para demandar por incumplimiento de contrato?', a: 'El plazo de prescripción para acciones derivadas de contratos civiles es generalmente de 10 años en la Ciudad de México, aunque puede variar según el tipo de obligación. Es recomendable actuar lo antes posible para preservar pruebas y mejorar las posibilidades de éxito.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Inmobiliario',
+    preguntas: [
+      { q: '¿Puedo regularizar un inmueble sin escrituras?', a: 'Sí. El procedimiento más común es la prescripción adquisitiva (usucapión), que requiere demostrar posesión pacífica, continua y pública del inmueble durante 5 años (con título) o 10 años (sin título). Nuestro equipo de <a href="/especialidades/derecho-inmobiliario-cdmx">abogados inmobiliarios</a> evalúa su situación específica y le indica la vía más adecuada.' },
+      { q: '¿Qué debo revisar antes de comprar un inmueble en CDMX?', a: 'Es fundamental verificar: la existencia de escrituras válidas, la situación en el Registro Público de la Propiedad (gravámenes, hipotecas, embargos), que los pagos de predial y agua estén al corriente, el uso de suelo permitido, y que el vendedor sea efectivamente el propietario legítimo.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Laboral',
+    preguntas: [
+      { q: '¿Cómo sé si mi despido fue injustificado?', a: 'Un despido es injustificado cuando el patrón no demuestra una causa prevista en el artículo 47 de la Ley Federal del Trabajo. Si fue despedido sin recibir un aviso por escrito con la causa y la fecha, o si la causa invocada no es real, tiene derecho a demandar indemnización constitucional. Consulte a nuestros <a href="/especialidades/derecho-laboral-cdmx">abogados laboralistas</a> para evaluar su caso.' },
+      { q: '¿Qué me corresponde si me liquidan?', a: 'En una liquidación por despido injustificado le corresponden: 3 meses de salario como indemnización constitucional, 20 días por año trabajado, prima de antigüedad (12 días por año), parte proporcional de vacaciones, prima vacacional y aguinaldo, más salarios caídos desde el despido.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Corporativo',
+    preguntas: [
+      { q: '¿Cuánto cuesta constituir una empresa en México?', a: 'El costo varía según el tipo de sociedad y la complejidad de los estatutos. Una S.A.S. (Sociedad por Acciones Simplificada) puede constituirse sin costo notarial a través del portal de la Secretaría de Economía. Una S.A. de C.V. requiere protocolización notarial cuyo costo oscila según la entidad y el capital social. Nuestros <a href="/especialidades/derecho-corporativo-cdmx">abogados corporativos</a> le presentan un presupuesto detallado en la asesoría inicial.' },
+      { q: '¿Qué tipo de sociedad me conviene más?', a: 'Depende de factores como el número de socios, el capital inicial, el régimen fiscal deseado, si habrá inversionistas y el nivel de responsabilidad que se quiera limitar. El <a href="/despacho-juridico/ian-montiel">Lic. Ian Montiel</a> evalúa su proyecto y le recomienda la estructura societaria que mejor se adapte a sus objetivos.' },
+    ]
+  },
+  {
+    nombre: 'Derecho Migratorio',
+    preguntas: [
+      { q: '¿Cuánto tarda obtener la residencia permanente en México?', a: 'El trámite de residencia permanente ante el Instituto Nacional de Migración suele tomar entre 20 y 45 días hábiles una vez presentada la solicitud completa. Los tiempos pueden variar según la carga de trabajo de la oficina migratoria y la complejidad del caso.' },
+      { q: '¿Puedo trabajar en México con visa de turista?', a: 'No. La visa de turista (Forma Migratoria Múltiple) no autoriza realizar actividades remuneradas en México. Para trabajar legalmente necesita una residencia temporal con permiso de trabajo o una residencia permanente. Nuestro equipo de <a href="/especialidades/derecho-migratorio-cdmx">abogados migratorios</a> le asesora sobre la vía migratoria más adecuada.' },
+    ]
+  },
+];
+
+const allFaqs = categorias.flatMap(c => c.preguntas.map(p => ({ ...p, cat: c.nombre })));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Preguntas frecuentes — Abogados en CDMX",
+  "url": "https://abogadosencdmx.com/preguntas-frecuentes",
+  "mainEntity": allFaqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Preguntas Frecuentes'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">FAQ</p>
+        <h1 class="text-white">Preguntas frecuentes sobre nuestros servicios legales</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Estas son las dudas más comunes que recibimos en Abogados en CDMX sobre procedimientos legales, costos, plazos y documentos necesarios. Si su pregunta no aparece aquí, contáctenos al 55 6465 5501 o agende su asesoría inicial sin costo.</p>
+      </div>
+    </div>
+  </section>
+
+  {categorias.map((cat) => (
+    <section class="faq-section" id={cat.nombre.toLowerCase().replace(/\s+/g, '-').replace('sobre-el-', '')}>
+      <div class="container">
+        <h2 class="faq-cat-title reveal">{cat.nombre}</h2>
+        <div class="faq-list">
+          {cat.preguntas.map((f) => (
+            <details class="faq-item reveal">
+              <summary class="faq-item__q">{f.q}</summary>
+              <div class="faq-item__a"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">¿No encontró su respuesta?</p>
+        <h2 class="text-white">Consulte directamente con un abogado especialista</h2>
+        <p class="text-white-soft" style="font-size:18px;">Agende una asesoría inicial sin costo en Abogados en CDMX. Nos ubicamos en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 horas.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .faq-section { padding: 60px 0; border-bottom: 1px solid var(--color-border); }
+  .faq-section:nth-child(even) { background: var(--color-light); }
+  .faq-cat-title { font-size: 28px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--color-secondary); display: inline-block; }
+  .faq-list { max-width: 850px; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q {
+    font-family: var(--font-heading); font-size: 20px; font-weight: 400;
+    color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; transition: transform .3s var(--ease); }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+
+  @media (max-width: 479px) {
+    .faq-item__q { font-size: 18px; }
+  }
+</style>

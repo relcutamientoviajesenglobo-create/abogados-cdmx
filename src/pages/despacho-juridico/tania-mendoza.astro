@@ -1,0 +1,227 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Tania Mendoza — Abogada Inmobiliaria en CDMX | Abogados en CDMX';
+const description = 'Tania Mendoza es abogada especializada en derecho inmobiliario en Abogados en CDMX. Compraventa de inmuebles, escrituración, arrendamientos, due diligence y regularización de propiedad en la Ciudad de México.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/tania-mendoza';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tania Mendoza",
+  "jobTitle": "Abogada especialista en Derecho Inmobiliario",
+  "url": "https://abogadosencdmx.com/despacho-juridico/tania-mendoza",
+  "image": "https://abogadosencdmx.com/images/equipo/tania-mendoza.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Inmobiliario", "Compraventa de inmuebles", "Escrituración", "Due diligence inmobiliario", "Contratos de arrendamiento", "Regularización de propiedad"],
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }
+};
+
+const servicios = [
+  { titulo: 'Compraventa de inmuebles', desc: 'Revisión y elaboración de contratos de compraventa, verificación de antecedentes registrales, acompañamiento notarial y protección patrimonial del comprador o vendedor en operaciones inmobiliarias en la Ciudad de México.' },
+  { titulo: 'Escrituración y registro', desc: 'Gestión del proceso de escrituración ante notario público, inscripción en el Registro Público de la Propiedad de la CDMX y obtención de folios reales para formalizar la titularidad legal del inmueble.' },
+  { titulo: 'Contratos de arrendamiento', desc: 'Redacción de contratos de arrendamiento con cláusulas que protegen los derechos del propietario o del inquilino, incluyendo garantías, depósitos, causales de rescisión y mecanismos de actualización de renta.' },
+  { titulo: 'Due diligence inmobiliario', desc: 'Auditoría legal completa de inmuebles previo a su adquisición: verificación de gravámenes, adeudos fiscales, situación catastral, uso de suelo, historial registral y cumplimiento normativo.' },
+  { titulo: 'Regularización de propiedad', desc: 'Trámites de prescripción adquisitiva (usucapión), inmatriculación, rectificación de medidas y linderos, y cualquier procedimiento necesario para regularizar la situación legal de un inmueble sin escrituras.' },
+  { titulo: 'Desalojos y controversias', desc: 'Representación legal en juicios de desocupación por falta de pago, vencimiento de contrato o uso indebido del inmueble, así como defensa en controversias entre copropietarios y administraciones de condominios.' },
+];
+
+const faqs = [
+  { q: '¿Qué experiencia tiene la Lic. Tania Mendoza en derecho inmobiliario?', a: 'Tania Mendoza se ha especializado exclusivamente en derecho inmobiliario dentro de Abogados en CDMX, con experiencia en compraventa, escrituración, due diligence, regularización de propiedad y litigios inmobiliarios ante tribunales de la Ciudad de México.' },
+  { q: '¿Puede ayudarme a regularizar un inmueble sin escrituras en CDMX?', a: 'Sí. La Lic. Mendoza tramita procesos de prescripción adquisitiva (usucapión) e inmatriculación para regularizar inmuebles que carecen de escrituras o que presentan deficiencias en su cadena registral dentro de la Ciudad de México.' },
+  { q: '¿Cuánto cobra la asesoría inicial en temas inmobiliarios?', a: 'La asesoría inicial en Abogados en CDMX es sin costo. Durante esta consulta, la Lic. Mendoza evalúa su caso, identifica la estrategia adecuada y le presenta un presupuesto claro antes de cualquier compromiso.' },
+  { q: '¿Qué zonas de la Ciudad de México atiende?', a: 'Tania Mendoza atiende casos inmobiliarios en todas las alcaldías de la Ciudad de México desde las oficinas de Abogados en CDMX ubicadas en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Tania Mendoza'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=620&fit=crop&crop=face" alt="Lic. Tania Mendoza — Abogada Inmobiliaria en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogada especialista</p>
+          <h1 class="text-white">Lic. Tania Mendoza</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Inmobiliario</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Tania Mendoza es abogada en Abogados en CDMX especializada en derecho inmobiliario. Con amplia experiencia en compraventa de inmuebles, escrituración, contratos de arrendamiento y due diligence, asesora tanto a personas como a inversionistas en operaciones inmobiliarias en la Ciudad de México. Su enfoque meticuloso en la revisión documental ha sido clave para proteger el patrimonio de sus clientes.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-inmobiliario-cdmx" class="btn-secondary-wrap">Ver área completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Operational — Servicios especializados -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En qué puede ayudarle la Lic. Tania Mendoza?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho inmobiliario que Tania Mendoza ofrece desde Abogados en CDMX para proteger su patrimonio y resolver conflictos relacionados con bienes inmuebles en la Ciudad de México.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por qué trabajar con Tania Mendoza?</h2>
+          <p>El derecho inmobiliario en la Ciudad de México requiere un conocimiento profundo de la normatividad local, los procedimientos registrales y la práctica notarial. Tania Mendoza combina estos conocimientos con una atención al detalle que marca la diferencia entre una operación segura y una que expone su patrimonio.</p>
+          <p>Cada caso recibe un análisis previo exhaustivo. Antes de firmar un contrato o iniciar un trámite, la Lic. Mendoza revisa antecedentes registrales, verifica que no existan gravámenes ocultos y confirma que la documentación cumpla con todos los requisitos legales vigentes.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Especialización exclusiva</h4>
+            <p>Tania Mendoza se dedica exclusivamente al derecho inmobiliario dentro de Abogados en CDMX, con conocimiento actualizado de la legislación aplicable en la Ciudad de México.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Revisión documental rigurosa</h4>
+            <p>Cada operación inmobiliaria pasa por un proceso de due diligence que identifica riesgos antes de que se materialicen y protege la inversión del cliente.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Comunicación transparente</h4>
+            <p>El cliente conoce el estado de su trámite en todo momento. Tania Mendoza reporta avances, explica opciones y responde dudas de forma directa y oportuna.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre la Lic. Mendoza</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca más sobre nuestro despacho en <a href="/quienes-somos">quiénes somos</a>, consulte todas las áreas de práctica en <a href="/que-ofrecemos">qué ofrecemos</a>, o visite nuestro <a href="/blog">blog jurídico</a> para leer artículos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas más consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Tiene un asunto inmobiliario que resolver?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoría inicial con la Lic. Tania Mendoza y obtenga un diagnóstico profesional de su caso. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/luciana-valle" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=375&fit=crop&crop=face" alt="Lic. Luciana Valle" width="300" height="375" loading="lazy">
+          <h4>Lic. Luciana Valle</h4>
+          <span>Derecho Laboral</span>
+        </a>
+        <a href="/despacho-juridico/ian-montiel" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=375&fit=crop&crop=face" alt="Lic. Ian Montiel" width="300" height="375" loading="lazy">
+          <h4>Lic. Ian Montiel</h4>
+          <span>Derecho Corporativo</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+
+  @media (max-width: 991px) {
+    .perfil-hero { grid-template-columns: 1fr; }
+    .perfil-hero__img { max-width: 350px; }
+    .servicios-grid-3col { grid-template-columns: 1fr 1fr; }
+    .diferenciador-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .servicios-grid-3col { grid-template-columns: 1fr; }
+    .equipo-mini-grid { flex-direction: column; align-items: center; }
+  }
+</style>

@@ -1,0 +1,215 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Ian Montiel — Abogado Corporativo en CDMX | Abogados en CDMX';
+const description = 'Ian Montiel es abogado especializado en derecho corporativo en Abogados en CDMX. Constitución de sociedades, fusiones, compliance, contratos mercantiles y gobierno corporativo en la Ciudad de México.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/ian-montiel';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ian Montiel",
+  "jobTitle": "Abogado especialista en Derecho Corporativo",
+  "url": "https://abogadosencdmx.com/despacho-juridico/ian-montiel",
+  "image": "https://abogadosencdmx.com/images/equipo/ian-montiel.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Corporativo", "Constitución de sociedades", "Fusiones y adquisiciones", "Compliance", "Contratos mercantiles", "Gobierno corporativo"],
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }
+};
+
+const servicios = [
+  { titulo: 'Constitución de sociedades', desc: 'Asesoría en la selección del tipo societario más conveniente (S.A., S.A. de C.V., S.A.P.I., S. de R.L.), redacción de estatutos sociales, protocolización notarial y registro ante el Registro Público de Comercio.' },
+  { titulo: 'Fusiones y adquisiciones', desc: 'Acompañamiento legal integral en operaciones de fusión, escisión y adquisición de empresas, incluyendo due diligence corporativo, negociación de términos, cierre de transacciones y cumplimiento regulatorio.' },
+  { titulo: 'Compliance y gobierno corporativo', desc: 'Diseño e implementación de programas de cumplimiento normativo, políticas anticorrupción, códigos de ética, protocolos de prevención de lavado de dinero y estructuras de gobierno corporativo.' },
+  { titulo: 'Contratos mercantiles', desc: 'Elaboración, revisión y negociación de contratos comerciales complejos: distribución, franquicia, licenciamiento, joint ventures, suministro, prestación de servicios y acuerdos de confidencialidad.' },
+  { titulo: 'Reestructuración empresarial', desc: 'Asesoría legal en procesos de reorganización corporativa, capitalización, reducción de capital, transformación societaria y estrategias para optimizar la estructura jurídica de la empresa.' },
+  { titulo: 'Asambleas y actas corporativas', desc: 'Preparación, convocatoria y formalización de asambleas ordinarias y extraordinarias de accionistas, redacción de actas, protocolización notarial y cumplimiento de obligaciones societarias.' },
+];
+
+const faqs = [
+  { q: '¿Qué experiencia tiene el Lic. Ian Montiel en derecho corporativo?', a: 'Ian Montiel se ha especializado en derecho corporativo dentro de Abogados en CDMX, con experiencia en constitución de sociedades, fusiones y adquisiciones, compliance, contratos mercantiles y gobierno corporativo para empresas nacionales y extranjeras que operan en la Ciudad de México.' },
+  { q: '¿Puede asesorar a empresas extranjeras que quieren operar en México?', a: 'Sí. El Lic. Montiel asesora a empresas extranjeras en el proceso de establecimiento en México, incluyendo la selección de la estructura societaria, cumplimiento regulatorio, requisitos migratorios para ejecutivos y obligaciones fiscales corporativas.' },
+  { q: '¿Qué tipo de sociedades puede constituir?', a: 'El Lic. Montiel constituye todos los tipos societarios reconocidos por la legislación mexicana: S.A. de C.V., S.A.P.I., S. de R.L., S.A.S., asociaciones civiles y fideicomisos empresariales, según las necesidades específicas de cada proyecto.' },
+  { q: '¿Ofrecen programas de compliance para empresas pequeñas?', a: 'Sí. Abogados en CDMX ofrece programas de compliance adaptados al tamaño y riesgo de cada empresa, desde protocolos básicos de cumplimiento normativo hasta sistemas integrales para empresas con operaciones complejas o reguladas.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Ian Montiel'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=620&fit=crop&crop=face" alt="Lic. Ian Montiel — Abogado Corporativo en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogado especialista</p>
+          <h1 class="text-white">Lic. Ian Montiel</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Corporativo</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Ian Montiel es abogado en Abogados en CDMX especializado en derecho corporativo. Asesora a empresas nacionales y extranjeras en constitución de sociedades, compliance, contratos mercantiles, fusiones y gobierno corporativo. Su visión estratégica combina el rigor jurídico con el entendimiento del negocio, lo que le permite ofrecer asesoría legal que impulsa el crecimiento empresarial.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-corporativo-cdmx" class="btn-secondary-wrap">Ver área completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Operational — Servicios -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En qué puede ayudarle el Lic. Ian Montiel?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho corporativo que Ian Montiel ofrece desde Abogados en CDMX para estructurar, proteger y hacer crecer su empresa en la Ciudad de México.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por qué trabajar con Ian Montiel?</h2>
+          <p>El derecho corporativo no es solo cumplir con la ley: es estructurar la empresa para que crezca de forma ordenada, minimice riesgos y aproveche oportunidades. Ian Montiel entiende que detrás de cada consulta jurídica hay una decisión de negocio, y aborda cada caso con esa perspectiva integral.</p>
+          <p>Su experiencia con empresas de diferentes tamaños y sectores le permite identificar rápidamente los riesgos legales que afectan a cada industria y proponer soluciones prácticas que no obstaculizan la operación del negocio sino que la fortalecen.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Visión de negocio</h4>
+            <p>Ian Montiel no solo resuelve problemas legales: entiende el contexto empresarial y ofrece asesoría que se alinea con los objetivos comerciales del cliente.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Experiencia multisectorial</h4>
+            <p>Ha asesorado a empresas de tecnología, comercio, manufactura y servicios, lo que le permite aplicar mejores prácticas de distintas industrias a cada caso.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Compliance proactivo</h4>
+            <p>Diseña programas de cumplimiento que previenen problemas antes de que ocurran, en lugar de reaccionar cuando ya existen sanciones o conflictos regulatorios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre el Lic. Montiel</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca más sobre nuestro despacho en <a href="/quienes-somos">quiénes somos</a>, consulte todas las áreas de práctica en <a href="/que-ofrecemos">qué ofrecemos</a>, o visite nuestro <a href="/blog">blog jurídico</a> para leer artículos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas más consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Necesita asesoría corporativa para su empresa?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoría inicial con el Lic. Ian Montiel y obtenga un diagnóstico profesional para su empresa. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/tania-mendoza" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=375&fit=crop&crop=face" alt="Lic. Tania Mendoza" width="300" height="375" loading="lazy">
+          <h4>Lic. Tania Mendoza</h4>
+          <span>Derecho Inmobiliario</span>
+        </a>
+        <a href="/despacho-juridico/luciana-valle" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=375&fit=crop&crop=face" alt="Lic. Luciana Valle" width="300" height="375" loading="lazy">
+          <h4>Lic. Luciana Valle</h4>
+          <span>Derecho Laboral</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+  @media (max-width: 991px) { .perfil-hero { grid-template-columns: 1fr; } .perfil-hero__img { max-width: 350px; } .servicios-grid-3col { grid-template-columns: 1fr 1fr; } .diferenciador-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 479px) { .servicios-grid-3col { grid-template-columns: 1fr; } .equipo-mini-grid { flex-direction: column; align-items: center; } }
+</style>

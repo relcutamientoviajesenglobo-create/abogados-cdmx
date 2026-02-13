@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Página no encontrada — Abogados en CDMX';
+const description = 'La página que busca no existe o ha sido movida. Visite nuestra página principal o explore nuestras especialidades legales.';
+---
+
+<Base title={title} description={description}>
+  <Header slot="header" />
+
+  <section class="page-404">
+    <div class="container text-center">
+      <span class="page-404__code">404</span>
+      <h1>Página no encontrada</h1>
+      <p>La página que busca no existe, ha sido movida o la dirección es incorrecta. Utilice los enlaces a continuación para encontrar lo que necesita.</p>
+      <div class="page-404__actions">
+        <a href="/" class="btn-primary-wrap">Ir al inicio →</a>
+        <a href="/especialidades" class="btn-secondary-wrap-dark">Ver especialidades →</a>
+      </div>
+      <div class="page-404__links">
+        <h3>Páginas principales</h3>
+        <nav class="page-404__nav">
+          <a href="/que-ofrecemos">Servicios</a>
+          <a href="/especialidades">Especialidades</a>
+          <a href="/quienes-somos">Nosotros</a>
+          <a href="/equipo-legal-cdmx">Equipo Legal</a>
+          <a href="/blog">Blog</a>
+          <a href="/contacto">Contacto</a>
+          <a href="/asesoria-inicial">Asesoría Inicial</a>
+        </nav>
+      </div>
+      <p class="page-404__contact">¿Necesita ayuda? Llame al <a href="tel:+525564655501">55 6465 5501</a> o escriba a <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a></p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .page-404 {
+    min-height: 70vh; display: flex; align-items: center;
+    padding: 120px 0 80px; background: var(--color-light);
+  }
+  .page-404__code {
+    font-family: var(--font-heading); font-size: 140px; color: var(--color-secondary);
+    opacity: .2; display: block; line-height: 1; margin-bottom: -20px;
+  }
+  .page-404 h1 { font-size: 48px; margin-bottom: 16px; }
+  .page-404 > .container > p { font-size: 18px; max-width: 550px; margin: 0 auto 32px; }
+  .page-404__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+  .btn-secondary-wrap-dark {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--color-primary);
+    padding: 16px 32px; border: 1px solid var(--color-border);
+    font-weight: 600; font-size: 16px; font-family: var(--font-body);
+    transition: all var(--transition); cursor: pointer;
+  }
+  .btn-secondary-wrap-dark:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
+  .page-404__links { margin-bottom: 40px; }
+  .page-404__links h3 { font-size: 20px; margin-bottom: 16px; }
+  .page-404__nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .page-404__nav a {
+    font-size: 15px; font-weight: 600; color: var(--color-secondary);
+    padding: 8px 16px; border: 1px solid var(--color-border); transition: all var(--transition);
+  }
+  .page-404__nav a:hover { background: var(--color-secondary); color: var(--color-white); border-color: var(--color-secondary); }
+  .page-404__contact { font-size: 15px; color: var(--color-paragraph); }
+  .page-404__contact a { color: var(--color-secondary); font-weight: 600; }
+
+  @media (max-width: 479px) {
+    .page-404__code { font-size: 90px; }
+    .page-404 h1 { font-size: 34px; }
+  }
+</style>

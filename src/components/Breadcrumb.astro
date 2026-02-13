@@ -1,0 +1,66 @@
+---
+/**
+ * Breadcrumb Component — Abogados en CDMX
+ * Schema BreadcrumbList + ARIA + visible navigation
+ * Usage: <Breadcrumb items={[{label:'Especialidades',href:'/especialidades'},{label:'Derecho Familiar'}]} />
+ * Last item has no href (current page)
+ */
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+interface Props {
+  items: BreadcrumbItem[];
+}
+const { items } = Astro.props;
+const siteUrl = 'https://abogadosencdmx.com';
+
+const schemaItems = [
+  { "@type": "ListItem", position: 1, name: "Inicio", item: siteUrl },
+  ...items.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 2,
+    name: item.label,
+    ...(item.href ? { item: `${siteUrl}${item.href}` } : {}),
+  })),
+];
+---
+
+<nav class="breadcrumb" aria-label="Ubicación en el sitio">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="/" class="breadcrumb__link">Inicio</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+    </li>
+    {items.map((item, i) => (
+      <li class="breadcrumb__item">
+        {item.href ? (
+          <a href={item.href} class="breadcrumb__link">{item.label}</a>
+        ) : (
+          <span class="breadcrumb__current" aria-current="page">{item.label}</span>
+        )}
+        {i < items.length - 1 && <span class="breadcrumb__sep" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": schemaItems
+})} />
+
+<style>
+  .breadcrumb { padding: 20px 0 0; }
+  .breadcrumb__list { display: flex; flex-wrap: wrap; gap: 0; align-items: center; }
+  .breadcrumb__item { display: flex; align-items: center; font-size: 14px; }
+  .breadcrumb__link {
+    color: var(--color-secondary);
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  .breadcrumb__link:hover { color: var(--color-primary); }
+  .breadcrumb__sep { color: rgba(0, 29, 61, .3); margin: 0 8px; font-weight: 300; }
+  .breadcrumb__current { color: var(--color-paragraph); font-weight: 500; }
+</style>

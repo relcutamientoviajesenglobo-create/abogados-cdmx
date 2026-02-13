@@ -1,0 +1,213 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Especialidades Legales en CDMX — Abogados en CDMX';
+const description = 'Abogados en CDMX ofrece representación jurídica especializada en 7 áreas del derecho: familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral en Ciudad de México.';
+const canonical = 'https://abogadosencdmx.com/especialidades';
+
+const specialties = [
+  {
+    title: 'Derecho Familiar',
+    slug: '/especialidades/derecho-familiar-cdmx',
+    icon: '👨‍👩‍👧‍👦',
+    desc: 'Divorcios, custodia, pensiones alimenticias, adopciones y convivencias familiares. Protegemos los derechos de su familia con sensibilidad y firmeza legal.',
+  },
+  {
+    title: 'Derecho Penal',
+    slug: '/especialidades/derecho-penal-cdmx',
+    icon: '⚖️',
+    desc: 'Defensa penal con y sin detenido, amparos, representación de víctimas y asesoría en delitos graves. Actuamos con urgencia para proteger su libertad.',
+  },
+  {
+    title: 'Derecho Civil',
+    slug: '/especialidades/derecho-civil-cdmx',
+    icon: '📜',
+    desc: 'Contratos, sucesiones, arrendamientos, daños y perjuicios. Resolvemos controversias civiles con estrategia jurídica sólida y orientada a resultados.',
+  },
+  {
+    title: 'Derecho Corporativo',
+    slug: '/especialidades/derecho-corporativo-cdmx',
+    icon: '🏢',
+    desc: 'Constitución de sociedades, compliance, contratos mercantiles, fusiones y adquisiciones. Asesoramos empresas desde su creación hasta su expansión.',
+  },
+  {
+    title: 'Derecho Inmobiliario',
+    slug: '/especialidades/derecho-inmobiliario-cdmx',
+    icon: '🏠',
+    desc: 'Compraventa, escrituración, arrendamiento, desalojos y due diligence. Cada operación inmobiliaria requiere certeza jurídica que nosotros garantizamos.',
+  },
+  {
+    title: 'Derecho Migratorio',
+    slug: '/especialidades/derecho-migratorio-cdmx',
+    icon: '🌎',
+    desc: 'Visas, residencias temporales y permanentes, naturalización y permisos de trabajo. Facilitamos su proceso migratorio en México con asesoría experta.',
+  },
+  {
+    title: 'Derecho Laboral',
+    slug: '/especialidades/derecho-laboral-cdmx',
+    icon: '💼',
+    desc: 'Despidos injustificados, conflictos obrero-patronales, contratos laborales y cumplimiento normativo. Defendemos los derechos de trabajadores y empleadores.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Especialidades Legales — Abogados en CDMX",
+  "description": description,
+  "url": canonical,
+  "isPartOf": { "@type": "WebSite", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": specialties.map((s, i) => ({
+      "@type": "ListItem", "position": i + 1, "name": s.title, "url": `https://abogadosencdmx.com${s.slug}`
+    }))
+  }
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Especialidades'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Nuestras áreas de práctica</p>
+        <h1 class="text-white">Especialidades legales en la Ciudad de México</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Abogados en CDMX cuenta con un equipo jurídico multidisciplinario que ofrece representación legal especializada en siete áreas del derecho. Cada especialidad es atendida por abogados con experiencia comprobada en tribunales de la Ciudad de México, lo que nos permite abordar su caso con el conocimiento técnico y la estrategia procesal que su situación requiere.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Conceptual — ¿Qué áreas cubrimos? -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Cobertura jurídica integral</p>
+        <h2>Siete áreas del derecho, un solo despacho</h2>
+        <p class="max-w-746">En lugar de buscar diferentes abogados para cada tipo de asunto legal, en Abogados en CDMX encontrará un despacho con la capacidad de atender todas las ramas del derecho que una persona o empresa necesita. Nuestro equipo se especializa en cada materia para ofrecer asesoría con profundidad real, no soluciones genéricas.</p>
+      </div>
+      <div class="specialty-grid">
+        {specialties.map((s, i) => (
+          <a href={s.slug} class="specialty-card reveal" style={`--delay:${i * 0.08}s`}>
+            <span class="specialty-card__icon" aria-hidden="true">{s.icon}</span>
+            <h3 class="specialty-card__title">{s.title}</h3>
+            <p class="specialty-card__desc">{s.desc}</p>
+            <span class="specialty-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Intent — Prose with contextual internal links -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p class="section-tag">Cómo Trabajamos</p>
+        <h2>Un equipo de especialistas, no de generalistas</h2>
+        <p style="font-size:18px;line-height:1.7;margin-bottom:20px;">Abogados en CDMX es un despacho jurídico que asigna cada caso al abogado con mayor experiencia en la materia correspondiente. No empleamos abogados generalistas que atienden todo tipo de asuntos — cada miembro de nuestro <a href="/equipo-legal-cdmx">equipo legal</a> trabaja exclusivamente en su área de especialización.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Nuestros perfiles principales incluyen a la <a href="/despacho-juridico/tania-mendoza">Lic. Tania Mendoza</a> en derecho inmobiliario, la <a href="/despacho-juridico/luciana-valle">Lic. Luciana Valle</a> en derecho laboral y el <a href="/despacho-juridico/ian-montiel">Lic. Ian Montiel</a> en derecho corporativo. Cada especialista conoce la legislación aplicable, los procedimientos vigentes y los criterios actuales de los juzgados y tribunales de la Ciudad de México en su materia.</p>
+        <p style="font-size:16px;line-height:1.8;">Cuando un caso involucra más de una especialidad — por ejemplo, un divorcio con liquidación de bienes inmuebles y aspectos laborales — los abogados de las áreas correspondientes coordinan una estrategia conjunta. Esto le evita contratar múltiples despachos para resolver un solo problema. Para conocer más sobre nuestro despacho, visite <a href="/quienes-somos">quiénes somos</a> o revise los <a href="/que-ofrecemos">servicios que ofrecemos</a>. Si desea agendar una consulta, visite nuestra sección de <a href="/asesoria-inicial">asesoría inicial</a> o llame al 55 6465 5501 desde nuestras oficinas en Guanajuato 224, Colonia Roma Norte, C.P. 06700, Ciudad de México.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal">
+          <p class="section-tag">Preguntas frecuentes</p>
+          <h2>Dudas comunes sobre nuestras especialidades</h2>
+          <p>Entendemos que elegir un abogado puede generar incertidumbre. Aquí respondemos las preguntas que nuestros clientes nos hacen con más frecuencia antes de agendar su primera consulta.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Puedo consultar por más de una especialidad a la vez?</summary>
+            <div class="faq-item__a"><p>Sí. Muchos casos involucran más de una rama del derecho. Por ejemplo, un proceso de divorcio puede requerir asesoría en derecho familiar, civil e inmobiliario simultáneamente. Nuestro modelo multidisciplinario permite coordinar abogados de diferentes áreas para atender todos los frentes de su caso. Consulte nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> para más detalles o visite nuestro <a href="/blog">blog jurídico</a> para leer artículos sobre cada especialidad.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuánto cuesta la asesoría inicial?</summary>
+            <div class="faq-item__a"><p>La asesoría inicial tiene un costo accesible que varía según la complejidad del asunto. Durante esta consulta evaluamos su caso, le explicamos sus opciones legales y le presentamos una estrategia clara. Puede agendar su cita llamando al 55 6465 5501 o visitando nuestra sección de <a href="/asesoria-inicial">asesoría inicial</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Atienden casos fuera de la Ciudad de México?</summary>
+            <div class="faq-item__a"><p>Nuestro despacho se encuentra en Guanajuato 224, Colonia Roma Norte, y atendemos principalmente casos en la Ciudad de México y su zona metropolitana. Para asuntos que involucren otras entidades federativas, evaluamos la viabilidad durante la asesoría inicial.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="cta-section section-padding" style="background-color: var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal">
+        <h2 class="text-white">¿Necesita asesoría legal especializada?</h2>
+        <p class="text-white-soft max-w-694 mb-40">Platiquemos sobre su situación. Nuestra asesoría inicial está diseñada para que usted entienda exactamente cuáles son sus opciones legales y cuál es la estrategia más conveniente para su caso.</p>
+        <div class="btn-group btn-group--center">
+          <a href="/asesoria-inicial" class="btn-primary-wrap"><span class="btn-primary">Agendar asesoría inicial <span aria-hidden="true">→</span></span></a>
+          <a href="/contacto" class="btn-secondary-wrap"><span class="btn-secondary">Contactar al despacho</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .hero-pillar { padding: 0 0 80px; }
+  .hero-pillar__content { max-width: 856px; padding-top: 50px; }
+
+  .specialty-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .specialty-card {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    padding: 40px 32px; position: relative; overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    transition-delay: var(--delay, 0s);
+    display: flex; flex-direction: column;
+  }
+  .specialty-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,29,61,0.08); }
+  .specialty-card__icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .specialty-card__title { font-size: 22px; margin-bottom: 12px; color: var(--color-primary); }
+  .specialty-card__desc { font-size: 15px; line-height: 1.7; flex: 1; margin-bottom: 16px; }
+  .specialty-card__arrow {
+    color: var(--color-secondary); font-size: 20px; font-weight: 600;
+    transition: transform var(--transition);
+  }
+  .specialty-card:hover .specialty-card__arrow { transform: translateX(6px); }
+
+  /* Last card spans full width if odd */
+  .specialty-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q {
+    font-family: var(--font-heading); font-size: 20px; font-weight: 400;
+    color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+
+  .cta-section h2 { margin-bottom: 16px; }
+
+  @media (max-width: 991px) {
+    .specialty-grid { grid-template-columns: repeat(2, 1fr); }
+    .specialty-card:last-child:nth-child(odd) { max-width: 100%; }
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 479px) {
+    .specialty-grid { grid-template-columns: 1fr; }
+  }
+</style>

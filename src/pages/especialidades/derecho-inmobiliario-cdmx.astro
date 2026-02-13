@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados de Derecho Inmobiliario en CDMX — Compraventa, Arrendamiento y Regularización | Abogados en CDMX';
+const description = 'Abogados inmobiliarios en la Ciudad de México. Compraventa de inmuebles, contratos de arrendamiento, regularización de propiedad, desalojos y condominios. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-inmobiliario-cdmx';
+
+const schema = {
+  "@context": "https://schema.org", "@type": "Service",
+  "name": "Derecho Inmobiliario en CDMX",
+  "description": "Asesoría jurídica inmobiliaria: compraventa, arrendamiento, regularización de propiedad, condominios y procedimientos de desalojo en la Ciudad de México.",
+  "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com", "telephone": "+525564655501", "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" } },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }, "serviceType": "Derecho Inmobiliario"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Civil', href: '/especialidades/derecho-civil-cdmx', desc: 'Contratos, obligaciones, responsabilidad civil y sucesiones testamentarias.' },
+  { nombre: 'Derecho Corporativo', href: '/especialidades/derecho-corporativo-cdmx', desc: 'Constitución de sociedades y adquisiciones corporativas de inmuebles.' },
+  { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', desc: 'Sucesiones, herencias y adjudicación de bienes inmuebles en procesos familiares.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+  <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Inmobiliario'}]} /></div></section>
+
+  <!-- BRACKET 1: CONCEPTUAL — Declaración definicional -->
+  <section class="section-padding">
+    <div class="container"><div class="cluster-intro reveal">
+      <p class="section-tag">Derecho Inmobiliario</p>
+      <h1>Abogados de derecho inmobiliario en la Ciudad de México</h1>
+      <p class="lead">Abogados en CDMX es un despacho jurídico especializado en derecho inmobiliario que asesora a compradores, vendedores, arrendadores, arrendatarios, desarrolladores e inversionistas en la Ciudad de México. El derecho inmobiliario es la rama jurídica que regula las relaciones derivadas de la propiedad, posesión, uso y transmisión de bienes inmuebles. En la Ciudad de México, las operaciones inmobiliarias se rigen por el Código Civil del Distrito Federal, la Ley de Propiedad en Condominio, la Ley del Notariado, las disposiciones del Registro Público de la Propiedad y de Comercio y la normatividad urbana de la Secretaría de Desarrollo Urbano y Vivienda.</p>
+      <p>Nuestro equipo de <a href="/equipo-legal-cdmx">abogados inmobiliarios</a> revisa la situación jurídica de los inmuebles, identifica riesgos registrales y catastrales, redacta contratos de compraventa y arrendamiento, y representa a nuestros clientes en procedimientos judiciales y administrativos para proteger su patrimonio. Las operaciones inmobiliarias en colonias como Roma Norte, Condesa, Polanco, Del Valle, Nápoles y Santa Fe requieren un conocimiento profundo de la normatividad local, incluyendo los certificados de uso de suelo que emite la Alcaldía correspondiente y las restricciones que establece la Secretaría de Desarrollo Urbano y Vivienda.</p>
+      <p>Nuestras oficinas se encuentran en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México — a una cuadra de la avenida Álvaro Obregón, cerca del Metrobús Sonora y la estación del Metro Insurgentes. Atendemos de lunes a viernes de 9:00 a 18:00 horas. Llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com para agendar una <a href="/asesoria-inicial">asesoría jurídica inmobiliaria</a>.</p>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL — Servicios específicos -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;"><p class="section-tag">Servicios</p><h2>Servicios jurídicos inmobiliarios que ofrece nuestro despacho</h2></div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Compraventa de inmuebles</h3>
+          <p>Asesoramos en la compraventa de casas, departamentos, terrenos, oficinas y locales comerciales en la Ciudad de México. Realizamos un estudio de antecedentes registrales ante el Registro Público de la Propiedad para verificar que el inmueble esté libre de gravámenes, hipotecas, embargos o litigios. Redactamos contratos de promesa de compraventa y acompañamos al cliente hasta la firma de la escritura ante notario público.</p>
+        </div>
+        <div class="service-block">
+          <h3>Arrendamiento</h3>
+          <p>Redactamos y revisamos contratos de arrendamiento para vivienda y uso comercial conforme al Código Civil del Distrito Federal. Incluimos cláusulas de protección para el propietario o el inquilino según corresponda: garantías, depósitos, ajustes de renta, causales de rescisión, penalidades por incumplimiento y mecanismos de resolución de controversias. También representamos a propietarios e inquilinos en demandas de desocupación y controversias sobre rentas vencidas.</p>
+        </div>
+        <div class="service-block">
+          <h3>Regularización de propiedad</h3>
+          <p>Tramitamos la regularización de inmuebles que carecen de escrituras, tienen problemas de titularidad o presentan inconsistencias registrales. Los procedimientos incluyen juicios de usucapión (prescripción adquisitiva), protocolización de contratos privados, rectificación de actas y escrituras, inmatriculación administrativa y los trámites necesarios ante el Registro Público de la Propiedad y de Comercio para sanear la titularidad del inmueble.</p>
+        </div>
+        <div class="service-block">
+          <h3>Condominios y propiedad horizontal</h3>
+          <p>Asesoramos a administradores, comités de vigilancia y condóminos en la aplicación de la Ley de Propiedad en Condominio de Inmuebles del Distrito Federal. Asistimos en la elaboración y modificación de reglamentos internos, la celebración de asambleas, la resolución de controversias entre vecinos, el cobro de cuotas de mantenimiento vencidas y las acciones legales por daños a áreas comunes.</p>
+        </div>
+        <div class="service-block">
+          <h3>Desalojos y juicios de arrendamiento</h3>
+          <p>Representamos a propietarios en juicios de desocupación por falta de pago de rentas, uso indebido del inmueble o vencimiento del contrato de arrendamiento. También defendemos a inquilinos frente a desalojos injustificados o violaciones a sus derechos como arrendatarios. Los juicios de arrendamiento inmobiliario en la Ciudad de México se tramitan ante los juzgados civiles conforme al procedimiento previsto en el Código Nacional de Procedimientos Civiles y Familiares.</p>
+        </div>
+        <div class="service-block">
+          <h3>Due diligence inmobiliario</h3>
+          <p>Realizamos auditorías jurídicas integrales de inmuebles para inversionistas, desarrolladores y compradores que necesitan verificar la situación legal completa de una propiedad antes de adquirirla. La auditoría cubre antecedentes registrales, situación catastral, adeudos fiscales (predial, agua), uso de suelo, licencias de construcción, afectaciones por planes urbanos y cualquier litigio o procedimiento administrativo que pueda afectar la operación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container"><div class="faq-layout">
+      <div class="reveal"><p class="section-tag">Preguntas Frecuentes</p><h2>Dudas comunes sobre derecho inmobiliario en CDMX</h2></div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary class="faq-item__q">¿Qué debo verificar antes de comprar un inmueble en CDMX?</summary><div class="faq-item__a"><p>Antes de firmar cualquier documento, debe verificarse que el vendedor sea el legítimo propietario consultando el Registro Público de la Propiedad, que el inmueble esté libre de gravámenes, hipotecas y embargos, que los pagos de predial y agua estén al corriente, que el uso de suelo permita el destino que usted pretende darle y que no existan litigios pendientes sobre la propiedad. Un abogado inmobiliario realiza estas verificaciones mediante un estudio de antecedentes registrales y catastrales. En Abogados en CDMX incluimos este análisis como parte de nuestro servicio de <a href="/especialidades/derecho-civil-cdmx">due diligence jurídico</a>.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Cuánto tiempo toma regularizar un inmueble sin escrituras?</summary><div class="faq-item__a"><p>El tiempo depende del procedimiento necesario. Una protocolización de contrato privado ante notario puede tomar de 4 a 8 semanas. Un juicio de usucapión — cuando se acredita la posesión pacífica por el plazo que marca la ley — puede durar de 1 a 3 años en los juzgados civiles de la Ciudad de México. La inmatriculación administrativa, disponible en ciertos supuestos, puede resolverse en 3 a 6 meses. Nuestros abogados evalúan su caso para determinar la vía más rápida y segura.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Qué hago si mi inquilino no paga la renta?</summary><div class="faq-item__a"><p>Primero debe enviarse un requerimiento formal de pago al arrendatario. Si no paga dentro del plazo otorgado, se puede iniciar un juicio de desocupación por falta de pago ante los juzgados civiles de la Ciudad de México. El procedimiento incluye la demanda, emplazamiento, contestación, audiencia y sentencia. Si la sentencia es favorable, se ejecuta el desalojo con auxilio de la fuerza pública. Es importante no intentar un desalojo por cuenta propia, ya que constituye un delito. Nuestro equipo de <a href="/equipo-legal-cdmx">abogados litigantes</a> le asiste en todo el proceso.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Puedo vender un inmueble que heredé sin tener las escrituras a mi nombre?</summary><div class="faq-item__a"><p>No. Para vender un inmueble heredado, primero debe concluirse el juicio sucesorio y obtenerse la adjudicación del bien a su favor, la cual se inscribe en el Registro Público de la Propiedad. Solo cuando el inmueble aparece registrado a nombre del heredero es posible realizar una compraventa válida ante notario público. Si el juicio sucesorio no se ha iniciado, nuestros abogados de <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> pueden tramitarlo y gestionar la adjudicación para que usted pueda disponer libremente del inmueble.</p></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados inmobiliarios en Colonia Roma Norte</h2>
+        <p>A diferencia de otros despachos que atienden asuntos inmobiliarios de forma genérica, Abogados en CDMX concentra su práctica inmobiliaria en la Ciudad de México. Esta especialización nos permite conocer las particularidades registrales de cada Alcaldía, los criterios actuales de los juzgados civiles capitalinos y los tiempos reales de trámite ante el Registro Público de la Propiedad y de Comercio. Nuestras oficinas en Guanajuato 224, Colonia Roma Norte, nos sitúan cerca de las principales notarías, juzgados y oficinas gubernamentales donde se tramitan los asuntos inmobiliarios de nuestros clientes.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Enfoque local exclusivo</h4><p>Operamos exclusivamente en la Ciudad de México. Conocemos los criterios de los juzgados civiles de cada Alcaldía, los tiempos del Registro Público y las prácticas notariales locales. Esta especialización nos permite anticipar obstáculos y acelerar los procesos de nuestros clientes.</p></div>
+        <div class="diff-card"><h4>Auditoría antes de la firma</h4><p>Toda operación inmobiliaria comienza con una auditoría jurídica integral. No permitimos que nuestros clientes firmen contratos sin antes verificar antecedentes registrales, situación catastral, adeudos fiscales, uso de suelo y posibles litigios. Este protocolo ha evitado pérdidas significativas a compradores e inversionistas.</p></div>
+        <div class="diff-card"><h4>Equipo multidisciplinario</h4><p>Las operaciones inmobiliarias frecuentemente involucran aspectos de <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a> (adquisiciones societarias), <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> (sucesiones, contratos) y derecho fiscal. Nuestro despacho integra todas estas disciplinas para ofrecer soluciones completas sin necesidad de contratar múltiples abogados.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO: ESPECIALIDADES RELACIONADAS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;"><p class="section-tag">Especialidades Relacionadas</p><h2>Áreas vinculadas al derecho inmobiliario</h2>
+      <p>Los asuntos inmobiliarios con frecuencia se conectan con otras ramas del derecho. Nuestro despacho ofrece atención integral para que cada aspecto jurídico de su operación esté cubierto desde nuestras oficinas en Roma Norte.</p></div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (<a href={h.href} class="related-card"><h4>{h.nombre}</h4><p>{h.desc}</p><span class="related-arrow">Ver especialidad →</span></a>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Artículos sobre derecho inmobiliario en CDMX</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Le recomendamos leer nuestra <a href="/blog/derechos-inquilino-cdmx-2026">guía de derechos del inquilino en CDMX</a>, donde explicamos los límites legales a los aumentos de renta, la protección contra desalojos ilegales y las obligaciones del propietario. También puede consultar el artículo sobre el <a href="/blog/nuevo-codigo-procedimientos-civiles-familiares-2026">Nuevo Código Nacional de Procedimientos 2026</a>, que afecta directamente los juicios civiles e inmobiliarios en la Ciudad de México.</p>
+        <p style="font-size:16px;line-height:1.8;">Visite nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> para resolver dudas sobre regularización de inmuebles, compraventa y arrendamiento. Para conocer al despacho, consulte <a href="/quienes-somos">quiénes somos</a> y <a href="/que-ofrecemos">qué ofrecemos</a>. Nuestro <a href="/blog">blog jurídico</a> se actualiza regularmente con temas inmobiliarios relevantes para propietarios e inquilinos en la Ciudad de México.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Necesita asesoría para una operación inmobiliaria?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Proteja su inversión con el respaldo de abogados inmobiliarios que conocen el mercado y la legislación de la Ciudad de México. Visítenos en Guanajuato 224, Roma Norte, o llame al 55 6465 5501.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; } .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; } .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; } .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; } .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; } .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; } .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

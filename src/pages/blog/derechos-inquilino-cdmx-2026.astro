@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Derechos del Inquilino en CDMX 2026: Lo Que Todo Arrendatario Debe Conocer | Abogados en CDMX';
+const description = 'Guía sobre los derechos del inquilino en la Ciudad de México. Duración de contratos, depósitos, aumentos de renta, desalojos y procedimientos legales conforme al Código Civil vigente.';
+const canonical = 'https://abogadosencdmx.com/blog/derechos-inquilino-cdmx-2026';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Derechos del inquilino en CDMX: lo que todo arrendatario debe conocer",
+  "description": description,
+  "url": canonical,
+  "datePublished": "2026-02-05",
+  "dateModified": "2026-02-11",
+  "author": { "@type": "Person", "name": "Ian Montiel", "url": "https://abogadosencdmx.com/despacho-juridico/ian-montiel" },
+  "publisher": {
+    "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "mainEntityOfPage": canonical
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+  <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Blog', href:'/blog'},{label:'Derechos del Inquilino'}]} /></div></section>
+
+  <article class="section-padding">
+    <div class="container">
+      <div class="article-layout">
+        <div class="article-content">
+          <div class="article-meta reveal">
+            <span class="article-cat">Derecho Inmobiliario</span>
+            <time datetime="2026-02-05">5 de febrero de 2026</time>
+            <span class="article-author">Por <a href="/despacho-juridico/ian-montiel">Lic. Ian Montiel</a></span>
+          </div>
+
+          <h1 class="reveal">Derechos del inquilino en CDMX: lo que todo arrendatario debe conocer</h1>
+
+          <p class="lead reveal">Miles de personas rentan vivienda en la Ciudad de México, especialmente en colonias como Roma Norte, Condesa, Del Valle, Nápoles, Polanco y Juárez, donde la demanda de arrendamiento es alta. Sin embargo, muchos inquilinos desconocen los derechos que el Código Civil del Distrito Federal les otorga. Esta guía, elaborada por los <a href="/especialidades/derecho-inmobiliario-cdmx">abogados inmobiliarios</a> de Abogados en CDMX, explica los derechos fundamentales de todo arrendatario en la capital.</p>
+
+          <h2 class="reveal">Derecho a un contrato por escrito</h2>
+          <p class="reveal">Todo arrendamiento de vivienda en la Ciudad de México debe constar por escrito. El contrato debe especificar el inmueble arrendado, el monto de la renta mensual, la duración del contrato, el monto y condiciones de devolución del depósito, las causales de rescisión y las obligaciones de ambas partes. Si usted renta sin contrato escrito, la relación de arrendamiento existe pero carece de las protecciones que un contrato bien redactado proporciona. Nuestros abogados revisan y redactan contratos de arrendamiento que protegen tanto a propietarios como a inquilinos.</p>
+
+          <h2 class="reveal">Duración mínima del contrato y derecho de preferencia</h2>
+          <p class="reveal">El Código Civil de la Ciudad de México no establece una duración mínima obligatoria para los contratos de arrendamiento de vivienda, pero sí otorga al inquilino un derecho de preferencia para renovar el contrato bajo las mismas condiciones al vencimiento del plazo pactado, siempre que esté al corriente en el pago de las rentas. Además, si el propietario decide vender el inmueble, el inquilino tiene derecho de preferencia para adquirirlo en igualdad de condiciones que cualquier otro comprador, lo que se conoce como derecho del tanto.</p>
+
+          <h2 class="reveal">Límites a los aumentos de renta</h2>
+          <p class="reveal">En la Ciudad de México, los incrementos anuales de renta están regulados. El Código Civil establece que los aumentos no pueden exceder el 10% del monto de la renta vigente, salvo pacto en contrario. Esto significa que si su renta actual es de $15,000 MXN mensuales, el propietario no puede incrementarla a más de $16,500 MXN al año siguiente. Si su arrendador intenta aplicar un aumento superior sin justificación, usted puede oponerse legalmente.</p>
+
+          <h2 class="reveal">Depósito en garantía y su devolución</h2>
+          <p class="reveal">El depósito en garantía — comúnmente equivalente a un mes de renta — es un pago que el inquilino entrega al inicio del contrato como garantía por posibles daños al inmueble o adeudos de servicios. Al término del contrato, el propietario debe devolver el depósito íntegro dentro de un plazo razonable, descontando únicamente los daños que excedan el desgaste natural del inmueble y los adeudos de servicios debidamente comprobados. Si el propietario se niega a devolver el depósito sin causa justificada, el inquilino puede reclamar judicialmente.</p>
+
+          <h2 class="reveal">Protección contra desalojos ilegales</h2>
+          <p class="reveal">Ningún propietario puede desalojar a un inquilino por su cuenta. Los desalojos en la Ciudad de México solo pueden ejecutarse mediante una orden judicial emitida por un juez civil después de un juicio de arrendamiento. Esto significa que cambiar cerraduras, cortar servicios, retirar pertenencias o intimidar al inquilino para que desocupe el inmueble son acciones ilegales que pueden constituir delito de despojo. Si usted enfrenta una situación de desalojo irregular, tiene derecho a denunciar ante la Fiscalía y a solicitar la protección de un <a href="/especialidades/derecho-penal-cdmx">abogado penalista</a>.</p>
+
+          <h2 class="reveal">Obligaciones del propietario durante el arrendamiento</h2>
+          <p class="reveal">El propietario tiene la obligación legal de entregar el inmueble en condiciones de habitabilidad, realizar las reparaciones mayores necesarias para conservar el inmueble (estructura, instalaciones hidráulicas y eléctricas, impermeabilización), no perturbar el uso pacífico del inmueble y respetar la privacidad del inquilino. Las reparaciones menores derivadas del uso normal — como cambio de focos, llaves de agua o chapas — corresponden generalmente al inquilino, salvo pacto distinto en el contrato.</p>
+
+          <h2 class="reveal">¿Qué hacer si tiene un conflicto con su arrendador?</h2>
+          <p class="reveal">Si tiene un conflicto con su propietario — aumento excesivo de renta, negativa a devolver el depósito, intento de desalojo, condiciones inhabitables — le recomendamos documentar todo por escrito (mensajes, correos, fotografías) y buscar asesoría legal antes de tomar cualquier acción. Abogados en CDMX es un despacho jurídico cuyos <a href="/especialidades/derecho-inmobiliario-cdmx">abogados inmobiliarios</a> y <a href="/especialidades/derecho-civil-cdmx">civilistas</a> asesoran tanto a inquilinos como a propietarios para resolver conflictos de arrendamiento de forma justa y conforme a la ley.</p>
+
+          <p class="reveal">Puede agendar una <a href="/asesoria-inicial">asesoría inicial</a> en nuestras oficinas de Guanajuato 224, Colonia Roma Norte — una zona donde la relación arrendador-inquilino es parte del día a día. Llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com.</p>
+
+          <div class="article-cta reveal">
+            <p><strong>¿Tiene un problema con su arrendamiento en la Ciudad de México?</strong></p>
+            <p>Nuestros abogados inmobiliarios protegen sus derechos como inquilino o como propietario con estrategia legal sólida.</p>
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar asesoría inicial →</a>
+          </div>
+        </div>
+
+        <aside class="article-sidebar reveal">
+          <div class="sidebar-card"><h4>Artículos relacionados</h4><ul>
+            <li><a href="/blog/nuevo-codigo-procedimientos-civiles-familiares-2026">Nuevo Código Nacional 2026</a></li>
+            <li><a href="/blog/guia-divorcio-cdmx-2026">Guía de divorcio en CDMX</a></li>
+            <li><a href="/blog/derechos-detenido-cdmx">Derechos del detenido en CDMX</a></li>
+          </ul></div>
+          <div class="sidebar-card"><h4>Especialidades</h4><ul>
+            <li><a href="/especialidades/derecho-inmobiliario-cdmx">Derecho Inmobiliario</a></li>
+            <li><a href="/especialidades/derecho-civil-cdmx">Derecho Civil</a></li>
+          </ul></div>
+          <div class="sidebar-card sidebar-contact"><h4>¿Necesita asesoría?</h4><p>Guanajuato 224, Roma Norte<br>C.P. 06700, CDMX</p><p><a href="tel:+525564655501">55 6465 5501</a></p><a href="/contacto">Contactar despacho →</a></div>
+        </aside>
+      </div>
+    </div>
+  </article>
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; }
+  .article-content { max-width: 750px; }
+  .article-meta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; font-size: 14px; color: #666; }
+  .article-cat { font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+  .article-author a { color: var(--color-secondary); }
+  .article-content h1 { font-size: 40px; line-height: 1.2; margin-bottom: 24px; }
+  .lead { font-size: 20px; line-height: 1.7; color: var(--color-primary); font-weight: 500; margin-bottom: 32px; }
+  .article-content h2 { font-size: 28px; margin: 40px 0 16px; }
+  .article-content p { font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .article-content a { color: var(--color-secondary); text-decoration: underline; }
+  .article-cta { background: var(--color-light); padding: 32px; margin-top: 40px; border-left: 4px solid var(--color-secondary); }
+  .article-cta p { margin-bottom: 12px; } .article-cta p:last-of-type { margin-bottom: 20px; }
+  .article-sidebar { position: sticky; top: 140px; }
+  .sidebar-card { background: var(--color-light); padding: 24px; margin-bottom: 20px; }
+  .sidebar-card h4 { font-size: 18px; margin-bottom: 12px; }
+  .sidebar-card ul { list-style: none; padding: 0; } .sidebar-card li { margin-bottom: 10px; }
+  .sidebar-card li a { font-size: 15px; color: var(--color-primary); text-decoration: none; } .sidebar-card li a:hover { color: var(--color-secondary); }
+  .sidebar-contact { background: var(--color-primary); color: var(--color-white); }
+  .sidebar-contact h4 { color: var(--color-white); } .sidebar-contact p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 8px; }
+  .sidebar-contact a { color: var(--color-secondary); }
+  @media (max-width: 991px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; } }
+  @media (max-width: 767px) { .article-layout { gap: 32px; } .article-content h2 { font-size: 24px; } .article-content h3 { font-size: 20px; } .lead { font-size: 18px; } .article-cta { padding: 24px; } .sidebar-card { padding: 20px; } }
+  @media (max-width: 479px) { .article-content h1 { font-size: 30px; } .article-cta { padding: 20px; } .lead { font-size: 16px; } }
+</style>

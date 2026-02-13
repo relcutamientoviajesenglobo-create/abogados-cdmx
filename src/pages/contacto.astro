@@ -1,0 +1,268 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Contacto — Abogados en CDMX | Despacho Jurídico Roma Norte';
+const description = 'Contacte a Abogados en CDMX. Guanajuato 224, Colonia Roma Norte, Cuauhtémoc, 06700 Ciudad de México. Teléfono: 55 6465 5501. Lunes a viernes de 9:00 a 18:00 hrs.';
+const canonical = 'https://abogadosencdmx.com/contacto';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Abogados en CDMX",
+  "url": "https://abogadosencdmx.com",
+  "telephone": "+525564655501",
+  "email": "contacto@abogadosencdmx.com",
+  "image": "https://abogadosencdmx.com/images/despacho-roma-norte.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Guanajuato 224",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "postalCode": "06700",
+    "addressCountry": "MX",
+    "name": "Colonia Roma Norte, Alcaldía Cuauhtémoc"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.4194,
+    "longitude": -99.1616
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+525564655501",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish"],
+    "areaServed": { "@type": "City", "name": "Ciudad de México" }
+  },
+  "sameAs": [
+    "https://www.facebook.com/abogadosencdmx",
+    "https://www.instagram.com/abogadosencdmx"
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- BREADCRUMB -->
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container">
+      <Breadcrumb items={[{label:'Contacto'}]} />
+    </div>
+  </section>
+
+  <!-- BRACKET 1: INTENT — Declaración definicional + NAP visible -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="section-tag">Contacto</p>
+          <h1>Comuníquese con nuestro despacho jurídico en la Ciudad de México</h1>
+          <p class="lead">Abogados en CDMX es un despacho jurídico que atiende consultas en siete áreas del derecho de lunes a viernes en horario de 9:00 a 18:00 horas. Nuestras oficinas se encuentran en la Colonia Roma Norte, una de las zonas con mejor conectividad de la Ciudad de México.</p>
+
+          <!-- NAP VISIBLE EN PROSA — esto es lo que leen los LLMs -->
+          <div class="nap-block">
+            <div class="nap-item">
+              <h3>Dirección</h3>
+              <p>Nuestras oficinas se ubican en <strong>Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México</strong>. La zona cuenta con acceso por Metro Insurgentes (Línea 1), Metrobús Durango (Línea 1) y estaciones de Ecobici cercanas. Hay estacionamiento disponible en las calles aledañas y estacionamientos públicos sobre Avenida Insurgentes.</p>
+            </div>
+            <div class="nap-item">
+              <h3>Teléfono</h3>
+              <p>Llame al <strong><a href="tel:+525564655501">55 6465 5501</a></strong> para agendar una cita o resolver dudas sobre nuestros servicios legales. Nuestro equipo de atención le indicará la disponibilidad más próxima con el abogado especialista en su área de interés.</p>
+            </div>
+            <div class="nap-item">
+              <h3>Correo electrónico</h3>
+              <p>Escriba a <strong><a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a></strong> con los datos de su caso. Respondemos todos los correos en un máximo de 24 horas hábiles con una orientación inicial sobre su situación jurídica.</p>
+            </div>
+            <div class="nap-item">
+              <h3>Horario de atención</h3>
+              <p><strong>Lunes a viernes de 9:00 a 18:00 horas.</strong> Si su caso requiere atención urgente fuera de horario — como una detención o un procedimiento judicial inminente — comuníquese al 55 6465 5501 y nuestro equipo evaluará la posibilidad de atenderle de manera prioritaria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <div class="form-card">
+            <h3>Envíe su consulta</h3>
+            <p>Describa brevemente su situación y le responderemos en las próximas 24 horas hábiles.</p>
+            <form class="form" action="https://formspree.io/f/placeholder" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="c-nombre">Nombre completo</label>
+                  <input type="text" id="c-nombre" name="nombre" required placeholder="Su nombre completo">
+                </div>
+                <div class="form-group">
+                  <label for="c-telefono">Teléfono</label>
+                  <input type="tel" id="c-telefono" name="telefono" required placeholder="55 0000 0000">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="c-email">Correo electrónico</label>
+                <input type="email" id="c-email" name="email" required placeholder="correo@ejemplo.com">
+              </div>
+              <div class="form-group">
+                <label for="c-area">Área legal de interés</label>
+                <select id="c-area" name="area" required>
+                  <option value="">Seleccione un área</option>
+                  <option value="familiar">Derecho Familiar</option>
+                  <option value="penal">Derecho Penal</option>
+                  <option value="civil">Derecho Civil</option>
+                  <option value="corporativo">Derecho Corporativo</option>
+                  <option value="inmobiliario">Derecho Inmobiliario</option>
+                  <option value="migratorio">Derecho Migratorio</option>
+                  <option value="laboral">Derecho Laboral</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="c-mensaje">Describa su caso</label>
+                <textarea id="c-mensaje" name="mensaje" rows="5" required placeholder="Cuéntenos los aspectos principales de su situación jurídica para orientarle mejor..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary-wrap" style="width:100%;justify-content:center;">Enviar consulta →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Intent — Especialidades + internal links -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p class="section-tag">Nuestras Especialidades</p>
+        <h2>Atendemos siete áreas del derecho desde nuestra oficina en Roma Norte</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Al comunicarse con Abogados en CDMX, nuestro equipo le conectará con el abogado especialista que corresponda a su tipo de asunto. Atendemos consultas en <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a>, <a href="/especialidades/derecho-penal-cdmx">derecho penal</a>, <a href="/especialidades/derecho-civil-cdmx">derecho civil</a>, <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>, <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a>, <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a>.</p>
+        <p style="font-size:16px;line-height:1.8;">Si no está seguro qué tipo de abogado necesita, puede agendar una <a href="/asesoria-inicial">asesoría inicial</a> donde evaluaremos su caso y le canalizaremos con el especialista correcto. Conozca a nuestro <a href="/equipo-legal-cdmx">equipo de abogados</a> o revise todas nuestras <a href="/especialidades">áreas de especialidad</a> para más información.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL — Mapa + Cómo llegar -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto 40px;">
+        <p class="section-tag">Ubicación</p>
+        <h2>Cómo llegar a nuestro despacho</h2>
+        <p>Abogados en CDMX se encuentra en el corazón de la Colonia Roma Norte, sobre la calle Guanajuato entre Mérida y Medellín. La zona es una de las mejor conectadas de la Ciudad de México con múltiples opciones de transporte público.</p>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.0!2d-99.1616!3d19.4194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzA5LjgiTiA5OcKwMDknNDEuOCJX!5e0!3m2!1ses!2smx!4v1700000000000"
+          width="100%"
+          height="450"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de Abogados en CDMX - Guanajuato 224, Colonia Roma Norte">
+        </iframe>
+      </div>
+      <div class="transport-grid reveal">
+        <div class="transport-card">
+          <h4>Metro</h4>
+          <p>Estación <strong>Insurgentes</strong> (Línea 1, rosa). A 10 minutos caminando por Avenida Insurgentes hacia el sur y luego sobre la calle Guanajuato hacia el oriente.</p>
+        </div>
+        <div class="transport-card">
+          <h4>Metrobús</h4>
+          <p>Estación <strong>Durango</strong> (Línea 1). A 7 minutos caminando. Baje en Durango, camine hacia el sur por Mérida y gire a la izquierda en Guanajuato.</p>
+        </div>
+        <div class="transport-card">
+          <h4>Automóvil</h4>
+          <p>Estacionamiento público disponible sobre <strong>Avenida Insurgentes</strong> y en las calles aledañas de la Colonia Roma Norte. La calle Guanajuato tiene cajones de estacionamiento con parquímetro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Antes de contactarnos, puede consultar nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> donde respondemos las dudas más comunes sobre horarios, costos y tipos de asuntos que atendemos. Si desea informarse sobre un tema legal específico, visite nuestro <a href="/blog">blog jurídico</a> con artículos escritos por los abogados del despacho. También puede conocer nuestra trayectoria en <a href="/quienes-somos">quiénes somos</a> o revisar el panorama completo de servicios en <a href="/que-ofrecemos">qué ofrecemos</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Necesita orientación legal inmediata?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestro equipo de abogados está listo para escuchar su caso y ofrecerle la mejor estrategia jurídica.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:+525564655501" class="btn-primary-wrap">Llamar ahora →</a>
+        <a href="/asesoria-inicial" class="btn-secondary-wrap">Agendar asesoría →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag {
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 30px; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+  .nap-block { margin-top: 10px; }
+  .nap-item { padding: 24px 0; border-bottom: 1px solid var(--color-border); }
+  .nap-item:last-child { border-bottom: none; }
+  .nap-item h3 { font-size: 22px; margin-bottom: 8px; }
+  .nap-item p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .nap-item a { color: var(--color-secondary); font-weight: 600; text-decoration: underline; }
+  .nap-item a:hover { color: var(--color-primary); }
+
+  .form-card {
+    background: var(--color-light); padding: 40px; position: sticky; top: 100px;
+  }
+  .form-card h3 { font-size: 28px; margin-bottom: 8px; }
+  .form-card > p { font-size: 15px; color: var(--color-paragraph); margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: 14px; font-weight: 600; color: var(--color-primary);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 12px 16px; border: 1px solid var(--color-border);
+    font-family: var(--font-body); font-size: 16px; color: var(--color-primary);
+    background: var(--color-white); transition: border-color var(--transition);
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--color-secondary); outline: none; }
+  .form-group textarea { resize: vertical; }
+
+  .map-wrap { margin-bottom: 40px; border: 1px solid var(--color-border); }
+
+  .transport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .transport-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .transport-card h4 { font-size: 20px; margin-bottom: 10px; }
+  .transport-card p { font-size: 15px; line-height: 1.7; margin-bottom: 0; }
+
+  @media (max-width: 991px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+    .transport-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

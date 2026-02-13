@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checklist Abogados CDMX — v3</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,sans-serif;background:#0a0a0a;color:#e0e0e0;padding:20px}
+h1{font-size:28px;color:#a97b54;margin-bottom:8px}
+.meta{font-size:14px;color:#777;margin-bottom:30px}
+.progress-bar{background:#1a1a2e;border-radius:8px;height:24px;margin-bottom:30px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#a97b54,#c99b6d);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;transition:width .5s}
+table{width:100%;border-collapse:collapse;margin-bottom:30px}
+th{background:#1a1a2e;padding:12px;text-align:left;font-size:13px;color:#a97b54;text-transform:uppercase;letter-spacing:1px}
+td{padding:10px 12px;border-bottom:1px solid #1a1a2e;font-size:14px}
+tr:hover{background:#111}
+.done{color:#4ade80}.pending{color:#fbbf24}.missing{color:#f87171}
+.tag{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:600}
+.tag-done{background:#065f46;color:#4ade80}
+.tag-pending{background:#713f12;color:#fbbf24}
+.tag-missing{background:#7f1d1d;color:#f87171}
+.section-title{font-size:20px;color:#fff;margin:30px 0 15px;padding-bottom:8px;border-bottom:1px solid #222}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:30px}
+.card{background:#111;border:1px solid #222;padding:16px;border-radius:8px}
+.card h3{font-size:16px;color:#a97b54;margin-bottom:4px}
+.card p{font-size:32px;font-weight:700;color:#fff}
+.card span{font-size:12px;color:#777}
+</style></head><body>
+<h1>📋 Abogados en CDMX — Checklist v3</h1>
+<p class="meta">Última actualización: 11 feb 2026 · Astro + Semantic HTML + GEO/Koray Framework</p>
+
+<div class="grid">
+<div class="card"><h3>Páginas</h3><p>21 / 21</p><span>100% completado ✅</span></div>
+<div class="card"><h3>Componentes</h3><p>4 / 4</p><span>Header v2 · Footer · Breadcrumb · WhatsApp</span></div>
+<div class="card"><h3>NAP consistente</h3><p>21 / 21</p><span>Guanajuato 224 en todas las páginas</span></div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" style="width:100%">100% ✅</div></div>
+
+<h2 class="section-title">Level 0 — HOME</h2>
+<table>
+<tr><th>Página</th><th>Ruta</th><th>Schema</th><th>Estado</th></tr>
+<tr><td>Home</td><td>/</td><td>LegalService + WebSite</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Level 1 — Pillar Pages (7/7)</h2>
+<table>
+<tr><th>Página</th><th>Ruta</th><th>Schema</th><th>Estado</th></tr>
+<tr><td>Especialidades HUB</td><td>/especialidades</td><td>CollectionPage + ItemList</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Qué Ofrecemos</td><td>/que-ofrecemos</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Quiénes Somos</td><td>/quienes-somos</td><td>AboutPage + LegalService</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Equipo Legal</td><td>/equipo-legal-cdmx</td><td>Organization + Person[]</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Asesoría Inicial</td><td>/asesoria-inicial</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Contacto</td><td>/contacto</td><td>LegalService + ContactPoint</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Blog HUB</td><td>/blog</td><td>Blog</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Level 2 — Specialty Clusters (7/7)</h2>
+<table>
+<tr><th>Página</th><th>Ruta</th><th>Schema</th><th>Estado</th></tr>
+<tr><td>Derecho Familiar</td><td>/especialidades/derecho-familiar-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Penal</td><td>/especialidades/derecho-penal-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Civil</td><td>/especialidades/derecho-civil-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Corporativo</td><td>/especialidades/derecho-corporativo-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Inmobiliario</td><td>/especialidades/derecho-inmobiliario-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Migratorio</td><td>/especialidades/derecho-migratorio-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Derecho Laboral</td><td>/especialidades/derecho-laboral-cdmx</td><td>Service</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Level 2 — Perfiles (3/3)</h2>
+<table>
+<tr><th>Página</th><th>Ruta</th><th>Schema</th><th>Estado</th></tr>
+<tr><td>Tania Mendoza</td><td>/despacho-juridico/tania-mendoza</td><td>Person</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Luciana Valle</td><td>/despacho-juridico/luciana-valle</td><td>Person</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Ian Montiel</td><td>/despacho-juridico/ian-montiel</td><td>Person</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Level 3 — Utility (3/3)</h2>
+<table>
+<tr><th>Página</th><th>Ruta</th><th>Schema</th><th>Estado</th></tr>
+<tr><td>Preguntas Frecuentes</td><td>/preguntas-frecuentes</td><td>FAQPage (20 FAQs)</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Aviso de Privacidad</td><td>/aviso-de-privacidad</td><td>LFPDPPP + ARCO</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>404</td><td>/404</td><td>9 internal links</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Técnico (3/3)</h2>
+<table>
+<tr><th>Item</th><th>Archivo</th><th>Estado</th></tr>
+<tr><td>Sitemap XML</td><td>public/sitemap.xml</td><td><span class="tag tag-done">✅ 20 URLs</span></td></tr>
+<tr><td>Robots.txt</td><td>public/robots.txt</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Favicon</td><td>public/favicon.ico + .svg</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Componentes (4/4)</h2>
+<table>
+<tr><th>Componente</th><th>Features</th><th>Estado</th></tr>
+<tr><td>Header.astro</td><td>Topbar + Glassmorphism + Isotipo + Scroll + Mobile overlay</td><td><span class="tag tag-done">✅ v2</span></td></tr>
+<tr><td>Footer.astro</td><td>NAP visible + 4-col grid + Social</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>Breadcrumb.astro</td><td>Schema BreadcrumbList + ARIA</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+<tr><td>WhatsAppFloat.astro</td><td>Fixed left + pulse glow + dark blue bg</td><td><span class="tag tag-done">✅ DONE</span></td></tr>
+</table>
+
+<h2 class="section-title">Header v2 Sync Status</h2>
+<table>
+<tr><th>Feature</th><th>Scope</th><th>Estado</th></tr>
+<tr><td>Top bar (horario + email + tel)</td><td>All 18 pages via Header.astro</td><td><span class="tag tag-done">✅ SYNCED</span></td></tr>
+<tr><td>Glassmorphism + scroll behavior</td><td>All 18 pages via Header.astro</td><td><span class="tag tag-done">✅ SYNCED</span></td></tr>
+<tr><td>Logo isotipo SVG</td><td>All 18 pages via Header.astro</td><td><span class="tag tag-done">✅ SYNCED</span></td></tr>
+<tr><td>WhatsApp float</td><td>All 18 pages via Base.astro</td><td><span class="tag tag-done">✅ SYNCED</span></td></tr>
+<tr><td>CSS vars (topbar-h, header-h)</td><td>global.css</td><td><span class="tag tag-done">✅ SYNCED</span></td></tr>
+</table>
+
+</body></html>

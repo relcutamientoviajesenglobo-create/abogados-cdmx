@@ -1,0 +1,162 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados Laboralistas en CDMX — Despidos, Liquidaciones y Demandas | Abogados en CDMX';
+const description = 'Abogados laboralistas en la Ciudad de México. Despidos injustificados, liquidaciones, demandas patronales, acoso laboral y seguridad social. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-laboral-cdmx';
+
+const schema = {
+  "@context": "https://schema.org", "@type": "Service",
+  "name": "Derecho Laboral en CDMX",
+  "description": "Representación jurídica laboral: despidos injustificados, liquidaciones, demandas, acoso laboral, seguridad social y conciliación ante el CEFRAMEL en la Ciudad de México.",
+  "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com", "telephone": "+525564655501", "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" } },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }, "serviceType": "Derecho Laboral"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Corporativo', href: '/especialidades/derecho-corporativo-cdmx', desc: 'Compliance laboral, contratos colectivos y gobierno corporativo.' },
+  { nombre: 'Derecho Penal', href: '/especialidades/derecho-penal-cdmx', desc: 'Defensa penal en casos de acoso, discriminación y delitos laborales.' },
+  { nombre: 'Derecho Migratorio', href: '/especialidades/derecho-migratorio-cdmx', desc: 'Permisos de trabajo y derechos laborales de trabajadores extranjeros.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+  <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Laboral'}]} /></div></section>
+
+  <!-- BRACKET 1: CONCEPTUAL — Declaración definicional -->
+  <section class="section-padding">
+    <div class="container"><div class="cluster-intro reveal">
+      <p class="section-tag">Derecho Laboral</p>
+      <h1>Abogados laboralistas en la Ciudad de México</h1>
+      <p class="lead">Abogados en CDMX es un despacho jurídico que ofrece representación laboral especializada a trabajadores y empresas en la Ciudad de México. Nuestro equipo de abogados laboralistas, encabezado por la <a href="/despacho-juridico/luciana-valle">Lic. Luciana Valle</a>, atiende desde despidos injustificados y cálculos de liquidación hasta conflictos colectivos y asesoría patronal. El derecho laboral es la rama del derecho social que regula las relaciones entre trabajadores y empleadores, estableciendo los derechos mínimos irrenunciables de los trabajadores, las obligaciones patronales y los mecanismos de resolución de conflictos laborales. En México, el marco normativo principal lo constituyen la Ley Federal del Trabajo, la Constitución Política (artículo 123) y las disposiciones del Centro Federal de Conciliación y Registro Laboral y los tribunales laborales locales.</p>
+      <p>Nuestro <a href="/equipo-legal-cdmx">equipo de abogados laboralistas</a> representa a trabajadores y empresas en conflictos laborales individuales y colectivos ante el Centro de Conciliación Laboral de la Ciudad de México (CEFRAMEL) y los tribunales laborales del Poder Judicial de la Ciudad de México. Asesoramos en la prevención de conflictos, la negociación de terminaciones laborales y el litigio cuando la vía conciliatoria no prospera. Los conflictos laborales en la Ciudad de México se concentran en zonas empresariales como Polanco, Santa Fe, Reforma, Insurgentes y la zona industrial de Azcapotzalco e Iztapalapa, donde nuestros clientes operan.</p>
+      <p>Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México — cerca del CEFRAMEL y los tribunales laborales del centro de la ciudad. Si fue despedido o tiene un conflicto laboral, llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com para agendar una <a href="/asesoria-inicial">consulta inicial</a>.</p>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL — Servicios específicos -->
+
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;"><p class="section-tag">Servicios</p><h2>Procedimientos que atendemos en materia laboral</h2></div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Despido injustificado</h3>
+          <p>Representamos a trabajadores que han sido despedidos sin causa justificada ante los tribunales laborales de la Ciudad de México. Conforme al artículo 48 de la Ley Federal del Trabajo, el trabajador despedido injustificadamente puede optar por la reinstalación en su puesto o por una indemnización constitucional equivalente a tres meses de salario, más 20 días de salario por cada año de servicios (indemnización de antigüedad), salarios vencidos, prima de antigüedad, vacaciones y aguinaldo proporcionales y demás prestaciones devengadas.</p>
+        </div>
+        <div class="service-block">
+          <h3>Liquidaciones y finiquitos</h3>
+          <p>Asesoramos a trabajadores y empresas en el cálculo y negociación de liquidaciones y finiquitos laborales. Verificamos que los montos ofrecidos correspondan a lo que marca la ley, incluyendo la indemnización constitucional, la prima de antigüedad, las partes proporcionales de vacaciones, prima vacacional y aguinaldo, y cualquier otra prestación pactada en el contrato individual o colectivo de trabajo. Cuando el pago ofrecido es inferior al legalmente procedente, representamos al trabajador ante las instancias competentes.</p>
+        </div>
+        <div class="service-block">
+          <h3>Demandas laborales</h3>
+          <p>Con la reforma laboral, el procedimiento para resolver conflictos laborales individuales en la Ciudad de México inicia con una audiencia de conciliación obligatoria ante el CEFRAMEL. Si no se logra un acuerdo, la demanda se presenta ante los tribunales laborales del Poder Judicial local. Representamos tanto a trabajadores como a empresas en todas las etapas del procedimiento: conciliación, demanda, contestación, ofrecimiento y desahogo de pruebas, alegatos y sentencia.</p>
+        </div>
+        <div class="service-block">
+          <h3>Acoso laboral y discriminación</h3>
+          <p>Asesoramos a víctimas de acoso laboral (mobbing), acoso sexual y discriminación en el trabajo. La Ley Federal del Trabajo prohíbe estas conductas y establece mecanismos de protección que incluyen la rescisión del contrato con indemnización a favor del trabajador, la denuncia ante la Procuraduría Federal de la Defensa del Trabajo (PROFEDET) y, en casos graves, la denuncia penal conforme al Código Penal aplicable. Nuestros abogados de <a href="/especialidades/derecho-penal-cdmx">derecho penal</a> intervienen cuando el acoso constituye un delito. Acompañamos al trabajador en la documentación de los hechos y la presentación de las acciones legales pertinentes.</p>
+        </div>
+        <div class="service-block">
+          <h3>Seguridad social</h3>
+          <p>Tramitamos reclamos ante el IMSS por incapacidades, pensiones por riesgo de trabajo, enfermedades profesionales, invalidez y retiro. Cuando el patrón omite registrar al trabajador ante el IMSS o lo registra con un salario inferior al real, ejercemos las acciones correspondientes para que el trabajador obtenga las prestaciones de seguridad social que le corresponden conforme a la Ley del Seguro Social. También asesoramos en la rectificación de semanas cotizadas ante el IMSS e INFONAVIT.</p>
+        </div>
+        <div class="service-block">
+          <h3>Asesoría patronal</h3>
+          <p>Asesoramos a empresas en el cumplimiento de sus obligaciones laborales para prevenir demandas y sanciones. Nuestros servicios patronales incluyen la elaboración de contratos individuales y colectivos, reglamentos internos de trabajo, políticas de recursos humanos, procedimientos de terminación conforme a la ley, atención a inspecciones de la Secretaría del Trabajo y Previsión Social, y representación ante el CEFRAMEL y los tribunales laborales cuando la empresa enfrenta demandas de trabajadores. Para una revisión integral de las obligaciones laborales de su empresa, consulte también nuestros servicios de <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container"><div class="faq-layout">
+      <div class="reveal"><p class="section-tag">Preguntas Frecuentes</p><h2>Dudas comunes sobre derecho laboral en CDMX</h2></div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary class="faq-item__q">¿Cuánto tiempo tengo para demandar por despido injustificado?</summary><div class="faq-item__a"><p>El trabajador tiene un plazo de 2 meses a partir del día siguiente al despido para ejercer la acción legal correspondiente. Este plazo es improrrogable y su vencimiento extingue el derecho a reclamar la indemnización. Por eso es fundamental buscar asesoría legal lo antes posible después del despido. En Abogados en CDMX evaluamos su caso el mismo día que nos contacta para no perder tiempo valioso. <a href="/contacto">Contáctenos de inmediato</a> si fue despedido recientemente.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Cuánto me corresponde de liquidación?</summary><div class="faq-item__a"><p>La liquidación por despido injustificado incluye: 3 meses de salario (indemnización constitucional), 20 días de salario por cada año trabajado (indemnización por antigüedad), 12 días de salario por cada año de antigüedad como prima de antigüedad, más las partes proporcionales de vacaciones, prima vacacional y aguinaldo. El cálculo se realiza sobre el salario diario integrado, que incluye todas las prestaciones ordinarias que recibía el trabajador. Nuestros abogados calculan el monto exacto conforme a su caso particular.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Es obligatoria la conciliación antes de demandar?</summary><div class="faq-item__a"><p>Sí. Desde la reforma laboral de 2019, es requisito obligatorio agotar la etapa de conciliación ante el Centro de Conciliación Laboral antes de presentar una demanda ante los tribunales laborales. La audiencia de conciliación se celebra ante el CEFRAMEL (Centro de Conciliación Laboral de la Ciudad de México) y tiene un plazo máximo de 45 días naturales. Si no se alcanza un acuerdo, el centro emite una constancia de no conciliación que habilita al trabajador para presentar la demanda judicial.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Mi patrón puede obligarme a firmar una renuncia?</summary><div class="faq-item__a"><p>No. La renuncia debe ser un acto voluntario del trabajador. Si un empleador presiona, amenaza o coacciona a un trabajador para que firme una renuncia, dicho documento puede ser impugnado ante los tribunales laborales por vicio del consentimiento. Si usted se encuentra en esta situación, es importante no firmar ningún documento bajo presión y buscar <a href="/asesoria-inicial">asesoría legal inmediata</a>. Cualquier renuncia obtenida mediante engaño o coacción puede ser declarada nula.</p></div></details>
+        <details class="faq-item"><summary class="faq-item__q">¿Qué pruebas necesito para una demanda laboral?</summary><div class="faq-item__a"><p>Las pruebas más relevantes en un juicio laboral incluyen: recibos de nómina, contrato de trabajo, credencial de la empresa, estados de cuenta bancarios donde se deposite el salario, constancias de horario, correos electrónicos, mensajes de texto o WhatsApp, testigos y cualquier documento que acredite la relación laboral y las condiciones de trabajo. En materia laboral, la carga de la prueba recae principalmente en el patrón, quien debe demostrar la fecha de ingreso, salario, horario, condiciones de trabajo y causa de rescisión.</p></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contar con abogados laboralistas en Roma Norte</h2>
+        <p>Abogados en CDMX se diferencia de otros despachos porque nuestra práctica laboral abarca tanto la defensa de trabajadores como la asesoría patronal. Este enfoque dual nos da una ventaja estratégica: conocemos los argumentos y tácticas de ambas partes. Cuando defendemos a un trabajador, anticipamos la estrategia que usará la empresa; cuando asesoramos a un patrón, sabemos exactamente qué reclamará el trabajador.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Doble perspectiva</h4><p>Al representar tanto a trabajadores como a empresas, conocemos las estrategias de ambas partes. Esta experiencia dual permite construir casos más sólidos y anticipar las acciones de la contraparte en cada etapa del procedimiento laboral.</p></div>
+        <div class="diff-card"><h4>Cercanía al CEFRAMEL</h4><p>Nuestras oficinas en Colonia Roma Norte nos ubican a minutos del CEFRAMEL y los tribunales laborales del centro de la Ciudad de México. Esta proximidad facilita las audiencias de conciliación y reduce los tiempos de traslado para nuestros clientes.</p></div>
+        <div class="diff-card"><h4>Cálculo exacto de prestaciones</h4><p>Antes de cualquier negociación o demanda, calculamos las prestaciones exactas que corresponden al trabajador conforme a la Ley Federal del Trabajo. Nuestros clientes saben con precisión el monto al que tienen derecho antes de tomar decisiones sobre su caso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO: ESPECIALIDADES RELACIONADAS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;"><p class="section-tag">Especialidades Relacionadas</p><h2>Áreas vinculadas al derecho laboral</h2>
+      <p>Los conflictos laborales frecuentemente involucran aspectos de otras ramas del derecho. Nuestro despacho ofrece un enfoque integral para resolver cada dimensión de su caso desde un solo equipo legal.</p></div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (<a href={h.href} class="related-card"><h4>{h.nombre}</h4><p>{h.desc}</p><span class="related-arrow">Ver especialidad →</span></a>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Recursos sobre derecho laboral en la Ciudad de México</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Consulte nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a>, donde respondemos las dudas más comunes sobre despidos injustificados, cálculo de liquidaciones y derechos del trabajador en la Ciudad de México. Para empresas que necesitan asesoría integral, le recomendamos también revisar nuestros servicios de <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>, donde combinamos la asesoría laboral patronal con el compliance empresarial.</p>
+        <p style="font-size:16px;line-height:1.8;">Visite <a href="/quienes-somos">quiénes somos</a> para conocer la experiencia del despacho en la defensa de trabajadores y empresas. Consulte <a href="/que-ofrecemos">qué ofrecemos</a> para ver todas nuestras áreas de práctica y nuestro <a href="/blog">blog jurídico</a> para artículos actualizados sobre temas laborales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Tiene un conflicto laboral que resolver?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados laboralistas defienden sus derechos ante los tribunales laborales de la Ciudad de México. Visítenos en Guanajuato 224, Roma Norte, o llame al 55 6465 5501.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; } .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; } .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; } .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; } .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; } .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; } .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

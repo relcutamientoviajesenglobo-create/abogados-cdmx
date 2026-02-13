@@ -1,0 +1,214 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados Penalistas en CDMX — Defensa Penal y Amparos | Abogados en CDMX';
+const description = 'Abogados penalistas en la Ciudad de México. Defensa penal, amparos, recursos de apelación, procedimiento abreviado y asesoría a víctimas del delito. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-penal-cdmx';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Derecho Penal en CDMX",
+  "description": "Defensa penal especializada: representación ante Ministerio Público, juzgados penales, juicios orales, amparos y recursos en la Ciudad de México.",
+  "provider": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" },
+  "serviceType": "Derecho Penal"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', desc: 'Divorcios, custodia, pensiones y violencia familiar.' },
+  { nombre: 'Derecho Laboral', href: '/especialidades/derecho-laboral-cdmx', desc: 'Despidos injustificados, liquidaciones y demandas patronales.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container">
+      <Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Penal'}]} />
+    </div>
+  </section>
+
+  <!-- BRACKET 1: CONCEPTUAL -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="cluster-intro reveal">
+        <p class="section-tag">Derecho Penal</p>
+        <h1>Abogados penalistas en la Ciudad de México</h1>
+        <p class="lead">El derecho penal es la rama del derecho público que regula las conductas consideradas delitos por el Estado, establece las penas aplicables y define los procedimientos para su investigación, persecución y sanción. En la Ciudad de México, los procedimientos penales se rigen por el Código Nacional de Procedimientos Penales, el Código Penal para el Distrito Federal y la Constitución Política de los Estados Unidos Mexicanos.</p>
+        <p>Abogados en CDMX es un despacho jurídico que cuenta con abogados penalistas especializados en la defensa penal y la asesoría a víctimas del delito ante las fiscalías, juzgados de control, tribunales de enjuiciamiento y tribunales de alzada de la Ciudad de México. Nuestro enfoque combina un conocimiento profundo del sistema penal acusatorio con una estrategia de litigio orientada a resultados concretos para cada cliente.</p>
+        <p>Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Si usted o un familiar enfrenta una situación penal urgente, comuníquese al 55 6465 5501.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;">
+        <p class="section-tag">Servicios</p>
+        <h2>Procedimientos que atendemos en materia penal</h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Defensa penal en juicio oral</h3>
+          <p>Representamos a personas imputadas en todas las etapas del proceso penal acusatorio: audiencia inicial, vinculación a proceso, etapa intermedia y juicio oral ante el tribunal de enjuiciamiento. Preparamos una teoría del caso sólida, identificamos los puntos débiles de la acusación y ejercemos una defensa técnica basada en el principio de presunción de inocencia y el debido proceso. Nuestra intervención abarca delitos del fuero común previstos en el Código Penal del Distrito Federal.</p>
+        </div>
+        <div class="service-block">
+          <h3>Amparos en materia penal</h3>
+          <p>Promovemos juicios de amparo indirecto y directo para impugnar actos de autoridad que vulneren los derechos fundamentales de nuestros clientes en el ámbito penal. El amparo indirecto procede contra órdenes de aprehensión, autos de vinculación a proceso y medidas cautelares excesivas. El amparo directo se interpone contra sentencias definitivas dictadas por los tribunales de enjuiciamiento. Tramitamos estos recursos ante los juzgados de distrito y tribunales colegiados de circuito en materia penal.</p>
+        </div>
+        <div class="service-block">
+          <h3>Recursos de apelación y revisión</h3>
+          <p>Interponemos recursos de apelación ante la Sala Penal del Tribunal Superior de Justicia de la Ciudad de México para impugnar resoluciones adversas dictadas por los juzgados de primera instancia. El recurso de apelación permite revisar errores de procedimiento, valoración indebida de pruebas y violaciones al debido proceso que hayan afectado la defensa del imputado o los derechos de la víctima.</p>
+        </div>
+        <div class="service-block">
+          <h3>Procedimiento abreviado y salidas alternas</h3>
+          <p>Negociamos acuerdos reparatorios, suspensiones condicionales del proceso y procedimientos abreviados cuando estas vías representan la mejor opción para el cliente. El procedimiento abreviado permite obtener una reducción significativa de la pena a cambio de la aceptación de los hechos. Evaluamos cada caso para determinar si una salida alterna es más conveniente que llevar el asunto a juicio oral.</p>
+        </div>
+        <div class="service-block">
+          <h3>Asesoría a víctimas del delito</h3>
+          <p>Representamos a víctimas y ofendidos del delito ante el Ministerio Público y los juzgados penales de la Ciudad de México. Asistimos en la presentación de denuncias y querellas, solicitamos medidas de protección, damos seguimiento a las carpetas de investigación y exigimos la reparación del daño conforme a las disposiciones de la Ley General de Víctimas y el Código Nacional de Procedimientos Penales.</p>
+        </div>
+        <div class="service-block">
+          <h3>Detenciones y flagrancia</h3>
+          <p>Brindamos atención inmediata cuando una persona ha sido detenida en flagrancia o por orden de aprehensión en la Ciudad de México. Verificamos que la detención se haya realizado conforme a los protocolos legales, asistimos al imputado desde la audiencia inicial de control de detención y solicitamos las medidas cautelares menos restrictivas posibles mientras se resuelve la situación jurídica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="reveal">
+          <p class="section-tag">Preguntas Frecuentes</p>
+          <h2>Dudas comunes sobre derecho penal en CDMX</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué hago si un familiar fue detenido?</summary>
+            <div class="faq-item__a"><p>Comuníquese de inmediato al 55 6465 5501 e indique la urgencia. Lo primero es verificar en qué agencia del Ministerio Público o centro de justicia se encuentra la persona detenida. Toda persona detenida tiene derecho a una llamada telefónica, a conocer los motivos de su detención, a guardar silencio y a contar con un abogado defensor desde el primer momento. Nuestros penalistas pueden asistir a la audiencia de control de detención, que debe realizarse dentro de las 48 horas siguientes a la puesta a disposición del juez de control.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuánto tiempo dura un proceso penal?</summary>
+            <div class="faq-item__a"><p>La duración depende de la complejidad del caso y la vía procesal elegida. Un procedimiento abreviado puede resolverse en semanas. Un proceso que llega a juicio oral ante el tribunal de enjuiciamiento suele durar entre 6 meses y 2 años, considerando la etapa de investigación complementaria, la etapa intermedia y el juicio. Si se interponen recursos de apelación o amparo, el tiempo total puede extenderse considerablemente.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuál es la diferencia entre amparo indirecto y directo?</summary>
+            <div class="faq-item__a"><p>El amparo indirecto se promueve contra actos de autoridad que no constituyen sentencias definitivas: órdenes de aprehensión, autos de vinculación a proceso, medidas cautelares o resoluciones interlocutorias. Se tramita ante un juzgado de distrito. El amparo directo se interpone exclusivamente contra sentencias definitivas o resoluciones que ponen fin al juicio. Se tramita ante un tribunal colegiado de circuito. Ambos tienen plazos específicos de interposición que es fundamental respetar.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Puedo cambiar de abogado durante un proceso penal?</summary>
+            <div class="faq-item__a"><p>Sí. El imputado tiene el derecho constitucional de designar libremente a su abogado defensor en cualquier etapa del proceso penal. Si no está satisfecho con su representación actual, puede revocar el nombramiento y designar a un nuevo defensor. El cambio no afecta el avance del procedimiento, aunque es importante que el nuevo abogado tenga tiempo suficiente para estudiar el expediente antes de la siguiente audiencia.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué delitos se persiguen por querella y cuáles de oficio?</summary>
+            <div class="faq-item__a"><p>Los delitos perseguibles por querella requieren que la víctima presente una denuncia formal para que el Ministerio Público inicie la investigación. Ejemplos incluyen daño en propiedad ajena, amenazas y algunos tipos de fraude. Los delitos perseguibles de oficio son investigados por la autoridad sin necesidad de querella — como homicidio, secuestro, violación y robo con violencia. Esta distinción es relevante porque los delitos perseguibles por querella admiten el perdón del ofendido como causa de extinción de la acción penal.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados penalistas en la Ciudad de México</h2>
+        <p>En materia penal, la rapidez y el conocimiento del sistema acusatorio son determinantes. Abogados en CDMX se especializa en el sistema de justicia penal de la Ciudad de México, con experiencia directa ante la Fiscalía General de Justicia capitalina, los juzgados de control, los tribunales de enjuiciamiento y los juzgados de ejecución penal. Nuestras oficinas en Guanajuato 224, Colonia Roma Norte, nos permiten responder con velocidad ante detenciones, audiencias iniciales y medidas cautelares.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Respuesta inmediata</h4><p>Las detenciones no esperan horario de oficina. Nuestros abogados penalistas atienden llamadas de emergencia para que el imputado cuente con defensa técnica desde el primer momento. La intervención temprana puede evitar la prisión preventiva y proteger los derechos procesales del cliente.</p></div>
+        <div class="diff-card"><h4>Dominio del sistema acusatorio</h4><p>El sistema penal acusatorio exige habilidades de litigación oral que no todos los abogados dominan. Nuestro equipo tiene experiencia en audiencias orales, técnicas de interrogatorio y contrainterrogatorio, teoría del caso y alegatos de apertura y clausura ante tribunales de la Ciudad de México.</p></div>
+        <div class="diff-card"><h4>Estrategia integral</h4><p>Los asuntos penales frecuentemente requieren acciones en <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a> (violencia familiar), <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> (reparación del daño) y <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> (despido por proceso penal). Nuestro despacho atiende todas las dimensiones del caso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO: ESPECIALIDADES RELACIONADAS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;">
+        <p class="section-tag">Especialidades Relacionadas</p>
+        <h2>Áreas jurídicas vinculadas al derecho penal</h2>
+        <p>Los asuntos penales se intersectan con otras ramas del derecho. Nuestro despacho en Roma Norte resuelve cada dimensión jurídica de su caso.</p>
+      </div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (
+          <a href={h.href} class="related-card">
+            <h4>{h.nombre}</h4>
+            <p>{h.desc}</p>
+            <span class="related-arrow">Ver especialidad →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Recursos sobre derecho penal en la Ciudad de México</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Si usted o un familiar enfrenta una situación penal, le recomendamos leer nuestra <a href="/blog/derechos-detenido-cdmx">guía de derechos del detenido en CDMX</a>, donde explicamos paso a paso qué hacer ante una detención, los plazos de retención y cuándo solicitar un abogado defensor. También puede consultar la sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> sobre derecho penal para resolver dudas comunes sobre el sistema acusatorio y los procedimientos vigentes.</p>
+        <p style="font-size:16px;line-height:1.8;">Para conocer al equipo que atenderá su caso, visite <a href="/quienes-somos">quiénes somos</a> y consulte los perfiles de nuestros abogados. Si necesita una visión general de todas las materias que atendemos, visite <a href="/que-ofrecemos">qué ofrecemos</a>. Nuestro <a href="/blog">blog jurídico</a> publica regularmente artículos sobre temas penales relevantes para la Ciudad de México.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Necesita un abogado penalista de confianza?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros penalistas evalúan su caso con urgencia y definen la estrategia legal más efectiva para proteger su libertad y sus derechos.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; }
+  .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; }
+  .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; }
+  .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; }
+  .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

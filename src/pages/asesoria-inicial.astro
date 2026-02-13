@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Asesoría Legal Inicial — Consulta Jurídica en CDMX | Abogados en CDMX';
+const description = 'Solicite una asesoría legal inicial con Abogados en CDMX. Evaluamos su caso, le explicamos sus opciones y definimos la mejor estrategia jurídica. Despacho en Colonia Roma Norte, CDMX.';
+const canonical = 'https://abogadosencdmx.com/asesoria-inicial';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Asesoría Legal Inicial",
+  "description": "Consulta jurídica inicial donde evaluamos su caso, explicamos las opciones legales disponibles y definimos la estrategia más conveniente.",
+  "url": canonical,
+  "provider": {
+    "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Asesoría Inicial'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Primer paso</p>
+        <h1 class="text-white">Asesoría legal inicial</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">La asesoría inicial es el punto de partida para resolver cualquier situación legal. En esta consulta, un abogado especialista de Abogados en CDMX escucha su caso, evalúa su situación jurídica, le explica sus opciones reales y define con usted la estrategia más conveniente. No hay compromiso de contratación posterior.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Intent — ¿Qué incluye? -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal">
+          <p class="section-tag">¿Qué incluye la asesoría?</p>
+          <h2>Una consulta diseñada para darle claridad</h2>
+          <p>Durante la asesoría inicial, el abogado asignado a su caso realizará una evaluación completa de su situación legal. Le explicará cuáles son sus derechos, qué opciones tiene disponibles, cuáles son los posibles escenarios y qué pasos se recomiendan seguir.</p>
+          <p>La consulta incluye análisis de su caso particular, revisión de documentos relevantes que usted traiga, explicación clara de los procedimientos legales aplicables, estimación de tiempos y costos, y una recomendación honesta sobre si conviene o no proceder legalmente.</p>
+          <p>Nos reunimos en nuestras oficinas de Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. También ofrecemos consultas por videollamada para quienes no puedan acudir presencialmente. Para agendar, llame al 55 6465 5501 o use el formulario de esta página.</p>
+        </div>
+        <div class="form-card reveal">
+          <h3 style="font-size:24px; margin-bottom:20px;">Solicite su asesoría</h3>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Su nombre" />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required placeholder="su@correo.com" />
+            </div>
+            <div class="form-group">
+              <label for="especialidad">Área legal de interés</label>
+              <select id="especialidad" name="especialidad" required>
+                <option value="">Seleccione una opción</option>
+                <option value="familiar">Derecho Familiar</option>
+                <option value="penal">Derecho Penal</option>
+                <option value="civil">Derecho Civil</option>
+                <option value="corporativo">Derecho Corporativo</option>
+                <option value="inmobiliario">Derecho Inmobiliario</option>
+                <option value="migratorio">Derecho Migratorio</option>
+                <option value="laboral">Derecho Laboral</option>
+                <option value="otro">Otro / No estoy seguro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Describa brevemente su caso</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntenos su situación..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Solicitar asesoría inicial →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Conceptual — Áreas que cubrimos + NAP + internal links -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p class="section-tag">Áreas de Consulta</p>
+        <h2>Asesoría jurídica en siete especialidades del derecho</h2>
+        <p style="font-size:18px;line-height:1.7;margin-bottom:20px;">Abogados en CDMX es un despacho jurídico que ofrece asesoría legal inicial en todas las áreas que atendemos. La consulta inicial no es una conversación genérica — es una evaluación técnica de su caso realizada por el abogado especialista en la materia correspondiente.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Ofrecemos asesoría inicial en <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a> (divorcios, custodia, pensiones), <a href="/especialidades/derecho-penal-cdmx">derecho penal</a> (defensa penal, carpetas de investigación), <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> (contratos, daños, sucesiones), <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a> (constitución de empresas, compliance), <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a> (compraventa, arrendamiento, regularización), <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> (despidos, liquidaciones, demandas) y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a> (visas, residencia, naturalización).</p>
+        <p style="font-size:16px;line-height:1.8;">La asesoría se realiza de forma presencial en nuestras oficinas de Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México — o por videollamada para clientes fuera de la ciudad. Para agendar su consulta, llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com. También puede consultar nuestra página de <a href="/contacto">contacto</a> para más opciones de comunicación o conocer a nuestro <a href="/equipo-legal-cdmx">equipo de abogados</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Lo que necesita saber antes de su consulta</h2>
+      </div>
+      <div class="faq-list reveal" style="max-width:800px; margin:0 auto;">
+        <details class="faq-item">
+          <summary class="faq-item__q">¿La asesoría inicial tiene algún costo?</summary>
+          <div class="faq-item__a"><p>Sí, la asesoría inicial tiene un costo accesible que varía según el área legal. Este costo se le comunica al momento de agendar su cita. Si decide contratar nuestros servicios, el monto de la asesoría se descuenta de los honorarios totales.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">¿Cuánto dura la consulta?</summary>
+          <div class="faq-item__a"><p>La asesoría inicial dura aproximadamente 45 a 60 minutos, dependiendo de la complejidad de su caso. El tiempo es suficiente para evaluar su situación, resolver sus dudas y definir los próximos pasos.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">¿Qué documentos debo llevar?</summary>
+          <div class="faq-item__a"><p>Le recomendamos traer toda la documentación relacionada con su caso: contratos, actas, oficios, notificaciones o cualquier documento legal que tenga. Si no cuenta con documentos, no se preocupe — el abogado le indicará qué necesitará durante la consulta.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">¿La consulta me obliga a contratar el servicio?</summary>
+          <div class="faq-item__a"><p>No. La asesoría inicial es informativa y sin compromiso. Su objetivo es que usted entienda su situación legal y las opciones que tiene. La decisión de proceder con nuestro despacho es completamente suya.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Si desea prepararse antes de su consulta, le recomendamos visitar nuestro <a href="/blog">blog jurídico</a> para leer artículos sobre su tema específico, o consultar las <a href="/preguntas-frecuentes">preguntas frecuentes</a> donde respondemos las dudas más comunes de nuestros clientes. Para conocer la trayectoria del despacho, visite <a href="/quienes-somos">quiénes somos</a> y consulte <a href="/que-ofrecemos">qué ofrecemos</a> para ver todas nuestras áreas de práctica.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .hero-pillar { padding: 0 0 80px; }
+  .hero-pillar__content { max-width: 856px; padding-top: 50px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .form-card {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    padding: 40px; position: sticky; top: 100px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--color-primary); }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 14px 16px; border: 1px solid var(--color-border);
+    font-family: var(--font-body); font-size: 15px; background: var(--color-light);
+    transition: border-color var(--transition);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--color-secondary);
+  }
+  .form-group textarea { resize: vertical; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q {
+    font-family: var(--font-heading); font-size: 20px; font-weight: 400;
+    color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+
+  @media (max-width: 991px) {
+    .two-col { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+  }
+</style>

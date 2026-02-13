@@ -1,0 +1,240 @@
+---
+/**
+ * Header v2 — Abogados en CDMX
+ * Top bar (horario + email + tel) + Glassmorphism nav + Isotipo + Mobile overlay
+ */
+---
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Lunes a viernes · 9:00 – 18:00
+      </span>
+      <span class="topbar__divider"></span>
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+      </span>
+      <span class="topbar__divider"></span>
+      <span class="topbar__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Colonia Roma Norte, CDMX
+      </span>
+    </div>
+    <div class="topbar__right">
+      <a href="tel:+525564655501" class="topbar__cta">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863q-2.5-2.5-3.862-5.55T3 4.05q0-.45.3-.75T4.05 3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3z"/></svg>
+        55 6465 5501
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HEADER — GLASSMORPHISM ═══ -->
+<header class="header" id="mainHeader">
+  <div class="container header__inner">
+    <a href="/" class="header__logo" aria-label="Abogados en CDMX — Inicio">
+      <div class="header__isotipo">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2L4 8v4h24V8L16 2zM6 14v10h4V14H6zm8 0v10h4V14h-4zm8 0v10h4V14h-4zM2 26v4h28v-4H2z" fill="#a97b54"/></svg>
+      </div>
+      <div class="header__brand">
+        <span class="header__brand-name">Abogados en CDMX</span>
+        <span class="header__brand-sub">Despacho Jurídico</span>
+      </div>
+    </a>
+    <nav class="header__nav" aria-label="Navegación principal">
+      <ul class="header__menu">
+        <li><a href="/que-ofrecemos" class="header__link">Servicios</a></li>
+        <li><a href="/especialidades" class="header__link">Especialidades</a></li>
+        <li><a href="/quienes-somos" class="header__link">Nosotros</a></li>
+        <li><a href="/equipo-legal-cdmx" class="header__link">Equipo</a></li>
+        <li><a href="/blog" class="header__link">Blog</a></li>
+        <li><a href="/contacto" class="header__link">Contacto</a></li>
+      </ul>
+      <a href="/asesoria-inicial" class="header__cta-btn">Asesoría inicial →</a>
+    </nav>
+    <button class="header__burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ MOBILE OVERLAY ═══ -->
+<div class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay__inner">
+    <ul class="nav-overlay__menu">
+      <li><a href="/" class="nav-overlay__link">Inicio <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/que-ofrecemos" class="nav-overlay__link">Servicios <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/especialidades" class="nav-overlay__link">Especialidades <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/quienes-somos" class="nav-overlay__link">Nosotros <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/equipo-legal-cdmx" class="nav-overlay__link">Equipo Legal <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/blog" class="nav-overlay__link">Blog <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="/contacto" class="nav-overlay__link">Contacto <span class="nav-overlay__arrow" aria-hidden="true">→</span></a></li>
+    </ul>
+    <a href="/asesoria-inicial" class="btn-primary-wrap" style="margin-top:32px;width:100%;justify-content:center;">
+      Asesoría inicial →
+    </a>
+    <div class="nav-overlay__contact">
+      <p>Tel: <a href="tel:+525564655501">55 6465 5501</a></p>
+      <p>contacto@abogadosencdmx.com</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-100%); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══ TOP BAR ═══ */
+  .topbar {
+    background: var(--color-primary);
+    height: var(--topbar-h, 40px);
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+    animation: slideDown .6s var(--ease) both;
+  }
+  .topbar__inner { display: flex; justify-content: space-between; align-items: center; }
+  .topbar__left, .topbar__right { display: flex; align-items: center; gap: 24px; }
+  .topbar__item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; color: rgba(255,255,255,.55); font-weight: 500;
+  }
+  .topbar__item svg { width: 14px; height: 14px; opacity: .6; flex-shrink: 0; }
+  .topbar__item a { color: rgba(255,255,255,.7); transition: color var(--transition); }
+  .topbar__item a:hover { color: var(--color-secondary); }
+  .topbar__divider { width: 1px; height: 16px; background: rgba(255,255,255,.12); }
+  .topbar__cta {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--color-secondary); transition: color var(--transition);
+  }
+  .topbar__cta:hover { color: #c99b6d; }
+  .topbar__cta svg { width: 16px; height: 16px; }
+
+  /* ═══ HEADER ═══ */
+  .header {
+    position: fixed; top: var(--topbar-h, 40px); left: 0; right: 0; z-index: 100;
+    height: var(--header-h, 80px);
+    background: rgba(0, 29, 61, 0.15);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transition: all .4s var(--ease);
+    animation: slideDown .6s var(--ease) .1s both;
+  }
+  .header.scrolled {
+    background: rgba(0, 29, 61, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0,0,0,.2);
+  }
+  .header__inner {
+    display: flex; align-items: center; justify-content: space-between; height: 100%;
+  }
+
+  /* ═══ LOGO ═══ */
+  .header__logo { display: flex; align-items: center; gap: 12px; }
+  .header__isotipo {
+    width: 42px; height: 42px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1.5px solid var(--color-secondary);
+    padding: 6px; transition: all var(--transition);
+  }
+  .header__logo:hover .header__isotipo { background: var(--color-secondary); }
+  .header__isotipo svg { width: 24px; height: 24px; }
+  .header__logo:hover .header__isotipo svg path { fill: var(--color-white); }
+  .header__brand { display: flex; flex-direction: column; line-height: 1.1; }
+  .header__brand-name { font-family: var(--font-heading); font-size: 20px; color: var(--color-white); }
+  .header__brand-sub { font-size: 10px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; }
+
+  /* ═══ NAV ═══ */
+  .header__nav { display: flex; align-items: center; gap: 32px; }
+  .header__menu { display: flex; gap: 28px; }
+  .header__link {
+    color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500;
+    transition: color var(--transition); position: relative;
+  }
+  .header__link::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
+    height: 2px; background: var(--color-secondary); transition: width var(--transition);
+  }
+  .header__link:hover { color: var(--color-white); }
+  .header__link:hover::after { width: 100%; }
+  .header__cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--color-secondary); color: var(--color-white);
+    padding: 12px 24px; font-weight: 600; font-size: 14px;
+    font-family: var(--font-body); transition: all var(--transition);
+  }
+  .header__cta-btn:hover { background: #8e6543; transform: translateY(-1px); }
+
+  /* ═══ BURGER ═══ */
+  .header__burger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 32px; height: 24px; position: relative; z-index: 200;
+  }
+  .header__burger span {
+    display: block; width: 100%; height: 2px; background: var(--color-white);
+    position: absolute; left: 0; transition: all 0.3s ease;
+  }
+  .header__burger span:nth-child(1) { top: 0; }
+  .header__burger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+  .header__burger span:nth-child(3) { bottom: 0; }
+  .header__burger.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+  .header__burger.active span:nth-child(2) { opacity: 0; }
+  .header__burger.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+  /* ═══ OVERLAY ═══ */
+  .nav-overlay {
+    position: fixed; inset: 0; z-index: 150;
+    background: var(--color-primary);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease);
+  }
+  .nav-overlay.active { opacity: 1; pointer-events: all; }
+  .nav-overlay__inner { text-align: center; padding: 24px; width: 100%; max-width: 400px; }
+  .nav-overlay__menu { margin-bottom: 16px; }
+  .nav-overlay__link {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--font-heading); font-size: 28px; color: var(--color-white);
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color var(--transition);
+  }
+  .nav-overlay__link:hover { color: var(--color-secondary); }
+  .nav-overlay__arrow { font-size: 20px; color: var(--color-secondary); }
+  .nav-overlay__contact { margin-top: 32px; color: rgba(255,255,255,0.6); font-size: 14px; }
+  @media (max-width: 479px) {
+    .nav-overlay__link { font-size: 22px; padding: 12px 0; }
+    .nav-overlay__arrow { font-size: 16px; }
+    .nav-overlay__inner { padding: 16px; }
+  }
+  .nav-overlay__contact a { color: var(--color-secondary); }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 991px) {
+    .topbar { display: none; }
+    .header { top: 0; background: rgba(0, 29, 61, 0.85); }
+    .header__nav { display: none; }
+    .header__burger { display: block; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const burger = document.querySelector('.header__burger');
+  const overlay = document.querySelector('.nav-overlay');
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    overlay?.classList.toggle('active');
+    burger.setAttribute('aria-expanded', burger.classList.contains('active').toString());
+    overlay?.setAttribute('aria-hidden', (!overlay.classList.contains('active')).toString());
+    document.body.style.overflow = overlay?.classList.contains('active') ? 'hidden' : '';
+  });
+</script>

@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Servicios Legales en CDMX — Qué Ofrecemos | Abogados en CDMX';
+const description = 'Conozca los servicios legales de Abogados en CDMX: asesoría jurídica, representación en tribunales, mediación, contratos, auditoría legal y defensa penal en la Ciudad de México.';
+const canonical = 'https://abogadosencdmx.com/que-ofrecemos';
+
+const services = [
+  { title: 'Asesoría Jurídica', icon: '📋', desc: 'Evaluamos su situación legal, le explicamos sus derechos y obligaciones, y le presentamos las opciones disponibles para resolver su caso de la manera más favorable.' },
+  { title: 'Representación en Tribunales', icon: '🏛️', desc: 'Llevamos su caso ante juzgados civiles, penales, familiares y laborales de la Ciudad de México. Preparamos la estrategia procesal, presentamos las pruebas y defendemos sus intereses en cada audiencia.' },
+  { title: 'Mediación y Negociación', icon: '🤝', desc: 'Antes de llegar a un litigio, exploramos soluciones negociadas que resulten más rápidas y menos costosas. La mediación es especialmente efectiva en conflictos familiares, laborales y mercantiles.' },
+  { title: 'Elaboración de Contratos', icon: '📝', desc: 'Redactamos y revisamos contratos civiles, mercantiles, laborales e inmobiliarios que protejan sus intereses. Cada cláusula se diseña para prevenir conflictos futuros.' },
+  { title: 'Auditoría Legal Corporativa', icon: '🔍', desc: 'Revisamos la situación jurídica integral de su empresa: contratos vigentes, cumplimiento normativo, estructura societaria y posibles contingencias legales.' },
+  { title: 'Defensa Penal', icon: '🛡️', desc: 'Actuamos con urgencia ante detenciones, órdenes de aprehensión o carpetas de investigación. Garantizamos el respeto a sus derechos constitucionales en cada etapa del proceso penal.' },
+];
+
+const steps = [
+  { num: '01', title: 'Consulta inicial', desc: 'Escuchamos su caso, evaluamos la situación legal y le explicamos las opciones disponibles con total transparencia.' },
+  { num: '02', title: 'Estrategia jurídica', desc: 'Diseñamos una estrategia personalizada con objetivos claros, tiempos estimados y costos definidos desde el inicio.' },
+  { num: '03', title: 'Ejecución y seguimiento', desc: 'Ejecutamos la estrategia ante las autoridades competentes y le mantenemos informado del avance de su caso en todo momento.' },
+  { num: '04', title: 'Resolución', desc: 'Trabajamos hasta obtener el mejor resultado posible para su caso, ya sea por vía judicial, negociación o acuerdo.' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Servicios Legales — Abogados en CDMX",
+  "description": description,
+  "url": canonical,
+  "provider": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "postalCode": "06700", "addressCountry": "MX" }
+  }
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Servicios'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Lo que hacemos por usted</p>
+        <h1 class="text-white">Servicios legales de Abogados en CDMX</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Abogados en CDMX ofrece seis servicios jurídicos fundamentales que cubren desde la consulta inicial hasta la resolución completa de su caso. Cada servicio está respaldado por abogados especializados en su materia y por un proceso de trabajo estructurado que garantiza claridad, comunicación constante y resultados medibles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Conceptual — 6 servicios -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Nuestros servicios</p>
+        <h2>Soluciones legales completas en un solo despacho</h2>
+        <p class="max-w-746">Abogados en CDMX es un despacho jurídico integral que concentra siete áreas de especialidad bajo un mismo techo. Esta estructura permite resolver asuntos que involucran múltiples ramas del derecho sin que el cliente tenga que contratar a varios abogados independientes.</p>
+      </div>
+      <div class="services-grid">
+        {services.map((s, i) => (
+          <div class="service-card reveal" style={`--delay:${i * 0.08}s`}>
+            <span class="service-card__icon" aria-hidden="true">{s.icon}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Intent — Áreas de especialización con links -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p class="section-tag">Nuestras Especialidades</p>
+        <h2>Siete áreas de práctica jurídica en la Ciudad de México</h2>
+        <p style="font-size:18px;line-height:1.7;margin-bottom:24px;">Cada uno de nuestros servicios se aplica dentro de las siete áreas de especialidad que nuestro despacho domina. Esta combinación de servicios transversales y especialidades verticales nos permite ofrecer soluciones completas independientemente de la complejidad del caso.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">En <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a>, atendemos divorcios, custodia, pensiones alimenticias y sucesiones ante los juzgados familiares de la Ciudad de México. En <a href="/especialidades/derecho-penal-cdmx">derecho penal</a>, ejercemos la defensa técnica en carpetas de investigación, audiencias de control y juicios orales ante la Fiscalía General de Justicia y los tribunales penales capitalinos. En <a href="/especialidades/derecho-civil-cdmx">derecho civil</a>, litigamos asuntos contractuales, patrimoniales y de responsabilidad civil ante los juzgados civiles.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Nuestro equipo de <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a> asesora a empresas en constitución de sociedades, gobierno corporativo, fusiones, adquisiciones y cumplimiento regulatorio. En <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a>, protegemos las operaciones de compraventa, arrendamiento y regularización de propiedades en la Ciudad de México. Nuestros <a href="/especialidades/derecho-laboral-cdmx">abogados laboralistas</a> representan a trabajadores y empresas ante el CEFRAMEL y los tribunales laborales. Y en <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a>, gestionamos visas, residencias y naturalizaciones ante el Instituto Nacional de Migración.</p>
+        <p style="font-size:16px;line-height:1.8;">Todas estas especialidades se atienden desde nuestras oficinas en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Para conocer a los abogados responsables de cada área, visite nuestra página de <a href="/equipo-legal-cdmx">equipo legal</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Operational — Proceso 4 pasos -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Nuestro proceso</p>
+        <h2>Cómo trabajamos su caso en 4 pasos</h2>
+        <p class="max-w-746">Desde la primera consulta hasta la resolución, seguimos un proceso estructurado que le permite conocer en todo momento el estado de su asunto legal, los próximos pasos y los resultados esperados.</p>
+      </div>
+      <div class="steps-grid">
+        {steps.map((s, i) => (
+          <div class="step-card reveal" style={`--delay:${i * 0.1}s`}>
+            <span class="step-card__num">{s.num}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="cta-section section-padding" style="background-color: var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal">
+        <h2 class="text-white">¿Listo para resolver su situación legal?</h2>
+        <p class="text-white-soft max-w-694 mb-40">El primer paso es una conversación. Cuéntenos su caso y le diremos exactamente cómo podemos ayudarle.</p>
+        <div class="btn-group btn-group--center">
+          <a href="/asesoria-inicial" class="btn-primary-wrap"><span class="btn-primary">Agendar asesoría inicial →</span></a>
+          <a href="/contacto" class="btn-secondary-wrap"><span class="btn-secondary">Contactar al despacho</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .hero-pillar { padding: 0 0 80px; }
+  .hero-pillar__content { max-width: 856px; padding-top: 50px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    padding: 40px 32px; transition: transform var(--transition), box-shadow var(--transition);
+    transition-delay: var(--delay, 0s);
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,29,61,0.08); }
+  .service-card__icon { font-size: 32px; display: block; margin-bottom: 16px; }
+  .service-card h3 { font-size: 22px; margin-bottom: 12px; }
+  .service-card p { font-size: 15px; line-height: 1.7; margin: 0; }
+
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .step-card { text-align: center; transition-delay: var(--delay, 0s); }
+  .step-card__num {
+    display: block; font-family: var(--font-heading); font-size: 48px;
+    color: var(--color-secondary); margin-bottom: 16px; line-height: 1;
+  }
+  .step-card h3 { font-size: 20px; margin-bottom: 12px; }
+  .step-card p { font-size: 15px; line-height: 1.7; margin: 0; }
+
+  .cta-section h2 { margin-bottom: 16px; }
+
+  @media (max-width: 991px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 479px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+</style>

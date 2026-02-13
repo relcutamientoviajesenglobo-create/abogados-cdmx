@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados de Derecho Civil en CDMX — Contratos, Daños y Sucesiones | Abogados en CDMX';
+const description = 'Abogados civilistas en la Ciudad de México. Contratos, responsabilidad civil, daños y perjuicios, sucesiones testamentarias e intestamentarias. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-civil-cdmx';
+
+const schema = {
+  "@context": "https://schema.org", "@type": "Service",
+  "name": "Derecho Civil en CDMX",
+  "description": "Representación jurídica en derecho civil: contratos, obligaciones, responsabilidad civil, sucesiones y procedimientos civiles en la Ciudad de México.",
+  "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com", "telephone": "+525564655501", "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" } },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" }, "serviceType": "Derecho Civil"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', desc: 'Divorcios, custodia, pensiones y sucesiones familiares.' },
+  { nombre: 'Derecho Inmobiliario', href: '/especialidades/derecho-inmobiliario-cdmx', desc: 'Compraventa, arrendamiento y regularización de inmuebles.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Civil'}]} /></div>
+  </section>
+
+  <!-- BRACKET 1: CONCEPTUAL -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="cluster-intro reveal">
+        <p class="section-tag">Derecho Civil</p>
+        <h1>Abogados de derecho civil en la Ciudad de México</h1>
+        <p class="lead">El derecho civil es la rama del derecho privado que regula las relaciones jurídicas entre particulares, incluyendo las obligaciones contractuales, la responsabilidad civil, los derechos reales sobre bienes, las sucesiones y el estado civil de las personas. En la Ciudad de México, la materia civil se rige por el Código Civil para el Distrito Federal y el Código Nacional de Procedimientos Civiles y Familiares vigente desde 2026.</p>
+        <p>Abogados en CDMX es un despacho jurídico que ofrece representación integral en derecho civil para personas físicas y morales que requieren resolver controversias patrimoniales, cumplir o exigir obligaciones contractuales, reclamar daños y perjuicios o tramitar procedimientos sucesorios. Nuestros abogados civilistas diseñan estrategias procesales precisas para cada caso, priorizando siempre la resolución más eficiente y menos costosa para el cliente.</p>
+        <p>Nuestras oficinas se encuentran en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 horas. Llame al 55 6465 5501 o escriba a contacto@abogadosencdmx.com para agendar su consulta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;">
+        <p class="section-tag">Servicios</p>
+        <h2>Procedimientos que atendemos en materia civil</h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Contratos y obligaciones</h3>
+          <p>Redactamos, revisamos y negociamos contratos civiles de toda naturaleza: compraventa de bienes muebles e inmuebles, prestación de servicios, arrendamiento, comodato, mutuo, donación y contratos innominados. Cuando una de las partes incumple sus obligaciones contractuales, ejercemos las acciones de cumplimiento forzoso o rescisión del contrato con indemnización por daños y perjuicios ante los juzgados civiles de la Ciudad de México.</p>
+        </div>
+        <div class="service-block">
+          <h3>Responsabilidad civil y daños</h3>
+          <p>Representamos a personas afectadas por daños materiales, morales o patrimoniales causados por la conducta negligente o dolosa de terceros. La responsabilidad civil en la Ciudad de México puede ser contractual — derivada del incumplimiento de un contrato — o extracontractual — originada por hechos ilícitos. Cuantificamos los daños conforme a criterios jurisprudenciales y exigimos la reparación integral ante los tribunales competentes.</p>
+        </div>
+        <div class="service-block">
+          <h3>Sucesiones testamentarias</h3>
+          <p>Tramitamos juicios sucesorios testamentarios ante los juzgados civiles de la Ciudad de México. Verificamos la validez formal del testamento, gestionamos la apertura de la sucesión, la designación y protesta del albacea, el inventario y avalúo de los bienes hereditarios, la rendición de cuentas y la partición y adjudicación a los herederos conforme a la voluntad del testador.</p>
+        </div>
+        <div class="service-block">
+          <h3>Sucesiones intestamentarias</h3>
+          <p>Cuando una persona fallece sin haber otorgado testamento, tramitamos la sucesión intestamentaria para determinar los herederos legítimos conforme al orden de prelación establecido en el Código Civil del Distrito Federal: descendientes, cónyuge o concubino supérstite, ascendientes, colaterales y, en último caso, el gobierno de la Ciudad de México. Gestionamos todo el procedimiento hasta la adjudicación de los bienes.</p>
+        </div>
+        <div class="service-block">
+          <h3>Juicios ejecutivos y cobro</h3>
+          <p>Iniciamos juicios ejecutivos mercantiles y civiles para el cobro de pagarés, cheques, letras de cambio y otros títulos de crédito. También ejercemos acciones de cobro derivadas de contratos de préstamo, reconocimientos de adeudo y cualquier documento que contenga una obligación líquida, cierta y exigible. Ejecutamos las sentencias mediante embargo y remate de bienes del deudor.</p>
+        </div>
+        <div class="service-block">
+          <h3>Prescripción y usucapión</h3>
+          <p>Tramitamos juicios de prescripción adquisitiva — también llamada usucapión — ante los juzgados civiles de la Ciudad de México. Este procedimiento permite a una persona que ha poseído un inmueble de manera pacífica, continua, pública y de buena fe durante el plazo que marca la ley, obtener el reconocimiento judicial de su derecho de propiedad e inscribirlo en el Registro Público de la Propiedad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="reveal">
+          <p class="section-tag">Preguntas Frecuentes</p>
+          <h2>Dudas comunes sobre derecho civil en CDMX</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuánto tiempo tengo para demandar por incumplimiento de contrato?</summary>
+            <div class="faq-item__a"><p>El plazo de prescripción para ejercer acciones derivadas de un contrato civil en la Ciudad de México es generalmente de 10 años, contados a partir de la fecha en que la obligación se hizo exigible. Sin embargo, existen plazos especiales para ciertos tipos de contratos — por ejemplo, las acciones derivadas de vicios ocultos en una compraventa prescriben en 6 meses. Es fundamental consultar a un abogado para determinar el plazo aplicable a su caso específico.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué es la responsabilidad civil extracontractual?</summary>
+            <div class="faq-item__a"><p>La responsabilidad civil extracontractual surge cuando una persona causa un daño a otra sin que exista un contrato entre ambas. El ejemplo más común son los accidentes vehiculares, pero también aplica a daños causados por animales, construcciones defectuosas, negligencia profesional o cualquier hecho ilícito que genere un perjuicio cuantificable. La persona afectada tiene derecho a exigir la reparación integral del daño, que puede incluir daño material, daño moral y lucro cesante.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué diferencia hay entre sucesión testamentaria e intestamentaria?</summary>
+            <div class="faq-item__a"><p>La sucesión testamentaria se abre cuando el fallecido dejó un testamento válido que indica cómo deben distribuirse sus bienes. La sucesión intestamentaria procede cuando no existe testamento, cuando el testamento es declarado nulo o cuando el testamento no abarca todos los bienes del fallecido. En la sucesión intestamentaria, la ley determina quiénes son los herederos y en qué proporción les corresponde heredar, siguiendo el orden de parentesco.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Se puede reclamar daño moral en la Ciudad de México?</summary>
+            <div class="faq-item__a"><p>Sí. El Código Civil del Distrito Federal reconoce el derecho a la reparación del daño moral cuando una persona sufre una afectación a sus sentimientos, afectos, creencias, decoro, honor, reputación, vida privada o aspecto físico como consecuencia de un acto ilícito. El monto de la indemnización por daño moral lo determina el juez considerando los derechos lesionados, el grado de responsabilidad del causante, la situación económica de ambas partes y las circunstancias del caso.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados civilistas en la Ciudad de México</h2>
+        <p>Abogados en CDMX concentra su práctica civil en los juzgados de la Ciudad de México. A diferencia de despachos que atienden asuntos en múltiples estados, nuestra especialización en la capital nos permite conocer los criterios de cada juzgado civil, los tiempos reales de cada procedimiento y las particularidades del Código Civil del Distrito Federal frente a los códigos de otras entidades. Nuestras oficinas en Guanajuato 224, Colonia Roma Norte, nos sitúan cerca del Tribunal Superior de Justicia y los juzgados civiles de la Ciudad de México.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Especialización capitalina</h4><p>Litigamos exclusivamente en los juzgados civiles de la Ciudad de México. Conocemos los criterios de cada juzgado, los tiempos promedio de resolución y las prácticas locales que hacen la diferencia entre ganar y perder un caso civil en la capital.</p></div>
+        <div class="diff-card"><h4>Prevención antes que litigio</h4><p>Nuestro enfoque privilegia la redacción de contratos sólidos y la prevención de conflictos. Revisamos cada documento antes de que el cliente firme para eliminar riesgos. Cuando el litigio es inevitable, nuestro <a href="/equipo-legal-cdmx">equipo de abogados litigantes</a> actúa con la misma rigurosidad.</p></div>
+        <div class="diff-card"><h4>Enfoque patrimonial integral</h4><p>Los asuntos civiles se cruzan con <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a>, <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a> y <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>. Nuestro despacho atiende todas estas dimensiones para resolver la totalidad del asunto, no solo una parte.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;">
+        <p class="section-tag">Especialidades Relacionadas</p>
+        <h2>Áreas jurídicas vinculadas al derecho civil</h2>
+        <p>El derecho civil se conecta estrechamente con otras ramas del derecho que nuestro despacho atiende. Esta integración permite resolver su caso de forma completa desde nuestras oficinas en Roma Norte.</p>
+      </div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (
+          <a href={h.href} class="related-card"><h4>{h.nombre}</h4><p>{h.desc}</p><span class="related-arrow">Ver especialidad →</span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Información adicional sobre derecho civil en CDMX</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">El <a href="/blog/nuevo-codigo-procedimientos-civiles-familiares-2026">Nuevo Código Nacional de Procedimientos Civiles y Familiares 2026</a> ha transformado la forma en que se tramitan los juicios civiles en la Ciudad de México. Le recomendamos leer nuestro artículo al respecto para entender cómo la oralidad afecta su caso. Si tiene dudas específicas, consulte nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> sobre derecho civil, donde abordamos temas como prescripción de acciones e incumplimiento de contratos.</p>
+        <p style="font-size:16px;line-height:1.8;">Visite <a href="/quienes-somos">quiénes somos</a> para conocer la trayectoria del despacho y <a href="/que-ofrecemos">qué ofrecemos</a> para una visión general de nuestras siete áreas de práctica. Nuestro <a href="/blog">blog jurídico</a> publica artículos sobre temas civiles relevantes para personas y empresas en la Ciudad de México.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Tiene un asunto civil que resolver?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados civilistas analizan su caso y le proponen la estrategia procesal más efectiva para proteger su patrimonio. Visítenos en Guanajuato 224, Roma Norte, o llame al 55 6465 5501.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; } .cluster-intro h1 { margin-bottom: 24px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; }
+  .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  .faq-layout { max-width: 850px; } .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q { font-family: var(--font-heading); font-size: 20px; font-weight: 400; color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; }
+  .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+  @media (max-width: 991px) { .services-grid, .related-grid, .diff-grid { grid-template-columns: 1fr; } }
+</style>

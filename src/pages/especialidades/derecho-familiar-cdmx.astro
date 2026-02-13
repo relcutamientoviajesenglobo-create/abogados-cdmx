@@ -1,0 +1,239 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Abogados de Derecho Familiar en CDMX — Divorcios, Custodia y Pensiones | Abogados en CDMX';
+const description = 'Abogados especializados en derecho familiar en la Ciudad de México. Divorcios, guarda y custodia, pensión alimenticia, violencia familiar y sucesiones. Despacho en Colonia Roma Norte.';
+const canonical = 'https://abogadosencdmx.com/especialidades/derecho-familiar-cdmx';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Derecho Familiar en CDMX",
+  "description": "Representación jurídica especializada en derecho familiar: divorcios, guarda y custodia, pensión alimenticia, violencia familiar y sucesiones en la Ciudad de México.",
+  "provider": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "areaServed": { "@type": "City", "name": "Ciudad de México" },
+  "serviceType": "Derecho Familiar"
+};
+
+const hermanas = [
+  { nombre: 'Derecho Civil', href: '/especialidades/derecho-civil-cdmx', desc: 'Contratos, daños, responsabilidad civil y sucesiones testamentarias.' },
+  { nombre: 'Derecho Migratorio', href: '/especialidades/derecho-migratorio-cdmx', desc: 'Visas, residencia y naturalización para familias binacionales.' },
+  { nombre: 'Derecho Penal', href: '/especialidades/derecho-penal-cdmx', desc: 'Defensa penal en casos de violencia familiar y delitos relacionados.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container">
+      <Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Familiar'}]} />
+    </div>
+  </section>
+
+  <!-- BRACKET 1: CONCEPTUAL — Declaración definicional -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="cluster-intro reveal">
+        <p class="section-tag">Derecho Familiar</p>
+        <h1>Abogados de derecho familiar en la Ciudad de México</h1>
+        <p class="lead">El derecho familiar es la rama del derecho civil que regula las relaciones jurídicas derivadas del matrimonio, el concubinato, la filiación, la adopción, la patria potestad, la tutela, la guarda y custodia, la pensión alimenticia y la sucesión legítima. En la Ciudad de México, los procedimientos familiares se rigen por el Código Civil del Distrito Federal, el Código Nacional de Procedimientos Civiles y Familiares vigente desde 2026, y las disposiciones aplicables del Tribunal Superior de Justicia de la Ciudad de México.</p>
+        <p>Abogados en CDMX es un despacho jurídico que ofrece representación especializada en derecho familiar a personas y familias que enfrentan procesos legales en la capital del país. Nuestro equipo de abogados familiaristas analiza cada caso de manera individual, identifica las vías procesales más efectivas y acompaña al cliente en todas las etapas del procedimiento hasta obtener una resolución favorable.</p>
+        <p>Nuestro despacho se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Atendemos de lunes a viernes de 9:00 a 18:00 horas. Para agendar una consulta sobre su caso familiar, comuníquese al 55 6465 5501 o escriba a contacto@abogadosencdmx.com.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 2: OPERATIONAL — Servicios específicos -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:50px;">
+        <p class="section-tag">Servicios</p>
+        <h2>Procedimientos que atendemos en derecho familiar</h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-block">
+          <h3>Divorcios</h3>
+          <p>Tramitamos divorcios voluntarios, incausados y administrativos ante los juzgados familiares y el Registro Civil de la Ciudad de México. El divorcio voluntario procede cuando ambas partes acuerdan los términos de la disolución. El divorcio incausado permite a cualquiera de los cónyuges solicitar la disolución sin necesidad de expresar una causa específica, conforme al artículo 266 del Código Civil del Distrito Federal. Asesoramos en la negociación de convenios que incluyen la liquidación de la sociedad conyugal, la guarda y custodia de los hijos menores, el régimen de visitas y la pensión alimenticia.</p>
+        </div>
+        <div class="service-block">
+          <h3>Guarda y custodia</h3>
+          <p>Representamos a madres y padres en procedimientos de guarda y custodia ante los juzgados familiares de la Ciudad de México. El juez determina la custodia con base en el principio del interés superior del menor, evaluando factores como el entorno familiar, la estabilidad emocional, las condiciones económicas y el vínculo afectivo con cada progenitor. Trabajamos en la obtención de custodia compartida, custodia exclusiva, y en la modificación de resoluciones previas cuando las circunstancias han cambiado sustancialmente.</p>
+        </div>
+        <div class="service-block">
+          <h3>Pensión alimenticia</h3>
+          <p>Iniciamos y defendemos demandas de pensión alimenticia ante los juzgados familiares. La pensión alimenticia en la Ciudad de México comprende comida, vestido, habitación, atención médica, gastos educativos y los necesarios para el desarrollo integral del acreedor alimentario. Nuestros abogados calculan el monto de pensión procedente conforme a la capacidad económica del deudor y las necesidades del acreedor, y ejecutamos el cobro mediante las vías legales disponibles, incluyendo el embargo de bienes y la inscripción en el Registro de Deudores Alimentarios Morosos.</p>
+        </div>
+        <div class="service-block">
+          <h3>Violencia familiar</h3>
+          <p>Asesoramos y representamos a víctimas de violencia familiar ante las autoridades competentes de la Ciudad de México. Tramitamos órdenes de protección ante los juzgados civiles y familiares, acompañamos en la denuncia penal y gestionamos medidas cautelares para garantizar la seguridad de la víctima y sus dependientes. La Ley de Acceso de las Mujeres a una Vida Libre de Violencia del Distrito Federal y el Código Penal establecen mecanismos específicos de protección que aplicamos en cada caso.</p>
+        </div>
+        <div class="service-block">
+          <h3>Sucesiones y testamentos</h3>
+          <p>Tramitamos juicios sucesorios testamentarios e intestamentarios ante los juzgados familiares de la Ciudad de México. En la sucesión testamentaria, verificamos la validez del testamento y gestionamos la designación del albacea para administrar los bienes del de cujus. En la sucesión intestamentaria — cuando no existe testamento — determinamos los herederos legítimos conforme al orden de prelación del Código Civil y gestionamos la partición y adjudicación de los bienes hereditarios.</p>
+        </div>
+        <div class="service-block">
+          <h3>Adopción y patria potestad</h3>
+          <p>Acompañamos a familias en el proceso de adopción conforme a las disposiciones del Sistema DIF de la Ciudad de México y los juzgados familiares. Asimismo, representamos a padres en procedimientos de pérdida, suspensión o recuperación de la patria potestad cuando las circunstancias lo ameriten, siempre priorizando el interés superior del menor en cada actuación judicial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 3: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="reveal">
+          <p class="section-tag">Preguntas Frecuentes</p>
+          <h2>Dudas comunes sobre derecho familiar en CDMX</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cuánto tarda un divorcio en la Ciudad de México?</summary>
+            <div class="faq-item__a"><p>El tiempo varía según el tipo de divorcio. Un divorcio administrativo ante el Registro Civil puede resolverse en aproximadamente 15 días. Un divorcio voluntario judicial tarda entre 2 y 4 meses si ambas partes cumplen con los requisitos y acuerdos. Un divorcio incausado contencioso puede extenderse de 6 meses a más de un año, dependiendo de la complejidad de los bienes a liquidar y las controversias sobre custodia o pensión alimenticia.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Cómo se calcula la pensión alimenticia en CDMX?</summary>
+            <div class="faq-item__a"><p>No existe un porcentaje fijo establecido por ley. El juez familiar determina el monto de la pensión alimenticia considerando dos factores principales: la capacidad económica del deudor alimentario y las necesidades reales del acreedor alimentario. En la práctica judicial de la Ciudad de México, los montos suelen oscilar entre el 15% y el 40% de los ingresos netos del deudor, aunque cada caso se resuelve de manera individual conforme a las pruebas presentadas.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué se necesita para obtener la custodia de un hijo?</summary>
+            <div class="faq-item__a"><p>Para obtener la guarda y custodia de un menor, debe iniciarse un procedimiento ante el juzgado familiar competente de la Ciudad de México presentando la demanda correspondiente, la documentación que acredite el parentesco y las pruebas que demuestren que el entorno que usted ofrece es el más adecuado para el desarrollo integral del menor. El juez evaluará factores como la estabilidad emocional, las condiciones del hogar, la cercanía con el centro educativo y la opinión del menor si tiene la edad suficiente para expresarla.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Se puede modificar un convenio de divorcio después de firmado?</summary>
+            <div class="faq-item__a"><p>Sí. Las cláusulas de un convenio de divorcio relativas a guarda y custodia, régimen de visitas y pensión alimenticia pueden modificarse cuando exista un cambio sustancial en las circunstancias que se tuvieron en cuenta al momento de celebrar el convenio. La solicitud de modificación se tramita ante el mismo juzgado familiar que dictó la resolución original, mediante un incidente de modificación de convenio.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">¿Qué hacer si mi expareja no paga la pensión alimenticia?</summary>
+            <div class="faq-item__a"><p>Si el deudor alimentario incumple con el pago de la pensión, puede solicitarse la ejecución forzosa de la sentencia ante el juzgado familiar. Las medidas disponibles incluyen el embargo de bienes, la retención directa del salario por parte del empleador, la inscripción del deudor en el Registro de Deudores Alimentarios Morosos de la Ciudad de México y, en casos graves, la denuncia penal por el delito de incumplimiento de obligaciones alimentarias previsto en el Código Penal.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 4: COMPARATIVE — Diferenciación -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:750px;margin-bottom:40px;">
+        <p class="section-tag">¿Por Qué Nuestro Despacho?</p>
+        <h2>Ventajas de contratar abogados familiaristas en Roma Norte</h2>
+        <p>Abogados en CDMX se especializa en derecho familiar con un enfoque centrado en soluciones negociadas siempre que sea posible. A diferencia de despachos que llevan todo a juicio, nuestros abogados familiaristas evalúan primero la vía conciliatoria — convenios de divorcio, acuerdos de custodia, mediación familiar — para resolver el conflicto de forma más rápida, menos costosa y menos desgastante emocionalmente. Cuando la negociación no es viable, litigamos con la misma firmeza en los juzgados familiares de la Ciudad de México.</p>
+      </div>
+      <div class="diff-grid reveal">
+        <div class="diff-card"><h4>Soluciones negociadas primero</h4><p>Privilegiamos los convenios y la mediación familiar antes del litigio. Un divorcio por convenio puede resolverse en 2 a 3 meses; un juicio contencioso puede tardar más de un año. Nuestros clientes obtienen resultados más rápido y con menor costo emocional y económico.</p></div>
+        <div class="diff-card"><h4>Sensibilidad en casos delicados</h4><p>Los asuntos familiares involucran emociones intensas. Nuestro equipo trata cada caso con la discreción y sensibilidad que merece, especialmente cuando hay menores de edad involucrados en procesos de custodia, convivencia o pensión alimenticia.</p></div>
+        <div class="diff-card"><h4>Enfoque multidisciplinario</h4><p>Los casos familiares frecuentemente requieren apoyo de <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> (sucesiones, contratos), <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a> (liquidación de bienes) y <a href="/especialidades/derecho-penal-cdmx">derecho penal</a> (violencia familiar). Nuestro despacho integra todas estas áreas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO: ESPECIALIDADES RELACIONADAS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;">
+        <p class="section-tag">Especialidades Relacionadas</p>
+        <h2>Otras áreas del derecho que complementan su caso familiar</h2>
+        <p>Los asuntos de derecho familiar frecuentemente se vinculan con otras ramas jurídicas. Nuestro despacho en Roma Norte atiende todas estas dimensiones para resolver su caso de forma integral.</p>
+      </div>
+      <div class="related-grid reveal">
+        {hermanas.map((h) => (
+          <a href={h.href} class="related-card">
+            <h4>{h.nombre}</h4>
+            <p>{h.desc}</p>
+            <span class="related-arrow">Ver especialidad →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION — prose links to pillar pages -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <h2>Recursos adicionales sobre derecho familiar en CDMX</h2>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Si desea profundizar en temas de derecho familiar antes de agendar una consulta, le recomendamos leer nuestra <a href="/blog/guia-divorcio-cdmx-2026">guía completa para tramitar un divorcio en CDMX en 2026</a> y el artículo sobre el <a href="/blog/nuevo-codigo-procedimientos-civiles-familiares-2026">Nuevo Código Nacional de Procedimientos Civiles y Familiares</a>, que explica cómo los juicios familiares han cambiado con la oralidad. También puede consultar nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a>, donde respondemos las dudas más comunes sobre divorcios, custodia y pensiones alimenticias en la Ciudad de México.</p>
+        <p style="font-size:16px;line-height:1.8;">Para conocer la trayectoria de nuestro despacho, visite <a href="/quienes-somos">quiénes somos</a>. Si prefiere ver el panorama completo de nuestras áreas de práctica, consulte <a href="/que-ofrecemos">qué ofrecemos</a>. Todas las publicaciones de nuestro <a href="/blog">blog jurídico</a> son escritas por abogados en ejercicio del despacho y actualizadas conforme a la legislación vigente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET 5: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);color:var(--color-white);text-align:center;">
+    <div class="container reveal">
+      <h2 style="color:var(--color-white);max-width:700px;margin:0 auto 20px;">¿Enfrenta un problema de derecho familiar?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:550px;margin:0 auto 35px;font-size:18px;">Nuestros abogados familiaristas evalúan su caso y le presentan las opciones legales disponibles para proteger sus derechos y los de su familia.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoría →</a>
+        <a href="/contacto" class="btn-secondary-wrap">Contactar despacho →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .section-tag {
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: var(--color-secondary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .lead { font-size: 20px; line-height: 1.6; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+  .cluster-intro { max-width: 850px; }
+  .cluster-intro h1 { margin-bottom: 24px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .service-block { background: var(--color-white); padding: 32px; border: 1px solid var(--color-border); }
+  .service-block h3 { font-size: 24px; margin-bottom: 14px; }
+  .service-block p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+
+  .faq-layout { max-width: 850px; }
+  .faq-layout h2 { margin-bottom: 40px; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-item__q {
+    font-family: var(--font-heading); font-size: 20px; font-weight: 400;
+    color: var(--color-primary); padding: 24px 0; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
+  .faq-item[open] .faq-item__q::after { content: '−'; }
+  .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .related-card {
+    background: var(--color-white); padding: 28px; border: 1px solid var(--color-border);
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
+  .related-card h4 { font-size: 22px; margin-bottom: 10px; }
+  .related-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+  .related-arrow { font-size: 14px; font-weight: 600; color: var(--color-secondary); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .diff-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); }
+  .diff-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--color-primary); } .diff-card p { font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+
+  @media (max-width: 991px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .related-grid, .diff-grid { grid-template-columns: 1fr; }
+  }
+</style>

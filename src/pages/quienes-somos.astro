@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Quiénes Somos — Despacho Jurídico en CDMX | Abogados en CDMX';
+const description = 'Abogados en CDMX es un despacho jurídico multidisciplinario en Colonia Roma Norte, Ciudad de México. Más de 300 casos resueltos en 7 áreas del derecho con un equipo de 20+ abogados.';
+const canonical = 'https://abogadosencdmx.com/quienes-somos';
+
+const values = [
+  { icon: '🎯', title: 'Enfoque en resultados', desc: 'Cada estrategia legal que diseñamos tiene un objetivo medible. No prolongamos casos innecesariamente ni generamos honorarios sin justificación.' },
+  { icon: '🤝', title: 'Transparencia total', desc: 'Desde la primera consulta conocerá los costos, los tiempos estimados y las probabilidades reales de éxito. Sin sorpresas ni letra pequeña.' },
+  { icon: '📚', title: 'Especialización real', desc: 'Cada abogado de nuestro equipo se dedica a una rama específica del derecho. No somos generalistas que intentan cubrir todo sin profundidad.' },
+  { icon: '⏱️', title: 'Comunicación constante', desc: 'Usted sabrá el estado de su caso en todo momento. Respondemos llamadas, correos y mensajes con la prontitud que su situación merece.' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Quiénes Somos — Abogados en CDMX",
+  "description": description,
+  "url": canonical,
+  "mainEntity": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "foundingDate": "2016",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 20 },
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de México", "postalCode": "06700", "addressCountry": "MX" },
+    "areaServed": { "@type": "City", "name": "Ciudad de México" }
+  }
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Quiénes Somos'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Nuestro despacho</p>
+        <h1 class="text-white">Quiénes somos</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Abogados en CDMX es un despacho jurídico multidisciplinario establecido en la Colonia Roma Norte de la Ciudad de México. Nuestro equipo de más de 20 abogados se especializa en siete áreas del derecho, lo que nos permite ofrecer soluciones legales integrales respaldadas por conocimiento técnico profundo y experiencia comprobada en tribunales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Conceptual — Historia y misión -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="two-col reveal">
+        <div>
+          <p class="section-tag">Nuestra historia</p>
+          <h2>Un despacho construido sobre resultados</h2>
+          <p>Abogados en CDMX nació con una premisa clara: ofrecer representación legal que combine especialización técnica con trato humano. Desde nuestras oficinas en Guanajuato 224, Colonia Roma Norte, hemos construido un equipo que atiende casos en las siete ramas del derecho más demandadas en la Ciudad de México.</p>
+          <p>A lo largo de nuestra trayectoria hemos resuelto más de 300 casos en materias que van desde divorcios y custodia hasta litigios corporativos y defensa penal. Esta experiencia acumulada nos permite anticipar escenarios, diseñar estrategias sólidas y ofrecer a nuestros clientes la tranquilidad de saber que su caso está en manos de especialistas.</p>
+          <p>Nuestra misión es hacer accesible la asesoría legal de calidad. Creemos que toda persona y empresa en la Ciudad de México merece contar con un abogado que realmente entienda su situación, le explique sus opciones con claridad y trabaje con determinación para proteger sus derechos e intereses.</p>
+        </div>
+        <div>
+          <img src="/images/despacho-roma-norte.jpg" alt="Oficinas de Abogados en CDMX en Colonia Roma Norte, Ciudad de México" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; background:#ddd;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Operational — Valores -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Lo que nos define</p>
+        <h2>Nuestros valores como despacho</h2>
+      </div>
+      <div class="values-grid">
+        {values.map((v, i) => (
+          <div class="value-card reveal" style={`--delay:${i * 0.08}s`}>
+            <span class="value-card__icon" aria-hidden="true">{v.icon}</span>
+            <h3>{v.title}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Intent — Especialización y alcance -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p class="section-tag">Nuestra Especialización</p>
+        <h2>Un despacho multidisciplinario con raíz en la Ciudad de México</h2>
+        <p style="font-size:18px;line-height:1.7;margin-bottom:20px;">Abogados en CDMX es un despacho jurídico que opera exclusivamente en la Ciudad de México. Esta decisión estratégica nos permite conocer los juzgados, tribunales, fiscalías, centros de conciliación y autoridades administrativas de la capital como ningún otro despacho. No pretendemos abarcar todo el país — nos concentramos en dominar el sistema jurídico de la Ciudad de México para que nuestros clientes obtengan los mejores resultados posibles.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Nuestra práctica se estructura en siete <a href="/especialidades">áreas de especialidad</a>: <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a>, <a href="/especialidades/derecho-penal-cdmx">derecho penal</a>, <a href="/especialidades/derecho-civil-cdmx">derecho civil</a>, <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>, <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a>, <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a> y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a>. Cada área cuenta con abogados dedicados que conocen la legislación aplicable, los procedimientos vigentes y los criterios actuales de los juzgados y tribunales de la Ciudad de México.</p>
+        <p style="font-size:16px;line-height:1.8;">Nuestras oficinas se ubican en Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700 — en el corazón de una de las zonas con mayor concentración de despachos jurídicos, notarías y oficinas gubernamentales de la ciudad. Esta ubicación nos permite atender audiencias, presentar escritos y realizar gestiones con agilidad. Para conocer a los abogados que integran nuestro equipo, visite nuestra sección de <a href="/equipo-legal-cdmx">equipo legal</a> o agende una <a href="/asesoria-inicial">asesoría inicial</a> llamando al 55 6465 5501.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="stats-row reveal">
+        <div class="stat-item"><span class="stat-item__num">20+</span><span class="stat-item__label">Abogados especializados</span></div>
+        <div class="stat-item"><span class="stat-item__num">7</span><span class="stat-item__label">Áreas del derecho</span></div>
+        <div class="stat-item"><span class="stat-item__num">300+</span><span class="stat-item__label">Casos resueltos</span></div>
+        <div class="stat-item"><span class="stat-item__num">100+</span><span class="stat-item__label">Clientes satisfechos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA — Equipo -->
+  <section class="section-padding">
+    <div class="container text-center">
+      <div class="reveal">
+        <p class="section-tag">Nuestro equipo</p>
+        <h2>Conozca a los abogados detrás del despacho</h2>
+        <p class="max-w-694 mb-40">Cada miembro de nuestro equipo se especializa en un área concreta del derecho. Conozca a los abogados que integran Abogados en CDMX.</p>
+        <a href="/equipo-legal-cdmx" class="btn-primary-wrap"><span class="btn-primary">Conocer al equipo legal <span aria-hidden="true">→</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="cta-section section-padding" style="background-color: var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal">
+        <h2 class="text-white">¿Necesita un despacho de confianza?</h2>
+        <p class="text-white-soft max-w-694 mb-40">Platiquemos sobre su caso. Nuestra primera consulta está diseñada para que usted entienda su situación legal y las opciones que tiene disponibles.</p>
+        <div class="btn-group btn-group--center">
+          <a href="/asesoria-inicial" class="btn-primary-wrap"><span class="btn-primary">Agendar asesoría inicial <span aria-hidden="true">→</span></span></a>
+          <a href="/contacto" class="btn-secondary-wrap"><span class="btn-secondary">Contactar al despacho</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .hero-pillar { padding: 0 0 80px; }
+  .hero-pillar__content { max-width: 856px; padding-top: 50px; }
+
+  .two-col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+  .two-col p { margin-bottom: 14px; }
+
+  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .value-card {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    padding: 40px 32px; transition-delay: var(--delay, 0s);
+  }
+  .value-card__icon { font-size: 32px; display: block; margin-bottom: 16px; }
+  .value-card h3 { font-size: 24px; margin-bottom: 12px; }
+  .value-card p { font-size: 16px; line-height: 1.7; margin: 0; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .stat-item__num { display: block; font-family: var(--font-heading); font-size: 56px; color: var(--color-secondary); line-height: 1.1; margin-bottom: 8px; }
+  .stat-item__label { font-size: 16px; font-weight: 500; }
+
+  .cta-section h2 { margin-bottom: 16px; }
+
+  @media (max-width: 991px) {
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .stats-row { grid-template-columns: 1fr; }
+    .stat-item__num { font-size: 42px; }
+  }
+</style>
