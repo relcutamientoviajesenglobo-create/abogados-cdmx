@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
+import MarqueeSpecs from '../../components/MarqueeSpecs.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
@@ -26,6 +27,8 @@ const hermanas = [
 <Base title={title} description={description} canonical={canonical} schema={schema}>
   <Header slot="header" />
   <section class="section-padding" style="padding-bottom:0;"><div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Migratorio'}]} /></div></section>
+
+  <MarqueeSpecs />
 
   <!-- BRACKET 1: CONCEPTUAL — Declaración definicional -->
   <section class="section-padding">

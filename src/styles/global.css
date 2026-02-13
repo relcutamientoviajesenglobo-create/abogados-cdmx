@@ -112,6 +112,14 @@ p { margin-bottom: 1em; }
 .marquee-content { display: flex; gap: 0; align-items: center; animation: marquee-scroll 30s linear infinite; white-space: nowrap; width: max-content; }
 .marquee-item { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.5); padding: 0 20px; text-transform: uppercase; letter-spacing: 2px; }
 .marquee-dot { color: var(--color-secondary); font-size: 10px; }
+.marquee-section--light { background: var(--color-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.marquee-section--light .marquee-dot { color: var(--color-secondary); opacity: .5; }
+.marquee-section--dark { background: #00142b; }
+.marquee-content--slow { animation-duration: 40s; }
+.marquee-spec { font-size: 14px; font-weight: 600; color: var(--color-primary); padding: 0 20px; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; transition: color var(--transition); white-space: nowrap; }
+.marquee-spec:hover { color: var(--color-secondary); }
+.marquee-stat { font-size: 14px; color: rgba(255,255,255,.5); padding: 0 20px; letter-spacing: 1px; white-space: nowrap; }
+.marquee-stat strong { color: var(--color-secondary); font-weight: 700; margin-right: 6px; }
 
 /* REVEAL ANIMATION */
 @keyframes fadeInUp {
