@@ -84,7 +84,7 @@ p { margin-bottom: 1em; }
   opacity: 0; transform: translateY(35px);
   transition: opacity .6s var(--ease), transform .6s var(--ease);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 /* MARQUEE */
 @keyframes marquee-scroll {
