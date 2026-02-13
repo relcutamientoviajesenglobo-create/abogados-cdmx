@@ -168,6 +168,11 @@ const schema = {
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .values-grid { grid-template-columns: 1fr; }
   }
+  
+  @media (max-width: 767px) {
+    h1 { font-size: 36px; }
+    .lead { font-size: 18px; }
+  }
   @media (max-width: 479px) {
     .stats-row { grid-template-columns: 1fr; }
     .stat-item__num { font-size: 42px; }

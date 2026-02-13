@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Level 0: HOME -->
-  <url><loc>https://abogadosencdmx.com/</loc><lastmod>2026-02-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://abogadosencdmx.com/</loc><lastmod>2026-02-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <!-- Level 1: Pillar Pages -->
-  <url><loc>https://abogadosencdmx.com/especialidades</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/que-ofrecemos</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abogadosencdmx.com/quienes-somos</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abogadosencdmx.com/equipo-legal-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abogadosencdmx.com/asesoria-inicial</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/contacto</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog</loc><lastmod>2026-02-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/que-ofrecemos</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abogadosencdmx.com/quienes-somos</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abogadosencdmx.com/equipo-legal-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abogadosencdmx.com/asesoria-inicial</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/contacto</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog</loc><lastmod>2026-02-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Level 2: Specialty Clusters -->
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-familiar-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-penal-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-civil-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-corporativo-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-inmobiliario-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-migratorio-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://abogadosencdmx.com/especialidades/derecho-laboral-cdmx</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-familiar-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-penal-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-civil-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-corporativo-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-inmobiliario-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-migratorio-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://abogadosencdmx.com/especialidades/derecho-laboral-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Level 2: Perfiles -->
-  <url><loc>https://abogadosencdmx.com/despacho-juridico/tania-mendoza</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/despacho-juridico/luciana-valle</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/despacho-juridico/ian-montiel</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/despacho-juridico/tania-mendoza</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/despacho-juridico/luciana-valle</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/despacho-juridico/ian-montiel</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Level 3: Utility -->
-  <url><loc>https://abogadosencdmx.com/preguntas-frecuentes</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://abogadosencdmx.com/aviso-de-privacidad</loc><lastmod>2026-02-12</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://abogadosencdmx.com/preguntas-frecuentes</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://abogadosencdmx.com/aviso-de-privacidad</loc><lastmod>2026-02-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
   <!-- Level 3: Blog Articles -->
-  <url><loc>https://abogadosencdmx.com/blog/nuevo-codigo-procedimientos-civiles-familiares-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/guia-divorcio-cdmx-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/derechos-inquilino-cdmx-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/derechos-detenido-cdmx</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/despido-injustificado-cdmx-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/residencia-permanente-mexico-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/constituir-empresa-mexico-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://abogadosencdmx.com/blog/sucesiones-herencias-cdmx-2026</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/nuevo-codigo-procedimientos-civiles-familiares-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/guia-divorcio-cdmx-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/derechos-inquilino-cdmx-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/derechos-detenido-cdmx</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/despido-injustificado-cdmx-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/residencia-permanente-mexico-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/constituir-empresa-mexico-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://abogadosencdmx.com/blog/sucesiones-herencias-cdmx-2026</loc><lastmod>2026-02-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

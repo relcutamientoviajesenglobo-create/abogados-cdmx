@@ -157,6 +157,11 @@ const schema = {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .steps-grid { grid-template-columns: repeat(2, 1fr); }
   }
+  
+  @media (max-width: 767px) {
+    h1 { font-size: 36px; }
+    .lead { font-size: 18px; }
+  }
   @media (max-width: 479px) {
     .services-grid { grid-template-columns: 1fr; }
     .steps-grid { grid-template-columns: 1fr; }

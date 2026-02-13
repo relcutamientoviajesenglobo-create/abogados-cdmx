@@ -156,8 +156,11 @@ p { margin-bottom: 1em; }
 @media screen and (max-width: 767px) {
   h1 { font-size: 52px; } h3 { font-size: 32px; } h5 { font-size: 22px; }
   .section-padding { padding-top: 75px; padding-bottom: 75px; }
+  .hero-pillar { padding: 140px 0 60px; }
 }
 @media screen and (max-width: 479px) {
   body { font-size: 16px; } h1 { font-size: 45px; } h2 { font-size: 42px; } h4 { font-size: 24px; } h6 { font-size: 18px; }
   .section-padding { padding-top: 60px; padding-bottom: 60px; }
+  .hero-pillar { padding: 130px 0 50px; }
+  .marquee-item, .marquee-spec, .marquee-stat { font-size: 12px; padding: 0 14px; }
 }
