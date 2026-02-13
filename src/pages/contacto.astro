@@ -55,24 +55,24 @@ const schema = {
 <Base title={title} description={description} canonical={canonical} schema={schema}>
   <Header slot="header" />
 
-  <!-- BREADCRUMB -->
-  <section class="section-padding" style="padding-bottom:0;">
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
     <div class="container">
       <Breadcrumb items={[{label:'Contacto'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Contacto</p>
+        <h1 class="text-white">Comuníquese con nuestro despacho jurídico</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Abogados en CDMX atiende consultas en siete áreas del derecho de lunes a viernes de 9:00 a 18:00 horas. Nuestras oficinas se encuentran en Guanajuato 224, Colonia Roma Norte, una de las zonas con mejor conectividad de la Ciudad de México.</p>
+      </div>
     </div>
   </section>
-
   <MarqueeStats />
 
-  <!-- BRACKET 1: INTENT — Declaración definicional + NAP visible -->
+  <!-- BRACKET 1: INTENT — NAP visible -->
   <section class="section-padding">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info reveal">
-          <p class="section-tag">Contacto</p>
-          <h1>Comuníquese con nuestro despacho jurídico en la Ciudad de México</h1>
-          <p class="lead">Abogados en CDMX es un despacho jurídico que atiende consultas en siete áreas del derecho de lunes a viernes en horario de 9:00 a 18:00 horas. Nuestras oficinas se encuentran en la Colonia Roma Norte, una de las zonas con mejor conectividad de la Ciudad de México.</p>
-
           <!-- NAP VISIBLE EN PROSA — esto es lo que leen los LLMs -->
           <div class="nap-block">
             <div class="nap-item">

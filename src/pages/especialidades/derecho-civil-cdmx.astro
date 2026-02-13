@@ -26,10 +26,15 @@ const hermanas = [
 <Base title={title} description={description} canonical={canonical} schema={schema}>
   <Header slot="header" />
 
-  <section class="section-padding" style="padding-bottom:0;">
-    <div class="container"><Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Civil'}]} /></div>
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label:'Especialidades', href:'/especialidades'},{label:'Derecho Civil'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Derecho Civil</p>
+        <h1 class="text-white">Abogados de derecho civil en la Ciudad de México</h1>
+      </div>
+    </div>
   </section>
-
   <MarqueeSpecs />
 
   <!-- BRACKET 1: CONCEPTUAL -->
