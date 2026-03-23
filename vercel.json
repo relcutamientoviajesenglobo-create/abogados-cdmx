@@ -34,7 +34,10 @@
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/blog/index.html", "destination": "/blog", "permanent": true }
+    { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
+        { "source": "/home-3", "destination": "/", "permanent": true },
+        { "source": "/home-3/", "destination": "/", "permanent": true },
+        { "source": "/services/:path*", "destination": "/especialidades", "permanent": true }
   ],
   "trailingSlash": false
 }
