@@ -16,10 +16,14 @@
 | Penal | 8 | 7 | COMPLETA |
 | Inmobiliario | 8 | 7 | COMPLETA |
 | Civil | 7 | 7 | COMPLETA |
-| Laboral | 5 → 7 | 7 | EN PROGRESO (2 nuevos escribiéndose) |
-| Corporativo | 4 → 7 | 7 | EN PROGRESO (3 nuevos escribiéndose) |
-| Migratorio | 4 → 7 | 7 | EN PROGRESO (3 nuevos escribiéndose) |
-| **TOTAL** | **45 → 53** | **49+** | — |
+| Laboral | 10 | 10 | COMPLETA |
+| Corporativo | 10 | 10 | COMPLETA |
+| Migratorio | 10 | 10 | COMPLETA |
+| Civil | 10 | 10 | COMPLETA |
+| Penal | 10 | 10 | COMPLETA |
+| Inmobiliario | 10 | 10 | COMPLETA |
+| Familiar | 10 | 10 | COMPLETA |
+| **TOTAL** | **70** | **70** | TODAS COMPLETAS |
 
 ---
 
@@ -117,15 +121,15 @@
 - [x] concubinato-derechos-cdmx.md (Familiar)
 - [x] violencia-familiar-cdmx.md (Familiar)
 
-### [ ] Fase C final — Artículos faltantes (EN PROGRESO)
-- [ ] fusiones-adquisiciones-mexico.md (Corporativo)
-- [ ] gobierno-corporativo-mexico.md (Corporativo)
-- [ ] propiedad-intelectual-empresas-cdmx.md (Corporativo)
-- [ ] visa-inversionista-mexico.md (Migratorio)
-- [ ] reunificacion-familiar-mexico.md (Migratorio)
-- [ ] regularizacion-migratoria-mexico.md (Migratorio)
-- [ ] outsourcing-subcontratacion-mexico.md (Laboral)
-- [ ] demanda-laboral-cdmx.md (Laboral)
+### [x] Fase C final — Artículos faltantes (COMPLETADA)
+- [x] fusiones-adquisiciones-mexico.md (Corporativo)
+- [x] gobierno-corporativo-mexico.md (Corporativo)
+- [x] propiedad-intelectual-empresas-cdmx.md (Corporativo)
+- [x] visa-inversionista-mexico.md (Migratorio)
+- [x] reunificacion-familiar-mexico.md (Migratorio)
+- [x] regularizacion-migratoria-mexico.md (Migratorio)
+- [x] outsourcing-subcontratacion-mexico.md (Laboral)
+- [x] demanda-laboral-cdmx.md (Laboral)
 
 ---
 
@@ -178,7 +182,7 @@
 - [ ] Crear Facebook page + Instagram business
 - [ ] Registrar en directorios legales mexicanos (NexoAbogados, AbogaClick, Juristas.MX, Buholegal)
 - [ ] Agregar sameAs schema cuando se creen perfiles sociales
-- [ ] Blog Tier 3: artículos para llegar a 70+ (2-3 por especialidad adicionales)
+- [x] Blog Tier 3: artículos para llegar a 70 (10 por especialidad) — COMPLETADO
 
 ### Prioridad Baja
 - [ ] YouTube channel con video explicativos por especialidad
