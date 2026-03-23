@@ -28,6 +28,7 @@ const schema = {
 const hermanas = [
   { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', desc: 'Divorcios, custodia, pensiones y violencia familiar.' },
   { nombre: 'Derecho Laboral', href: '/especialidades/derecho-laboral-cdmx', desc: 'Despidos injustificados, liquidaciones y demandas patronales.' },
+  { nombre: 'Derecho Civil', href: '/especialidades/derecho-civil-cdmx', desc: 'Reparación del daño, responsabilidad civil y obligaciones contractuales.' },
 ];
 ---
 
@@ -207,7 +208,7 @@ const hermanas = [
   .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
   .faq-item[open] .faq-item__q::after { content: '−'; }
   .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
-  .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .related-card { background: var(--color-white); padding: 28px; border: 1px solid var(--color-border); transition: border-color var(--transition), transform var(--transition); }
   .related-card:hover { border-color: var(--color-secondary); transform: translateY(-4px); }
   .related-card h4 { font-size: 22px; margin-bottom: 10px; }
