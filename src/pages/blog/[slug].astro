@@ -5,6 +5,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getImageUrl, getImageAlt } from '../../data/blog-images';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -21,12 +22,15 @@ const title = `${post.data.title} | Abogados en CDMX`;
 const description = post.data.description;
 const canonical = `https://abogadosencdmx.com/blog/${post.slug}`;
 const publishedDate = post.data.date.toISOString();
+const heroImage = getImageUrl(post.slug).replace('w=700&h=420', 'w=1200&h=600');
+const heroAlt = getImageAlt(post.slug);
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": post.data.title,
   "description": description,
+  "image": heroImage,
   "url": canonical,
   "datePublished": publishedDate,
   "dateModified": publishedDate,
@@ -54,27 +58,86 @@ const toc = headings.filter((h) => [2, 3].includes(h.depth));
 const dateObj = post.data.date;
 const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${dateObj.getFullYear()}`;
+
+// Detect category from keywords
+const keywords = post.data.keywords?.split(',').map((k: string) => k.trim().toLowerCase()) || [];
+const catMap: Record<string, { label: string; color: string }> = {
+  'familiar': { label: 'Derecho Familiar', color: '#c17f3e' },
+  'penal': { label: 'Derecho Penal', color: '#8b1a1a' },
+  'civil': { label: 'Derecho Civil', color: '#2d5f8a' },
+  'corporativo': { label: 'Derecho Corporativo', color: '#1a5c3a' },
+  'inmobiliario': { label: 'Derecho Inmobiliario', color: '#6b4c9a' },
+  'migratorio': { label: 'Derecho Migratorio', color: '#2e7d6f' },
+  'laboral': { label: 'Derecho Laboral', color: '#c4731b' },
+};
+const catDetect: Record<string, string[]> = {
+  'familiar': ['divorcio','custodia','pension','matrimonio','adopcion','familiar','conyugal','guarda','patria','violencia domestica'],
+  'penal': ['penal','delito','amparo','defensa','detenido','narcomenudeo','robo','fraude','penalista','antecedentes'],
+  'civil': ['civil','contrato','sucesion','herencia','usucapion','demanda civil','responsabilidad','profeco','consumidor','embargo','mediacion civil','prescripcion','interdiccion','tutela','cobro','deuda'],
+  'corporativo': ['empresa','corporativo','sociedad','mercantil','startup','compliance','franquicia','propiedad intelectual','marca','sa de cv','srl','sas','constituir','disolucion','datos personales'],
+  'inmobiliario': ['inmobiliario','inmueble','propiedad','arrendamiento','inquilino','escritura','compraventa','hipoteca','infonavit','fideicomiso','avaluo','condomin'],
+  'migratorio': ['migratorio','migracion','visa','residencia','inm','extranjero','naturalizacion','deportacion','asilo','refugio','nacionalidad'],
+  'laboral': ['laboral','trabajo','despido','liquidacion','sindicato','outsourcing','subcontratacion','jornada','horas extra','home office','teletrabajo','mobbing','acoso laboral','contrato trabajo','accidente trabajo'],
+};
+let detectedCat = 'general';
+for (const [cat, catKws] of Object.entries(catDetect)) {
+  if (keywords.some(kw => catKws.some(ck => kw.includes(ck) || ck.includes(kw)))) {
+    detectedCat = cat;
+    break;
+  }
+}
+const catInfo = catMap[detectedCat] || { label: 'Derecho', color: '#001d3d' };
+
+// Estimate reading time
+const wordCount = post.body?.split(/\s+/).length || 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 ---
 
-<Base title={title} description={description} canonical={canonical} schema={schema} publishedDate={publishedDate} modifiedDate={publishedDate} author={post.data.author}>
+<Base title={title} description={description} canonical={canonical} schema={schema} publishedDate={publishedDate} modifiedDate={publishedDate} author={post.data.author} ogImage={heroImage}>
   <Header slot="header" />
 
+  <!-- ═══ HERO ═══ -->
+  <section class="post-hero">
+    <img src={heroImage} alt={heroAlt} class="post-hero__bg" width="1200" height="600" loading="eager" fetchpriority="high" />
+    <div class="post-hero__overlay"></div>
+    <div class="post-hero__content container">
+      <div class="post-hero__breadcrumb">
+        <a href="/">Inicio</a>
+        <span class="post-hero__sep">/</span>
+        <a href="/blog">Blog</a>
+        <span class="post-hero__sep">/</span>
+        <span>{post.data.title.length > 50 ? post.data.title.substring(0, 50) + '...' : post.data.title}</span>
+      </div>
+      <div class="post-hero__meta">
+        <span class="post-hero__badge" style={`background:${catInfo.color}`}>{catInfo.label}</span>
+        <span class="post-hero__dot">·</span>
+        <time datetime={publishedDate}>{dateDisplay}</time>
+        <span class="post-hero__dot">·</span>
+        <span>{readingTime} min de lectura</span>
+      </div>
+      <h1 class="post-hero__title">{post.data.title}</h1>
+      <div class="post-hero__author">
+        <div class="post-hero__avatar">{post.data.author.split(' ').slice(-2).map((n: string) => n[0]).join('')}</div>
+        <div class="post-hero__author-info">
+          <span class="post-hero__author-name">{post.data.author}</span>
+          <span class="post-hero__author-role">Abogados en CDMX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ARTICLE BODY ═══ -->
   <article class="section-padding">
     <div class="container">
-      <Breadcrumb items={[{label:'Blog', href:'/blog'},{label: post.data.title}]} />
       <div class="article-layout">
         <div class="article-content">
-          <div class="article-meta">
-            <span class="article-cat">Derecho</span>
-            <time datetime={publishedDate}>{dateDisplay}</time>
-            <span class="article-author">Por {post.data.author}</span>
-          </div>
-
-          <h1>{post.data.title}</h1>
 
           {toc.length > 3 && (
             <nav class="article-toc" aria-label="Tabla de contenidos">
-              <h2 class="article-toc__title">Contenido del artículo</h2>
+              <h2 class="article-toc__title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                Contenido del artículo
+              </h2>
               <ol class="article-toc__list">
                 {toc.map((h) => (
                   <li class={h.depth === 3 ? 'toc-sub' : ''}>
@@ -108,32 +171,161 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
 </Base>
 
 <style>
-  .article-layout { max-width: 800px; margin: 0 auto; }
+  /* ═══ HERO ═══ */
+  .post-hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-top: calc(var(--topbar-h, 40px) + var(--header-h, 80px));
+  }
+  .post-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .post-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 15, 35, 0.92) 0%,
+      rgba(0, 15, 35, 0.7) 40%,
+      rgba(0, 15, 35, 0.35) 100%
+    );
+  }
+  .post-hero__content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+    padding-bottom: 48px;
+    max-width: 900px;
+  }
+
+  /* Breadcrumb */
+  .post-hero__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+  .post-hero__breadcrumb a {
+    color: rgba(255,255,255,0.6);
+    transition: color 0.2s;
+  }
+  .post-hero__breadcrumb a:hover {
+    color: var(--color-secondary);
+  }
+  .post-hero__sep {
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* Meta */
+  .post-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+  .post-hero__badge {
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .post-hero__dot {
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* Title */
+  .post-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 28px;
+    max-width: 800px;
+  }
+
+  /* Author */
+  .post-hero__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .post-hero__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .post-hero__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .post-hero__author-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .post-hero__author-role {
+    color: rgba(255,255,255,0.45);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ═══ ARTICLE LAYOUT ═══ */
+  .article-layout { max-width: 800px; margin: 0 auto; overflow: hidden; }
   .article-content { width: 100%; }
 
-  .article-meta {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
-    padding-bottom: 20px; margin-bottom: 32px;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 14px; color: var(--color-paragraph);
-  }
-  .article-cat {
-    background: var(--color-secondary); color: var(--color-white);
-    padding: 3px 10px; font-weight: 600; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 1px;
-  }
-  .article-author { font-weight: 600; color: var(--color-primary); }
-
+  /* ═══ TOC ═══ */
   .article-toc {
-    background: var(--color-light); padding: 28px 32px; margin-bottom: 40px;
+    background: var(--color-light);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--color-secondary);
   }
-  .article-toc__title { font-size: 18px; margin-bottom: 16px; }
+  .article-toc__title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-primary);
+  }
+  .article-toc__title svg {
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
   .article-toc__list { padding-left: 20px; }
   .article-toc__list li { margin-bottom: 8px; font-size: 15px; }
-  .article-toc__list li a { color: var(--color-primary); }
+  .article-toc__list li a { color: var(--color-primary); transition: color 0.2s; }
   .article-toc__list li a:hover { color: var(--color-secondary); }
   .toc-sub { padding-left: 20px; font-size: 14px; }
 
+  /* ═══ PROSE ═══ */
   .prose {
     font-size: 17px; line-height: 1.85; color: #333;
   }
@@ -154,7 +346,7 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
   .prose :global(li) { margin-bottom: 8px; }
   .prose :global(table) {
     width: 100%; border-collapse: collapse; margin: 24px 0;
-    font-size: 15px;
+    font-size: 15px; display: block; overflow-x: auto;
   }
   .prose :global(th) {
     background: var(--color-primary); color: var(--color-white);
@@ -174,6 +366,7 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
     margin: 40px 0;
   }
 
+  /* ═══ CTA ═══ */
   .article-cta {
     background: var(--color-primary); color: var(--color-white);
     padding: 40px; margin-top: 48px;
@@ -181,11 +374,54 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
   .article-cta h3 { color: var(--color-white); margin-bottom: 12px; }
   .article-cta p { color: rgba(255,255,255,.7); margin-bottom: 24px; font-size: 16px; }
 
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 991px) {
+    .post-hero {
+      min-height: 400px;
+      margin-top: var(--header-h, 80px);
+    }
+    .post-hero__content {
+      padding-bottom: 36px;
+      padding-top: 60px;
+    }
+  }
+
   @media (max-width: 767px) {
+    .post-hero {
+      min-height: 360px;
+    }
+    .post-hero__content {
+      padding-bottom: 28px;
+      padding-top: 48px;
+    }
+    .post-hero__title {
+      font-size: clamp(24px, 6vw, 32px);
+    }
+    .post-hero__meta {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
     .prose { font-size: 16px; }
     .prose :global(h2) { font-size: 26px; }
     .prose :global(h3) { font-size: 20px; }
     .article-cta { padding: 28px 20px; }
     .article-toc { padding: 20px; }
+  }
+
+  @media (max-width: 479px) {
+    .post-hero {
+      min-height: 320px;
+    }
+    .post-hero__breadcrumb {
+      display: none;
+    }
+    .post-hero__avatar {
+      width: 38px;
+      height: 38px;
+      font-size: 13px;
+    }
+    .post-hero__author-name {
+      font-size: 14px;
+    }
   }
 </style>
