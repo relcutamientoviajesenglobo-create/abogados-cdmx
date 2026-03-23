@@ -63,16 +63,16 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
       <Breadcrumb items={[{label:'Blog', href:'/blog'},{label: post.data.title}]} />
       <div class="article-layout">
         <div class="article-content">
-          <div class="article-meta reveal">
+          <div class="article-meta">
             <span class="article-cat">Derecho</span>
             <time datetime={publishedDate}>{dateDisplay}</time>
             <span class="article-author">Por {post.data.author}</span>
           </div>
 
-          <h1 class="reveal">{post.data.title}</h1>
+          <h1>{post.data.title}</h1>
 
           {toc.length > 3 && (
-            <nav class="article-toc reveal" aria-label="Tabla de contenidos">
+            <nav class="article-toc" aria-label="Tabla de contenidos">
               <h2 class="article-toc__title">Contenido del artículo</h2>
               <ol class="article-toc__list">
                 {toc.map((h) => (
@@ -84,11 +84,11 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
             </nav>
           )}
 
-          <div class="prose reveal">
+          <div class="prose">
             <Content />
           </div>
 
-          <div class="article-cta reveal">
+          <div class="article-cta">
             <h3>¿Necesita asesoría legal sobre este tema?</h3>
             <p>Nuestro equipo de abogados en CDMX puede orientarle con un diagnóstico profesional de su caso. La consulta inicial es gratuita.</p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
