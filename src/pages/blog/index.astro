@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import MarqueeSpecs from '../../components/MarqueeSpecs.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import { blogImages } from '../../data/blog-images';
+import { blogImages, getImageAlt } from '../../data/blog-images';
 
 const title = 'Blog Jurídico — Artículos Legales y Noticias | Abogados en CDMX';
 const description = 'Blog de Abogados en CDMX. Artículos sobre derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Información legal actualizada para la Ciudad de México en 2026.';
@@ -1072,7 +1072,7 @@ const articulos = [
           {articulos.map((art) => (
             <article class="blog-card reveal">
               <div class="blog-card__img">
-                <img src={art.imagen} alt={art.titulo} width="600" height="340" loading="lazy" style="width:100%;height:100%;object-fit:cover;background:var(--color-light);">
+                <img src={art.imagen} alt={getImageAlt(art.slug)} title={art.titulo} width="600" height="340" loading="lazy" style="width:100%;height:100%;object-fit:cover;background:var(--color-light);">
               </div>
               <div class="blog-card__body">
                 <div class="blog-card__meta">

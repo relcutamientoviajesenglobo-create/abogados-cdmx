@@ -5,7 +5,7 @@
  * Matching semántico por keywords compartidos + misma categoría
  */
 import { getCollection } from 'astro:content';
-import { getRelatedImage } from '../data/blog-images';
+import { getRelatedImage, getImageAlt } from '../data/blog-images';
 
 interface Props {
   currentSlug: string;
@@ -191,7 +191,8 @@ const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto
           <div class="rp-card__image-wrap">
             <img
               src={card.image}
-              alt={card.title}
+              alt={getImageAlt(card.slug)}
+              title={card.title}
               width="400"
               height="240"
               loading="lazy"
