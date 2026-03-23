@@ -1,12 +1,9 @@
 ---
 title: "Divorcio Express en CDMX — Requisitos, Costo y Tiempo en 2026"
 description: "Guía completa sobre divorcio express y voluntario en CDMX. Requisitos documentales, costo, tiempo de tramitación, paso a paso del proceso, y comparativa con divorcio contencioso."
+date: 2026-03-22
 author: "Despacho de Abogados CDMX"
-publishDate: "2026-03-22"
-lastModified: "2026-03-22"
 keywords: "divorcio express CDMX, divorcio voluntario CDMX, trámite divorcio rápido"
-canonical: "https://abogadosencdmx.com/blog/divorcio-express-cdmx"
-ogImage: "https://abogadosencdmx.com/images/divorcio-express.jpg"
 ---
 
 ## Divorcio Express en CDMX — Requisitos, Costo y Tiempo en 2026

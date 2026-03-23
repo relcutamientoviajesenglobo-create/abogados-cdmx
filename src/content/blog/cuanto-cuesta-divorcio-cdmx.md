@@ -4,8 +4,6 @@ description: "Guía definitiva sobre costos de divorcios en Ciudad de México. P
 date: 2026-03-22
 author: "Despacho de Abogados en CDMX"
 keywords: "cuánto cuesta divorcio CDMX, precio divorcio CDMX, costo abogado divorcio, divorcio express precio, divorcio voluntario CDMX costo"
-schema_type: "Article"
-article_type: "Guide"
 ---
 
 ## Snippet Citable Introductorio

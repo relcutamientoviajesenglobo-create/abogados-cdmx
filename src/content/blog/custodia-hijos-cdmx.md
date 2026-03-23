@@ -1,12 +1,9 @@
 ---
 title: "Guarda y Custodia en CDMX — Todo lo que Necesitas Saber en 2026"
 description: "Guía completa sobre guarda y custodia de hijos en CDMX. Requisitos legales, factores que considera el juez, artículos del Código Civil y cómo proteger los derechos de tus hijos."
+date: 2026-03-22
 author: "Despacho de Abogados CDMX"
-publishDate: "2026-03-22"
-lastModified: "2026-03-22"
 keywords: "custodia hijos CDMX, guarda y custodia CDMX, derecho familiar CDMX"
-canonical: "https://abogadosencdmx.com/blog/custodia-hijos-cdmx"
-ogImage: "https://abogadosencdmx.com/images/custodia-hijos.jpg"
 ---
 
 ## Guarda y Custodia en CDMX — Todo lo que Necesitas Saber en 2026

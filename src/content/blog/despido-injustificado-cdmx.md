@@ -1,18 +1,9 @@
 ---
 title: "Despido injustificado en CDMX — Tus derechos y cómo demandar en 2026"
 description: "Guía completa sobre despido injustificado en la Ciudad de México. Conoce tus derechos laborales, plazos para demandar, montos de indemnización y pasos clave para proteger tu futuro."
-slug: "despido-injustificado-cdmx"
 date: 2026-03-22
-lastmod: 2026-03-22
 author: "Abogados en CDMX"
-type: "article"
-keywords:
-  - despido injustificado CDMX
-  - demanda laboral CDMX
-  - liquidación por despido
-  - indemnización despido México
-  - derechos trabajador despido
-category: "Derecho Laboral"
+keywords: "despido injustificado CDMX, demanda laboral CDMX, liquidación por despido, indemnización despido México, derechos trabajador despido"
 ---
 
 ## Tu situación de despido injustificado en CDMX: Lo que necesitas saber ahora

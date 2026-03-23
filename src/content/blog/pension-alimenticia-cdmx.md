@@ -1,10 +1,9 @@
 ---
 title: "Pensión alimenticia en México: Cómo se calcula y cuánto corresponde en 2026"
 description: "Guía completa sobre pensión alimenticia en CDMX. Descubre cálculos, porcentajes, artículos del Código Civil y ejemplos prácticos. Información de abogados especializados en CDMX."
-date: "2026-03-22"
+date: 2026-03-22
 author: "Despacho de Abogados en CDMX"
-keywords: ["pensión alimenticia cómo se calcula México", "pensión alimenticia CDMX", "cuánto es la pensión alimenticia", "cálculo pensión alimenticia México", "porcentaje pensión alimenticia"]
-schema: "BlogPosting"
+keywords: "pensión alimenticia cómo se calcula México, pensión alimenticia CDMX, cuánto es la pensión alimenticia, cálculo pensión alimenticia México, porcentaje pensión alimenticia"
 ---
 
 ## Pensión Alimenticia en México: Guía Completa de Cálculo y Derechos en 2026
