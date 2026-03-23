@@ -33,8 +33,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Padres compartiendo tiempo con hijo bajo custodia compartida en CDMX'
   },
   'adopcion-cdmx': {
-    url: 'https://images.unsplash.com/photo-1499728603263-13571c8e3601?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Familia feliz celebrando proceso de adopción en Ciudad de México'
+    url: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Manos de familia unidas representando adopción en Ciudad de México'
   },
   'patria-potestad-cdmx': {
     url: 'https://images.unsplash.com/photo-1478476868527-002ae3f3e159?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -87,12 +87,12 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Documentos oficiales para carta de antecedentes penales en CDMX'
   },
   'narcomenudeo-cdmx-defensa': {
-    url: 'https://images.unsplash.com/photo-1611773542744-8b3b2e7a15f0?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Balanza de justicia en caso de narcomenudeo en Ciudad de México'
+    url: 'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Símbolo de justicia en defensa por narcomenudeo en Ciudad de México'
   },
   'robo-vehiculo-cdmx': {
-    url: 'https://images.unsplash.com/photo-1587825140708-dfaf18c4b07a?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Automóvil estacionado representando prevención de robo de vehículo en CDMX'
+    url: 'https://images.unsplash.com/photo-1505664063603-28e48ca204eb?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Ventana de prisión simbolizando consecuencias del robo de vehículo en CDMX'
   },
   'delitos-patrimoniales-cdmx': {
     url: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -103,12 +103,12 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Biblioteca jurídica con libros sobre prescripción de delitos en CDMX'
   },
   'recursos-apelacion-penal-cdmx': {
-    url: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a1?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Abogado redactando recurso de apelación penal en CDMX'
+    url: 'https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Tribunal donde se presentan recursos de apelación penal en CDMX'
   },
   'mediacion-penal-cdmx': {
-    url: 'https://images.unsplash.com/photo-1542744173-8e7e91415e5c?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Mediador facilitando acuerdo en proceso penal en CDMX'
+    url: 'https://images.unsplash.com/photo-1562577309-2592ab84b1bc?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Balanza de justicia representando mediación penal en CDMX'
   },
   'violencia-familiar-cdmx-penal': {
     url: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -129,8 +129,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Expediente judicial de demanda civil en juzgado de CDMX'
   },
   'juicio-oral-civil-cdmx': {
-    url: 'https://images.unsplash.com/photo-1517245386747-bb6c9c34c75e?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Audiencia de juicio oral civil en tribunal de Ciudad de México'
+    url: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Columnas de tribunal donde se realizan juicios orales civiles en CDMX'
   },
   'responsabilidad-civil-cdmx': {
     url: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -203,8 +203,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Emprendedores trabajando en startup con asesoría legal en México'
   },
   'franquicias-mexico': {
-    url: 'https://images.unsplash.com/photo-1542626991-cbc4e04d76f4?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Local comercial representando modelo de franquicia en México'
+    url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Oficina tecnológica representando franquicias modernas en México'
   },
   'fusiones-adquisiciones-mexico': {
     url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -265,8 +265,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Perito realizando avalúo inmobiliario de edificio en CDMX'
   },
   'fideicomiso-inmobiliario-cdmx': {
-    url: 'https://images.unsplash.com/photo-1560185127-6a8e38e1d7e2?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Complejo residencial bajo fideicomiso inmobiliario en Ciudad de México'
+    url: 'https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Entrega de llaves de propiedad en fideicomiso inmobiliario en CDMX'
   },
   'due-diligence-inmobiliario-cdmx': {
     url: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -285,8 +285,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Propiedad de lujo sujeta a impuestos por compraventa en CDMX'
   },
   'zona-restringida-extranjeros-inmuebles-mexico': {
-    url: 'https://images.unsplash.com/photo-1503220317266-8c685ff5e247?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Playa mexicana en zona restringida para compra de inmuebles por extranjeros'
+    url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Departamento moderno en zona restringida para inmuebles de extranjeros en México'
   },
 
   // ── MIGRATORIO (immigration, visas, passports, borders) ──
@@ -299,8 +299,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Documentos migratorios para obtener residencia permanente en México'
   },
   'visa-trabajo-mexico': {
-    url: 'https://images.unsplash.com/photo-1544016768-982d1554f0b3?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Pasaporte con visa de trabajo sellada para laborar en México'
+    url: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Aeropuerto de salida representando trámite de visa de trabajo en México'
   },
   'visa-trabajo-mexico-tipos': {
     url: 'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -315,8 +315,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Bandera mexicana representando proceso de naturalización en México'
   },
   'naturalizacion-mexicana-requisitos': {
-    url: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Solicitud con requisitos para naturalización mexicana ante autoridades'
+    url: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Destino turístico representando el camino hacia la naturalización mexicana'
   },
   'doble-nacionalidad-mexico': {
     url: 'https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?w=700&h=420&fit=crop&fm=webp&q=75',
@@ -339,8 +339,8 @@ export const blogImages: Record<string, { url: string; alt: string }> = {
     alt: 'Persona solicitando asilo y refugio humanitario en México'
   },
   'reunificacion-familiar-mexico': {
-    url: 'https://images.unsplash.com/photo-1526778548025-9c3a01e99e87?w=700&h=420&fit=crop&fm=webp&q=75',
-    alt: 'Familia reunida tras proceso de reunificación familiar en México'
+    url: 'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&h=420&fit=crop&fm=webp&q=75',
+    alt: 'Padre e hijo caminando juntos tras reunificación familiar en México'
   },
 
   // ── LABORAL (employment, work, labor rights) ──
