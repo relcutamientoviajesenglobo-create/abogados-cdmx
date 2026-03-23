@@ -1,0 +1,703 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Calculadora de Pensión Alimenticia CDMX 2026 | Abogados en CDMX';
+const description = 'Calcule el monto estimado de pensión alimenticia en la Ciudad de México. Porcentajes actualizados 2026 según criterios del Tribunal Superior de Justicia de CDMX.';
+const canonical = 'https://abogadosencdmx.com/calcular-pension-alimenticia';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Calculadora de Pensión Alimenticia CDMX",
+      "url": canonical,
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": description,
+      "provider": {
+        "@type": "LegalService",
+        "name": "Abogados en CDMX",
+        "url": "https://abogadosencdmx.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadora de Pensión Alimenticia", "item": canonical }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula la pensión alimenticia en CDMX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La pensión alimenticia en CDMX se calcula como un porcentaje del ingreso neto del obligado, considerando el número de hijos, gastos especiales y la capacidad económica. Los tribunales del TSJCDMX utilizan rangos del 15% al 40% según las circunstancias de cada caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es el porcentaje de pensión alimenticia por hijo en CDMX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Como referencia, los juzgados familiares de CDMX aplican aproximadamente: 15-20% para 1 hijo, 25-30% para 2 hijos, 30-35% para 3 hijos y 35-40% para 4 o más hijos. El porcentaje final lo determina el juez considerando todas las circunstancias."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="calc-hero">
+    <div class="container">
+      <nav class="calc-breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Calculadora de Pensión Alimenticia</span>
+      </nav>
+      <div class="calc-hero__badge">Herramienta gratuita · Actualizada marzo 2026</div>
+      <h1 class="calc-hero__title">Calculadora de Pensión<br>Alimenticia <span>CDMX</span></h1>
+      <p class="calc-hero__sub">Obtenga un estimado del monto de pensión alimenticia basado en los criterios que aplican los juzgados familiares de la Ciudad de México. Porcentajes según lineamientos del TSJCDMX.</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc-section">
+    <div class="container">
+      <div class="calc-layout">
+
+        <!-- LEFT: Form -->
+        <div class="calc-form-wrap">
+          <form id="pensionCalc" class="calc-form">
+
+            <!-- Step 1: Income -->
+            <div class="calc-step" data-step="1">
+              <div class="calc-step__header">
+                <span class="calc-step__num">01</span>
+                <div>
+                  <h2 class="calc-step__title">Ingreso mensual del obligado</h2>
+                  <p class="calc-step__desc">Ingreso neto mensual (después de impuestos) de quien pagará la pensión</p>
+                </div>
+              </div>
+              <div class="calc-field">
+                <span class="calc-field__prefix">$</span>
+                <input type="number" id="income" class="calc-field__input" placeholder="25,000" min="1000" max="1000000" step="100" required>
+                <span class="calc-field__suffix">MXN / mes</span>
+              </div>
+              <div class="calc-presets">
+                <button type="button" class="calc-preset" data-value="10000">$10,000</button>
+                <button type="button" class="calc-preset" data-value="20000">$20,000</button>
+                <button type="button" class="calc-preset" data-value="35000">$35,000</button>
+                <button type="button" class="calc-preset" data-value="50000">$50,000</button>
+                <button type="button" class="calc-preset" data-value="80000">$80,000</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Children -->
+            <div class="calc-step" data-step="2">
+              <div class="calc-step__header">
+                <span class="calc-step__num">02</span>
+                <div>
+                  <h2 class="calc-step__title">Número de hijos</h2>
+                  <p class="calc-step__desc">Hijos menores de edad o dependientes económicos</p>
+                </div>
+              </div>
+              <div class="calc-children">
+                <button type="button" class="calc-child-btn" data-children="1">
+                  <span class="calc-child-icon">👶</span>
+                  <span>1 hijo</span>
+                </button>
+                <button type="button" class="calc-child-btn" data-children="2">
+                  <span class="calc-child-icon">👶👶</span>
+                  <span>2 hijos</span>
+                </button>
+                <button type="button" class="calc-child-btn" data-children="3">
+                  <span class="calc-child-icon">👶👶👶</span>
+                  <span>3 hijos</span>
+                </button>
+                <button type="button" class="calc-child-btn" data-children="4">
+                  <span class="calc-child-icon">👶+</span>
+                  <span>4 o más</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Custody -->
+            <div class="calc-step" data-step="3">
+              <div class="calc-step__header">
+                <span class="calc-step__num">03</span>
+                <div>
+                  <h2 class="calc-step__title">Tipo de custodia</h2>
+                  <p class="calc-step__desc">El régimen de custodia afecta el porcentaje aplicable</p>
+                </div>
+              </div>
+              <div class="calc-custody">
+                <label class="calc-radio">
+                  <input type="radio" name="custody" value="exclusive" checked>
+                  <div class="calc-radio__box">
+                    <div class="calc-radio__check"></div>
+                    <div>
+                      <strong>Custodia exclusiva</strong>
+                      <span>Un padre tiene la custodia principal</span>
+                    </div>
+                  </div>
+                </label>
+                <label class="calc-radio">
+                  <input type="radio" name="custody" value="shared">
+                  <div class="calc-radio__box">
+                    <div class="calc-radio__check"></div>
+                    <div>
+                      <strong>Custodia compartida</strong>
+                      <span>Ambos padres comparten tiempo equitativo</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 4: Special needs -->
+            <div class="calc-step" data-step="4">
+              <div class="calc-step__header">
+                <span class="calc-step__num">04</span>
+                <div>
+                  <h2 class="calc-step__title">Gastos especiales (opcional)</h2>
+                  <p class="calc-step__desc">Seleccione si aplica alguna circunstancia especial</p>
+                </div>
+              </div>
+              <div class="calc-extras">
+                <label class="calc-check">
+                  <input type="checkbox" id="school" value="school">
+                  <span class="calc-check__box"></span>
+                  <div>
+                    <strong>Escuela privada</strong>
+                    <span>Colegiaturas, uniformes, materiales</span>
+                  </div>
+                </label>
+                <label class="calc-check">
+                  <input type="checkbox" id="medical" value="medical">
+                  <span class="calc-check__box"></span>
+                  <div>
+                    <strong>Gastos médicos especiales</strong>
+                    <span>Tratamientos, terapias, discapacidad</span>
+                  </div>
+                </label>
+                <label class="calc-check">
+                  <input type="checkbox" id="activities" value="activities">
+                  <span class="calc-check__box"></span>
+                  <div>
+                    <strong>Actividades extracurriculares</strong>
+                    <span>Deportes, música, idiomas</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button type="submit" class="calc-submit" id="calcBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>
+              Calcular pensión alimenticia
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT: Results -->
+        <div class="calc-results-wrap" id="resultsPanel">
+          <div class="calc-results-empty" id="resultsEmpty">
+            <div class="calc-results-empty__icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+            </div>
+            <h3>Complete el formulario</h3>
+            <p>Ingrese los datos para obtener el cálculo estimado de pensión alimenticia</p>
+          </div>
+
+          <div class="calc-results" id="resultsContent" style="display:none;">
+            <div class="calc-results__header">
+              <span class="calc-results__tag">Resultado estimado</span>
+              <h3 class="calc-results__title">Pensión alimenticia mensual</h3>
+            </div>
+
+            <div class="calc-results__amount-wrap">
+              <div class="calc-results__range">
+                <div class="calc-results__range-item">
+                  <span class="calc-results__label">Mínimo</span>
+                  <span class="calc-results__amount" id="resMin">$0</span>
+                </div>
+                <div class="calc-results__range-sep">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="calc-results__range-item">
+                  <span class="calc-results__label">Máximo</span>
+                  <span class="calc-results__amount" id="resMax">$0</span>
+                </div>
+              </div>
+              <div class="calc-results__pct">
+                <span id="resPct">0%</span> del ingreso neto
+              </div>
+            </div>
+
+            <div class="calc-results__breakdown">
+              <h4>Desglose del cálculo</h4>
+              <div class="calc-results__row">
+                <span>Ingreso mensual neto</span>
+                <strong id="resIncome">$0</strong>
+              </div>
+              <div class="calc-results__row">
+                <span>Número de hijos</span>
+                <strong id="resChildren">0</strong>
+              </div>
+              <div class="calc-results__row">
+                <span>Tipo de custodia</span>
+                <strong id="resCustody">—</strong>
+              </div>
+              <div class="calc-results__row">
+                <span>Rango porcentual aplicable</span>
+                <strong id="resPctRange">0% – 0%</strong>
+              </div>
+              <div class="calc-results__row" id="resExtrasRow" style="display:none;">
+                <span>Ajuste por gastos especiales</span>
+                <strong id="resExtras">+0%</strong>
+              </div>
+            </div>
+
+            <div class="calc-results__bar-wrap">
+              <div class="calc-results__bar-label">
+                <span>0%</span><span>50%</span>
+              </div>
+              <div class="calc-results__bar">
+                <div class="calc-results__bar-fill" id="resBar"></div>
+                <div class="calc-results__bar-marker" id="resMarker"></div>
+              </div>
+            </div>
+
+            <div class="calc-results__disclaimer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <p>Este cálculo es <strong>orientativo</strong> y no constituye asesoría legal. El monto definitivo lo fija el juez familiar considerando todas las circunstancias del caso. Basado en los criterios del TSJCDMX y arts. 301-323 del Código Civil para la CDMX.</p>
+            </div>
+
+            <a href="/asesoria-inicial" class="calc-results__cta">
+              Consultar con un abogado familiarista →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFERENCE TABLE -->
+      <div class="calc-table-section">
+        <h2>Tabla de porcentajes de pensión alimenticia CDMX 2026</h2>
+        <p>Rangos orientativos utilizados por los juzgados familiares de la Ciudad de México, según criterios del Tribunal Superior de Justicia de la CDMX y los artículos 301-323 del Código Civil para la Ciudad de México.</p>
+        <div class="calc-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Hijos</th>
+                <th>Custodia exclusiva</th>
+                <th>Custodia compartida</th>
+                <th>Con gastos especiales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1 hijo</strong></td><td>15% – 20%</td><td>10% – 15%</td><td>20% – 25%</td></tr>
+              <tr><td><strong>2 hijos</strong></td><td>25% – 30%</td><td>18% – 22%</td><td>30% – 35%</td></tr>
+              <tr><td><strong>3 hijos</strong></td><td>30% – 35%</td><td>22% – 28%</td><td>35% – 40%</td></tr>
+              <tr><td><strong>4+ hijos</strong></td><td>35% – 40%</td><td>28% – 33%</td><td>40% – 45%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="calc-table-note">Fuente: Criterios orientadores del TSJCDMX. Los porcentajes varían según la capacidad económica del obligado, las necesidades del acreedor alimentario y las circunstancias particulares de cada caso. Arts. 308-311 CCCDMX.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="calc-cta">
+        <h2>¿Necesita fijar o modificar una pensión alimenticia?</h2>
+        <p>Nuestros abogados familiaristas en CDMX pueden representarle para obtener un monto justo. La consulta inicial es gratuita.</p>
+        <div class="calc-cta__buttons">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta gratuita →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<script>
+  const form = document.getElementById('pensionCalc') as HTMLFormElement;
+  const incomeInput = document.getElementById('income') as HTMLInputElement;
+  const resultsEmpty = document.getElementById('resultsEmpty')!;
+  const resultsContent = document.getElementById('resultsContent')!;
+
+  // Children selection
+  let selectedChildren = 0;
+  document.querySelectorAll('.calc-child-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.calc-child-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedChildren = parseInt(btn.getAttribute('data-children') || '0');
+    });
+  });
+
+  // Preset buttons
+  document.querySelectorAll('.calc-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      incomeInput.value = btn.getAttribute('data-value') || '';
+      document.querySelectorAll('.calc-preset').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Percentages CDMX 2026
+  const pctTable: Record<string, Record<number, [number, number]>> = {
+    exclusive: { 1: [15, 20], 2: [25, 30], 3: [30, 35], 4: [35, 40] },
+    shared:    { 1: [10, 15], 2: [18, 22], 3: [22, 28], 4: [28, 33] }
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const income = parseFloat(incomeInput.value);
+    if (!income || income < 1000) { incomeInput.focus(); return; }
+    if (selectedChildren === 0) { return; }
+
+    const custody = (document.querySelector('input[name="custody"]:checked') as HTMLInputElement)?.value || 'exclusive';
+    const children = Math.min(selectedChildren, 4);
+    const [pctMin, pctMax] = pctTable[custody][children];
+
+    // Extra adjustments
+    let extraPct = 0;
+    if ((document.getElementById('school') as HTMLInputElement).checked) extraPct += 3;
+    if ((document.getElementById('medical') as HTMLInputElement).checked) extraPct += 4;
+    if ((document.getElementById('activities') as HTMLInputElement).checked) extraPct += 2;
+
+    const finalMin = pctMin + extraPct;
+    const finalMax = pctMax + extraPct;
+    const amountMin = Math.round(income * finalMin / 100);
+    const amountMax = Math.round(income * finalMax / 100);
+
+    // Format currency
+    const fmt = (n: number) => '$' + n.toLocaleString('es-MX');
+
+    // Update results
+    document.getElementById('resMin')!.textContent = fmt(amountMin);
+    document.getElementById('resMax')!.textContent = fmt(amountMax);
+    document.getElementById('resPct')!.textContent = `${finalMin}% – ${finalMax}%`;
+    document.getElementById('resIncome')!.textContent = fmt(income);
+    document.getElementById('resChildren')!.textContent = selectedChildren >= 4 ? '4 o más' : String(selectedChildren);
+    document.getElementById('resCustody')!.textContent = custody === 'exclusive' ? 'Exclusiva' : 'Compartida';
+    document.getElementById('resPctRange')!.textContent = `${finalMin}% – ${finalMax}%`;
+
+    const extrasRow = document.getElementById('resExtrasRow')!;
+    if (extraPct > 0) {
+      extrasRow.style.display = 'flex';
+      document.getElementById('resExtras')!.textContent = `+${extraPct}%`;
+    } else {
+      extrasRow.style.display = 'none';
+    }
+
+    // Bar
+    const avgPct = (finalMin + finalMax) / 2;
+    const barFill = document.getElementById('resBar')!;
+    const barMarker = document.getElementById('resMarker')!;
+    barFill.style.width = `${Math.min(avgPct * 2, 100)}%`;
+    barMarker.style.left = `${Math.min(avgPct * 2, 100)}%`;
+    barMarker.textContent = `${Math.round(avgPct)}%`;
+
+    // Show results
+    resultsEmpty.style.display = 'none';
+    resultsContent.style.display = 'block';
+    resultsContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+
+<style>
+  /* ═══ HERO ═══ */
+  .calc-hero {
+    background: var(--color-primary);
+    padding: 160px 0 60px;
+    color: #fff;
+  }
+  .calc-breadcrumb {
+    display: flex; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 24px;
+  }
+  .calc-breadcrumb a { color: rgba(255,255,255,0.5); }
+  .calc-breadcrumb a:hover { color: var(--color-secondary); }
+  .calc-hero__badge {
+    display: inline-block; background: rgba(193,127,62,0.15); border: 1px solid rgba(193,127,62,0.3);
+    color: var(--color-secondary); padding: 6px 16px; font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+  }
+  .calc-hero__title {
+    font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; margin-bottom: 16px;
+  }
+  .calc-hero__title span { color: var(--color-secondary); }
+  .calc-hero__sub {
+    font-size: 17px; color: rgba(255,255,255,0.6); max-width: 640px; line-height: 1.6;
+  }
+
+  /* ═══ LAYOUT ═══ */
+  .calc-section { padding: 60px 0 80px; }
+  .calc-layout {
+    display: grid; grid-template-columns: 1fr 420px; gap: 48px;
+    align-items: start;
+  }
+
+  /* ═══ FORM ═══ */
+  .calc-form-wrap { }
+  .calc-step {
+    margin-bottom: 36px; padding-bottom: 36px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .calc-step:last-of-type { border-bottom: none; }
+  .calc-step__header {
+    display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px;
+  }
+  .calc-step__num {
+    display: flex; align-items: center; justify-content: center;
+    min-width: 36px; height: 36px;
+    background: var(--color-primary); color: #fff;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+    font-family: var(--font-heading);
+  }
+  .calc-step__title {
+    font-size: 20px; margin-bottom: 4px; color: var(--color-primary);
+  }
+  .calc-step__desc {
+    font-size: 14px; color: var(--color-paragraph);
+  }
+
+  /* Input field */
+  .calc-field {
+    display: flex; align-items: center; border: 2px solid #d0d0d0;
+    transition: border-color 0.2s; background: #fff;
+  }
+  .calc-field:focus-within { border-color: var(--color-secondary); }
+  .calc-field__prefix {
+    padding: 0 0 0 16px; font-size: 20px; font-weight: 700; color: var(--color-primary);
+  }
+  .calc-field__input {
+    flex: 1; border: none; padding: 16px 12px; font-size: 22px; font-weight: 700;
+    color: var(--color-primary); outline: none; background: transparent;
+    font-family: var(--font-heading);
+  }
+  .calc-field__input::placeholder { color: #c0c0c0; font-weight: 400; }
+  .calc-field__suffix {
+    padding: 0 16px 0 0; font-size: 13px; color: var(--color-paragraph); white-space: nowrap;
+  }
+
+  /* Presets */
+  .calc-presets { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .calc-preset {
+    padding: 8px 16px; border: 1px solid #d0d0d0; background: #fff;
+    font-size: 13px; font-weight: 600; color: var(--color-paragraph);
+    cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
+  }
+  .calc-preset:hover, .calc-preset.active {
+    border-color: var(--color-secondary); color: var(--color-secondary);
+    background: rgba(193,127,62,0.05);
+  }
+
+  /* Children buttons */
+  .calc-children { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .calc-child-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    padding: 20px 12px; border: 2px solid #e0e0e0; background: #fff;
+    cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
+  }
+  .calc-child-btn:hover { border-color: var(--color-secondary); }
+  .calc-child-btn.active {
+    border-color: var(--color-secondary); background: rgba(193,127,62,0.06);
+    box-shadow: 0 0 0 3px rgba(193,127,62,0.1);
+  }
+  .calc-child-icon { font-size: 24px; }
+  .calc-child-btn span:last-child { font-size: 13px; font-weight: 600; color: var(--color-primary); }
+
+  /* Radio buttons */
+  .calc-custody { display: flex; flex-direction: column; gap: 12px; }
+  .calc-radio { cursor: pointer; }
+  .calc-radio input { display: none; }
+  .calc-radio__box {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 20px; border: 2px solid #e0e0e0; transition: all 0.2s;
+  }
+  .calc-radio input:checked + .calc-radio__box {
+    border-color: var(--color-secondary); background: rgba(193,127,62,0.04);
+  }
+  .calc-radio__check {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 2px solid #d0d0d0; flex-shrink: 0;
+    position: relative; transition: all 0.2s;
+  }
+  .calc-radio input:checked + .calc-radio__box .calc-radio__check {
+    border-color: var(--color-secondary);
+  }
+  .calc-radio input:checked + .calc-radio__box .calc-radio__check::after {
+    content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+    border-radius: 50%; background: var(--color-secondary);
+  }
+  .calc-radio__box strong { display: block; font-size: 15px; color: var(--color-primary); }
+  .calc-radio__box span { font-size: 13px; color: var(--color-paragraph); }
+
+  /* Checkboxes */
+  .calc-extras { display: flex; flex-direction: column; gap: 12px; }
+  .calc-check {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 20px; border: 1px solid #e8e8e8; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .calc-check:hover { border-color: var(--color-secondary); }
+  .calc-check input { display: none; }
+  .calc-check__box {
+    width: 22px; height: 22px; border: 2px solid #d0d0d0;
+    flex-shrink: 0; position: relative; transition: all 0.2s;
+  }
+  .calc-check input:checked ~ .calc-check__box {
+    background: var(--color-secondary); border-color: var(--color-secondary);
+  }
+  .calc-check input:checked ~ .calc-check__box::after {
+    content: '✓'; position: absolute; top: -1px; left: 3px;
+    color: #fff; font-size: 14px; font-weight: 700;
+  }
+  .calc-check strong { display: block; font-size: 14px; color: var(--color-primary); }
+  .calc-check span { font-size: 12px; color: var(--color-paragraph); }
+
+  /* Submit */
+  .calc-submit {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 18px; background: var(--color-secondary);
+    color: #fff; font-size: 16px; font-weight: 700; border: none;
+    cursor: pointer; transition: all 0.3s; font-family: var(--font-body);
+    margin-top: 12px;
+  }
+  .calc-submit:hover { background: #8e6543; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(193,127,62,0.3); }
+
+  /* ═══ RESULTS PANEL ═══ */
+  .calc-results-wrap {
+    position: sticky; top: 140px;
+    background: #fff; border: 1px solid #e0e0e0;
+    min-height: 400px;
+  }
+  .calc-results-empty {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 60px 32px; text-align: center; min-height: 400px;
+  }
+  .calc-results-empty__icon { color: #d0d0d0; margin-bottom: 16px; }
+  .calc-results-empty h3 { font-size: 18px; color: var(--color-primary); margin-bottom: 8px; }
+  .calc-results-empty p { font-size: 14px; color: var(--color-paragraph); }
+
+  .calc-results { padding: 0; }
+  .calc-results__header {
+    padding: 24px 28px; background: var(--color-primary); color: #fff;
+  }
+  .calc-results__tag {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--color-secondary);
+    margin-bottom: 4px;
+  }
+  .calc-results__title { font-size: 20px; color: #fff; }
+
+  .calc-results__amount-wrap { padding: 28px; border-bottom: 1px solid #eee; }
+  .calc-results__range { display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .calc-results__range-item { text-align: center; }
+  .calc-results__label { display: block; font-size: 11px; color: var(--color-paragraph); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .calc-results__amount { font-size: 32px; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); }
+  .calc-results__range-sep { color: var(--color-secondary); }
+  .calc-results__pct { text-align: center; margin-top: 12px; font-size: 14px; color: var(--color-secondary); font-weight: 600; }
+
+  .calc-results__breakdown { padding: 20px 28px; border-bottom: 1px solid #eee; }
+  .calc-results__breakdown h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-paragraph); margin-bottom: 12px; }
+  .calc-results__row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    font-size: 14px; border-bottom: 1px solid #f5f5f5;
+  }
+  .calc-results__row span { color: var(--color-paragraph); }
+  .calc-results__row strong { color: var(--color-primary); }
+
+  .calc-results__bar-wrap { padding: 20px 28px; }
+  .calc-results__bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--color-paragraph); margin-bottom: 6px; }
+  .calc-results__bar { height: 8px; background: #eee; position: relative; overflow: visible; }
+  .calc-results__bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-secondary), #d4956a); transition: width 0.8s ease; width: 0; }
+  .calc-results__bar-marker {
+    position: absolute; top: -28px; transform: translateX(-50%);
+    background: var(--color-primary); color: #fff; padding: 2px 8px;
+    font-size: 11px; font-weight: 700; transition: left 0.8s ease;
+    left: 0;
+  }
+  .calc-results__bar-marker::after {
+    content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 4px solid var(--color-primary);
+  }
+
+  .calc-results__disclaimer {
+    display: flex; gap: 10px; padding: 16px 28px; background: #faf8f5;
+    border-top: 1px solid #eee;
+  }
+  .calc-results__disclaimer svg { flex-shrink: 0; color: var(--color-secondary); margin-top: 2px; }
+  .calc-results__disclaimer p { font-size: 12px; color: var(--color-paragraph); line-height: 1.5; }
+
+  .calc-results__cta {
+    display: block; text-align: center; padding: 18px 28px;
+    background: var(--color-secondary); color: #fff; font-weight: 700;
+    font-size: 15px; transition: background 0.3s;
+  }
+  .calc-results__cta:hover { background: #8e6543; }
+
+  /* ═══ TABLE ═══ */
+  .calc-table-section {
+    margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--color-border);
+  }
+  .calc-table-section h2 { font-size: 28px; color: var(--color-primary); margin-bottom: 12px; }
+  .calc-table-section > p { font-size: 15px; color: var(--color-paragraph); margin-bottom: 24px; max-width: 700px; }
+  .calc-table-wrap { overflow-x: auto; }
+  .calc-table-wrap table {
+    width: 100%; border-collapse: collapse; font-size: 15px;
+  }
+  .calc-table-wrap th {
+    background: var(--color-primary); color: #fff; padding: 14px 20px;
+    text-align: left; font-weight: 600;
+  }
+  .calc-table-wrap td {
+    padding: 14px 20px; border-bottom: 1px solid #eee;
+  }
+  .calc-table-wrap tr:nth-child(even) { background: var(--color-light); }
+  .calc-table-note { font-size: 13px; color: var(--color-paragraph); margin-top: 16px; font-style: italic; }
+
+  /* ═══ CTA ═══ */
+  .calc-cta {
+    margin-top: 60px; background: var(--color-primary); color: #fff;
+    padding: 48px; text-align: center;
+  }
+  .calc-cta h2 { color: #fff; margin-bottom: 12px; font-size: 28px; }
+  .calc-cta p { color: rgba(255,255,255,0.6); margin-bottom: 28px; font-size: 16px; }
+  .calc-cta__buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 991px) {
+    .calc-layout { grid-template-columns: 1fr; }
+    .calc-results-wrap { position: static; }
+    .calc-hero { padding: 120px 0 48px; }
+  }
+  @media (max-width: 767px) {
+    .calc-children { grid-template-columns: repeat(2, 1fr); }
+    .calc-hero { padding: 100px 0 36px; }
+    .calc-hero__title { font-size: 28px; }
+    .calc-results__amount { font-size: 26px; }
+    .calc-cta { padding: 32px 20px; }
+    .calc-cta h2 { font-size: 22px; }
+  }
+  @media (max-width: 479px) {
+    .calc-presets { gap: 6px; }
+    .calc-preset { padding: 6px 10px; font-size: 12px; }
+    .calc-step__header { gap: 12px; }
+    .calc-step__num { min-width: 30px; height: 30px; font-size: 11px; }
+  }
+</style>
