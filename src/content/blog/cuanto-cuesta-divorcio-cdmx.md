@@ -258,7 +258,7 @@ El precio final de un divorcio en CDMX depende de múltiples variables más all�
 
 ### Presencia de hijos menores de edad
 
-La presencia de hijos menores aumenta significativamente el costo del divorcio. Los casos con menores requieren acuerdos de [custodia](/blog/custodia-hijos-cdmx), pensión alimenticia, y potencialmente peritajes psicológicos o de asuntos sociales. **Un divorcio con tres o más hijos puede costar 30-50% más que un divorcio sin hijos.** Adicionalmente, si existe controversia sobre custodia, los costos se disparan exponencialmente.
+La presencia de hijos menores aumenta significativamente el costo del divorcio. Los casos con menores requieren acuerdos de [custodia](/blog/custodia-hijos-cdmx), pensión alimenticia, y potencialmente peritajes psicológicos o de asuntos sociales. Utilice nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para obtener un estimado actualizado 2026 del monto que podría corresponder en su caso. **Un divorcio con tres o más hijos puede costar 30-50% más que un divorcio sin hijos.** Adicionalmente, si existe controversia sobre custodia, los costos se disparan exponencialmente.
 
 ### Cantidad y complejidad de bienes
 

@@ -92,6 +92,8 @@ Estos porcentajes se aplican al salario bruto, que incluye todas las percepcione
 | 4 hijos | 25% | 30% | 27-28% | Difícil justificar más del 30% por ley de derechos del acreedor laboral |
 | 5 o más hijos | 25% | 35% | 28-32% | Se analiza capacidad económica del obligado caso a caso |
 
+Utilice nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para obtener un estimado personalizado con porcentajes actualizados 2026 según su ingreso y número de hijos.
+
 **Notas importantes sobre la tabla:**
 
 La tabla anterior representa únicamente los porcentajes del salario bruto base. El juzgado puede determinar porcentajes dentro de estos rangos dependiendo de:

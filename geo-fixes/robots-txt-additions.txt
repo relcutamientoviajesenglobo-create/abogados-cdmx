@@ -1,0 +1,33 @@
+# ROBOTS.TXT — ACCIÓN REQUERIDA EN CLOUDFLARE DASHBOARD
+# =====================================================
+#
+# PROBLEMA: Cloudflare Managed Content bloquea GPTBot, ClaudeBot,
+# Google-Extended, Applebot-Extended y Amazonbot, anulando tus reglas manuales.
+#
+# SOLUCIÓN:
+# 1. Ve a dash.cloudflare.com → tu sitio → Bots → AI Crawlers
+# 2. Cambia a ALLOW los siguientes bots:
+#    - GPTBot (OpenAI — permite aparecer en ChatGPT search)
+#    - ClaudeBot (Anthropic — permite aparecer en Claude)
+#    - Google-Extended (Google — permite aparecer en AI Overviews)
+#    - Applebot-Extended (Apple — permite aparecer en Apple Intelligence)
+#    - Amazonbot (Amazon — permite aparecer en Alexa/Amazon search)
+# 3. MANTÉN BLOQUEADOS:
+#    - CCBot (Common Crawl — solo entrena modelos, no da visibilidad)
+#    - Bytespider (ByteDance — solo entrena modelos)
+# 4. OPCIONAL — Decide si permitir:
+#    - Meta-ExternalAgent (Meta — permite aparecer en Meta AI)
+#
+# DESPUÉS de ajustar Cloudflare, tu robots.txt manual funcionará correctamente.
+#
+# También agrega estas reglas que faltan:
+
+# Bots sin regla explícita — agregar al final de robots.txt:
+User-agent: GoogleOther
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /

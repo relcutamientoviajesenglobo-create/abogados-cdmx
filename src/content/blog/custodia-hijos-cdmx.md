@@ -83,7 +83,7 @@ Reconoce que menores de edad en condiciones de discernimiento deben ser escuchad
 
 El proceso inicia cuando uno de los padres presenta demanda ante el Juzgado Familiar correspondiente en CDMX. Sin embargo, estadísticas del Tribunal Superior de Justicia CDMX muestran que el 78% de los casos se resuelven mediante acuerdo previo entre las partes, evitando un litigio prolongado.
 
-Si ambos padres llegan a un acuerdo sobre custodia, régimen de visitas y [pensión alimenticia](/blog/pension-alimenticia-cdmx), pueden presentar una "Propuesta de Convenio" ante el juez. Este documento debe incluir: ubicación de la vivienda del custodio, horarios de visita detallados, monto de manutención, distribución de gastos de educación y salud, y medidas de comunicación entre padre e hijo.
+Si ambos padres llegan a un acuerdo sobre custodia, régimen de visitas y [pensión alimenticia](/blog/pension-alimenticia-cdmx), pueden presentar una "Propuesta de Convenio" ante el juez. Puede utilizar nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para estimar el monto antes de negociar el convenio. Este documento debe incluir: ubicación de la vivienda del custodio, horarios de visita detallados, monto de manutención, distribución de gastos de educación y salud, y medidas de comunicación entre padre e hijo.
 
 El juez revisar el convenio propuesto para verificar que no contravenga el interés superior del menor. Si lo considera benéfico, aprueba el acuerdo y emite una sentencia ejecutoria.
 

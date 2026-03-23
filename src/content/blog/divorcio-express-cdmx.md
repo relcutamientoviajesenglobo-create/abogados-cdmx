@@ -62,7 +62,7 @@ Si existen hijos menores de edad:
 
 - **Actas de nacimiento certificadas** de todos los hijos menores (máximo 6 meses antigüedad)
 - **Acuerdo sobre custodia:** Documento especificando quién tendrá guarda del menor, régimen de visitas detallado, horarios
-- **Acuerdo sobre manutención infantil:** Monto mensual que pagará el padre no custodio, método de pago, porcentaje de gastos extraordinarios
+- **Acuerdo sobre manutención infantil:** Monto mensual que pagará el padre no custodio, método de pago, porcentaje de gastos extraordinarios. Utilice nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para obtener un estimado actualizado 2026
 - **Cartilla de vacunación** de los menores
 - **Registro de inscripción escolar** actual
 

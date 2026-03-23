@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Abogados en CDMX",
+  "url": "https://abogadosencdmx.com",
+  "logo": "https://abogadosencdmx.com/images/og-default.svg",
+  "description": "Despacho jurídico en la Colonia Roma Norte, CDMX. Especialistas en 7 áreas del derecho: familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral.",
+  "foundingDate": "2014",
+  "telephone": "+525564655501",
+  "email": "contacto@abogadosencdmx.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Guanajuato 224",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "postalCode": "06700",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.4194",
+    "longitude": "-99.1616"
+  },
+  "sameAs": [
+    "AGREGAR_URL_FACEBOOK",
+    "AGREGAR_URL_INSTAGRAM",
+    "AGREGAR_URL_LINKEDIN",
+    "AGREGAR_URL_GOOGLE_BUSINESS"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+525564655501",
+    "contactType": "customer service",
+    "availableLanguage": "es",
+    "areaServed": {
+      "@type": "City",
+      "name": "Ciudad de México"
+    }
+  },
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 5,
+    "maxValue": 20
+  }
+}

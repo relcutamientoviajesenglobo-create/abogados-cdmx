@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una consulta con un abogado en CDMX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En nuestro despacho, la consulta inicial es gratuita y sin compromiso. Durante esta sesión de 30-45 minutos evaluamos su caso, explicamos las opciones legales disponibles y proporcionamos un presupuesto transparente. Los honorarios posteriores varían según la complejidad del caso y el área del derecho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué áreas del derecho manejan en su despacho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro despacho en la Colonia Roma Norte maneja 7 especialidades: derecho familiar (divorcios, custodia, pensión alimenticia), derecho penal (defensa criminal), derecho civil (contratos, responsabilidad), derecho corporativo (constitución de empresas, cumplimiento), derecho inmobiliario (compraventa, arrendamiento), derecho migratorio (visas, residencia) y derecho laboral (despido injustificado, contratos)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda un divorcio en CDMX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un divorcio express de mutuo acuerdo en CDMX puede resolverse en 2-4 meses. Un divorcio contencioso (sin acuerdo entre las partes) puede tardar de 6 meses a 2 años dependiendo de la complejidad, bienes en disputa y custodia de hijos. Nuestro equipo de derecho familiar ha resuelto más de 300 casos en la Ciudad de México."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde están ubicados sus oficinas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro despacho está ubicado en Guanajuato 224, Colonia Roma Norte, Cuauhtémoc, Ciudad de México, CP 06700. Estamos a 5 minutos caminando de la estación de Metro Insurgentes. Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 horas. También ofrecemos consultas por videollamada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debo hacer si me despidieron injustificadamente en CDMX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si fue despedido sin causa justificada, tiene derecho a una indemnización que incluye 3 meses de salario, 20 días por año trabajado, prima de antigüedad, salarios caídos y prestaciones proporcionales. Tiene 2 meses a partir del despido para presentar su demanda ante el Tribunal Laboral. Contacte a un abogado laboralista inmediatamente para proteger sus derechos."
+      }
+    }
+  ]
+}

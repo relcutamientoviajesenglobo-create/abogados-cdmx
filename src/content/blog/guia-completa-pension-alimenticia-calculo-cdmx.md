@@ -38,6 +38,8 @@ Los tribunales de la Ciudad de México utilizan tablas de porcentajes orientador
 | 3 hijos | Más de $60 000 MXN | 30 % | 50 % | $18 000 | Variable |
 | 4 o más hijos | Cualquier rango | 35 % | 55 % | Variable | Variable |
 
+Utilice nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para obtener un estimado actualizado 2026 basado en su ingreso y número de hijos.
+
 Es fundamental entender que estos porcentajes se aplican sobre el ingreso neto del deudor, es decir, después de las deducciones obligatorias por concepto de ISR, cuotas al IMSS o ISSSTE, y aportaciones al fondo de ahorro para el retiro. Las percepciones extraordinarias como aguinaldo, prima vacacional, bonos de productividad y participación de utilidades también forman parte de la base de cálculo, conforme a la tesis jurisprudencial 1a./J. 34/2016 de la Primera Sala de la Suprema Corte de Justicia de la Nación.
 
 ## Factores que los jueces ponderan al fijar el monto

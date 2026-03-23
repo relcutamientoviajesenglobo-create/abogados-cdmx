@@ -122,7 +122,7 @@ La custodia compartida tiene implicaciones directas sobre la [pensión alimentic
 | Custodia 60/40 | El padre con menor tiempo paga pensión proporcional | Según tiempo de convivencia |
 | Gastos escolares y médicos | Se distribuyen proporcionalmente a los ingresos | Independientes del régimen de custodia |
 
-Es importante aclarar que la custodia compartida no elimina automáticamente la obligación alimentaria. El artículo 311 del Código Civil para la CDMX mantiene el principio de proporcionalidad: si un progenitor gana significativamente más que el otro, debe contribuir en mayor proporción a los gastos del menor, independientemente de que la custodia sea compartida.
+Es importante aclarar que la custodia compartida no elimina automáticamente la obligación alimentaria. El artículo 311 del Código Civil para la CDMX mantiene el principio de proporcionalidad: si un progenitor gana significativamente más que el otro, debe contribuir en mayor proporción a los gastos del menor, independientemente de que la custodia sea compartida. Utilice nuestra [calculadora de pensión alimenticia](/calcular-pension-alimenticia) para obtener un estimado actualizado 2026 según los ingresos de cada progenitor.
 
 ## Modificación y revisión de la custodia compartida
 
