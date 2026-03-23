@@ -58,14 +58,9 @@ const dateDisplay = `${dateObj.getDate()} de ${months[dateObj.getMonth()]} de ${
 <Base title={title} description={description} canonical={canonical} schema={schema} publishedDate={publishedDate} modifiedDate={publishedDate} author={post.data.author}>
   <Header slot="header" />
 
-  <section class="section-padding" style="padding-bottom:0;">
-    <div class="container">
-      <Breadcrumb items={[{label:'Blog', href:'/blog'},{label: post.data.title}]} />
-    </div>
-  </section>
-
   <article class="section-padding">
     <div class="container">
+      <Breadcrumb items={[{label:'Blog', href:'/blog'},{label: post.data.title}]} />
       <div class="article-layout">
         <div class="article-content">
           <div class="article-meta reveal">
