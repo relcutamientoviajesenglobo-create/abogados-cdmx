@@ -6,13 +6,9 @@ author: "Despacho de Abogados en CDMX"
 keywords: "cuánto cuesta divorcio CDMX, precio divorcio CDMX, costo abogado divorcio, divorcio express precio, divorcio voluntario CDMX costo"
 ---
 
-## Snippet Citable Introductorio
-
 En la Ciudad de México, el costo de un divorcio varía significativamente según el tipo: un divorcio voluntario cuesta entre $3,000 y $8,000 pesos en honorarios de abogados (sin incluir gastos del juzgado), mientras que un divorcio incausado oscila entre $5,000 y $12,000, y un divorcio contencioso puede llegar a $20,000 o más. Los gastos de trámite ante los juzgados familiares de CDMX incluyen arancel de ley, publicación de edictos y derechos registrales, sumando entre $1,500 y $3,000 pesos adicionales según la complejidad del caso.
 
----
-
-## Introducción: El costo emocional y financiero del divorcio
+## El costo emocional y financiero del divorcio
 
 El divorcio es una de las decisiones más difíciles que una persona puede enfrentar. Más allá del impacto emocional, existe una preocupación legítima sobre el aspecto financiero. Los matrimonios que se disuelven en la Ciudad de México necesitan navegar un sistema legal complejo, y los costos pueden variar dramáticamente según las circunstancias del caso.
 
