@@ -225,8 +225,15 @@
 
 <script>
   const header = document.getElementById('mainHeader');
+  // On interior pages (not homepage), always show solid background
+  if (window.location.pathname !== '/') {
+    header?.classList.add('scrolled');
+  }
   window.addEventListener('scroll', () => {
-    header?.classList.toggle('scrolled', window.scrollY > 60);
+    if (window.location.pathname === '/') {
+      header?.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    // Interior pages always keep scrolled class
   });
 
   const burger = document.querySelector('.header__burger');
