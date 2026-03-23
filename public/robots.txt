@@ -39,6 +39,16 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Bots adicionales de búsqueda IA — PERMITIDOS
+User-agent: GoogleOther
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 # Bots de training-only — BLOQUEADOS (no generan visibilidad)
 User-agent: CCBot
 Disallow: /

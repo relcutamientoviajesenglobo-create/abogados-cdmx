@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const title = 'Abogados en CDMX — Despacho Jurídico Especializado en Derecho Familiar, Civil, Penal y Corporativo';
-const description = 'Abogados en CDMX es un despacho jurídico en la Colonia Roma Norte especializado en derecho familiar, civil, penal, corporativo, migratorio, inmobiliario y laboral. Asesoría legal confiable en la Ciudad de México.';
+const description = 'Despacho jurídico en Roma Norte, CDMX. Especialistas en derecho familiar, penal, civil, corporativo, migratorio, inmobiliario y laboral. Consulta gratuita.';
 const canonical = 'https://abogadosencdmx.com';
 
 const schema = {
@@ -82,6 +82,70 @@ const schema = {
       "name": "Abogados en CDMX",
       "url": "https://abogadosencdmx.com",
       "potentialAction": { "@type": "SearchAction", "target": "https://abogadosencdmx.com/blog?q={search_term_string}", "query-input": "required name=search_term_string" }
+    },
+    {
+      "@type": "Organization",
+      "name": "Abogados en CDMX",
+      "url": "https://abogadosencdmx.com",
+      "logo": "https://abogadosencdmx.com/images/og-default.svg",
+      "description": "Despacho jurídico en la Colonia Roma Norte, CDMX. Especialistas en 7 áreas del derecho: familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Fundado en 2014.",
+      "foundingDate": "2014",
+      "telephone": "+525564655501",
+      "email": "contacto@abogadosencdmx.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Guanajuato 224",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "postalCode": "06700",
+        "addressCountry": "MX",
+        "name": "Colonia Roma Norte, Alcaldía Cuauhtémoc"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+525564655501",
+        "contactType": "customer service",
+        "availableLanguage": "es",
+        "areaServed": { "@type": "City", "name": "Ciudad de México" }
+      },
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 20 },
+      "sameAs": []
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta una consulta con un abogado en CDMX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "En nuestro despacho, la consulta inicial es gratuita y sin compromiso. Durante esta sesión de 30 a 45 minutos evaluamos su caso, explicamos las opciones legales disponibles y proporcionamos un presupuesto transparente. Los honorarios posteriores varían según la complejidad del caso y el área del derecho." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué áreas del derecho manejan en su despacho?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nuestro despacho en la Colonia Roma Norte maneja 7 especialidades: derecho familiar (divorcios, custodia, pensión alimenticia), derecho penal (defensa criminal), derecho civil (contratos, responsabilidad), derecho corporativo (constitución de empresas, compliance), derecho inmobiliario (compraventa, arrendamiento), derecho migratorio (visas, residencia) y derecho laboral (despido injustificado, contratos)." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tarda un divorcio en CDMX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un divorcio express de mutuo acuerdo en CDMX puede resolverse en 2 a 4 meses. Un divorcio contencioso sin acuerdo entre las partes puede tardar de 6 meses a 2 años dependiendo de la complejidad, bienes en disputa y custodia de hijos. Nuestro equipo de derecho familiar ha resuelto más de 300 casos en la Ciudad de México." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde están ubicadas sus oficinas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nuestro despacho está ubicado en Guanajuato 224, Colonia Roma Norte, Cuauhtémoc, Ciudad de México, CP 06700. Estamos a 5 minutos caminando de la estación de Metro Insurgentes. Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 horas. También ofrecemos consultas por videollamada." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué debo hacer si me despidieron injustificadamente en CDMX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si fue despedido sin causa justificada, tiene derecho a una indemnización que incluye 3 meses de salario, 20 días por año trabajado, prima de antigüedad, salarios caídos y prestaciones proporcionales. Tiene 2 meses a partir del despido para presentar su demanda ante el Tribunal Laboral. Contacte a un abogado laboralista inmediatamente para proteger sus derechos." }
+        }
+      ]
     }
   ]
 };
@@ -114,7 +178,7 @@ const equipo = [
 ];
 ---
 
-<Base title={title} description={description} canonical={canonical} schema={schema}>
+<Base title={title} description={description} canonical={canonical} schema={schema} publishedDate="2025-09-15T00:00:00-06:00" modifiedDate="2026-03-22T00:00:00-06:00" author="Abogados en CDMX">
   <Header slot="header" />
 
   <!-- ══════════════════════════════════════════════
@@ -470,6 +534,54 @@ const equipo = [
     <div class="container">
       <div class="reveal" style="max-width:850px;margin:0 auto;">
         <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Si desea conocer más antes de agendar su consulta, visite nuestro <a href="/blog">blog jurídico</a> donde publicamos guías prácticas y artículos escritos por los abogados del despacho — incluyendo la <a href="/blog/guia-divorcio-cdmx-2026">guía de divorcio en CDMX 2026</a>, los <a href="/blog/derechos-inquilino-cdmx-2026">derechos del inquilino</a> y la <a href="/blog/derechos-detenido-cdmx">guía de derechos del detenido</a>. También puede consultar nuestra sección de <a href="/preguntas-frecuentes">preguntas frecuentes</a> para resolver dudas generales sobre nuestras siete áreas de especialidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION: FAQ — PREGUNTAS FRECUENTES
+       ══════════════════════════════════════════════ -->
+  <section class="section-padding faq-home-section" style="background:var(--color-light);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>¿Tiene dudas sobre su caso legal en CDMX?</h2>
+        <p class="section-sub">Respondemos las consultas más comunes que recibimos en nuestro despacho jurídico de la Colonia Roma Norte.</p>
+      </div>
+      <div class="faq-list" style="max-width:850px;margin:0 auto;">
+        <details class="faq-item reveal" open>
+          <summary class="faq-question">¿Cuánto cuesta una consulta con un abogado en CDMX?</summary>
+          <div class="faq-answer">
+            <p>En nuestro despacho, la <strong>consulta inicial es gratuita</strong> y sin compromiso. Durante esta sesión de 30 a 45 minutos evaluamos su caso, explicamos las opciones legales disponibles y proporcionamos un presupuesto transparente con honorarios desglosados. Los costos posteriores varían según la complejidad del caso y el área del derecho — por ejemplo, un divorcio express de mutuo acuerdo tiene costos distintos a un litigio de custodia contencioso. En nuestra experiencia, la transparencia en honorarios desde el primer momento genera confianza y permite que nuestros clientes tomen decisiones informadas sobre cómo proceder con su asunto legal.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">¿Qué áreas del derecho manejan en su despacho?</summary>
+          <div class="faq-answer">
+            <p>Nuestro despacho en la Colonia Roma Norte, CDMX, maneja <strong>7 especialidades jurídicas</strong>: derecho familiar (divorcios, custodia, pensión alimenticia, violencia familiar), derecho penal (defensa criminal, amparos, recursos), derecho civil (contratos, responsabilidad civil, sucesiones), derecho corporativo (constitución de empresas, fusiones, compliance), derecho inmobiliario (compraventa, arrendamiento, regularización de propiedad), derecho migratorio (visas, residencia temporal y permanente, naturalización) y derecho laboral (despido injustificado, liquidaciones, acoso laboral). Cada área cuenta con abogados dedicados exclusivamente a esa materia, con conocimiento actualizado de la legislación vigente en la Ciudad de México y experiencia ante los tribunales locales.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">¿Cuánto tiempo tarda un divorcio en CDMX?</summary>
+          <div class="faq-answer">
+            <p>Los plazos dependen del tipo de divorcio. Un <strong>divorcio express de mutuo acuerdo</strong> en CDMX puede resolverse en 2 a 4 meses cuando ambas partes están de acuerdo en los términos del convenio (custodia, pensión, bienes). Un <strong>divorcio contencioso</strong> — donde no hay acuerdo entre las partes — puede tardar de 6 meses a 2 años dependiendo de la complejidad, los bienes en disputa y los acuerdos de custodia de hijos. Según el artículo 266 del Código Civil para la Ciudad de México, no se requiere expresar causa para solicitar el divorcio. Nuestro equipo de derecho familiar ha resuelto más de 300 casos familiares en la CDMX y puede orientarle sobre el procedimiento más adecuado para su situación.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">¿Dónde están ubicadas sus oficinas?</summary>
+          <div class="faq-answer">
+            <p>Nuestro despacho está ubicado en <strong>Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, Ciudad de México, CP 06700</strong>. Estamos a 5 minutos caminando de la estación de Metro Insurgentes (Línea 1) y a 10 minutos de Metrobús Durango. Contamos con estacionamiento cercano en la calle de Orizaba. Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 horas. También ofrecemos <strong>consultas por videollamada</strong> para clientes que no pueden acudir de manera presencial. Para agendar su cita puede llamar al <a href="tel:+525564655501">55 6465 5501</a> o escribir a <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">¿Qué debo hacer si me despidieron injustificadamente en CDMX?</summary>
+          <div class="faq-answer">
+            <p>Si fue despedido sin causa justificada, la Ley Federal del Trabajo le otorga derecho a una <strong>indemnización constitucional</strong> que incluye: 3 meses de salario integrado, 20 días de salario por cada año trabajado, prima de antigüedad (12 días por año), salarios caídos desde la fecha del despido y prestaciones proporcionales (aguinaldo, vacaciones, prima vacacional). Tiene un <strong>plazo de 2 meses</strong> a partir del despido para presentar su demanda ante el Tribunal Laboral correspondiente — si se excede este plazo, puede perder su derecho a reclamar. En nuestra experiencia como abogados laboralistas en CDMX, le recomendamos contactar a un especialista inmediatamente después del despido para documentar adecuadamente su caso y proteger sus derechos.</p>
+          </div>
+        </details>
+      </div>
+      <div class="section-cta reveal" style="text-align:center;margin-top:40px;">
+        <a href="/preguntas-frecuentes" class="btn-primary-wrap">Ver todas las preguntas frecuentes →</a>
       </div>
     </div>
   </section>

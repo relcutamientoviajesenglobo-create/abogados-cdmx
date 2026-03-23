@@ -12,8 +12,11 @@ interface Props {
   canonical?: string;
   schema?: object;
   ogImage?: string;
+  publishedDate?: string;
+  modifiedDate?: string;
+  author?: string;
 }
-const { title, description, canonical = 'https://abogadosencdmx.com', schema, ogImage = '/images/og-default.svg' } = Astro.props;
+const { title, description, canonical = 'https://abogadosencdmx.com', schema, ogImage = '/images/og-default.svg', publishedDate, modifiedDate, author } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="es-MX">
@@ -29,6 +32,11 @@ const { title, description, canonical = 'https://abogadosencdmx.com', schema, og
   <meta name="geo.placename" content="Ciudad de México" />
   <meta name="geo.position" content="19.4194;-99.1616" />
   <meta name="ICBM" content="19.4194, -99.1616" />
+
+  <!-- E-E-A-T: Publication & Modification dates -->
+  {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+  {modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+  {author && <meta name="author" content={author} />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
