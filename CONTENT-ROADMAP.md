@@ -93,27 +93,27 @@ keywords: "keyword1, keyword2, keyword3"
 - [x] amparo-penal-cdmx — Amparo penal en CDMX: cuándo procede y cómo tramitarlo
 - [x] defensa-penal-cdmx — Defensa penal en CDMX: cómo elegir abogado penalista
 - [x] delitos-patrimoniales-cdmx — Fraude, robo y abuso de confianza en CDMX: guía legal
-- [ ] violencia-familiar-cdmx-penal — Violencia familiar como delito en CDMX: denuncia y proceso
-- [ ] libertad-bajo-caucion-cdmx — Libertad bajo caución en CDMX: requisitos y costos 2026
-- [ ] juicio-oral-penal-cdmx — El juicio oral penal en CDMX: etapas y derechos del acusado
-- [ ] recursos-apelacion-penal-cdmx — Recursos de apelación en materia penal: guía práctica
+- [x] violencia-familiar-cdmx-penal — Violencia familiar como delito en CDMX: denuncia y proceso
+- [x] libertad-bajo-caucion-cdmx — Libertad bajo caución en CDMX: requisitos y costos 2026
+- [x] juicio-oral-penal-cdmx — El juicio oral penal en CDMX: etapas y derechos del acusado
+- [x] recursos-apelacion-penal-cdmx — Recursos de apelación en materia penal: guía práctica
 
 ### Derecho Civil (7 artículos nuevos)
 - [x] contratos-civiles-cdmx — Contratos civiles en CDMX: tipos, requisitos y validez legal
 - [x] responsabilidad-civil-cdmx — Responsabilidad civil en CDMX: daños, perjuicios e indemnización
 - [x] usucapion-cdmx — Usucapión en CDMX: cómo obtener la propiedad por prescripción
-- [ ] testamento-cdmx — Cómo hacer un testamento en CDMX: tipos, costos y requisitos 2026
-- [ ] juicio-ejecutivo-mercantil-cdmx — Juicio ejecutivo mercantil en CDMX: cobro de pagarés y deudas
-- [ ] demanda-civil-cdmx — Cómo presentar una demanda civil en CDMX: paso a paso
-- [ ] arrendamiento-conflictos-cdmx — Conflictos de arrendamiento en CDMX: desalojos y rentas impagadas
+- [x] testamento-cdmx — Cómo hacer un testamento en CDMX: tipos, costos y requisitos 2026
+- [x] juicio-ejecutivo-mercantil-cdmx — Juicio ejecutivo mercantil en CDMX: cobro de pagarés y deudas
+- [x] demanda-civil-cdmx — Cómo presentar una demanda civil en CDMX: paso a paso
+- [x] arrendamiento-conflictos-cdmx — Conflictos de arrendamiento en CDMX: desalojos y rentas impagadas
 
 ### Derecho Inmobiliario (6 artículos nuevos)
 - [x] compraventa-inmueble-cdmx — Compraventa de inmuebles en CDMX: guía legal completa
 - [x] escrituracion-cdmx — Escrituración en CDMX: proceso, costos y requisitos notariales
-- [ ] regularizacion-propiedad-cdmx — Regularización de propiedad en CDMX sin escrituras
+- [x] regularizacion-propiedad-cdmx — Regularización de propiedad en CDMX sin escrituras
 - [x] contrato-arrendamiento-cdmx — Contrato de arrendamiento en CDMX: cláusulas esenciales 2026
-- [ ] due-diligence-inmobiliario-cdmx — Due diligence inmobiliario: qué revisar antes de comprar
-- [ ] condominos-administracion-cdmx — Derechos y obligaciones de condóminos en CDMX
+- [x] due-diligence-inmobiliario-cdmx — Due diligence inmobiliario: qué revisar antes de comprar
+- [x] condominos-administracion-cdmx — Derechos y obligaciones de condóminos en CDMX
 
 ---
 
@@ -180,10 +180,10 @@ keywords: "keyword1, keyword2, keyword3"
 | Fase | Artículos | Status |
 |------|-----------|--------|
 | A — Base | 13/13 | COMPLETADA |
-| B — Especialidades débiles | 9/20 | EN PROGRESO |
+| B — Especialidades débiles | 20/20 | COMPLETADA |
 | C — Crecimiento | 0/20 | Pendiente |
 | D — Autoridad total | 0/17 | Pendiente |
-| **TOTAL** | **22/70** | **31%** |
+| **TOTAL** | **33/70** | **47%** |
 
 ---
 
