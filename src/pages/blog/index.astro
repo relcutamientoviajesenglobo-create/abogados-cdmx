@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import MarqueeSpecs from '../../components/MarqueeSpecs.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import { blogImages } from '../../data/blog-images';
 
 const title = 'Blog Jurídico — Artículos Legales y Noticias | Abogados en CDMX';
 const description = 'Blog de Abogados en CDMX. Artículos sobre derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Información legal actualizada para la Ciudad de México en 2026.';
@@ -52,7 +53,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Despacho de Abogados en CDMX',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Guarda y Custodia en CDMX — Todo lo que Necesitas Saber en 2026',
@@ -62,7 +63,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Despacho de Abogados CDMX',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Despido injustificado en CDMX — Tus derechos y cómo demandar en 2026',
@@ -72,7 +73,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Abogados en CDMX',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Divorcio Express en CDMX — Requisitos, Costo y Tiempo en 2026',
@@ -82,7 +83,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Despacho de Abogados CDMX',
-    imagen: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1537655780520-1e392ead81f2?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Pensión alimenticia en México: Cómo se calcula y cuánto corresponde en 2026',
@@ -92,7 +93,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Despacho de Abogados en CDMX',
-    imagen: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1581952976147-5a2d15560349?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Amparo penal en CDMX: cuándo procede y cómo tramitarlo',
@@ -102,7 +103,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Defensa penal en CDMX: cómo elegir abogado penalista',
@@ -112,7 +113,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Fraude, robo y abuso de confianza en CDMX: guía legal completa',
@@ -122,7 +123,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Contratos civiles en CDMX: tipos, requisitos y validez legal',
@@ -132,7 +133,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Responsabilidad civil en CDMX: daños, perjuicios e indemnización',
@@ -142,7 +143,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Usucapión en CDMX: cómo obtener la propiedad por prescripción adquisitiva',
@@ -152,7 +153,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Compraventa de inmuebles en CDMX: guía legal completa 2026',
@@ -172,7 +173,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Contrato de arrendamiento en CDMX: cláusulas esenciales 2026',
@@ -182,7 +183,7 @@ const articulos = [
     fecha: '2026-03-22',
     fechaDisplay: '22 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Violencia familiar como delito en CDMX: denuncia y proceso penal',
@@ -192,7 +193,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Libertad bajo caución en CDMX: requisitos y costos 2026',
@@ -202,7 +203,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'El juicio oral penal en CDMX: etapas y derechos del acusado',
@@ -212,7 +213,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Recursos de apelación en materia penal: guía práctica CDMX',
@@ -222,7 +223,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a1?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo hacer un testamento en CDMX: tipos, costos y requisitos 2026',
@@ -232,7 +233,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Juicio ejecutivo mercantil en CDMX: cobro de pagarés y deudas',
@@ -242,7 +243,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo presentar una demanda civil en CDMX: paso a paso 2026',
@@ -252,7 +253,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Conflictos de arrendamiento en CDMX: desalojos y rentas impagadas',
@@ -262,7 +263,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Regularización de propiedad en CDMX: cómo obtener escrituras sin título',
@@ -272,7 +273,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Due diligence inmobiliario en CDMX: qué revisar antes de comprar',
@@ -282,7 +283,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Derechos y obligaciones de condóminos en CDMX: guía legal 2026',
@@ -292,7 +293,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1565402170291-8491f14678db?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Nuevo Código Nacional de Procedimientos Civiles y Familiares 2026: lo que debe saber',
@@ -302,7 +303,7 @@ const articulos = [
     fecha: '2026-01-15',
     fechaDisplay: '15 de enero de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Guía completa para tramitar un divorcio en CDMX en 2026',
@@ -312,7 +313,7 @@ const articulos = [
     fecha: '2026-01-28',
     fechaDisplay: '28 de enero de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Derechos del inquilino en CDMX: lo que todo arrendatario debe conocer',
@@ -322,7 +323,7 @@ const articulos = [
     fecha: '2026-02-05',
     fechaDisplay: '5 de febrero de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: '¿Qué hacer si lo detienen en la Ciudad de México? Guía de derechos del detenido',
@@ -342,7 +343,7 @@ const articulos = [
     fecha: '2026-02-12',
     fechaDisplay: '12 de febrero de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo obtener la residencia permanente en México 2026: guía completa',
@@ -352,7 +353,7 @@ const articulos = [
     fecha: '2026-02-12',
     fechaDisplay: '12 de febrero de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo constituir una empresa en México 2026: tipos de sociedad, costos y trámites',
@@ -362,7 +363,7 @@ const articulos = [
     fecha: '2026-02-12',
     fechaDisplay: '12 de febrero de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Sucesiones y herencias en CDMX 2026: guía completa del juicio sucesorio',
@@ -372,7 +373,7 @@ const articulos = [
     fecha: '2026-02-12',
     fechaDisplay: '12 de febrero de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Patria Potestad en CDMX: Diferencias con Custodia y Cómo se Pierde',
@@ -382,7 +383,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1478476868527-002ae3f3e159?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Derechos del Concubinato en CDMX: Pensión, Herencia y Custodia',
@@ -392,7 +393,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Violencia Familiar en CDMX: Medidas de Protección y Denuncia Civil',
@@ -402,7 +403,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1557862921-37829c790f19?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Compliance empresarial en México: obligaciones legales 2026',
@@ -422,7 +423,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Contratos mercantiles en México: tipos y cláusulas esenciales',
@@ -432,7 +433,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Fusiones y adquisiciones de empresas en México: guía legal 2026',
@@ -442,7 +443,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Gobierno corporativo en México: obligaciones y mejores prácticas',
@@ -452,7 +453,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Protección de marca y propiedad intelectual para empresas en CDMX',
@@ -462,7 +463,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Residencia Temporal en México: Guía Completa de Trámite 2026',
@@ -482,7 +483,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Visa de Trabajo en México: Tipos, Requisitos y Proceso 2026',
@@ -492,7 +493,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1544016768-982d1554f0b3?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Visa de Inversionista en México: Requisitos, Montos y Proceso 2026',
@@ -502,7 +503,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Reunificación Familiar en México: Visa por Matrimonio y Vínculo Familiar',
@@ -512,7 +513,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1526778548025-9c3a01e99e87?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Regularización Migratoria en México: Opciones para Migrantes en Situación Irregular',
@@ -522,7 +523,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Acoso laboral (mobbing) en CDMX: cómo denunciar y qué pruebas necesitas',
@@ -532,7 +533,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Contrato de trabajo en México: tipos, derechos y obligaciones',
@@ -542,7 +543,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Liquidación laboral en CDMX: cómo calcular lo que te corresponde',
@@ -552,7 +553,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Subcontratación y outsourcing en México: nueva ley y obligaciones 2026',
@@ -562,7 +563,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo presentar una demanda laboral en CDMX: proceso ante el Tribunal Laboral 2026',
@@ -572,7 +573,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Adopción en CDMX: requisitos, proceso y costos 2026',
@@ -582,7 +583,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solis',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1499728603263-13571c8e3601?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Prescripción de delitos en CDMX: plazos y cómo opera',
@@ -592,7 +593,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Mediación y justicia restaurativa en CDMX: alternativas al juicio penal',
@@ -602,7 +603,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1542744173-8e7e91415e5c?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Embargo de bienes en CDMX: proceso, tipos y cómo defenderse',
@@ -612,7 +613,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Mediación y conciliación civil en CDMX: alternativa al juicio',
@@ -622,7 +623,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Prescripción civil en CDMX: plazos para demandar y reclamar derechos',
@@ -632,7 +633,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Disolución y liquidación de empresas en México: proceso legal completo',
@@ -642,7 +643,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Franquicias en México: marco legal, contratos y obligaciones 2026',
@@ -652,7 +653,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1542626991-cbc4e04d76f4?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Protección de datos personales para empresas en México: LFPDPPP',
@@ -662,7 +663,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Fideicomiso inmobiliario en México: guía para compradores y extranjeros',
@@ -672,7 +673,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1560185127-6a8e38e1d7e2?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Avalúo inmobiliario en CDMX: tipos, costos y cuándo es obligatorio',
@@ -682,7 +683,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Asilo y refugio en México: derechos, proceso ante COMAR y protección 2026',
@@ -692,7 +693,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Doble nacionalidad en México: derechos, obligaciones y trámites',
@@ -702,7 +703,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Permiso de trabajo para extranjeros en México: opciones legales 2026',
@@ -712,7 +713,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Accidente de trabajo en CDMX: derechos, incapacidad e indemnización IMSS',
@@ -722,7 +723,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1530099486328-e021101a494a?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Horas extras y jornada laboral en México: derechos y límites legales',
@@ -732,7 +733,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Sindicatos y negociación colectiva en México: reforma laboral 2026',
@@ -742,7 +743,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo se calcula la pensión alimenticia en CDMX: tabla de porcentajes, ingresos y factores 2026',
@@ -762,7 +763,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Régimen matrimonial en CDMX: bienes separados vs sociedad conyugal — comparativa legal completa',
@@ -772,7 +773,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1506836467174-27f1042aa48c?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Guarda y custodia compartida en CDMX: requisitos, ventajas y proceso judicial 2026',
@@ -782,7 +783,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Andrea Solís',
-    imagen: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Juicio oral civil en CDMX: cuándo aplica, proceso y ventajas sobre el juicio escrito',
@@ -792,7 +793,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1517245386747-bb6c9c34c75e?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Interdicción y tutela en CDMX: cómo proteger legalmente a personas incapaces',
@@ -802,7 +803,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Derechos del consumidor en CDMX: cómo reclamar ante PROFECO paso a paso',
@@ -812,7 +813,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cobro de deudas en CDMX: plazos de prescripción, opciones legales y defensa del deudor',
@@ -822,7 +823,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Mariana Ortega',
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Delito de narcomenudeo en CDMX: cantidades permitidas, penas y defensa legal',
@@ -832,7 +833,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1611773542744-8b3b2e7a15f0?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Robo de vehículo en CDMX: qué hacer, denuncia y proceso legal completo',
@@ -842,7 +843,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1587825140708-dfaf18c4b07a?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Tipos de violencia de género en CDMX: cómo denunciar y protegerte legalmente',
@@ -852,7 +853,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Carta de antecedentes penales en CDMX: trámite, costos y cancelación de registros',
@@ -862,7 +863,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Roberto Fuentes',
-    imagen: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo calcular tu liquidación laboral en CDMX: fórmula completa con ejemplos 2026',
@@ -872,7 +873,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1560264280-88b68371db39?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Tipos de contrato de trabajo en México: cuál te conviene y cuáles son ilegales',
@@ -882,7 +883,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Acoso laboral (mobbing) en CDMX: cómo denunciar y qué pruebas necesitas',
@@ -892,7 +893,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Teletrabajo y home office en México: derechos, obligaciones y reforma LFT 2026',
@@ -902,7 +903,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Luciana Valle',
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'SA de CV vs SRL vs SAS: comparativa completa de sociedades mercantiles en Mexico 2026',
@@ -912,7 +913,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Contratos mercantiles en Mexico: tipos, clausulas esenciales y errores comunes',
@@ -922,7 +923,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Guia legal para startups en Mexico: constitucion, inversion y propiedad intelectual',
@@ -932,7 +933,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Ian Montiel',
-    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Impuestos en compraventa de inmuebles en CDMX: ISR, ISAI y deducciones 2026',
@@ -942,7 +943,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Hipoteca bancaria vs INFONAVIT vs FOVISSSTE: comparativa completa para comprar casa en CDMX',
@@ -952,7 +953,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Extranjeros comprando inmuebles en Mexico: zona restringida, fideicomiso y requisitos legales',
@@ -962,7 +963,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Tania Mendoza',
-    imagen: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1503220317266-8c685ff5e247?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Visas de trabajo en México: tipos, requisitos y proceso ante el INM 2026',
@@ -972,7 +973,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo obtener la nacionalidad mexicana por naturalización: requisitos y proceso completo',
@@ -982,7 +983,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Deportación y expulsión de México: derechos del extranjero y defensa legal',
@@ -992,7 +993,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo abrir una empresa siendo extranjero en México: guía de inversión 2026',
@@ -1002,7 +1003,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Lic. Diego Navarro',
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: '¿Cuánto cobra un abogado en CDMX? Guía de honorarios por especialidad 2026',
@@ -1012,7 +1013,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Despacho Abogados en CDMX',
-    imagen: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Cómo elegir al mejor abogado en CDMX: 10 criterios esenciales',
@@ -1022,7 +1023,7 @@ const articulos = [
     fecha: '2026-03-23',
     fechaDisplay: '23 de marzo de 2026',
     autor: 'Despacho Abogados en CDMX',
-    imagen: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&h=420&fit=crop&fm=webp&q=75',
+    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=420&fit=crop&fm=webp&q=75',
   },
   {
     titulo: 'Derechos fundamentales en México: guía completa para ciudadanos 2026',

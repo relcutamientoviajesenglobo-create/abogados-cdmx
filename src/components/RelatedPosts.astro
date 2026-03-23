@@ -5,6 +5,7 @@
  * Matching semántico por keywords compartidos + misma categoría
  */
 import { getCollection } from 'astro:content';
+import { getRelatedImage } from '../data/blog-images';
 
 interface Props {
   currentSlug: string;
@@ -168,7 +169,7 @@ const cards = related.slice(0, 3).map(({ post }) => {
     author: post.data.author,
     category: catInfo.label,
     categoryColor: catInfo.color,
-    image: catInfo.image,
+    image: getRelatedImage(post.slug),
     date: post.data.date,
   };
 });
