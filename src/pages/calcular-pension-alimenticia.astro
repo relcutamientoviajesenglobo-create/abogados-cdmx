@@ -60,10 +60,14 @@ const schema = {
           <!-- Ingreso Slider -->
           <div class="ctrl-group">
             <div class="ctrl-label">
+              <span class="ctrl-icon">💰</span>
               <span class="ctrl-label__text">Ingreso mensual neto</span>
               <span class="ctrl-label__value" id="incomeDisplay">$25,000</span>
             </div>
-            <input type="range" id="incomeSlider" class="slider" min="5000" max="150000" step="1000" value="25000">
+            <div class="slider-wrap">
+              <div class="slider-tooltip" id="sliderTooltip">$25,000</div>
+              <input type="range" id="incomeSlider" class="slider" min="5000" max="150000" step="1000" value="25000">
+            </div>
             <div class="slider-range">
               <span>$5,000</span><span>$150,000</span>
             </div>
@@ -72,44 +76,81 @@ const schema = {
           <!-- Hijos Selector -->
           <div class="ctrl-group">
             <div class="ctrl-label">
+              <span class="ctrl-icon">👶</span>
               <span class="ctrl-label__text">Número de hijos</span>
-              <span class="ctrl-label__value" id="childrenDisplay">2</span>
             </div>
-            <div class="chip-row" id="childrenChips">
-              <button class="chip" data-val="1">1 hijo</button>
-              <button class="chip active" data-val="2">2 hijos</button>
-              <button class="chip" data-val="3">3 hijos</button>
-              <button class="chip" data-val="4">4+</button>
+            <div class="children-grid" id="childrenChips">
+              <button class="child-card" data-val="1">
+                <span class="child-card__emoji">👶</span>
+                <span class="child-card__label">1 hijo</span>
+                <span class="child-card__pct">15-20%</span>
+              </button>
+              <button class="child-card active" data-val="2">
+                <span class="child-card__emoji">👶👶</span>
+                <span class="child-card__label">2 hijos</span>
+                <span class="child-card__pct">25-30%</span>
+              </button>
+              <button class="child-card" data-val="3">
+                <span class="child-card__emoji">👶👶👶</span>
+                <span class="child-card__label">3 hijos</span>
+                <span class="child-card__pct">30-35%</span>
+              </button>
+              <button class="child-card" data-val="4">
+                <span class="child-card__emoji">👨‍👩‍👧‍👦</span>
+                <span class="child-card__label">4 o más</span>
+                <span class="child-card__pct">35-40%</span>
+              </button>
             </div>
           </div>
 
           <!-- Custodia Toggle -->
           <div class="ctrl-group">
             <div class="ctrl-label">
+              <span class="ctrl-icon">⚖️</span>
               <span class="ctrl-label__text">Tipo de custodia</span>
             </div>
-            <div class="toggle-row" id="custodyToggle">
-              <button class="toggle active" data-val="exclusive">Exclusiva</button>
-              <button class="toggle" data-val="shared">Compartida</button>
-              <div class="toggle-indicator"></div>
+            <div class="custody-cards" id="custodyToggle">
+              <button class="custody-card active" data-val="exclusive">
+                <span class="custody-card__icon">👤</span>
+                <div class="custody-card__text">
+                  <strong>Exclusiva</strong>
+                  <span>Un padre tiene la custodia</span>
+                </div>
+                <span class="custody-card__check">✓</span>
+              </button>
+              <button class="custody-card" data-val="shared">
+                <span class="custody-card__icon">👥</span>
+                <div class="custody-card__text">
+                  <strong>Compartida</strong>
+                  <span>Tiempo equitativo</span>
+                </div>
+                <span class="custody-card__check">✓</span>
+              </button>
             </div>
           </div>
 
-          <!-- Gastos Especiales Chips -->
+          <!-- Gastos Especiales -->
           <div class="ctrl-group">
             <div class="ctrl-label">
+              <span class="ctrl-icon">📋</span>
               <span class="ctrl-label__text">Gastos especiales</span>
-              <span class="ctrl-label__value ctrl-label__optional">Opcional</span>
+              <span class="ctrl-label__optional">Opcional</span>
             </div>
-            <div class="chip-row multi" id="extrasChips">
-              <button class="chip-extra" data-val="school" data-pct="3">
-                <span class="chip-extra__icon">🎓</span>Escuela privada
+            <div class="extras-grid" id="extrasChips">
+              <button class="extra-card" data-val="school" data-pct="3">
+                <span class="extra-card__emoji">🎓</span>
+                <span class="extra-card__label">Escuela privada</span>
+                <span class="extra-card__pct">+3%</span>
               </button>
-              <button class="chip-extra" data-val="medical" data-pct="4">
-                <span class="chip-extra__icon">🏥</span>Gastos médicos
+              <button class="extra-card" data-val="medical" data-pct="4">
+                <span class="extra-card__emoji">🏥</span>
+                <span class="extra-card__label">Gastos médicos</span>
+                <span class="extra-card__pct">+4%</span>
               </button>
-              <button class="chip-extra" data-val="activities" data-pct="2">
-                <span class="chip-extra__icon">⚽</span>Extracurriculares
+              <button class="extra-card" data-val="activities" data-pct="2">
+                <span class="extra-card__emoji">⚽</span>
+                <span class="extra-card__label">Extracurriculares</span>
+                <span class="extra-card__pct">+2%</span>
               </button>
             </div>
           </div>
@@ -291,38 +332,42 @@ const schema = {
     s.style.setProperty('--pct', `${pctVal}%`);
   }
 
-  // === INCOME SLIDER ===
+  // === INCOME SLIDER + TOOLTIP ===
+  const tooltip = document.getElementById('sliderTooltip')!;
+  function updateTooltip() {
+    const s = incomeSlider;
+    const pctVal = ((parseInt(s.value) - parseInt(s.min)) / (parseInt(s.max) - parseInt(s.min)));
+    tooltip.style.left = `calc(${pctVal * 100}% + ${(0.5 - pctVal) * 28}px)`;
+    tooltip.textContent = fmt(income);
+  }
   incomeSlider.addEventListener('input', () => {
     income = parseInt(incomeSlider.value);
+    updateTooltip();
     calculate();
   });
 
-  // === CHILDREN CHIPS ===
-  document.querySelectorAll('#childrenChips .chip').forEach(btn => {
+  // === CHILDREN CARDS ===
+  document.querySelectorAll('#childrenChips .child-card').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#childrenChips .chip').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#childrenChips .child-card').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       children = parseInt(btn.getAttribute('data-val') || '1');
-      $('#childrenDisplay')!.textContent = children >= 4 ? '4+' : String(children);
       calculate();
     });
   });
 
-  // === CUSTODY TOGGLE ===
-  document.querySelectorAll('#custodyToggle .toggle').forEach(btn => {
+  // === CUSTODY CARDS ===
+  document.querySelectorAll('#custodyToggle .custody-card').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#custodyToggle .toggle').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#custodyToggle .custody-card').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       custody = btn.getAttribute('data-val') as 'exclusive' | 'shared';
-      // Move indicator
-      const indicator = document.querySelector('.toggle-indicator') as HTMLElement;
-      indicator.style.left = custody === 'exclusive' ? '0' : '50%';
       calculate();
     });
   });
 
-  // === EXTRAS CHIPS ===
-  document.querySelectorAll('#extrasChips .chip-extra').forEach(btn => {
+  // === EXTRAS CARDS ===
+  document.querySelectorAll('#extrasChips .extra-card').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
       const val = btn.getAttribute('data-val')!;
@@ -332,6 +377,7 @@ const schema = {
   });
 
   // === INIT ===
+  updateTooltip();
   calculate();
 </script>
 
@@ -367,84 +413,163 @@ const schema = {
 
   /* ═══ CONTROLS ═══ */
   .calc-controls { padding: 40px; }
-  .ctrl-group { margin-bottom: 32px; }
+  .ctrl-group { margin-bottom: 36px; }
   .ctrl-group:last-child { margin-bottom: 0; }
   .ctrl-label {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
   }
-  .ctrl-label__text { font-size: 14px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.5px; }
+  .ctrl-icon { font-size: 20px; }
+  .ctrl-label__text { font-size: 13px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.8px; flex: 1; }
   .ctrl-label__value {
-    font-size: 22px; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading);
-    transition: all 0.2s;
+    font-size: 24px; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading);
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
   }
-  .ctrl-label__optional { font-size: 12px; font-weight: 500; color: var(--color-paragraph); text-transform: none; letter-spacing: 0; }
+  .ctrl-label__optional {
+    font-size: 11px; font-weight: 600; color: var(--color-secondary);
+    background: rgba(193,127,62,0.1); padding: 3px 10px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
 
   /* Slider */
+  .slider-wrap { position: relative; padding: 16px 0 0; }
+  .slider-tooltip {
+    position: absolute; top: -6px;
+    background: var(--color-primary); color: #fff;
+    padding: 4px 12px; font-size: 12px; font-weight: 700;
+    white-space: nowrap; pointer-events: none;
+    transform: translateX(-50%); left: 50%;
+    opacity: 0; transition: opacity 0.2s;
+    font-family: var(--font-heading);
+  }
+  .slider-tooltip::after {
+    content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+    border-left: 5px solid transparent; border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-primary);
+  }
+  .slider-wrap:hover .slider-tooltip,
+  .slider-wrap:active .slider-tooltip { opacity: 1; }
+
   .slider {
     -webkit-appearance: none; appearance: none;
-    width: 100%; height: 6px; border-radius: 3px;
-    background: linear-gradient(to right, var(--color-secondary) var(--pct, 50%), #e0e0e0 var(--pct, 50%));
+    width: 100%; height: 8px; border-radius: 4px;
+    background: linear-gradient(to right, var(--color-secondary) var(--pct, 50%), #e8e8e8 var(--pct, 50%));
     outline: none; cursor: pointer;
   }
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none;
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--color-primary); border: 3px solid var(--color-secondary);
-    cursor: grab; transition: transform 0.15s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 4px solid var(--color-secondary);
+    cursor: grab; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(193,127,62,0.25);
   }
-  .slider::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.2); }
+  .slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 16px rgba(193,127,62,0.4);
+  }
+  .slider::-webkit-slider-thumb:active {
+    cursor: grabbing; transform: scale(1.25);
+    box-shadow: 0 4px 20px rgba(193,127,62,0.5);
+  }
   .slider::-moz-range-thumb {
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--color-primary); border: 3px solid var(--color-secondary);
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 4px solid var(--color-secondary);
     cursor: grab;
   }
-  .slider-range { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 6px; }
+  .slider-range { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 8px; }
 
-  /* Chips */
-  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  .chip {
-    padding: 10px 20px; border: 2px solid #e0e0e0; background: #fff;
-    font-size: 14px; font-weight: 600; color: var(--color-paragraph);
-    cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
-    flex: 1; text-align: center;
+  /* Children Cards */
+  .children-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .child-card {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 18px 8px 14px; border: 2px solid #e8e8e8; background: #fff;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    font-family: var(--font-body); position: relative; overflow: hidden;
   }
-  .chip:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
-  .chip.active {
-    border-color: var(--color-secondary); background: var(--color-secondary);
-    color: #fff;
+  .child-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at center, rgba(193,127,62,0.08), transparent 70%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .child-card:hover { border-color: var(--color-secondary); transform: translateY(-2px); }
+  .child-card:hover::before { opacity: 1; }
+  .child-card:active { transform: scale(0.96); }
+  .child-card.active {
+    border-color: var(--color-secondary); background: rgba(193,127,62,0.04);
+    box-shadow: 0 4px 20px rgba(193,127,62,0.15);
+    transform: translateY(-2px);
+  }
+  .child-card.active .child-card__emoji { animation: bounceIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275); }
+  .child-card__emoji { font-size: 28px; transition: transform 0.2s; position: relative; z-index: 1; line-height: 1; }
+  .child-card:hover .child-card__emoji { transform: scale(1.15); }
+  .child-card__label { font-size: 13px; font-weight: 700; color: var(--color-primary); position: relative; z-index: 1; }
+  .child-card__pct {
+    font-size: 10px; font-weight: 600; color: var(--color-secondary);
+    opacity: 0; transform: translateY(4px); transition: all 0.2s;
+    position: relative; z-index: 1;
+  }
+  .child-card.active .child-card__pct,
+  .child-card:hover .child-card__pct { opacity: 1; transform: translateY(0); }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.3); }
+    50% { transform: scale(1.15); }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); }
   }
 
-  /* Toggle */
-  .toggle-row {
-    display: flex; position: relative; background: #f0f0f0; padding: 4px;
+  /* Custody Cards */
+  .custody-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .custody-card {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 18px; border: 2px solid #e8e8e8; background: #fff;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    font-family: var(--font-body); position: relative;
   }
-  .toggle {
-    flex: 1; padding: 12px; border: none; background: transparent;
-    font-size: 14px; font-weight: 600; color: var(--color-paragraph);
-    cursor: pointer; position: relative; z-index: 2;
-    transition: color 0.3s; font-family: var(--font-body);
+  .custody-card:hover { border-color: var(--color-secondary); transform: translateY(-1px); }
+  .custody-card:active { transform: scale(0.98); }
+  .custody-card.active {
+    border-color: var(--color-primary); background: var(--color-primary); color: #fff;
   }
-  .toggle.active { color: #fff; }
-  .toggle-indicator {
-    position: absolute; top: 4px; left: 0; width: 50%; height: calc(100% - 8px);
-    background: var(--color-primary); transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
-    z-index: 1;
+  .custody-card__icon { font-size: 24px; flex-shrink: 0; }
+  .custody-card__text { flex: 1; }
+  .custody-card__text strong { display: block; font-size: 14px; color: var(--color-primary); transition: color 0.2s; }
+  .custody-card__text span { font-size: 11px; color: var(--color-paragraph); transition: color 0.2s; }
+  .custody-card.active .custody-card__text strong { color: #fff; }
+  .custody-card.active .custody-card__text span { color: rgba(255,255,255,0.55); }
+  .custody-card__check {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid #d0d0d0; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: transparent; transition: all 0.25s; flex-shrink: 0;
+  }
+  .custody-card.active .custody-card__check {
+    background: var(--color-secondary); border-color: var(--color-secondary); color: #fff;
   }
 
-  /* Extra chips */
-  .chip-extra {
-    display: flex; align-items: center; gap: 8px;
-    padding: 12px 18px; border: 1.5px solid #e0e0e0; background: #fff;
-    font-size: 13px; font-weight: 600; color: var(--color-paragraph);
-    cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
+  /* Extra Cards */
+  .extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .extra-card {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 16px 10px; border: 2px solid #e8e8e8; background: #fff;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    font-family: var(--font-body); text-align: center;
   }
-  .chip-extra:hover { border-color: var(--color-secondary); }
-  .chip-extra.active {
+  .extra-card:hover { border-color: var(--color-secondary); transform: translateY(-2px); }
+  .extra-card:active { transform: scale(0.96); }
+  .extra-card.active {
     border-color: var(--color-secondary); background: rgba(193,127,62,0.06);
-    color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(193,127,62,0.12);
   }
-  .chip-extra__icon { font-size: 18px; }
+  .extra-card.active .extra-card__emoji { animation: bounceIn 0.35s; }
+  .extra-card__emoji { font-size: 28px; transition: transform 0.2s; }
+  .extra-card:hover .extra-card__emoji { transform: scale(1.2) rotate(-5deg); }
+  .extra-card__label { font-size: 12px; font-weight: 600; color: var(--color-primary); }
+  .extra-card__pct {
+    font-size: 11px; font-weight: 700; color: var(--color-secondary);
+    background: rgba(193,127,62,0.1); padding: 2px 8px;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .extra-card.active .extra-card__pct,
+  .extra-card:hover .extra-card__pct { opacity: 1; }
 
   /* ═══ RESULT PANEL ═══ */
   .calc-result {
@@ -543,7 +668,7 @@ const schema = {
   }
   @media (max-width: 767px) {
     .calc-hero { padding: 100px 0 48px; }
-    .calc-controls { padding: 28px 20px; }
+    .calc-controls { padding: 24px 20px; }
     .result-top { padding: 28px 20px 20px; }
     .result-annual { padding: 0 20px; }
     .result-bar-section { padding: 20px; }
@@ -552,16 +677,19 @@ const schema = {
     .result-disclaimer { padding: 12px 20px; }
     .result-amount { font-size: 24px; }
     .result-amount--max { font-size: 28px; }
-    .chip-row { gap: 6px; }
-    .chip { padding: 8px 12px; font-size: 13px; }
     .ctrl-label__value { font-size: 18px; }
     .calc-final-cta { padding: 32px 20px; }
+    .children-grid { grid-template-columns: repeat(2, 1fr); }
+    .extras-grid { grid-template-columns: 1fr; }
+    .custody-cards { grid-template-columns: 1fr; }
+    .child-card__emoji { font-size: 24px; }
   }
   @media (max-width: 479px) {
     .result-amount-wrap { flex-direction: column; gap: 8px; align-items: flex-start; }
     .result-arrow { display: none; }
     .result-col { flex-direction: row; align-items: baseline; gap: 8px; }
-    .chip-row.multi { flex-direction: column; }
-    .chip-extra { width: 100%; }
+    .children-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .child-card { padding: 14px 6px 10px; }
+    .child-card__emoji { font-size: 22px; }
   }
 </style>
