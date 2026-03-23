@@ -25,30 +25,95 @@ const publishedDate = post.data.date.toISOString();
 const heroImage = getImageUrl(post.slug).replace('w=700&h=420', 'w=1200&h=600');
 const heroAlt = getImageAlt(post.slug);
 
+// Extract FAQ pairs from markdown body (## headings ending in ?)
+const faqPairs: { question: string; answer: string }[] = [];
+if (post.body) {
+  const lines = post.body.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('## ') && line.endsWith('?')) {
+      const question = line.replace(/^##\s+/, '').replace(/[¿?]/g, '').trim() + '?';
+      // Collect answer lines until next heading or empty section
+      let answer = '';
+      for (let j = i + 1; j < lines.length; j++) {
+        const nextLine = lines[j].trim();
+        if (nextLine.startsWith('## ') || nextLine.startsWith('# ')) break;
+        if (nextLine && !nextLine.startsWith('---')) {
+          // Strip markdown formatting for schema
+          const clean = nextLine
+            .replace(/\*\*(.*?)\*\*/g, '$1')
+            .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+            .replace(/[|`#>-]/g, '')
+            .trim();
+          if (clean) {
+            answer += (answer ? ' ' : '') + clean;
+          }
+        }
+      }
+      if (answer.length > 20) {
+        faqPairs.push({
+          question: '¿' + question,
+          answer: answer.substring(0, 500)
+        });
+      }
+    }
+  }
+}
+
+// Build @graph with Article + BreadcrumbList + FAQPage
+const schemaGraph: any[] = [
+  {
+    "@type": "Article",
+    "headline": post.data.title,
+    "description": description,
+    "image": heroImage,
+    "url": canonical,
+    "datePublished": publishedDate,
+    "dateModified": publishedDate,
+    "author": { "@type": "Person", "name": post.data.author },
+    "publisher": {
+      "@type": "LegalService",
+      "name": "Abogados en CDMX",
+      "url": "https://abogadosencdmx.com",
+      "telephone": "+525564655501",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Guanajuato 224",
+        "addressLocality": "Ciudad de México",
+        "postalCode": "06700",
+        "addressCountry": "MX"
+      }
+    },
+    "mainEntityOfPage": canonical
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://abogadosencdmx.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.data.title, "item": canonical }
+    ]
+  }
+];
+
+// Add FAQPage if we found FAQ pairs
+if (faqPairs.length >= 2) {
+  schemaGraph.push({
+    "@type": "FAQPage",
+    "mainEntity": faqPairs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
+}
+
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": post.data.title,
-  "description": description,
-  "image": heroImage,
-  "url": canonical,
-  "datePublished": publishedDate,
-  "dateModified": publishedDate,
-  "author": { "@type": "Person", "name": post.data.author },
-  "publisher": {
-    "@type": "LegalService",
-    "name": "Abogados en CDMX",
-    "url": "https://abogadosencdmx.com",
-    "telephone": "+525564655501",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Guanajuato 224",
-      "addressLocality": "Ciudad de México",
-      "postalCode": "06700",
-      "addressCountry": "MX"
-    }
-  },
-  "mainEntityOfPage": canonical
+  "@graph": schemaGraph
 };
 
 // Build TOC from headings
