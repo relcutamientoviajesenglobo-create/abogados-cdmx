@@ -1,7 +1,55 @@
+# robots.txt — abogadosencdmx.com
+# Despacho Jurídico en Ciudad de México
+
 User-agent: *
 Allow: /
-
 Disallow: /404
 Disallow: /preview
+Disallow: /home-3/
+Disallow: /services/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Bots de IA — PERMITIDOS (visibilidad en ChatGPT, Claude, Perplexity, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Bots de training-only — BLOQUEADOS (no generan visibilidad)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
 
 Sitemap: https://abogadosencdmx.com/sitemap.xml
