@@ -1,0 +1,17 @@
+{
+  "version": "rsl/1.0",
+  "contact": "contacto@abogadosencdmx.com",
+  "policies": [
+    {
+      "agent": "*",
+      "uses": ["search", "summarization", "citation"],
+      "permission": "allow",
+      "requirement": "attribution"
+    },
+    {
+      "agent": "*",
+      "uses": ["training"],
+      "permission": "deny"
+    }
+  ]
+}
