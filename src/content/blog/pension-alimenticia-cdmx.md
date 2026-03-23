@@ -42,13 +42,13 @@ La naturaleza de la pensión alimenticia es única en el derecho familiar: no es
 La ley mexicana establece un orden de obligados a proporcionar pensión alimenticia, conocido como "línea de sucesión de obligados". Este orden es importante para entender quién puede ser demandado en casos de pensión alimenticia.
 
 **Padres hacia hijos menores de edad o incapaces:**
-Los padres, ya sea que vivan juntos o separados, están obligados a mantener, alimentar, educar y proteger a sus hijos menores de edad. Esta obligación continúa incluso después del divorcio. En casos donde el hijo es mayor de edad pero tiene alguna incapacidad física o mental que le impide trabajar, la obligación de los padres se extiende indefinidamente.
+Los padres, ya sea que vivan juntos o separados, están obligados a mantener, alimentar, educar y proteger a sus hijos menores de edad. Esta obligación continúa incluso después del [divorcio](/blog/cuanto-cuesta-divorcio-cdmx). En casos donde el hijo es mayor de edad pero tiene alguna incapacidad física o mental que le impide trabajar, la obligación de los padres se extiende indefinidamente.
 
 **Padres hacia hijos mayores de edad en educación:**
 Los progenitores deben continuar proporcionando pensión alimenticia a los hijos mayores de edad mientras se encuentren en educación formal acreditada. Esta obligación se mantiene siempre que el hijo demuestre que está estudiando de manera activa en una institución educativa reconocida. Según el artículo 303 del Código Civil de CDMX, la obligación termina cuando el hijo cumple 25 años de edad o cuando abandona voluntariamente sus estudios.
 
 **Cónyuge o concubino hacia el otro cónyuge o concubino:**
-En casos de divorcio, separación o término de una relación concubinaria, la pareja que tenga ingresos económicos superiores debe proporcionar pensión alimenticia a la otra pareja si esta no puede sustentarse por sí misma. Este derecho aplica generalmente al cónyuge que se dedica al hogar o que tiene ingresos significativamente menores.
+En casos de divorcio, separación o término de una relación concubinaria, la pareja que tenga ingresos económicos superiores debe proporcionar pensión alimenticia a la otra pareja si esta no puede sustentarse por sí misma. En estos casos, la [custodia de los hijos](/blog/custodia-hijos-cdmx) suele definirse de manera conjunta con la pensión. Este derecho aplica generalmente al cónyuge que se dedica al hogar o que tiene ingresos significativamente menores.
 
 **Abuelos hacia nietos:**
 Los abuelos están obligados a proporcionar alimentos a sus nietos únicamente cuando los padres del menor no tienen capacidad económica para hacerlo o han fallecido. Este es un derecho subsidiario que se activa cuando falla la obligación paterna.
@@ -559,7 +559,7 @@ El derecho a alimentos no depende del estado civil, sino de la existencia de par
 
 ## ¿Cuándo contactar a un abogado especialista en pensión alimenticia? {#contacto}
 
-Si enfrenta una situación relacionada con pensión alimenticia en la Ciudad de México, es recomendable contactar a un abogado especializado en derecho familiar. Los siguientes son indicadores de que necesita asesoría legal profesional:
+Si enfrenta una situación relacionada con pensión alimenticia en la Ciudad de México, es recomendable contactar a un abogado especializado en [derecho familiar](/especialidades/derecho-familiar-cdmx). Los siguientes son indicadores de que necesita asesoría legal profesional:
 
 **Razones para contactar a un abogado especialista:**
 
@@ -579,7 +579,7 @@ Si enfrenta una situación relacionada con pensión alimenticia en la Ciudad de 
 
 ## Despacho de Abogados en CDMX especializado en Pensión Alimenticia
 
-En el **Despacho de Abogados en CDMX**, contamos con más de 15 años de experiencia en controversias de pensión alimenticia. Nuestro equipo de abogados especializados en derecho familiar entiende la urgencia y delicadeza de estas situaciones.
+En el **Despacho de Abogados en CDMX**, contamos con más de 15 años de experiencia en controversias de pensión alimenticia. Nuestro equipo, encabezado por la [Lic. Andrea Solís](/despacho-juridico/andrea-solis), entiende la urgencia y delicadeza de estas situaciones.
 
 ### Ubicación
 **Guanajuato 224, Colonia Roma Norte, Delegación Cuauhtémoc, Ciudad de México, C.P. 06700**
@@ -633,6 +633,12 @@ Aunque los porcentajes proporcionados en este artículo (10-30% según número d
 Si enfrenta una situación de pensión alimenticia, ya sea como acreedor que busca garantizar el sustento de sus hijos, u obligado que desea establecer un monto justo, **la asesoría de un abogado especializado es invaluable**. Los procesos judiciales en CDMX generalmente toman de 4 a 6 meses, pero el tiempo de espera vale la pena para garantizar que los derechos de los menores estén protegidos legalmente.
 
 Recuerde: La pensión alimenticia no es punición, sino reconocimiento de que todo menor tiene derecho a una vida digna.
+
+---
+
+## También le puede interesar
+
+Si su caso de pensión alimenticia está relacionado con una separación, le recomendamos consultar nuestra guía sobre [divorcio express en CDMX](/blog/divorcio-express-cdmx), donde explicamos los requisitos, costos y tiempos del procedimiento más rápido disponible en la capital.
 
 ---
 

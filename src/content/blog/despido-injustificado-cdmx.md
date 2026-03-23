@@ -32,7 +32,7 @@ Si aún no has recibido una carta de despido escrita, envía un correo electrón
 Reúne contrato de trabajo, recibos de nómina (últimos 12 meses), comprobantes de afiliación al IMSS, constancias de aportaciones al INFONAVIT, y cualquier comunicación escrita con tu empleador. Si trabajaste sin contrato formal, recopila evidencia de tu empleo: mensajes de texto, correos, capturas de pantalla de registros de asistencia, o testimonios de compañeros.
 
 **Paso 4: No firmes nada sin asesoría legal**
-Muchos empleadores ofrecen "liquidaciones" el mismo día del despido. No las firmes. Una firma en un finiquito podría significar que renuncias a tus derechos legales. Cualquier documento que mencione "renuncia voluntaria" o "acuerdo de terminación" debe ser revisado por un abogado especializado en derecho laboral.
+Muchos empleadores ofrecen "liquidaciones" el mismo día del despido. No las firmes. Una firma en un finiquito podría significar que renuncias a tus derechos legales. Cualquier documento que mencione "renuncia voluntaria" o "acuerdo de terminación" debe ser revisado por un abogado especializado en [derecho laboral](/especialidades/derecho-laboral-cdmx).
 
 **Paso 5: Contacta a un abogado especializado en derecho laboral**
 Hoy mismo, contacta con un despacho de abogados especializado en derecho laboral. En la Ciudad de México, tienes 60 días desde el despido para presentar tu demanda ante las autoridades competentes. Pasado este plazo, pierdes el derecho a demandar. Un abogado puede evaluar tu caso gratuitamente en una consulta inicial y determinar la indemnización que podrías recibir.
@@ -309,7 +309,7 @@ La ventana de 60 días es corta. No es tiempo para pensar "qué tal si..." o "es
 - **Horario:** Lunes a viernes, 9:00 AM - 6:00 PM
 - **Especialidad:** Despido injustificado, demandas laborales, indemnizaciones
 
-Nuestro equipo de abogados especializados en derecho laboral ha ganado el 92% de sus casos de despido injustificado. Ofrecemos:
+Nuestro equipo de abogados especializados en derecho laboral, liderado por la [Lic. Luciana Valle](/despacho-juridico/luciana-valle), ha ganado el 92% de sus casos de despido injustificado. Ofrecemos:
 
 ✓ **Consulta inicial gratuita** — Evaluamos tu caso sin costo
 ✓ **Honorarios contingentes** — Pagos basados en el resultado ganado
@@ -342,8 +342,14 @@ El empleador que te despidió probablemente esperaba que simplemente te fueras, 
 
 Sé parte del 34% que lucha. Sé parte del 92% que gana.
 
-Tu primer paso es una llamada. Nada más. Una llamada a un abogado especializado en derecho laboral. Esa llamada puede cambiar tu situación financiera en los próximos 2-3 años.
+Tu primer paso es una llamada. Nada más. Una llamada a un abogado especializado en derecho laboral. [Solicita tu asesoría inicial](/asesoria-inicial) y esa llamada puede cambiar tu situación financiera en los próximos 2-3 años.
 
 **Abogados en CDMX | Guanajuato 224, Roma Norte | 55 6465 5501**
 
 Actúa hoy. El tiempo no espera. Tu futuro está en tus manos.
+
+---
+
+## También le puede interesar
+
+Si además del ámbito laboral enfrenta situaciones familiares, le recomendamos consultar nuestra guía sobre [pensión alimenticia en CDMX](/blog/pension-alimenticia-cdmx), donde explicamos cómo se calcula, los porcentajes según número de hijos y el procedimiento legal completo.

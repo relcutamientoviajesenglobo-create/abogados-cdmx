@@ -115,7 +115,7 @@ Los litigios de divorcio en Ciudad de México deben tramitarse ante los Juzgados
 
 ## Divorcio express: Alternativa rápida en CDMX
 
-Desde 2015, la Ciudad de México permite el divorcio express o simplificado, una variante diseñada para parejas sin hijos menores, con pocos bienes y acuerdo mutuo. Este procedimiento es más rápido y económico que las opciones tradicionales.
+Desde 2015, la Ciudad de México permite el [divorcio express o simplificado](/blog/divorcio-express-cdmx), una variante diseñada para parejas sin hijos menores, con pocos bienes y acuerdo mutuo. Este procedimiento es más rápido y económico que las opciones tradicionales.
 
 ### ¿Cuánto cuesta un divorcio express en CDMX?
 
@@ -258,7 +258,7 @@ El precio final de un divorcio en CDMX depende de múltiples variables más all�
 
 ### Presencia de hijos menores de edad
 
-La presencia de hijos menores aumenta significativamente el costo del divorcio. Los casos con menores requieren acuerdos de custodia, pensión alimenticia, y potencialmente peritajes psicológicos o de asuntos sociales. **Un divorcio con tres o más hijos puede costar 30-50% más que un divorcio sin hijos.** Adicionalmente, si existe controversia sobre custodia, los costos se disparan exponencialmente.
+La presencia de hijos menores aumenta significativamente el costo del divorcio. Los casos con menores requieren acuerdos de [custodia](/blog/custodia-hijos-cdmx), pensión alimenticia, y potencialmente peritajes psicológicos o de asuntos sociales. **Un divorcio con tres o más hijos puede costar 30-50% más que un divorcio sin hijos.** Adicionalmente, si existe controversia sobre custodia, los costos se disparan exponencialmente.
 
 ### Cantidad y complejidad de bienes
 
@@ -270,7 +270,7 @@ El nivel de acuerdo entre los cónyuges es el factor más decisivo. Si ambas par
 
 ### Experiencia y especialización del abogado
 
-Un abogado especialista en derecho familiar con décadas de experiencia cobrará más que un abogado recién egresado. Sin embargo, a veces la inversión en un profesional más experimentado resulta en procedimientos más rápidos y costos menores a largo plazo. Los despachos grandes generalmente cobran más que abogados independientes.
+Un abogado especialista en [derecho familiar](/especialidades/derecho-familiar-cdmx) con décadas de experiencia cobrará más que un abogado recién egresado. Sin embargo, a veces la inversión en un profesional más experimentado resulta en procedimientos más rápidos y costos menores a largo plazo. Los despachos grandes generalmente cobran más que abogados independientes.
 
 ### Ubicación del juzgado y carga procesal
 
@@ -403,7 +403,13 @@ Para obtener asesoría profesional y cotización personalizada respecto a los co
 
 **Nuestro equipo de abogados especialistas en derecho familiar tiene más de 15 años de experiencia representando clientes en divorcios de todas las modalidades en la Ciudad de México. Entendemos que el divorcio es un momento difícil, y nuestro objetivo es proporcionarle asesoría legal clara, honesta, y enfocada en proteger sus derechos al costo más accesible posible.**
 
-Contáctenos hoy para una consulta inicial y conocer exactamente cuál es el costo realista para su caso específico.
+Contáctenos hoy para una [consulta inicial](/asesoria-inicial) y conocer exactamente cuál es el costo realista para su caso específico.
+
+---
+
+## También le puede interesar
+
+Si está evaluando los costos de su divorcio, le recomendamos consultar nuestra guía sobre [pensión alimenticia en CDMX](/blog/pension-alimenticia-cdmx), donde explicamos cómo se calcula, los porcentajes según número de hijos y el proceso legal para solicitarla.
 
 ---
 

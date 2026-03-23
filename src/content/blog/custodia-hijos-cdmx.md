@@ -57,7 +57,7 @@ El Artículo 282 define que la patria potestad es el conjunto de derechos y obli
 
 ### Artículo 283 — Ejercicio de la Patria Potestad en Caso de Separación
 
-Establece que cuando los padres se encuentran separados o divorciados, el ejercicio de la patria potestad se distribuye entre ambos, priorizando que el cuidado del menor se otorgue según el interés superior del niño. Este artículo permite la custodia compartida como opción viable.
+Establece que cuando los padres se encuentran separados o [divorciados](/blog/cuanto-cuesta-divorcio-cdmx), el ejercicio de la patria potestad se distribuye entre ambos, priorizando que el cuidado del menor se otorgue según el interés superior del niño. Este artículo permite la custodia compartida como opción viable.
 
 ### Artículo 286 — Criterios para la Adjudicación de la Custodia
 
@@ -83,7 +83,7 @@ Reconoce que menores de edad en condiciones de discernimiento deben ser escuchad
 
 El proceso inicia cuando uno de los padres presenta demanda ante el Juzgado Familiar correspondiente en CDMX. Sin embargo, estadísticas del Tribunal Superior de Justicia CDMX muestran que el 78% de los casos se resuelven mediante acuerdo previo entre las partes, evitando un litigio prolongado.
 
-Si ambos padres llegan a un acuerdo sobre custodia, régimen de visitas y pensión alimenticia, pueden presentar una "Propuesta de Convenio" ante el juez. Este documento debe incluir: ubicación de la vivienda del custodio, horarios de visita detallados, monto de manutención, distribución de gastos de educación y salud, y medidas de comunicación entre padre e hijo.
+Si ambos padres llegan a un acuerdo sobre custodia, régimen de visitas y [pensión alimenticia](/blog/pension-alimenticia-cdmx), pueden presentar una "Propuesta de Convenio" ante el juez. Este documento debe incluir: ubicación de la vivienda del custodio, horarios de visita detallados, monto de manutención, distribución de gastos de educación y salud, y medidas de comunicación entre padre e hijo.
 
 El juez revisar el convenio propuesto para verificar que no contravenga el interés superior del menor. Si lo considera benéfico, aprueba el acuerdo y emite una sentencia ejecutoria.
 
@@ -235,7 +235,7 @@ Un litigio de custodia es proceso emocionalmente agotador. Considera:
 
 ### Asesoría Legal Temprana
 
-Consulta abogado especialista en derecho familiar desde el inicio. Una estrategia legal temprana previene errores costosos que podrían perjudicar tu posición. El abogado debe:
+Consulta abogado especialista en [derecho familiar](/especialidades/derecho-familiar-cdmx) desde el inicio. Una estrategia legal temprana previene errores costosos que podrían perjudicar tu posición. El abogado debe:
 
 - Revisar viabilidad de tu caso
 - Identificar fortalezas y vulnerabilidades en tu posición
@@ -312,7 +312,7 @@ En 2026, los tribunales de CDMX favorecen cada vez más modelos colaborativos de
 
 ## Contacta a Nuestro Despacho — Especialistas en Derecho Familiar CDMX
 
-En **Despacho de Abogados CDMX** contamos con abogados especialistas en derecho familiar con más de 15 años de experiencia resolviendo casos de custodia, guarda y derecho patrimonial familiar.
+En **Despacho de Abogados CDMX** contamos con [abogados especialistas en derecho familiar](/despacho-juridico/andrea-solis) con más de 15 años de experiencia resolviendo casos de custodia, guarda y derecho patrimonial familiar.
 
 **Ofrecemos:**
 - Asesoría legal integral en custodia de menores
@@ -326,6 +326,12 @@ En **Despacho de Abogados CDMX** contamos con abogados especialistas en derecho 
 **Sitio Web:** https://abogadosencdmx.com
 
 **Solicita tu consulta inicial sin costo hoy.** Nuestro equipo evaluará tu situación y propondrá estrategia personalizada para proteger tus derechos y los de tus hijos.
+
+---
+
+## También le puede interesar
+
+Si está considerando un proceso de custodia en el contexto de una separación, consulte nuestra guía sobre [divorcio express en CDMX](/blog/divorcio-express-cdmx), donde explicamos requisitos, costos y tiempos del procedimiento más ágil disponible en la capital.
 
 ---
 

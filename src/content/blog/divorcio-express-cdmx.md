@@ -34,7 +34,7 @@ Para acceder a procedimiento de divorcio express en CDMX, deben cumplirse:
 
 4. **Capacidad legal:** Ambos deben tener plena capacidad jurídica. Personas con incapacidad legal requieren procedimiento especial con representante legal.
 
-5. **Sin dependientes menores de edad o acuerdo sobre custodia:** Si existen hijos menores no emancipados, requiere acuerdo explícito sobre custodia, régimen de visitas y manutención. Si ambos pueden ser custodios compartidos o si existe consenso claro, el trámite fluye normalmente.
+5. **Sin dependientes menores de edad o acuerdo sobre custodia:** Si existen hijos menores no emancipados, requiere acuerdo explícito sobre [custodia](/blog/custodia-hijos-cdmx), régimen de visitas y manutención. Si ambos pueden ser custodios compartidos o si existe consenso claro, el trámite fluye normalmente.
 
 ### Documentación Requerida
 
@@ -92,7 +92,7 @@ Antes de presentar demanda, reúnete con abogado especialista que:
 
 Este pretrámite toma 3-7 días si ambos cónyuges ya tienen acuerdos previos. Si requieren negociación, puede extenderse 2-3 semanas.
 
-**Costo aproximado:** $5,000-$8,000
+**Costo aproximado:** $5,000-$8,000 (consulte nuestra [guía completa sobre costos de divorcio en CDMX](/blog/cuanto-cuesta-divorcio-cdmx) para un desglose detallado)
 
 ### Paso 2: Presentación de Demanda (Semana 2)
 
@@ -451,7 +451,7 @@ Si ambos cónyuges desean terminar matrimonio preservando respeto mutuo y enfoca
 
 ## Contacta a Nuestro Despacho — Especialistas en Divorcio en CDMX
 
-En **Despacho de Abogados CDMX** somos expertos en divorcio express y procesos familiares. Contamos con equipo que:
+En **Despacho de Abogados CDMX** somos expertos en divorcio express y procesos de [derecho familiar](/especialidades/derecho-familiar-cdmx). Contamos con equipo que:
 
 - Asesora en negociación de términos del divorcio
 - Redacta convenios justos y protectores de derechos
@@ -471,6 +471,12 @@ En **Despacho de Abogados CDMX** somos expertos en divorcio express y procesos f
 **Sitio Web:** https://abogadosencdmx.com
 
 **Solicita tu consulta hoy.** Nuestro equipo evaluará tu situación particular y propondrá estrategia personalizada para lograr divorcio rápido, justo y con menor estrés emocional posible.
+
+---
+
+## También le puede interesar
+
+Si su divorcio involucra hijos menores, le recomendamos consultar nuestra guía sobre [pensión alimenticia en CDMX](/blog/pension-alimenticia-cdmx), donde explicamos cómo se calcula el monto, los porcentajes aplicables y el procedimiento para garantizar el sustento de los menores.
 
 ---
 
