@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Penal - Abogados en CDMX",
+  "description": "Especialidad en derecho penal. Defensa penal integral, asesoramiento a víctimas, amparo penal, acuerdos reparatorios y litigio ante sistemas acusatorios.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-penal/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Defensa penal",
+    "Asesoramiento a víctimas",
+    "Juicios orales",
+    "Amparo penal",
+    "Acuerdos reparatorios",
+    "Extinción de antecedentes",
+    "Delitos económicos",
+    "Delitos contra la salud",
+    "Delitos violentos"
+  ],
+  "knowsAbout": [
+    "Sistema acusatorio oral",
+    "Derechos constitucionales",
+    "Código Penal Federal",
+    "Código Penal CDMX",
+    "Garantías procesales penales",
+    "Procedimiento penal acusatorio"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-penal.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.8}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

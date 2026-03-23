@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Laboral - Abogados en CDMX",
+  "description": "Especialidad en derecho laboral. Contratos laborales, despido, liquidación, relaciones colectivas, seguridad social, litigio ante JCAB.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-laboral/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Contratos laborales",
+    "Despido injustificado",
+    "Cálculo de liquidación",
+    "Relaciones colectivas",
+    "Seguridad social",
+    "Accidentes laborales",
+    "Litigio ante JCAB",
+    "Acoso y discriminación"
+  ],
+  "knowsAbout": [
+    "Ley Federal del Trabajo",
+    "Derecho del trabajo mexicano",
+    "Junta de Conciliación y Arbitraje",
+    "Obligaciones de seguridad social",
+    "Derechos laborales fundamentales",
+    "Negociación colectiva"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-laboral.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.8}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

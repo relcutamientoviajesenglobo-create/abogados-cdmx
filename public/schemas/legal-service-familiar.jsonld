@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Familiar - Abogados en CDMX",
+  "description": "Especialidad en derecho familiar. Asesoramiento en divorcios, custodia de menores, pensión alimenticia, paternidad, sucesiones y mediación familiar.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-familiar/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Divorcios y separaciones",
+    "Custodia de menores",
+    "Pensión alimenticia",
+    "Paternidad y filiación",
+    "Sucesiones y testamentos",
+    "Mediación familiar",
+    "Violencia intrafamiliar"
+  ],
+  "knowsAbout": [
+    "Derecho de familia mexicano",
+    "Código Civil de la Ciudad de México",
+    "Procedimientos familiares",
+    "Interés superior del menor",
+    "Obligaciones familiares"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-familiar.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.8}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

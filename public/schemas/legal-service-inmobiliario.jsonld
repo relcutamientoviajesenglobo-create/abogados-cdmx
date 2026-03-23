@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Inmobiliario - Abogados en CDMX",
+  "description": "Especialidad en derecho inmobiliario. Compra-venta de propiedades, arrendamiento, hipotecas, condominio, litigio inmobiliario y regularización.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-inmobiliario/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Compra-venta de inmuebles",
+    "Arrendamiento inmobiliario",
+    "Hipotecas y financiamiento",
+    "Condominio y copropiedad",
+    "Desalojo y restitución",
+    "Prescripción adquisitiva",
+    "Litigio inmobiliario",
+    "Regularización de bienes"
+  ],
+  "knowsAbout": [
+    "Derecho inmobiliario",
+    "Registro Público de la Propiedad",
+    "Derechos reales",
+    "Transacciones inmobiliarias",
+    "Garantías hipotecarias",
+    "Copropiedad y condominio"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-inmobiliario.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.7}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

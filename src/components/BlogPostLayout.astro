@@ -1,0 +1,473 @@
+---
+/**
+ * BlogPostLayout.astro
+ * Layout completo para artículos de blog
+ * Incluye schema Article, breadcrumbs, meta tags SEO, author byline, TOC, FAQs
+ */
+
+import { getCollection } from 'astro:content';
+import SchemaOrg from './SchemaOrg.astro';
+import BreadcrumbNav from './BreadcrumbNav.astro';
+import FAQSection from './FAQSection.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    date: string;
+    author: string;
+    authorCredentials: string;
+    keywords: string[];
+    image: string;
+    faqs?: Array<{ question: string; answer: string }>;
+  };
+  headings?: Array<{ depth: number; slug: string; text: string }>;
+  content?: string;
+}
+
+const { frontmatter, headings = [], content = '' } = Astro.props;
+
+// Validación de props
+if (!frontmatter || !frontmatter.title) {
+  throw new Error('BlogPostLayout: frontmatter con title es requerido');
+}
+
+// Extraer headings H2 y H3 para tabla de contenidos
+const toc = headings
+  .filter((h) => [2, 3].includes(h.depth))
+  .map((h) => ({
+    level: h.depth,
+    text: h.text,
+    slug: h.slug
+  }));
+
+// Preparar schema Article
+const articleSchema = {
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  image: {
+    '@type': 'ImageObject',
+    url: new URL(frontmatter.image, Astro.site).href,
+    width: 1200,
+    height: 630
+  },
+  datePublished: new Date(frontmatter.date).toISOString(),
+  dateModified: new Date(frontmatter.date).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: frontmatter.author,
+    jobTitle: frontmatter.authorCredentials
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Abogados en CDMX',
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/images/logo.png', Astro.site).href,
+      width: 250,
+      height: 60
+    }
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': Astro.url.href
+  }
+};
+
+// Breadcrumb items
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: frontmatter.title, url: Astro.url.pathname }
+];
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<head>
+  <!-- Meta tags SEO -->
+  <title>{frontmatter.title} | Abogados en CDMX</title>
+  <meta name="description" content={frontmatter.description} />
+  <meta name="keywords" content={frontmatter.keywords.join(', ')} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={frontmatter.title} />
+  <meta property="og:description" content={frontmatter.description} />
+  <meta property="og:image" content={new URL(frontmatter.image, Astro.site).href} />
+  <meta property="og:url" content={Astro.url.href} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={frontmatter.title} />
+  <meta name="twitter:description" content={frontmatter.description} />
+  <meta name="twitter:image" content={new URL(frontmatter.image, Astro.site).href} />
+
+  <!-- Article specific meta -->
+  <meta property="article:published_time" content={new Date(frontmatter.date).toISOString()} />
+  <meta property="article:author" content={frontmatter.author} />
+  {
+    frontmatter.keywords.map((keyword) => (
+      <meta property="article:tag" content={keyword} />
+    ))
+  }
+
+  <!-- Schema.org -->
+  <SchemaOrg type="Article" data={articleSchema} />
+</head>
+
+<article class="blog-post-article">
+  <!-- Breadcrumbs -->
+  <BreadcrumbNav items={breadcrumbItems} />
+
+  <!-- Header -->
+  <header class="blog-post-header">
+    <h1 class="blog-post-title">{frontmatter.title}</h1>
+    <div class="blog-post-meta">
+      <span class="blog-post-date">
+        <time datetime={new Date(frontmatter.date).toISOString()}>
+          {formattedDate}
+        </time>
+      </span>
+      <span class="blog-post-separator">•</span>
+      <span class="blog-post-author">Por {frontmatter.author}</span>
+      {
+        frontmatter.authorCredentials && (
+          <>
+            <span class="blog-post-separator">•</span>
+            <span class="blog-post-credentials">{frontmatter.authorCredentials}</span>
+          </>
+        )
+      }
+    </div>
+    {
+      frontmatter.image && (
+        <img
+          src={frontmatter.image}
+          alt={frontmatter.title}
+          class="blog-post-image"
+          loading="lazy"
+          width="1200"
+          height="630"
+        />
+      )
+    }
+  </header>
+
+  <!-- Descripción -->
+  <div class="blog-post-description">
+    <p>{frontmatter.description}</p>
+  </div>
+
+  <!-- Tabla de Contenidos (si hay headings) -->
+  {
+    toc.length > 0 && (
+      <aside class="blog-post-toc">
+        <nav class="toc-nav" aria-labelledby="toc-title">
+          <h2 id="toc-title" class="toc-title">Contenido</h2>
+          <ol class="toc-list">
+            {toc.map((item) => (
+              <li
+                class={`toc-item ${item.level === 3 ? 'toc-item-level3' : ''}`}
+              >
+                <a href={`#${item.slug}`} class="toc-link">
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </aside>
+    )
+  }
+
+  <!-- Contenido Principal -->
+  <div class="blog-post-content">
+    <slot />
+  </div>
+
+  <!-- FAQs (si existen en frontmatter) -->
+  {
+    frontmatter.faqs && frontmatter.faqs.length > 0 && (
+      <FAQSection faqs={frontmatter.faqs} includeSchema={true} />
+    )
+  }
+
+  <!-- Footer del artículo -->
+  <footer class="blog-post-footer">
+    <div class="blog-post-footer-content">
+      <div class="author-bio">
+        <div class="author-name">{frontmatter.author}</div>
+        {
+          frontmatter.authorCredentials && (
+            <div class="author-credentials">{frontmatter.authorCredentials}</div>
+          )
+        }
+        <p>Especialista en asesoramiento legal con años de experiencia en la práctica del derecho.</p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<style>
+  .blog-post-article {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Header */
+  .blog-post-header {
+    margin-bottom: 3rem;
+  }
+
+  .blog-post-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 1rem 0 1.5rem;
+    color: #1a1a1a;
+  }
+
+  .blog-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-post-date {
+    font-weight: 600;
+    color: #003366;
+  }
+
+  .blog-post-separator {
+    color: #ccc;
+  }
+
+  .blog-post-author {
+    font-weight: 500;
+  }
+
+  .blog-post-credentials {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+  }
+
+  .blog-post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Descripción */
+  .blog-post-description {
+    background-color: #f0f4f8;
+    padding: 1.5rem;
+    border-left: 4px solid #003366;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .blog-post-description p {
+    margin: 0;
+  }
+
+  /* Tabla de Contenidos */
+  .blog-post-toc {
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+  }
+
+  .toc-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-title {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    color: #003366;
+  }
+
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .toc-item {
+    margin-left: 0;
+  }
+
+  .toc-item-level3 {
+    margin-left: 1.5rem;
+  }
+
+  .toc-link {
+    color: #003366;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .toc-link:hover {
+    color: #001a33;
+    background-color: rgba(0, 51, 102, 0.05);
+  }
+
+  .toc-link:focus-visible {
+    outline: 2px solid #003366;
+    outline-offset: 2px;
+  }
+
+  /* Contenido Principal */
+  .blog-post-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 3rem;
+  }
+
+  .blog-post-content :global(h2) {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+
+  .blog-post-content :global(h3) {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+
+  .blog-post-content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-content :global(ul),
+  .blog-post-content :global(ol) {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .blog-post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-post-content :global(blockquote) {
+    border-left: 4px solid #003366;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #666;
+  }
+
+  .blog-post-content :global(code) {
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  .blog-post-content :global(pre) {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .blog-post-content :global(a) {
+    color: #003366;
+    text-decoration: underline;
+  }
+
+  .blog-post-content :global(a:hover) {
+    color: #001a33;
+  }
+
+  /* Footer */
+  .blog-post-footer {
+    border-top: 2px solid #e0e0e0;
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .blog-post-footer-content {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .author-bio {
+    flex: 1;
+  }
+
+  .author-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+  }
+
+  .author-credentials {
+    font-size: 0.9rem;
+    color: #003366;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .author-bio p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .blog-post-article {
+      padding: 1rem;
+    }
+
+    .blog-post-title {
+      font-size: 1.75rem;
+    }
+
+    .blog-post-meta {
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-post-description {
+      padding: 1rem;
+    }
+
+    .blog-post-content :global(h2) {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .blog-post-content :global(h3) {
+      font-size: 1.2rem;
+    }
+  }
+</style>

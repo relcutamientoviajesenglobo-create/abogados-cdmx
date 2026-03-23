@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Migratorio - Abogados en CDMX",
+  "description": "Especialidad en derecho migratorio. Visas, residencia, naturalización, defensa migratoria, amparo, refugio y asesoramiento a empresas en sponsoreo.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-migratorio/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Visas de residente",
+    "Visa de trabajo",
+    "Cambio de status migratorio",
+    "Naturalización",
+    "Defensa migratoria",
+    "Amparo migratorio",
+    "Refugio y asilo",
+    "Asesoramiento empresarial"
+  ],
+  "knowsAbout": [
+    "Ley de Migración",
+    "Categorías de visa",
+    "Instituto Nacional de Migración",
+    "Procedimiento administrativo migratorio",
+    "Garantías constitucionales",
+    "Tratados internacionales"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-migratorio.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.8}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

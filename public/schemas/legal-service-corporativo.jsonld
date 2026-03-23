@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Derecho Corporativo y Mercantil - Abogados en CDMX",
+  "description": "Especialidad en derecho corporativo y mercantil. Constitución de sociedades, fusiones y adquisiciones, contratos comerciales, regulación y compliance, litigio mercantil.",
+  "url": "https://abogadosencdmx.com/servicios/derecho-corporativo/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ciudad de México"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+52 55 6465 5501",
+    "email": "contacto@abogadosencdmx.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Guanajuato 224",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "postalCode": "06700",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Constitución de sociedades",
+    "Fusiones y adquisiciones",
+    "Contratos comerciales",
+    "Derecho de la competencia",
+    "Compliance normativo",
+    "Litigio mercantil",
+    "Arbitraje comercial",
+    "Insolvencia y concursos"
+  ],
+  "knowsAbout": [
+    "Código Mercantil",
+    "Ley de Competencia Económica",
+    "Operaciones corporativas",
+    "Due diligence",
+    "Regulación empresarial",
+    "Responsabilidad civil comercial"
+  ],
+  "availableLanguage": ["es"],
+  "image": "https://abogadosencdmx.com/images/servicios/derecho-corporativo.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{PLACEHOLDER: 4.9}}",
+    "reviewCount": "{{PLACEHOLDER: número de reseñas}}"
+  }
+}

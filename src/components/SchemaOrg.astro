@@ -1,0 +1,32 @@
+---
+/**
+ * SchemaOrg.astro
+ * Componente reutilizable para inyectar JSON-LD schema
+ * Validación básica incluida
+ */
+
+interface Props {
+  type: string;
+  data: Record<string, any>;
+}
+
+const { type, data } = Astro.props;
+
+// Validación básica
+if (!type || typeof type !== 'string') {
+  console.warn('SchemaOrg: type prop es requerido y debe ser string');
+}
+
+if (!data || typeof data !== 'object') {
+  console.warn('SchemaOrg: data prop es requerido y debe ser un objeto');
+}
+
+// Construir schema con @context y @type
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  ...data
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

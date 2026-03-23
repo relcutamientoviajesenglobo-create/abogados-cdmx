@@ -1,0 +1,699 @@
+---
+/**
+ * SobreNosotros.astro
+ * Página completa "Sobre Nosotros" optimizada para E-E-A-T
+ * Incluye schema AboutPage + Organization
+ */
+
+import SchemaOrg from './SchemaOrg.astro';
+
+// Datos del despacho
+const firmData = {
+  name: 'Abogados en CDMX',
+  address: 'Guanajuato 224, Col. Roma Norte, CDMX',
+  phone: '55 6465 5501',
+  email: 'contacto@abogadosencdmx.com',
+  website: 'https://abogadosencdmx.com'
+};
+
+// Schema Organization
+const organizationSchema = {
+  name: firmData.name,
+  description: 'Despacho de abogados especializado en derecho familiar, penal, corporativo, inmobiliario, migratorio, laboral y civil',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Guanajuato 224',
+    addressLocality: 'México',
+    addressRegion: 'CDMX',
+    postalCode: '06700',
+    addressCountry: 'MX'
+  },
+  telephone: '55 6465 5501',
+  email: 'contacto@abogadosencdmx.com',
+  url: 'https://abogadosencdmx.com',
+  image: 'https://abogadosencdmx.com/images/logo.png',
+  areaServed: {
+    '@type': 'City',
+    name: 'Ciudad de México'
+  },
+  sameAs: [
+    'https://www.facebook.com/abogadosencdmx',
+    'https://www.instagram.com/abogadosencdmx',
+    'https://www.linkedin.com/company/abogadosencdmx'
+  ]
+};
+
+// Schema AboutPage
+const aboutPageSchema = {
+  '@type': 'AboutPage',
+  mainEntity: organizationSchema
+};
+
+const team = [
+  {
+    id: 1,
+    name: '{{PLACEHOLDER: Nombre Abogado 1}}',
+    specialty: 'Derecho Familiar',
+    credentials: 'Cédula Profesional: {{PLACEHOLDER: Número}}',
+    experience: 'Especialista con más de {{PLACEHOLDER: X}} años de experiencia',
+    photo: '{{PLACEHOLDER: /images/team/lawyer-1.jpg}}'
+  },
+  {
+    id: 2,
+    name: '{{PLACEHOLDER: Nombre Abogado 2}}',
+    specialty: 'Derecho Penal',
+    credentials: 'Cédula Profesional: {{PLACEHOLDER: Número}}',
+    experience: 'Especialista con más de {{PLACEHOLDER: X}} años de experiencia',
+    photo: '{{PLACEHOLDER: /images/team/lawyer-2.jpg}}'
+  },
+  {
+    id: 3,
+    name: '{{PLACEHOLDER: Nombre Abogado 3}}',
+    specialty: 'Derecho Corporativo',
+    credentials: 'Cédula Profesional: {{PLACEHOLDER: Número}}',
+    experience: 'Especialista con más de {{PLACEHOLDER: X}} años de experiencia',
+    photo: '{{PLACEHOLDER: /images/team/lawyer-3.jpg}}'
+  }
+];
+
+const certifications = [
+  {
+    title: '{{PLACEHOLDER: Certificación 1}}',
+    issuer: '{{PLACEHOLDER: Institucion Emisora}}',
+    year: '{{PLACEHOLDER: Año}}'
+  },
+  {
+    title: '{{PLACEHOLDER: Certificación 2}}',
+    issuer: '{{PLACEHOLDER: Institucion Emisora}}',
+    year: '{{PLACEHOLDER: Año}}'
+  }
+];
+---
+
+<head>
+  <title>Sobre Nosotros | Abogados en CDMX</title>
+  <meta
+    name="description"
+    content="Conoce el equipo de Abogados en CDMX. Despacho con especialistas en derecho familiar, penal, corporativo y más. Ubicados en Roma Norte."
+  />
+  <meta name="keywords" content="abogados CDMX, despacho legal, derecho familiar, derecho penal, derecho corporativo" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sobre Nosotros | Abogados en CDMX" />
+  <meta
+    property="og:description"
+    content="Despacho de abogados especializado en múltiples áreas del derecho"
+  />
+  <meta property="og:image" content="{{PLACEHOLDER: https://abogadosencdmx.com/images/og-about.jpg}}" />
+  <meta property="og:url" content="https://abogadosencdmx.com/sobre-nosotros/" />
+
+  <SchemaOrg type="AboutPage" data={aboutPageSchema} />
+</head>
+
+<main class="sobre-nosotros">
+  <!-- Sección Hero -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Sobre Nosotros</h1>
+      <p>Tu aliado legal de confianza en la Ciudad de México</p>
+    </div>
+  </section>
+
+  <!-- Sección Historia -->
+  <section class="historia-section">
+    <div class="container">
+      <h2>Nuestra Historia</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p>
+            {{PLACEHOLDER: Descripción detallada de la historia del despacho. Incluir año de
+            fundación, evolución, logros principales y hitos importantes en el desarrollo de la
+            práctica legal.}}
+          </p>
+          <p>
+            {{PLACEHOLDER: Párrafo adicional sobre el crecimiento y expansion del despacho,
+            clientes servidos, y consolidación como referente legal en la Ciudad de México.}}
+          </p>
+        </div>
+        <div class="content-image">
+          <img src="{{PLACEHOLDER: /images/historia.jpg}}" alt="Historia del despacho" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Misión y Valores -->
+  <section class="mision-valores-section">
+    <div class="container">
+      <h2>Misión y Valores</h2>
+      <div class="valores-grid">
+        <div class="valor-card">
+          <div class="valor-icon">🎯</div>
+          <h3>Nuestra Misión</h3>
+          <p>
+            {{PLACEHOLDER: Descripción clara de la misión del despacho. Debe reflejar el
+            compromiso con los clientes, excelencia legal y servicio de calidad.}}
+          </p>
+        </div>
+
+        <div class="valor-card">
+          <div class="valor-icon">⚖️</div>
+          <h3>Integridad</h3>
+          <p>
+            {{PLACEHOLDER: Explicar cómo la integridad es fundamental en la práctica legal del
+            despacho.}}
+          </p>
+        </div>
+
+        <div class="valor-card">
+          <div class="valor-icon">🤝</div>
+          <h3>Confianza</h3>
+          <p>
+            {{PLACEHOLDER: Describir cómo el despacho construye relaciones de confianza con sus
+            clientes.}}
+          </p>
+        </div>
+
+        <div class="valor-card">
+          <div class="valor-icon">📈</div>
+          <h3>Excelencia</h3>
+          <p>
+            {{PLACEHOLDER: Explicar el compromiso con la excelencia en cada caso y servicio
+            prestado.}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Equipo -->
+  <section class="equipo-section">
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <p class="section-intro">
+        {{PLACEHOLDER: Descripción breve sobre el equipo de profesionales que conforman el despacho.}}
+      </p>
+
+      <div class="team-grid">
+        {
+          team.map((lawyer) => (
+            <div class="team-card">
+              <div class="team-photo">
+                <img
+                  src={lawyer.photo}
+                  alt={lawyer.name}
+                  loading="lazy"
+                  width="300"
+                  height="400"
+                />
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">{lawyer.name}</h3>
+                <p class="team-specialty">{lawyer.specialty}</p>
+                <p class="team-credentials">{lawyer.credentials}</p>
+                <p class="team-experience">{lawyer.experience}</p>
+                <a href={`#contacto-${lawyer.id}`} class="team-contact-btn">
+                  Contactar
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Membresías y Certificaciones -->
+  <section class="certificaciones-section">
+    <div class="container">
+      <h2>Membresías y Certificaciones</h2>
+      <p class="section-intro">
+        {{PLACEHOLDER: Descripción sobre membresías profesionales y certificaciones obtenidas.}}
+      </p>
+
+      <div class="certificaciones-grid">
+        {
+          certifications.map((cert) => (
+            <div class="cert-card">
+              <div class="cert-icon">🏆</div>
+              <h3>{cert.title}</h3>
+              <p class="cert-issuer">{cert.issuer}</p>
+              <p class="cert-year">{cert.year}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="additional-certifications">
+        <h3>Membresías Profesionales</h3>
+        <ul>
+          <li>{{PLACEHOLDER: Membresía o afiliación profesional}}</li>
+          <li>{{PLACEHOLDER: Membresía o afiliación profesional}}</li>
+          <li>{{PLACEHOLDER: Membresía o afiliación profesional}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Ubicación -->
+  <section class="ubicacion-section">
+    <div class="container">
+      <h2>Ubicación</h2>
+      <div class="ubicacion-grid">
+        <div class="ubicacion-info">
+          <h3>Estamos ubicados en:</h3>
+          <p class="address">
+            <strong>Guanajuato 224</strong><br />
+            Colonia Roma Norte<br />
+            06700, Ciudad de México, México
+          </p>
+          <p class="contact-info">
+            <strong>Teléfono:</strong> <a href="tel:+525564655501">55 6465 5501</a><br />
+            <strong>Email:</strong> <a href="mailto:contacto@abogadosencdmx.com"
+              >contacto@abogadosencdmx.com</a
+            >
+          </p>
+          <p class="hours">
+            <strong>Horario de Atención:</strong><br />
+            {{PLACEHOLDER: Lunes a viernes: HH:MM - HH:MM}}<br />
+            {{PLACEHOLDER: Sábado: HH:MM - HH:MM}}<br />
+            {{PLACEHOLDER: Domingo: Cerrado}}
+          </p>
+        </div>
+
+        <div class="ubicacion-mapa">
+          {{PLACEHOLDER: Google Maps embed o mapa similar}}
+          <div class="mapa-placeholder">
+            <p>Mapa interactivo - {{PLACEHOLDER: Insertar código de embed de Google Maps}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Necesitas ayuda legal?</h2>
+      <p>Contáctanos hoy para agendar una consulta con nuestros especialistas</p>
+      <a href="/contacto/" class="cta-button">Agendar Consulta</a>
+    </div>
+  </section>
+</main>
+
+<style>
+  main {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+    padding: 6rem 1rem;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    margin: 0;
+    opacity: 0.95;
+  }
+
+  /* Historia Section */
+  .historia-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+  }
+
+  .historia-section h2,
+  .mision-valores-section h2,
+  .equipo-section h2,
+  .certificaciones-section h2,
+  .ubicacion-section h2,
+  .cta-section h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    color: #003366;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .content-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Misión y Valores */
+  .mision-valores-section {
+    padding: 4rem 0;
+  }
+
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .valor-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 51, 102, 0.15);
+  }
+
+  .valor-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .valor-card h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin: 0 0 0.75rem;
+  }
+
+  .valor-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Equipo Section */
+  .equipo-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+  }
+
+  .section-intro {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .team-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 51, 102, 0.15);
+  }
+
+  .team-photo {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+  }
+
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-info {
+    padding: 1.5rem;
+  }
+
+  .team-name {
+    font-size: 1.3rem;
+    color: #003366;
+    margin: 0 0 0.5rem;
+  }
+
+  .team-specialty {
+    color: #006699;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .team-credentials {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0 0 0.5rem;
+  }
+
+  .team-experience {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+
+  .team-contact-btn {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .team-contact-btn:hover {
+    background-color: #001a33;
+  }
+
+  /* Certificaciones */
+  .certificaciones-section {
+    padding: 4rem 0;
+  }
+
+  .certificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .cert-card {
+    background: #f0f4f8;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #003366;
+    text-align: center;
+  }
+
+  .cert-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-card h3 {
+    color: #003366;
+    margin: 0 0 0.5rem;
+  }
+
+  .cert-issuer {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .cert-year {
+    color: #999;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .additional-certifications {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .additional-certifications h3 {
+    color: #003366;
+    margin-top: 0;
+  }
+
+  .additional-certifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .additional-certifications li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #666;
+  }
+
+  .additional-certifications li:last-child {
+    border-bottom: none;
+  }
+
+  /* Ubicación */
+  .ubicacion-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+  }
+
+  .ubicacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ubicacion-info h3 {
+    color: #003366;
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+
+  .address {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info,
+  .hours {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info a,
+  .hours a {
+    color: #003366;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover,
+  .hours a:hover {
+    text-decoration: underline;
+  }
+
+  .mapa-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #e0e0e0;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #003366;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .historia-section,
+    .mision-valores-section,
+    .equipo-section,
+    .certificaciones-section,
+    .ubicacion-section,
+    .cta-section {
+      padding: 2rem 0;
+    }
+
+    .content-grid,
+    .ubicacion-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .valores-grid,
+    .team-grid,
+    .certificaciones-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+      padding: 3rem 1rem;
+    }
+
+    .cta-section {
+      padding: 2rem 1rem;
+    }
+  }
+</style>

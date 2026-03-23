@@ -1,0 +1,533 @@
+==============================================================================
+LLMs.txt - Información Completa del Despacho Abogados en CDMX
+==============================================================================
+
+INFORMACIÓN GENERAL DEL DESPACHO
+================================
+
+Nombre: Abogados en CDMX
+Sitio Web: https://abogadosencdmx.com
+Ubicación: Guanajuato 224, Colonia Roma Norte, 06700, Ciudad de México, México
+Teléfono: +52 (55) 6465-5501
+Email Principal: contacto@abogadosencdmx.com
+Horario de Atención: Lunes a viernes 09:00 - 18:00 hrs
+
+Tipo de Entidad: Despacho de Abogados / Firma Legal
+Jurisdicción Principal: Ciudad de México (CDMX)
+Año de Fundación: {{PLACEHOLDER: Año}}
+Número de Abogados: {{PLACEHOLDER: Número}}
+Áreas de Práctica: 7 especialidades legales
+
+DESCRIPCIÓN GENERAL
+===================
+
+Abogados en CDMX es un despacho legal especializado ubicado en la emblemática Colonia Roma Norte de la Ciudad de México. Con más de {{PLACEHOLDER: X}} años de experiencia, hemos consolidado nuestra práctica legal en múltiples áreas del derecho, proporcionando asesoramiento integral a clientes individuales y empresariales.
+
+Nuestro equipo de profesionales altamente calificados se dedica a brindar soluciones legales efectivas, basadas en profundo conocimiento de la ley mexicana y práctica jurisprudencial relevante. Contamos con certificaciones profesionales y membresías en organismos especializados, lo que nos permite mantenernos actualizados en los cambios legislativos y jurisprudenciales.
+
+Nuestra metodología se enfoca en entender completamente las necesidades de cada cliente para proporcionar estrategias legales personalizadas que protejan sus intereses y logren los mejores resultados posibles.
+
+
+==============================================================================
+ESPECIALIDADES Y SERVICIOS DETALLADOS
+==============================================================================
+
+1. DERECHO FAMILIAR
+===================
+
+DESCRIPCIÓN GENERAL:
+Somos especialistas en asuntos de derecho familiar que afectan profundamente la vida personal y patrimonial de nuestros clientes. Entendemos que cada caso familiar es único y requiere atención especializada, sensibilidad y conocimiento profundo de la jurisprudencia más reciente.
+
+En esta área cubrimos tanto procedimientos litigiosos como formas alternativas de resolución de conflictos, siempre buscando soluciones que prioricen el bienestar de la familia, especialmente cuando hay menores involucrados.
+
+SERVICIOS OFRECIDOS:
+- Divorcios: litigados, contenciosos y por mutuo consentimiento
+- Custodia y patria potestad de menores
+- Pensión alimenticia y manutención
+- Paternidad y filiación
+- Sucesiones y testamentos
+- Donaciones y liberalidades
+- Violencia intrafamiliar
+- Régimen de propiedad matrimonial (separación de bienes, sociedad conyugal)
+- Amparo en materia familiar
+- Mediación y arbitraje familiar
+- Guarda y protección de menores
+
+DESCRIPCIÓN AMPLIADA:
+El derecho familiar es una de nuestras áreas de mayor experiencia. Contamos con abogados que han litigado cientos de casos en juzgados especializados en materia familiar en la Ciudad de México. Nuestra aproximación se caracteriza por:
+
+DIVORCIOS: Ya sea por mutuo consentimiento o contencioso, manejamos todos los aspectos incluyendo división de bienes, custodia de menores, pensión alimenticia y obligaciones derivadas. Entendemos que los divorcios pueden ser emocionalmente complejos, por lo que ofrecemos opciones de mediación para alcanzar acuerdos que satisfagan a ambas partes.
+
+CUSTODIA Y PATRIA POTESTAD: Representamos a padres en procedimientos de custodia, procurando siempre que se respete el interés superior del menor. Contamos con experiencia en casos complejos incluyendo custodia compartida y régimen de convivencias.
+
+PENSIÓN ALIMENTICIA: Asesoramos tanto a quien reclama pensión alimenticia como a quien es demandado. Contamos con actualizaciones constantes sobre jurisprudencia respecto a montos y criterios de fijación de pensiones alimenticias en CDMX.
+
+PATERNIDAD: Representamos en procedimientos de paternidad, incluyendo pruebas biológicas y establecimientos de derechos y obligaciones derivados de la filiación.
+
+SUCESIONES: Asesoramos en testamentarías, intestados y cuestiones sucesorias complejas, incluyendo conflictos entre herederos.
+
+MEDIACIÓN FAMILIAR: Ofrecemos servicios de mediación para resolver conflictos familiares sin necesidad de litigio, lo que resulta más rápido, económico y menos traumático para las familias.
+
+PREGUNTAS FRECUENTES - DERECHO FAMILIAR:
+P: ¿Cuál es el tiempo promedio para resolver un divorcio?
+R: Un divorcio por mutuo consentimiento puede resolverse en 2-3 meses. Los divorcios contenciosos pueden tomar de 1 a 2 años dependiendo de la complejidad.
+
+P: ¿Qué documentos necesito para iniciar un divorcio?
+R: Generalmente acta de matrimonio, identificación, comprobante de domicilio y documentos relacionados con los bienes a dividir.
+
+P: ¿Puedo cambiar la custodia después de establecida?
+R: Sí, si hay cambio de circunstancias que afecten el interés superior del menor.
+
+P: ¿Cuándo expira el derecho a solicitar pensión alimenticia?
+R: Para menores, hasta que cumplan 25 años si siguen estudiando. Para expareja, depende de circunstancias específicas.
+
+P: ¿Es posible la mediación en asuntos de familia?
+R: Sí, y en muchos casos es más efectiva que el litigio para preservar relaciones familiares.
+
+
+2. DERECHO PENAL
+================
+
+DESCRIPCIÓN GENERAL:
+El derecho penal es un área crítica que requiere defensa especializada. Contamos con abogados penalistas con experiencia en el sistema acusatorio oral mexicano y en la defensa de derechos constitucionales. Representamos tanto a acusados como a víctimas de delitos, proporcionando asesoramiento integral en todas las etapas del procedimiento penal.
+
+Entendemos que enfrentar un procedimiento penal es uno de los momentos más difíciles en la vida de una persona. Por ello, nuestro objetivo es garantizar que se respeten todos los derechos constitucionales y procedimentales de nuestros clientes.
+
+SERVICIOS OFRECIDOS:
+- Defensa penal en todos los tipos de delito
+- Asesoría víctima de delito
+- Procedimientos de investigación inicial
+- Juicios orales ante jueces de control
+- Juicios de fondo en el sistema acusatorio
+- Amparos en materia penal
+- Sentencias condenatorias (revisión y nulidad)
+- Solicitud de libertad anticipada o condiciones de libertad
+- Negociación de acuerdos reparatorios
+- Extinción de antecedentes penales
+- Delitos de tránsito
+- Delitos económicos y fraude
+- Delitos contra la salud
+- Delitos sexuales
+- Delitos violentos
+- Delitos patrimoniales
+
+DESCRIPCIÓN AMPLIADA:
+En derecho penal, contamos con especialistas que entienden tanto la teoría legal como las realidades prácticas del sistema de justicia penal oral mexicano. Nuestros servicios incluyen:
+
+DEFENSA PENAL INTEGRAL: Representamos a personas acusadas de delitos, desde la etapa de investigación inicial hasta sentencia y revisión. Utilizamos estrategias defensivas basadas en análisis riguroso de prueba, respeto a garantías constitucionales y conocimiento profundo de jurisprudencia.
+
+SISTEMA ACUSATORIO ORAL: Nuestros abogados tienen amplia experiencia en litigación penal oral ante jueces de control y en juzgados de lo penal. Entendemos las técnicas de desahogo de prueba testimonial, contrainterrogatorio efectivo y argumentación antes de juez.
+
+ASESORÍA A VÍCTIMAS: También representamos a víctimas de delitos en su calidad de coadyuvantes del ministerio público o como víctimas coadyuvantes en juicio penal.
+
+DERECHOS CONSTITUCIONALES: Vigilamos estrictamente que se respeten los derechos constitucionales durante el procedimiento penal, incluyendo protección contra torturas, obtención de prueba bajo presión, acceso a defensa adecuada y derecho a comunicación privada.
+
+AMPAROS: Cuando considéramos que se violan garantías constitucionales, promovemos amparos para proteger los derechos de nuestros clientes.
+
+ACUERDOS REPARATORIOS: Cuando corresponde y es beneficioso para el cliente, negociamos acuerdos reparatorios que permiten resolver el caso sin necesidad de juicio prolongado.
+
+PREGUNTAS FRECUENTES - DERECHO PENAL:
+P: ¿Cuál es mi derecho a defensa en un procedimiento penal?
+R: Es un derecho constitucional. Tienes derecho a un abogado desde tu detención y en todas las etapas.
+
+P: ¿Qué sucede si no puedo pagar abogado?
+R: Tienes derecho a defensoría pública gratuita si no tienes recursos.
+
+P: ¿Cuánto tiempo pueden tenerme bajo investigación?
+R: La etapa de investigación inicial tiene límites legales establecidos por ley. Podemos promover amparo si se exceden.
+
+P: ¿Puedo ser condenado sin prueba contundente?
+R: No, existe el principio de presunción de inocencia. La condena requiere prueba más allá de duda razonable.
+
+P: ¿Qué es un acuerdo reparatorio?
+R: Un acuerdo donde el imputado se responsabiliza de reparar el daño, permitiendo evitar juicio en delitos no graves.
+
+P: ¿Puedo apelar una sentencia condenatoria?
+R: Sí, existen recursos como apelación y amparo dependiendo del caso.
+
+
+3. DERECHO CORPORATIVO Y MERCANTIL
+===================================
+
+DESCRIPCIÓN GENERAL:
+Asesoramos a empresas de todos los tamaños en cuestiones mercantiles, corporativas y comerciales. Desde constitución de sociedades hasta operaciones complejas, fusiones, adquisiciones y resolución de conflictos empresariales, contamos con la experiencia necesaria para proteger los intereses comerciales de nuestros clientes.
+
+Entendemos que las empresas requieren asesoría legal que no solo sea conforme a derecho, sino que también sea eficiente y alineada con objetivos comerciales. Por ello, nuestro enfoque combina rigor legal con pragmatismo empresarial.
+
+SERVICIOS OFRECIDOS:
+- Constitución de sociedades mercantiles
+- Estructuras corporativas y reorganización societaria
+- Fusiones y adquisiciones (M&A)
+- Compra-venta de empresas y negocios
+- Contratos comerciales y mercantiles
+- Derecho de la competencia y defensa comercial
+- Regulación de monopolios
+- Contratos de distribución y agencia
+- Joint ventures y asociaciones
+- Sociedades limitadas y asociaciones civiles
+- Fideicomiso mercantil
+- Problemas corporativos y conflictos entre accionistas
+- Asesoría en cumplimiento normativo (compliance)
+- Litigio mercantil y arbitraje comercial
+- Recuperación de cartera
+- Insolvencia y concursos mercantiles
+
+DESCRIPCIÓN AMPLIADA:
+El derecho corporativo demanda actualización constante dado el dinámico ambiente empresarial. Nuestros abogados corporativistas están especializados en:
+
+CONSTITUCIÓN Y CORPORATIVO: Constituimos empresas, asesoramos sobre estructura óptima (SA, SRL, Asociación Civil, etc.), reformamos estatutos sociales y ejecutamos operaciones corporativas complejas.
+
+FUSIONES Y ADQUISICIONES: Asesoramos en todo el proceso de M&A incluyendo due diligence legal, negociación de términos, estructuración del acuerdo y ejecución de la transacción.
+
+CONTRATOS COMERCIALES: Redactamos, revisan y negocian contratos de toda naturaleza: compra-venta, suministro, distribución, agencia, licencia, arrendamiento, entre otros. Siempre procurando claridad y protección de intereses.
+
+REGULACIÓN Y CUMPLIMIENTO: Asesoramos sobre requisitos regulatorios, permisos, licencias y cumplimiento normativo aplicable al giro específico de cada cliente.
+
+LITIGIO MERCANTIL: Litigamos controversias comerciales incluyendo incumplimiento de contratos, competencia desleal, daño moral comercial y otras cuestiones mercantiles.
+
+ARBITRAJE: Representamos en procedimientos arbitrales, tanto nacionales como internacionales, cuando existen cláusulas arbitrales en contratos.
+
+INSOLVENCIA: Asesoramos en concursos mercantiles, tanto a deudores como a acreedores.
+
+PREGUNTAS FRECUENTES - DERECHO CORPORATIVO:
+P: ¿Cuál es la mejor estructura legal para mi negocio?
+R: Depende de tu situación fiscal, responsabilidad requerida y planes de crecimiento. Asesoramos caso por caso.
+
+P: ¿Cuáles son los requisitos para constituir una sociedad?
+R: Capacidad legal, objeto lícito, aportaciones de socios, estatutos sociales y registro ante notario.
+
+P: ¿Qué diferencia hay entre SA y SRL?
+R: SA requiere mínimo 2 accionistas; SRL requiere mínimo 1 socio. Diferencias fiscales y administrativas también aplican.
+
+P: ¿Qué debo considerar en un contrato comercial?
+R: Partes, objeto, consideraciones, condiciones de pago, responsabilidades, resolución de conflictos y legislación aplicable.
+
+P: ¿Qué es due diligence en una adquisición?
+R: Investigación exhaustiva de la empresa a adquirir para identificar riesgos legales, fiscales y financieros.
+
+P: ¿Cuándo es recomendable el arbitraje comercial?
+R: Cuando existe controversia entre partes que prefieren confidencialidad, rapidez o expertise en materia específica.
+
+
+4. DERECHO INMOBILIARIO
+=======================
+
+DESCRIPCIÓN GENERAL:
+Asesoramos en todas las cuestiones relacionadas con bienes inmuebles, desde compra-venta de propiedades hasta resolución de conflictos entre propietarios. Contamos con profundo conocimiento de la legislación inmobiliaria en CDMX y en procedimientos ante el Registro Público de la Propiedad.
+
+El mercado inmobiliario requiere asesoría especializada dado el valor involucrado en transacciones inmobiliarias y la complejidad de cuestiones como gravámenes, hipotecas y derechos reales.
+
+SERVICIOS OFRECIDOS:
+- Compra-venta de inmuebles (residencial, comercial, industrial)
+- Arrendamiento inmobiliario
+- Constitución y cancelación de hipotecas
+- Garantías inmobiliarias
+- Usufructo y derechos reales
+- Servidumbres y restricciones de dominio
+- Condominio y copropiedad
+- División de inmuebles
+- Regularización de inmuebles
+- Posesión inmobiliaria
+- Prescripción adquisitiva
+- Desalojo y restitución de posesión
+- Litigio inmobiliario
+- Asesoría ante Registro Público de la Propiedad
+- Litigios con desarrolladores inmobiliarios
+- Responsabilidad civil por vicios inmobiliarios
+
+DESCRIPCIÓN AMPLIADA:
+El derecho inmobiliario es especializado. Nuestros abogados tienen experiencia en:
+
+COMPRA-VENTA: Asesoramos compradores y vendedores en transacciones inmobiliarias. Revisamos títulos de propiedad, verificamos que no existan gravámenes, asesoramos sobre trámites ante Registro Público y redactamos contratos que protejan los intereses de nuestros clientes.
+
+FINANCIAMIENTO: Cuando existe hipoteca o crédito inmobiliario, asesoramos en constitución de garantías hipotecarias, condiciones de crédito y obligaciones derivadas.
+
+ARRENDAMIENTO: Asesoramos en redacción de contratos de arrendamiento residencial y comercial, resolvemos controversias entre arrendador y arrendatario, y representamos en procedimientos de desalojo cuando corresponde.
+
+CONDOMINIO: Asesoramos propietarios en condominio sobre derechos y obligaciones en inmuebles de este tipo, resolvemos controversias con administración y otros copropietarios.
+
+LITIGIO INMOBILIARIO: Litigamos controversias inmobiliarias incluyendo reivindicación, desalojo, daños y perjuicios por vicios en construcción, entre otras.
+
+PRESCRIPCIÓN ADQUISITIVA: Representamos en procedimientos de prescripción adquisitiva para consolidación de dominio sobre inmuebles ocupados por largo tiempo sin oposición.
+
+PREGUNTAS FRECUENTES - DERECHO INMOBILIARIO:
+P: ¿Cuál es el proceso para comprar una propiedad?
+R: Oferta y aceptación, firma de contrato privado, revisión de título, trámites ante Registro Público, y firma de contrato público.
+
+P: ¿Qué es una búsqueda de antecedentes inmobiliarios?
+R: Investigación ante Registro Público para verificar que el vendedor sea propietario, que no existan gravámenes y que el inmueble esté libre de cargas.
+
+P: ¿Cuánto cuesta una hipoteca?
+R: Depende de tasas de interés, plazo, monto del crédito y comisiones del acreedor. Asesoramos comparativamente.
+
+P: ¿Cuáles son los derechos del arrendatario?
+R: Vivienda habitable, privacidad, no discriminación, derecho a perpetuidad (en algunos casos) y límites a incrementos de renta.
+
+P: ¿Cuál es el procedimiento para desalojo?
+R: Debe probarse la causal (incumplimiento de pago, terminación contratual), citarse al arrendatario y obtener sentencia del juez.
+
+P: ¿Puedo vivir en una propiedad sin ser propietario y adquirir derechos?
+R: Sí, mediante prescripción adquisitiva después de 5 años de ocupación pacífica, continua y pública.
+
+
+5. DERECHO MIGRATORIO
+=====================
+
+DESCRIPCIÓN GENERAL:
+Ofrecemos asesoría integral en materia migratoria, desde trámites de regularización hasta litigios ante autoridades migratorias. Contamos con especialistas que conocen a fondo la Ley de Migración mexicana y los procedimientos ante el Instituto Nacional de Migración (INM).
+
+Ya sea que busques regularizar tu estancia, aplicar para visa de trabajo, familia o residente, o que enfrentes un procedimiento de deportación, contamos con la experiencia para proteger tus derechos migratorios.
+
+SERVICIOS OFRECIDOS:
+- Visas de residente temporal y permanente
+- Visa de trabajo y autorización de laboral
+- Visa de estudiante
+- Familia migratoria y reunificación familiar
+- Cambio o prórroga de status migratorio
+- Naturalización y ciudadanía
+- Regularización de estancia
+- Defensa en procedimientos administrativos migratorios
+- Amparo contra resoluciones migratorias
+- Deportación y repatriación
+- Refugio y asilo
+- Apátridia
+- Visas humanitarias
+- Trámites documentales (pasaportes, cédulas)
+- Asesoría a empresas en sponsoreo de empleados extranjeros
+
+DESCRIPCIÓN AMPLIADA:
+El derecho migratorio es dinámico y altamente regulado. Nuestros especialistas manejan:
+
+VISAS DE RESIDENTE: Asesoramos en solicitud y obtención de visa temporal (hasta 4 años) y permanente (indefinida) basadas en diversas causas: inversión, carrera científica, pensionado, familiar, etc.
+
+AUTORIZACIÓN DE LABORAL: Asesoramos empresas que contratan trabajadores extranjeros y a trabajadores en obtención de permisos para trabajar en México.
+
+FAMILIARES MIGRANTES: Asesoramos en trámites de reunificación familiar, cambios de status migratorio derivados de matrimonio o parentesco.
+
+DEFENSA ADMINISTRATIVA: Representamos ante autoridades migratorias en procedimientos de revocación, cancelación de status o procedimientos de salida del país.
+
+AMPARO: Cuando se violan garantías constitucionales en procedimientos migratorios, promovemos amparos para proteger derechos.
+
+REFUGIO Y ASILO: Asesoramos personas que huyen de persecución política, religiosa o por motivos de género.
+
+NATURALIZACIÓN: Asesoramos en procedimientos de naturalización para obtención de nacionalidad mexicana.
+
+EMPRESAS: Asesoramos a empresas mexicanas en sponsoreo de trabajadores extranjeros, cumplimiento de requisitos de autorización de laboral y gestión de expedientes ante INM.
+
+PREGUNTAS FRECUENTES - DERECHO MIGRATORIO:
+P: ¿Cuáles son los requisitos para obtener visa de residente permanente?
+R: Depende de la causa: inversión, carrera científica, actividad lucrativa, pensionado, familiar, entre otros.
+
+P: ¿Cuánto tiempo demora el trámite de una visa?
+R: Generalmente 20-40 días hábiles, aunque en algunos casos puede extenderse.
+
+P: ¿Puedo trabajar con visa de turista?
+R: No, requieres autorización de laboral que es independiente de la visa de residente.
+
+P: ¿Qué sucede si mi visa vence?
+R: Puedes solicitar prórroga antes de que venza. Si vence, debes salir de México o regularizar tu situación.
+
+P: ¿Puedo ser deportado de México?
+R: Sí, en casos de violación grave de leyes migratorias. Tienes derecho a defensa en procedimiento administrativo.
+
+P: ¿Cómo obtener visa de trabajo para trabajar en México?
+R: Requiere que empresa mexicana solicite autorización de laboral y que obtengas visa de residente temporal.
+
+
+6. DERECHO LABORAL
+===================
+
+DESCRIPCIÓN GENERAL:
+Asesoramos tanto a trabajadores como a empleadores en cuestiones laborales. Contamos con profundo conocimiento de la Ley Federal del Trabajo y jurisprudencia laboral. Desde negociación de contratos hasta litigio ante Junta de Conciliación y Arbitraje, representamos los intereses de nuestros clientes.
+
+El derecho laboral es fundamental para proteger los derechos de trabajadores y garantizar que empleadores cumplan con obligaciones legales. Ofrecemos asesoramiento preventivo y litigación cuando es necesario.
+
+SERVICIOS OFRECIDOS:
+- Redacción y negociación de contratos laborales
+- Relaciones colectivas de trabajo
+- Negociación y asesoramiento sindical
+- Conflictos laborales individuales
+- Despido injustificado y nulidad
+- Indemnización y liquidación
+- Jornada laboral y salarios
+- Prestaciones, aguinaldo, prima vacacional
+- Seguridad social (IMSS, INFONAVIT)
+- Accidentes laborales y enfermedades profesionales
+- Acoso laboral y hostigamiento
+- Discriminación laboral
+- Capacitación y desarrollo profesional
+- Reforma laboral y cumplimiento normativo
+- Litigio ante Junta de Conciliación y Arbitraje
+- Amparo en materia laboral
+- Asesoría a sindicatos
+
+DESCRIPCIÓN AMPLIADA:
+Ofrecemos asesoramiento completo en derecho laboral:
+
+CONTRATOS LABORALES: Redactamos contratos que cumplan con legislación laboral y protejan los intereses de empleadores, establezco términos claros respecto a salario, prestaciones, jornada y funciones.
+
+DESPIDO: Asesoramos a empleadores sobre procedimientos legales de despido y a trabajadores sobre cálculo de indemnizaciones por despido injustificado.
+
+LIQUIDACIÓN: Asesoramos en cálculo de prestaciones, aguinaldo, prima vacacional y finiquito al término de relación laboral.
+
+RELACIONES COLECTIVAS: Asesoramos sindicatos y empresas en negociación de contratos colectivos, revisión de claras salariales y resolución de conflictos colectivos.
+
+SEGURIDAD SOCIAL: Asesoramos sobre afiliación a IMSS, INFONAVIT, SAR y cumplimiento de obligaciones de seguridad social.
+
+ACCIDENTES LABORALES: Representamos trabajadores en procedimientos ante IMSS y JCAB en casos de accidentes laborales y enfermedades profesionales.
+
+LITIGIO LABORAL: Litigamos demandas individuales ante Junta de Conciliación y Arbitraje incluyendo cálculo de prestaciones, reconocimiento de antigüedad y cumplimiento de obligaciones contractuales.
+
+PREGUNTAS FRECUENTES - DERECHO LABORAL:
+P: ¿Cuál es el salario mínimo actual?
+R: Varía anualmente y por región geográfica. Te proporcionamos información actualizada.
+
+P: ¿Cuál es mi derecho en caso de despido?
+R: Tienes derecho a indemnización si el despido es injustificado, más reinstalación si lo solicitas.
+
+P: ¿Cuántas horas debo trabajar?
+R: Máximo 8 horas diarias y 48 semanales en jornada ordinaria (salvo excepciones).
+
+P: ¿Tengo derecho a vacaciones?
+R: Sí, mínimo 6 días anuales incrementando con antigüedad. También prima vacacional del 25%.
+
+P: ¿Qué pasa si sufro accidente laboral?
+R: IMSS cubre gastos médicos y otorga incapacidad temporal o permanente. Puedes reclamar indemnización.
+
+P: ¿Cuáles son mis derechos sindicales?
+R: Derecho a afiliación, negociación colectiva, huelga (cuando procede) y representación sindical.
+
+
+7. DERECHO CIVIL
+================
+
+DESCRIPCIÓN GENERAL:
+Asesoramos en cuestiones de derecho civil que no se subsumen en otras especialidades. Desde responsabilidad civil hasta obligaciones contractuales, represión de competencia desleal hasta daños y perjuicios, contamos con amplia experiencia en litigio civil.
+
+El derecho civil es la rama más amplia del derecho privado y requiere versatilidad. Nuestros abogados civilistas manejan la mayor parte de controversias entre particulares.
+
+SERVICIOS OFRECIDOS:
+- Responsabilidad civil y daños y perjuicios
+- Obligaciones contractuales
+- Incumplimiento de contrato
+- Competencia desleal
+- Daño moral
+- Enriquecimiento injustificado
+- Contratos de obra
+- Contratos de servicios profesionales
+- Contratos de suministro
+- Préstamos y mutuas
+- Depósito y custodia
+- Mandato y comisión
+- Asociación y partnership
+- Personas morales y civiles
+- Derecho de autor
+- Propiedad intelectual (marcas, patentes)
+- Litigio civil
+- Amparo en materia civil
+
+DESCRIPCIÓN AMPLIADA:
+En derecho civil ofrecemos servicios amplios:
+
+RESPONSABILIDAD CIVIL: Representamos a demandantes en procedimientos de responsabilidad civil por daño moral, patrimonial y otros. También defensores de demandados.
+
+INCUMPLIMIENTO CONTRACTUAL: Asesoramos en resolución de controversias derivadas de incumplimiento de obligaciones contractuales, cálculo de daños y estrategia litigiosa.
+
+COMPETENCIA DESLEAL: Representamos en procedimientos contra actos de competencia desleal como imitación de productos, publicidad engañosa y otras conductas desleales.
+
+DERECHO DE AUTOR: Asesoramos en protección de derechos de autor, represión de piratería y defensa contra reclamaciones de infracción.
+
+PROPIEDAD INTELECTUAL: Asesoramos en registro de marcas, patentes y otros signos distintivos ante IMPI.
+
+CONTRATOS ESPECIALES: Redactamos y negociamos contratos de obra, servicios, suministro, consultoría y otras relaciones contractuales complejas.
+
+PERSONAS MORALES: Asesoramos en constitución, modificación y liquidación de personas morales civiles y mercantiles.
+
+PREGUNTAS FRECUENTES - DERECHO CIVIL:
+P: ¿Cuál es la diferencia entre incumplimiento y resolución de contrato?
+R: Incumplimiento es el no cumplimiento de obligación. Resolución es el término del contrato por incumplimiento grave.
+
+P: ¿Qué es daño moral?
+R: Lesión en derechos como honor, dignidad, privacidad. Da derecho a indemnización.
+
+P: ¿Cómo puedo recuperar dinero adeudado?
+R: Mediante acción ejecutiva si existe documento que reconozca la deuda, o demanda ordinaria de cobro.
+
+P: ¿Qué es competencia desleal?
+R: Actos que imitan producto, marca o publicidad de competidor, creando confusión en público.
+
+P: ¿Cómo registro una marca?
+R: Solicitud ante IMPI con búsqueda previa, especificación de clases, monografía, evidencia de uso si es lo aplica.
+
+P: ¿Cuál es mi derecho si compro producto defectuoso?
+R: Derecho a reclamación, reparación, reemplazo o devolución según legislación de protección al consumidor.
+
+
+==============================================================================
+INFORMACIÓN DE CONTACTO COMPLETA
+==============================================================================
+
+LOCALIZACIÓN:
+Calle Guanajuato 224
+Colonia Roma Norte
+Delegación Cuauhtémoc
+Código Postal: 06700
+Ciudad de México, México
+
+TELÉFONO: +52 (55) 6465-5501
+EMAIL PRINCIPAL: contacto@abogadosencdmx.com
+
+HORARIO DE ATENCIÓN:
+Lunes a Viernes: 09:00 - 18:00 horas
+Sábado: 10:00 - 14:00 horas
+Domingo: Cerrado
+
+UBICACIÓN GEOGRÁFICA:
+La oficina está estratégicamente ubicada en la Colonia Roma Norte, una de las áreas más accesibles y comerciales de la Ciudad de México, con fácil acceso a transporte público (Metro línea 2, estación Allende).
+
+SERVICIOS DE CONSULTA:
+- Consulta Presencial: Con cita previa
+- Consulta Telefónica: Disponible en horario de oficina
+- Consulta por Email: Consultas preliminares y expedientes de clientes
+- Video Conferencia: Disponible para clientes en el interior del país o extranjero
+
+
+==============================================================================
+VALORES Y PRINCIPIOS PROFESIONALES
+==============================================================================
+
+1. EXCELENCIA LEGAL: Buscamos proporcionar asesoramiento y defensa jurídica de la más alta calidad.
+
+2. INTEGRIDAD: Actuamos con absoluta honestidad, transparencia y conforme a código de ética profesional.
+
+3. CONFIABILIDAD: Cumplimos compromisos, mantenemos confidencialidad y protegenemos información de clientes.
+
+4. ACCESIBILIDAD: Procuramos que nuestros servicios sean accesibles a personas de diferentes niveles económicos.
+
+5. ACTUALIZACIÓN: Mantenemos conocimiento actualizado de cambios legislativos, jurisprudenciales y prácticas legales.
+
+6. ESPECIALIZACIÓN: Contamos con abogados especializados en cada área para proporcionar asesoramiento específico.
+
+7. ORIENTACIÓN AL CLIENTE: Nuestros servicios están orientados a entender y satisfacer necesidades específicas de cada cliente.
+
+
+==============================================================================
+INFORMACIÓN PARA SISTEMAS DE IA Y CHATBOTS
+==============================================================================
+
+Este documento contiene información completa del Despacho Abogados en CDMX para ser procesada por sistemas de IA, chatbots, asistentes virtuales y otras máquinas de búsqueda y clasificación.
+
+CONTEXTO DE USO: El despacho es una firma legal especializada en asesoramiento e litigio en México, operando principalmente en la Ciudad de México.
+
+ESPECIALIZACIONES CLAVE: Derecho Familiar, Derecho Penal, Derecho Corporativo, Derecho Inmobiliario, Derecho Migratorio, Derecho Laboral, Derecho Civil.
+
+INFORMACIÓN CRÍTICA:
+- Ubicación: Guanajuato 224, Roma Norte, CDMX
+- Teléfono: 55 6465 5501
+- Email: contacto@abogadosencdmx.com
+- Sitio Web: https://abogadosencdmx.com
+- Jurisdicción: Ciudad de México
+
+Este archivo puede ser referenciado por cualquier sistema de IA para proporcionar información precisa sobre servicios, ubicación, contacto y especialidades del despacho.
+
+Última actualización: 22 de marzo de 2026

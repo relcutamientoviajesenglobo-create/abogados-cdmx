@@ -1,0 +1,127 @@
+---
+/**
+ * BreadcrumbNav.astro
+ * Componente de navegación tipo breadcrumb con schema JSON-LD
+ * Accesible con aria-label y separador visual
+ */
+
+import SchemaOrg from './SchemaOrg.astro';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Validación
+if (!items || !Array.isArray(items) || items.length === 0) {
+  console.warn('BreadcrumbNav: items debe ser un array no vacío');
+}
+
+// Preparar schema BreadcrumbList
+const breadcrumbListItems = items.map((item, index) => ({
+  '@type': 'ListItem',
+  position: index + 1,
+  name: item.name,
+  item: {
+    '@id': new URL(item.url, Astro.site).href
+  }
+}));
+
+const breadcrumbSchema = {
+  itemListElement: breadcrumbListItems
+};
+---
+
+<SchemaOrg type="BreadcrumbList" data={breadcrumbSchema} />
+
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    {
+      items.map((item, index) => (
+        <li key={index} class="breadcrumb-item">
+          {index > 0 && <span class="breadcrumb-separator" aria-hidden="true">›</span>}
+          {index === items.length - 1 ? (
+            <span class="breadcrumb-current" aria-current="page">
+              {item.name}
+            </span>
+          ) : (
+            <a href={item.url} class="breadcrumb-link">
+              {item.name}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+  }
+
+  .breadcrumb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .breadcrumb-separator {
+    color: #999;
+    margin: 0 0.25rem;
+    font-weight: bold;
+  }
+
+  .breadcrumb-link {
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .breadcrumb-link:hover {
+    color: #001a33;
+    text-decoration: underline;
+    background-color: rgba(0, 51, 102, 0.05);
+  }
+
+  .breadcrumb-link:focus-visible {
+    outline: 2px solid #003366;
+    outline-offset: 2px;
+  }
+
+  .breadcrumb-current {
+    color: #666;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .breadcrumb-nav {
+      padding: 0.75rem 0;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb-separator {
+      margin: 0 0.15rem;
+    }
+  }
+</style>
