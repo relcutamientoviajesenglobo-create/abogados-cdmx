@@ -1,0 +1,229 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import MarqueeTrust from '../../components/MarqueeTrust.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Mariana Ortega — Abogada Civilista en CDMX | Abogados en CDMX';
+const description = 'Mariana Ortega es abogada especializada en derecho civil en Abogados en CDMX. Contratos, responsabilidad civil, sucesiones y herencias, usucapion y litigios civiles en la Ciudad de Mexico.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/mariana-ortega';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mariana Ortega",
+  "jobTitle": "Abogada especialista en Derecho Civil",
+  "url": "https://abogadosencdmx.com/despacho-juridico/mariana-ortega",
+  "image": "https://abogadosencdmx.com/images/equipo/mariana-ortega.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de Mexico", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Civil", "Contratos", "Responsabilidad civil", "Sucesiones", "Herencias", "Usucapion"],
+  "areaServed": { "@type": "City", "name": "Ciudad de Mexico" }
+};
+
+const servicios = [
+  { titulo: 'Contratos civiles', desc: 'Redaccion, revision y negociacion de contratos civiles de todo tipo: compraventa, prestacion de servicios, comodato, mutuo, donacion y demas actos juridicos regulados por el Codigo Civil para la Ciudad de Mexico, con clausulas que protegen los intereses del cliente.' },
+  { titulo: 'Responsabilidad civil', desc: 'Representacion legal en demandas por responsabilidad civil contractual y extracontractual, incluyendo la cuantificacion de danos y perjuicios, la acreditacion del nexo causal y la obtencion de indemnizaciones justas ante tribunales civiles de la CDMX.' },
+  { titulo: 'Sucesiones y herencias', desc: 'Tramitacion de juicios sucesorios testamentarios e intestamentarios, desde la apertura de la sucesion hasta la adjudicacion definitiva de los bienes hereditarios, incluyendo la designacion del albacea y la resolucion de controversias entre herederos.' },
+  { titulo: 'Usucapion', desc: 'Gestion de procedimientos de prescripcion adquisitiva para obtener la titularidad legal de inmuebles poseidos de manera pacifica, continua y publica durante el plazo establecido por la ley, regularizando la propiedad ante el Registro Publico.' },
+  { titulo: 'Danos y perjuicios', desc: 'Interposicion de demandas civiles por danos y perjuicios derivados de incumplimiento contractual, hechos ilicitos o responsabilidad objetiva, con cuantificacion precisa de las perdidas economicas y el lucro cesante sufrido por el cliente.' },
+  { titulo: 'Litigios civiles', desc: 'Representacion integral en juicios civiles ordinarios, especiales y ejecutivos ante juzgados civiles de la Ciudad de Mexico, incluyendo la preparacion de demandas, contestaciones, ofrecimiento de pruebas y alegatos en cada etapa procesal.' },
+];
+
+const faqs = [
+  { q: '¿Que tipo de contratos puede revisar o elaborar la Lic. Mariana Ortega?', a: 'La Lic. Ortega elabora y revisa todo tipo de contratos civiles: compraventa, prestacion de servicios, arrendamiento, comodato, mutuo, donacion y contratos innominados. Su enfoque preventivo en la redaccion ayuda a evitar conflictos legales futuros y protege los intereses del cliente desde el inicio de la relacion contractual.' },
+  { q: '¿Como funciona un juicio de sucesion o herencia en la Ciudad de Mexico?', a: 'Un juicio sucesorio en la CDMX inicia con la denuncia de la sucesion ante un juzgado civil. Se nombra un albacea, se realiza el inventario y avaluo de los bienes, se liquidan las deudas del difunto y finalmente se adjudican los bienes a los herederos. La Lic. Ortega guia al cliente en cada etapa del proceso.' },
+  { q: '¿Cuanto tiempo tarda un juicio civil en la Ciudad de Mexico?', a: 'Los tiempos varian segun el tipo de juicio y la complejidad del caso. Un juicio ordinario civil puede durar entre 6 meses y 2 anos. Un juicio especial o ejecutivo suele resolverse en menos tiempo. La Lic. Ortega analiza cada caso para estimar tiempos realistas y buscar las vias procesales mas eficientes.' },
+  { q: '¿Cuanto cuesta contratar un abogado civilista en Abogados en CDMX?', a: 'Los honorarios dependen del tipo de asunto, la complejidad y las etapas procesales involucradas. La asesoria inicial en Abogados en CDMX es sin costo. Durante esta consulta, la Lic. Ortega evalua su caso y le presenta un presupuesto claro con desglose de costos antes de cualquier compromiso.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Mariana Ortega'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=500&h=620&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Mariana Ortega — Abogada Civilista en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogada especialista</p>
+          <h1 class="text-white">Lic. Mariana Ortega</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Civil</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Abogada civilista en Abogados en CDMX especializada en contratos, responsabilidad civil, sucesiones y herencias, usucapion y litigios civiles. Su enfoque preventivo en la redaccion de contratos ha ayudado a numerosos clientes a evitar conflictos legales costosos.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-civil-cdmx" class="btn-secondary-wrap">Ver area completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <MarqueeTrust />
+
+  <!-- BRACKET: Operational — Servicios especializados -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En que puede ayudarle la Lic. Mariana Ortega?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho civil que Mariana Ortega ofrece desde Abogados en CDMX para proteger sus derechos patrimoniales y resolver conflictos civiles en la Ciudad de Mexico.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por que trabajar con Mariana Ortega?</h2>
+          <p>El derecho civil en la Ciudad de Mexico abarca una amplia gama de relaciones juridicas entre particulares. Mariana Ortega aporta un enfoque preventivo que busca anticipar problemas antes de que se conviertan en litigios, y cuando el conflicto ya existe, su experiencia en tribunales civiles garantiza una representacion solida y fundamentada.</p>
+          <p>Cada caso civil recibe un analisis documental exhaustivo. La Lic. Ortega revisa antecedentes, evalua la viabilidad de las pretensiones y presenta al cliente un plan de accion claro con las probabilidades reales de exito antes de iniciar cualquier procedimiento.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Enfoque preventivo</h4>
+            <p>Mariana Ortega prioriza la prevencion de conflictos a traves de contratos bien redactados y asesoria oportuna, evitando litigios innecesarios que consumen tiempo y recursos.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Experiencia en tribunales</h4>
+            <p>Cuando el litigio es inevitable, la Lic. Ortega cuenta con experiencia directa ante juzgados civiles de la Ciudad de Mexico, preparando estrategias probatorias solidas para cada etapa procesal.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Atencion personalizada</h4>
+            <p>Cada cliente recibe un trato directo con la abogada responsable de su caso. Mariana Ortega mantiene comunicacion constante y reporta avances de forma clara y oportuna.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre la Lic. Ortega</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca mas sobre nuestro despacho en <a href="/quienes-somos">quienes somos</a>, consulte todas las areas de practica en <a href="/que-ofrecemos">que ofrecemos</a>, o visite nuestro <a href="/blog">blog juridico</a> para leer articulos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra seccion de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas mas consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Tiene un asunto civil que resolver?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoria inicial con la Lic. Mariana Ortega y obtenga un diagnostico profesional de su caso. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldia Cuauhtemoc, C.P. 06700, Ciudad de Mexico.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoria →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/luciana-valle" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Luciana Valle" width="300" height="375" loading="lazy">
+          <h4>Lic. Luciana Valle</h4>
+          <span>Derecho Laboral</span>
+        </a>
+        <a href="/despacho-juridico/diego-navarro" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Diego Navarro" width="300" height="375" loading="lazy">
+          <h4>Lic. Diego Navarro</h4>
+          <span>Derecho Migratorio</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+
+  @media (max-width: 991px) {
+    .perfil-hero { grid-template-columns: 1fr; }
+    .perfil-hero__img { max-width: 350px; }
+    .servicios-grid-3col { grid-template-columns: 1fr 1fr; }
+    .diferenciador-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .servicios-grid-3col { grid-template-columns: 1fr; }
+    .equipo-mini-grid { flex-direction: column; align-items: center; }
+  }
+</style>

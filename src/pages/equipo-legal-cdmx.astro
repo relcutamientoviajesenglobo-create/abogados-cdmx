@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 const title = 'Equipo Legal — Abogados Especializados en CDMX | Abogados en CDMX';
-const description = 'Conozca a los abogados que integran Abogados en CDMX. Profesionales especializados en derecho inmobiliario, laboral y corporativo con experiencia en tribunales de la Ciudad de México.';
+const description = 'Conozca a los abogados que integran Abogados en CDMX. Profesionales especializados en derecho inmobiliario, laboral, corporativo, familiar, penal, civil y migratorio con experiencia en tribunales de la Ciudad de México.';
 const canonical = 'https://abogadosencdmx.com/equipo-legal-cdmx';
 
 const lawyers = [
@@ -36,6 +36,42 @@ const lawyers = [
     specialtyName: 'Derecho Corporativo',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&crop=face&fm=webp&q=75',
     bio: 'Ian Montiel es abogado en Abogados en CDMX especializado en derecho corporativo. Asesora a empresas nacionales y extranjeras en constitución de sociedades, compliance, contratos mercantiles, fusiones y gobierno corporativo. Su visión estratégica combina el rigor jurídico con el entendimiento del negocio, lo que le permite ofrecer asesoría legal que impulsa el crecimiento empresarial.',
+  },
+  {
+    name: 'Lic. Andrea Solís',
+    role: 'Especialista en Derecho Familiar',
+    slug: '/despacho-juridico/andrea-solis',
+    specialty: '/especialidades/derecho-familiar-cdmx',
+    specialtyName: 'Derecho Familiar',
+    image: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=750&fit=crop&crop=face&fm=webp&q=75',
+    bio: 'Andrea Solís es abogada familiarista en Abogados en CDMX con experiencia en divorcios, custodia de hijos, pensión alimenticia, violencia familiar y juicios sucesorios. Conocimiento profundo del Código Civil para la Ciudad de México y experiencia en los juzgados familiares de la capital.',
+  },
+  {
+    name: 'Lic. Roberto Fuentes',
+    role: 'Especialista en Derecho Penal',
+    slug: '/despacho-juridico/roberto-fuentes',
+    specialty: '/especialidades/derecho-penal-cdmx',
+    specialtyName: 'Derecho Penal',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=750&fit=crop&crop=face&fm=webp&q=75',
+    bio: 'Roberto Fuentes es abogado penalista en Abogados en CDMX especializado en defensa penal, amparos, recursos de apelación y asesoría a víctimas del delito. Experiencia ante juzgados penales de la Ciudad de México y el sistema de justicia penal acusatorio.',
+  },
+  {
+    name: 'Lic. Mariana Ortega',
+    role: 'Especialista en Derecho Civil',
+    slug: '/despacho-juridico/mariana-ortega',
+    specialty: '/especialidades/derecho-civil-cdmx',
+    specialtyName: 'Derecho Civil',
+    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=750&fit=crop&crop=face&fm=webp&q=75',
+    bio: 'Mariana Ortega es abogada civilista en Abogados en CDMX especializada en contratos, responsabilidad civil, sucesiones y herencias, usucapión y litigios civiles. Su enfoque preventivo en la redacción de contratos ha ayudado a numerosos clientes a evitar conflictos legales costosos.',
+  },
+  {
+    name: 'Lic. Diego Navarro',
+    role: 'Especialista en Derecho Migratorio',
+    slug: '/despacho-juridico/diego-navarro',
+    specialty: '/especialidades/derecho-migratorio-cdmx',
+    specialtyName: 'Derecho Migratorio',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=face&fm=webp&q=75',
+    bio: 'Diego Navarro es abogado migratorio en Abogados en CDMX especializado en visas, residencia temporal y permanente, naturalización y regularización migratoria. Asesora a extranjeros y empresas internacionales que necesitan cumplir con la normativa migratoria mexicana.',
   },
 ];
 
@@ -105,7 +141,7 @@ const schema = {
         <p class="section-tag">Estructura del Despacho</p>
         <h2>Un abogado especialista para cada área de su caso</h2>
         <p style="font-size:18px;line-height:1.7;margin-bottom:20px;">Abogados en CDMX organiza su equipo por especialidades para garantizar que cada cliente sea atendido por un abogado con experiencia directa en su tipo de asunto. No asignamos casos al azar ni rotamos abogados entre materias — cada profesional trabaja exclusivamente en su área de competencia.</p>
-        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Además de los tres especialistas presentados arriba, nuestro despacho cuenta con abogados dedicados a <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a>, <a href="/especialidades/derecho-penal-cdmx">derecho penal</a>, <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a>. Esta cobertura integral permite que los casos que involucran múltiples ramas del derecho — como un divorcio que incluye liquidación de bienes inmuebles y aspectos laborales — sean atendidos por un equipo coordinado dentro del mismo despacho.</p>
+        <p style="font-size:16px;line-height:1.8;margin-bottom:16px;">Nuestro equipo de siete especialistas cubre <a href="/especialidades/derecho-inmobiliario-cdmx">derecho inmobiliario</a>, <a href="/especialidades/derecho-laboral-cdmx">derecho laboral</a>, <a href="/especialidades/derecho-corporativo-cdmx">derecho corporativo</a>, <a href="/especialidades/derecho-familiar-cdmx">derecho familiar</a>, <a href="/especialidades/derecho-penal-cdmx">derecho penal</a>, <a href="/especialidades/derecho-civil-cdmx">derecho civil</a> y <a href="/especialidades/derecho-migratorio-cdmx">derecho migratorio</a>. Esta cobertura integral permite que los casos que involucran múltiples ramas del derecho — como un divorcio que incluye liquidación de bienes inmuebles y aspectos laborales — sean atendidos por un equipo coordinado dentro del mismo despacho.</p>
         <p style="font-size:16px;line-height:1.8;">Nuestro equipo opera desde Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. Para conocer qué especialista atendería su caso, llame al 55 6465 5501 o agende una <a href="/asesoria-inicial">asesoría inicial</a>. En la primera consulta, el abogado especialista evaluará su situación y le presentará las opciones legales disponibles con costos y tiempos estimados.</p>
       </div>
     </div>

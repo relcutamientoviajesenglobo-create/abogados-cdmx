@@ -1,0 +1,229 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import MarqueeTrust from '../../components/MarqueeTrust.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Diego Navarro — Abogado Migratorio en CDMX | Abogados en CDMX';
+const description = 'Diego Navarro es abogado especializado en derecho migratorio en Abogados en CDMX. Visas, residencia temporal y permanente, naturalizacion y regularizacion migratoria en la Ciudad de Mexico.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/diego-navarro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Diego Navarro",
+  "jobTitle": "Abogado especialista en Derecho Migratorio",
+  "url": "https://abogadosencdmx.com/despacho-juridico/diego-navarro",
+  "image": "https://abogadosencdmx.com/images/equipo/diego-navarro.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de Mexico", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Migratorio", "Visas", "Residencia temporal", "Residencia permanente", "Naturalizacion", "Regularizacion migratoria"],
+  "areaServed": { "@type": "City", "name": "Ciudad de Mexico" }
+};
+
+const servicios = [
+  { titulo: 'Residencia temporal', desc: 'Tramitacion de tarjetas de residencia temporal ante el Instituto Nacional de Migracion, incluyendo la preparacion de documentos, el seguimiento del tramite y la asesoria sobre las condiciones y vigencia de la estancia legal en Mexico.' },
+  { titulo: 'Residencia permanente', desc: 'Gestion del tramite de residencia permanente para extranjeros que cumplen los requisitos establecidos por la Ley de Migracion, ya sea por tiempo de residencia en Mexico, vinculo familiar con mexicano o razones humanitarias.' },
+  { titulo: 'Naturalizacion', desc: 'Asesoria y tramitacion del proceso de naturalizacion mexicana ante la Secretaria de Relaciones Exteriores, incluyendo la preparacion del expediente, el examen de conocimientos y el seguimiento hasta la obtencion de la carta de naturalizacion.' },
+  { titulo: 'Visas de trabajo', desc: 'Gestion de visas de trabajo y permisos laborales para extranjeros que desean emplearse en Mexico, coordinando con empresas y el Instituto Nacional de Migracion para cumplir con todos los requisitos legales y migratorios aplicables.' },
+  { titulo: 'Regularizacion migratoria', desc: 'Asesoria y tramitacion de procedimientos de regularizacion para extranjeros con estancia irregular en Mexico, evaluando las opciones disponibles para obtener una condicion migratoria legal y evitar sanciones administrativas.' },
+  { titulo: 'Permisos empresariales', desc: 'Asesoria a empresas internacionales y nacionales que necesitan gestionar permisos migratorios para sus empleados extranjeros, incluyendo la constancia de inscripcion de empleador y los tramites corporativos ante el INM.' },
+];
+
+const faqs = [
+  { q: '¿Como puedo obtener la residencia temporal en Mexico?', a: 'La residencia temporal se obtiene ante el Instituto Nacional de Migracion. Los requisitos dependen del motivo de la estancia: vinculo familiar, oferta de empleo, inversion o razones humanitarias. El Lic. Navarro evalua su situacion particular para determinar la via mas adecuada y prepara toda la documentacion necesaria.' },
+  { q: '¿Que tipos de visa de trabajo existen en Mexico?', a: 'Mexico ofrece diferentes opciones de visa de trabajo segun la actividad: visa de residente temporal con permiso de trabajo, visa de visitante con permiso para realizar actividades remuneradas y tarjeta de visitante por razones humanitarias. El Lic. Navarro asesora sobre cual aplica a cada caso especifico.' },
+  { q: '¿Cuanto tiempo tarda el proceso de naturalizacion mexicana?', a: 'El proceso de naturalizacion ante la Secretaria de Relaciones Exteriores puede tomar entre 6 meses y un ano, dependiendo de la carga de trabajo de la dependencia. Los requisitos incluyen un minimo de 5 anos de residencia legal en Mexico (o 2 anos si se tiene vinculo familiar con mexicano), entre otros.' },
+  { q: '¿Cuanto tiempo tardan los tramites migratorios en la Ciudad de Mexico?', a: 'Los tiempos varian segun el tipo de tramite. Un cambio de condicion migratoria puede resolverse en 20 a 40 dias habiles. Una regularizacion migratoria puede tomar entre 1 y 3 meses. El Lic. Navarro da seguimiento continuo a cada tramite y mantiene al cliente informado sobre el avance de su caso.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Diego Navarro'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=620&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Diego Navarro — Abogado Migratorio en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogado especialista</p>
+          <h1 class="text-white">Lic. Diego Navarro</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Migratorio</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Abogado migratorio en Abogados en CDMX especializado en visas, residencia temporal y permanente, naturalizacion y regularizacion migratoria. Asesora a extranjeros y empresas internacionales que necesitan cumplir con la normativa migratoria mexicana.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-migratorio-cdmx" class="btn-secondary-wrap">Ver area completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <MarqueeTrust />
+
+  <!-- BRACKET: Operational — Servicios especializados -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En que puede ayudarle el Lic. Diego Navarro?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho migratorio que Diego Navarro ofrece desde Abogados en CDMX para resolver su situacion migratoria en la Ciudad de Mexico.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por que trabajar con Diego Navarro?</h2>
+          <p>El derecho migratorio en Mexico es un area tecnica que requiere conocimiento actualizado de la Ley de Migracion, su reglamento y los criterios operativos del Instituto Nacional de Migracion. Diego Navarro domina esta normativa y mantiene relacion profesional con las oficinas del INM en la Ciudad de Mexico, lo que le permite dar seguimiento efectivo a cada tramite.</p>
+          <p>Cada caso migratorio recibe un analisis individualizado. El Lic. Navarro evalua la situacion migratoria actual del cliente, identifica la mejor via legal disponible y presenta un plan de accion con tiempos y costos reales antes de iniciar cualquier tramite.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Conocimiento del INM</h4>
+            <p>Diego Navarro conoce los procedimientos internos del Instituto Nacional de Migracion, lo que le permite anticipar requerimientos y agilizar los tramites de sus clientes.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Atencion bilingue</h4>
+            <p>El Lic. Navarro atiende a clientes extranjeros que requieren asesoria en espanol e ingles, facilitando la comunicacion y la comprension de los requisitos migratorios mexicanos.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Seguimiento continuo</h4>
+            <p>Cada tramite migratorio recibe seguimiento puntual. Diego Navarro mantiene al cliente informado sobre el estado de su caso y responde dudas de forma directa y oportuna.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre el Lic. Navarro</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca mas sobre nuestro despacho en <a href="/quienes-somos">quienes somos</a>, consulte todas las areas de practica en <a href="/que-ofrecemos">que ofrecemos</a>, o visite nuestro <a href="/blog">blog juridico</a> para leer articulos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra seccion de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas mas consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Tiene un asunto migratorio que resolver?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoria inicial con el Lic. Diego Navarro y obtenga un diagnostico profesional de su caso. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldia Cuauhtemoc, C.P. 06700, Ciudad de Mexico.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoria →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/ian-montiel" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Ian Montiel" width="300" height="375" loading="lazy">
+          <h4>Lic. Ian Montiel</h4>
+          <span>Derecho Corporativo</span>
+        </a>
+        <a href="/despacho-juridico/andrea-solis" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Andrea Solis" width="300" height="375" loading="lazy">
+          <h4>Lic. Andrea Solis</h4>
+          <span>Derecho Familiar</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+
+  @media (max-width: 991px) {
+    .perfil-hero { grid-template-columns: 1fr; }
+    .perfil-hero__img { max-width: 350px; }
+    .servicios-grid-3col { grid-template-columns: 1fr 1fr; }
+    .diferenciador-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .servicios-grid-3col { grid-template-columns: 1fr; }
+    .equipo-mini-grid { flex-direction: column; align-items: center; }
+  }
+</style>

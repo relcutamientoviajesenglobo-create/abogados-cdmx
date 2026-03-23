@@ -1,0 +1,229 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import MarqueeTrust from '../../components/MarqueeTrust.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Andrea Solis — Abogada Familiar en CDMX | Abogados en CDMX';
+const description = 'Andrea Solis es abogada especializada en derecho familiar en Abogados en CDMX. Divorcios, custodia de hijos, pension alimenticia, violencia familiar y juicios sucesorios en la Ciudad de Mexico.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/andrea-solis';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andrea Solis",
+  "jobTitle": "Abogada especialista en Derecho Familiar",
+  "url": "https://abogadosencdmx.com/despacho-juridico/andrea-solis",
+  "image": "https://abogadosencdmx.com/images/equipo/andrea-solis.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de Mexico", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Familiar", "Divorcios", "Custodia", "Pension alimenticia", "Violencia familiar", "Juicios sucesorios"],
+  "areaServed": { "@type": "City", "name": "Ciudad de Mexico" }
+};
+
+const servicios = [
+  { titulo: 'Divorcios (express, voluntario, incausado)', desc: 'Representacion legal en todos los tipos de divorcio reconocidos en la Ciudad de Mexico: express ante notario, voluntario por mutuo consentimiento e incausado ante juzgados familiares, con proteccion de los derechos patrimoniales y familiares del cliente.' },
+  { titulo: 'Custodia y guarda de hijos', desc: 'Asesoria y litigio en procedimientos de custodia, guarda y convivencia de menores, buscando siempre el interes superior del nino conforme al Codigo Civil para la Ciudad de Mexico y los criterios de los juzgados familiares.' },
+  { titulo: 'Pension alimenticia', desc: 'Tramite de demandas de pension alimenticia, incremento, reduccion o cancelacion de pensiones, incluyendo el calculo conforme a las necesidades del acreedor alimentario y la capacidad economica del deudor.' },
+  { titulo: 'Violencia familiar', desc: 'Asesoria y representacion legal a victimas de violencia familiar, incluyendo la obtencion de ordenes de proteccion, medidas cautelares y acompanamiento en el proceso penal y familiar correspondiente.' },
+  { titulo: 'Convenios reguladores', desc: 'Elaboracion y negociacion de convenios reguladores que establecen las condiciones del divorcio: custodia, pension alimenticia, regimen de visitas, liquidacion de sociedad conyugal y uso del domicilio familiar.' },
+  { titulo: 'Juicios sucesorios familiares', desc: 'Tramitacion de juicios sucesorios testamentarios e intestamentarios, incluyendo la declaracion de herederos, inventario y avaluo de bienes, particion y adjudicacion del patrimonio hereditario.' },
+];
+
+const faqs = [
+  { q: '¿Cuanto tiempo tarda un divorcio en la Ciudad de Mexico?', a: 'El tiempo depende del tipo de divorcio. Un divorcio express ante notario puede resolverse en semanas si ambas partes estan de acuerdo. Un divorcio incausado ante juzgado familiar tarda entre 3 y 6 meses aproximadamente, dependiendo de la carga del juzgado y la complejidad del caso.' },
+  { q: '¿Como se determina la custodia de los hijos en CDMX?', a: 'Los juzgados familiares de la Ciudad de Mexico deciden la custodia basandose en el interes superior del menor. La Lic. Solis prepara la estrategia probatoria adecuada, incluyendo estudios psicologicos y evidencia del entorno familiar, para que el juez cuente con los elementos necesarios para una resolucion favorable.' },
+  { q: '¿Cuanto cuesta la pension alimenticia y como se calcula?', a: 'La pension alimenticia se calcula considerando las necesidades del acreedor alimentario y la capacidad economica del deudor. No existe un porcentaje fijo en la ley; la Lic. Solis analiza cada caso para solicitar un monto justo y ejecutable conforme a los criterios de los juzgados familiares de CDMX.' },
+  { q: '¿Que experiencia tiene la Lic. Andrea Solis en derecho familiar?', a: 'Andrea Solis es abogada familiarista en Abogados en CDMX con experiencia en divorcios, custodia de hijos, pension alimenticia, violencia familiar y juicios sucesorios. Su conocimiento del Codigo Civil para la Ciudad de Mexico y su practica constante en juzgados familiares de la capital le permiten ofrecer representacion legal efectiva.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Andrea Solis'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&h=620&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Andrea Solis — Abogada Familiar en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogada especialista</p>
+          <h1 class="text-white">Lic. Andrea Solis</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Familiar</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Abogada familiarista en Abogados en CDMX con experiencia en divorcios, custodia de hijos, pension alimenticia, violencia familiar y juicios sucesorios. Conocimiento profundo del Codigo Civil para la Ciudad de Mexico y experiencia en los juzgados familiares de la capital.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-familiar-cdmx" class="btn-secondary-wrap">Ver area completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <MarqueeTrust />
+
+  <!-- BRACKET: Operational — Servicios especializados -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En que puede ayudarle la Lic. Andrea Solis?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho familiar que Andrea Solis ofrece desde Abogados en CDMX para proteger sus derechos y los de su familia en la Ciudad de Mexico.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por que trabajar con Andrea Solis?</h2>
+          <p>El derecho familiar en la Ciudad de Mexico involucra situaciones emocionalmente complejas que requieren un abogado con sensibilidad y firmeza en partes iguales. Andrea Solis combina su conocimiento tecnico del Codigo Civil para la Ciudad de Mexico con una atencion humana que permite a sus clientes atravesar procesos dificiles con claridad y confianza.</p>
+          <p>Cada caso familiar recibe un analisis individualizado. La Lic. Solis evalua las circunstancias particulares, identifica la mejor estrategia legal y presenta al cliente las opciones disponibles con tiempos y costos reales antes de iniciar cualquier procedimiento.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Especializacion en familia</h4>
+            <p>Andrea Solis se dedica exclusivamente al derecho familiar dentro de Abogados en CDMX, con practica constante en los juzgados familiares de la Ciudad de Mexico.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Enfoque en el interes del menor</h4>
+            <p>En casos que involucran hijos, la Lic. Solis prioriza siempre el interes superior del menor, preparando estrategias probatorias solidas que los juzgados valoran positivamente.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Negociacion y mediacion</h4>
+            <p>Antes de llevar un caso a juicio, Andrea Solis busca soluciones negociadas que reduzcan costos, tiempos y el desgaste emocional inherente a los conflictos familiares.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre la Lic. Solis</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca mas sobre nuestro despacho en <a href="/quienes-somos">quienes somos</a>, consulte todas las areas de practica en <a href="/que-ofrecemos">que ofrecemos</a>, o visite nuestro <a href="/blog">blog juridico</a> para leer articulos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra seccion de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas mas consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Tiene un asunto familiar que resolver?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoria inicial con la Lic. Andrea Solis y obtenga un diagnostico profesional de su caso. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldia Cuauhtemoc, C.P. 06700, Ciudad de Mexico.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoria →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/tania-mendoza" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Tania Mendoza" width="300" height="375" loading="lazy">
+          <h4>Lic. Tania Mendoza</h4>
+          <span>Derecho Inmobiliario</span>
+        </a>
+        <a href="/despacho-juridico/roberto-fuentes" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Roberto Fuentes" width="300" height="375" loading="lazy">
+          <h4>Lic. Roberto Fuentes</h4>
+          <span>Derecho Penal</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+
+  @media (max-width: 991px) {
+    .perfil-hero { grid-template-columns: 1fr; }
+    .perfil-hero__img { max-width: 350px; }
+    .servicios-grid-3col { grid-template-columns: 1fr 1fr; }
+    .diferenciador-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .servicios-grid-3col { grid-template-columns: 1fr; }
+    .equipo-mini-grid { flex-direction: column; align-items: center; }
+  }
+</style>

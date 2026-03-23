@@ -1,0 +1,229 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import MarqueeTrust from '../../components/MarqueeTrust.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Lic. Roberto Fuentes — Abogado Penalista en CDMX | Abogados en CDMX';
+const description = 'Roberto Fuentes es abogado especializado en derecho penal en Abogados en CDMX. Defensa penal, amparos, recursos de apelacion, asesoria a victimas y sistema de justicia penal acusatorio en la Ciudad de Mexico.';
+const canonical = 'https://abogadosencdmx.com/despacho-juridico/roberto-fuentes';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Roberto Fuentes",
+  "jobTitle": "Abogado especialista en Derecho Penal",
+  "url": "https://abogadosencdmx.com/despacho-juridico/roberto-fuentes",
+  "image": "https://abogadosencdmx.com/images/equipo/roberto-fuentes.jpg",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Abogados en CDMX",
+    "url": "https://abogadosencdmx.com",
+    "telephone": "+525564655501",
+    "address": { "@type": "PostalAddress", "streetAddress": "Guanajuato 224", "addressLocality": "Ciudad de Mexico", "addressRegion": "CDMX", "postalCode": "06700", "addressCountry": "MX" }
+  },
+  "knowsAbout": ["Derecho Penal", "Defensa criminal", "Amparos", "Recursos de apelacion", "Asesoria a victimas", "Sistema acusatorio"],
+  "areaServed": { "@type": "City", "name": "Ciudad de Mexico" }
+};
+
+const servicios = [
+  { titulo: 'Defensa penal', desc: 'Representacion legal integral del imputado en todas las etapas del procedimiento penal acusatorio: investigacion inicial, audiencia de control de detencion, vinculacion a proceso, juicio oral y ejecucion de sentencia ante juzgados penales de la Ciudad de Mexico.' },
+  { titulo: 'Amparos penales', desc: 'Tramitacion de juicios de amparo indirecto y directo para proteger las garantias constitucionales del cliente, impugnar actos de autoridad que vulneren derechos fundamentales y obtener la suspension de actos reclamados ante tribunales federales.' },
+  { titulo: 'Recursos de apelacion', desc: 'Interposicion y sustanciacion de recursos de apelacion contra sentencias y resoluciones desfavorables, con analisis exhaustivo del expediente para identificar errores procesales, violaciones a derechos humanos y agravios que fundamenten la impugnacion.' },
+  { titulo: 'Asesoria a victimas', desc: 'Acompanamiento legal a victimas del delito conforme a la Ley General de Victimas, incluyendo la representacion como asesor juridico de la victima, la solicitud de reparacion del dano y el acceso a medidas de proteccion.' },
+  { titulo: 'Medidas cautelares', desc: 'Gestion y revision de medidas cautelares impuestas durante el proceso penal, incluyendo la solicitud de modificacion o sustitucion cuando las circunstancias del caso lo justifiquen, buscando siempre la menor restriccion posible.' },
+  { titulo: 'Libertad bajo caucion', desc: 'Tramite de solicitudes de libertad condicional, sustitucion de medidas cautelares privativas de libertad y revision de la prision preventiva, garantizando el respeto al principio de presuncion de inocencia del imputado.' },
+];
+
+const faqs = [
+  { q: '¿Que hago si un familiar fue detenido en la Ciudad de Mexico?', a: 'Contacte inmediatamente a Abogados en CDMX al 55 6465 5501. El Lic. Roberto Fuentes puede intervenir desde la audiencia de control de detencion para verificar que se respeten los derechos del detenido y solicitar las medidas cautelares mas favorables. El tiempo es critico en estos casos.' },
+  { q: '¿Cuales son los derechos de una persona detenida en CDMX?', a: 'Toda persona detenida tiene derecho a guardar silencio, a un abogado defensor desde el momento de la detencion, a ser informada de los hechos que se le imputan, a no ser incomunicada, a no ser sometida a tortura y a ser presentada ante un juez de control dentro de las 48 horas siguientes a su detencion.' },
+  { q: '¿Cuanto cuesta la defensa penal en Abogados en CDMX?', a: 'Los honorarios de defensa penal varian segun la complejidad del caso, el tipo de delito y las etapas procesales involucradas. La asesoria inicial en Abogados en CDMX es sin costo. Durante esta consulta, el Lic. Fuentes evalua el caso y presenta un presupuesto detallado antes de cualquier compromiso.' },
+  { q: '¿Cuanto tiempo puede durar un proceso penal en la Ciudad de Mexico?', a: 'El tiempo depende del tipo de delito y la complejidad del caso. Un procedimiento abreviado puede resolverse en semanas, mientras que un juicio oral puede extenderse varios meses. El Lic. Fuentes analiza cada caso para identificar la estrategia que ofrezca la resolucion mas favorable en el menor tiempo posible.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Equipo Legal', href: '/equipo-legal-cdmx'}, {label: 'Roberto Fuentes'}]} />
+      <div class="perfil-hero reveal">
+        <div class="perfil-hero__img">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=620&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Roberto Fuentes — Abogado Penalista en CDMX" width="500" height="620" loading="eager">
+        </div>
+        <div class="perfil-hero__text">
+          <p class="section-tag" style="color:var(--color-secondary);">Abogado especialista</p>
+          <h1 class="text-white">Lic. Roberto Fuentes</h1>
+          <p class="perfil-hero__role">Especialista en Derecho Penal</p>
+          <p class="text-white-soft" style="font-size:18px; line-height:1.7; max-width:560px;">Abogado penalista en Abogados en CDMX especializado en defensa penal, amparos, recursos de apelacion y asesoria a victimas del delito. Experiencia ante juzgados penales de la Ciudad de Mexico y el sistema de justicia penal acusatorio.</p>
+          <div class="perfil-hero__actions">
+            <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta →</a>
+            <a href="/especialidades/derecho-penal-cdmx" class="btn-secondary-wrap">Ver area completa →</a>
+          </div>
+          <div class="perfil-hero__contact">
+            <span>Contacto directo:</span>
+            <a href="tel:+525564655501">55 6465 5501</a> · <a href="mailto:contacto@abogadosencdmx.com">contacto@abogadosencdmx.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <MarqueeTrust />
+
+  <!-- BRACKET: Operational — Servicios especializados -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Servicios especializados</p>
+        <h2>¿En que puede ayudarle el Lic. Roberto Fuentes?</h2>
+        <p class="max-w-746">Estos son los servicios de derecho penal que Roberto Fuentes ofrece desde Abogados en CDMX para defender sus derechos y libertad en la Ciudad de Mexico.</p>
+      </div>
+      <div class="servicios-grid-3col">
+        {servicios.map((s, i) => (
+          <div class="servicio-item reveal" style={`animation-delay:${i * 80}ms`}>
+            <span class="servicio-item__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.titulo}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: Comparative — Diferenciadores -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="diferenciador-grid">
+        <div class="reveal">
+          <p class="section-tag">Enfoque profesional</p>
+          <h2>¿Por que trabajar con Roberto Fuentes?</h2>
+          <p>El derecho penal en la Ciudad de Mexico exige un abogado con conocimiento profundo del sistema de justicia penal acusatorio, capacidad de reaccion inmediata y experiencia en la sala de audiencias. Roberto Fuentes combina estos atributos con una estrategia de defensa rigurosa que protege los derechos constitucionales de cada cliente.</p>
+          <p>Cada caso penal recibe atencion inmediata. El Lic. Fuentes entiende que en materia penal el tiempo es un factor critico, por lo que responde con urgencia desde el primer contacto y mantiene al cliente informado en cada etapa del procedimiento.</p>
+        </div>
+        <div class="diferenciador-cards">
+          <div class="diferenciador-card reveal">
+            <h4>Respuesta inmediata</h4>
+            <p>Roberto Fuentes atiende emergencias penales con la urgencia que requieren, interviniendo desde la detencion para proteger los derechos del imputado ante las autoridades.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Dominio del sistema acusatorio</h4>
+            <p>Experiencia directa en el sistema de justicia penal acusatorio, incluyendo audiencias orales, negociacion de procedimientos abreviados y juicios orales ante juzgados de la CDMX.</p>
+          </div>
+          <div class="diferenciador-card reveal">
+            <h4>Defensa estrategica</h4>
+            <p>Cada defensa se construye sobre un analisis exhaustivo del expediente, identificando debilidades en la teoria del caso de la fiscalia y violaciones a derechos fundamentales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: FAQ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2>Consultas habituales sobre el Lic. Fuentes</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item reveal">
+            <summary class="faq-question">{f.q}</summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CONTEXTUAL NAVIGATION -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container">
+      <div class="reveal" style="max-width:850px;">
+        <p style="font-size:16px;line-height:1.8;">Conozca mas sobre nuestro despacho en <a href="/quienes-somos">quienes somos</a>, consulte todas las areas de practica en <a href="/que-ofrecemos">que ofrecemos</a>, o visite nuestro <a href="/blog">blog juridico</a> para leer articulos escritos por los abogados del despacho. Si tiene dudas generales antes de su consulta, nuestra seccion de <a href="/preguntas-frecuentes">preguntas frecuentes</a> cubre los temas mas consultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACKET: CTA -->
+  <section class="section-padding" style="background:var(--color-primary);">
+    <div class="container text-center">
+      <div class="reveal" style="max-width:700px;margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white">¿Enfrenta un asunto penal que resolver?</h2>
+        <p class="text-white-soft" style="font-size:18px;">Solicite una asesoria inicial con el Lic. Roberto Fuentes y obtenga un diagnostico profesional de su caso. Abogados en CDMX se ubica en Guanajuato 224, Colonia Roma Norte, Alcaldia Cuauhtemoc, C.P. 06700, Ciudad de Mexico.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Solicitar asesoria →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SILO LINKS -->
+  <section class="section-padding" style="background:var(--color-light);">
+    <div class="container text-center">
+      <p class="section-tag">Conozca al equipo completo</p>
+      <h2>Otros abogados de nuestro despacho</h2>
+      <div class="equipo-mini-grid">
+        <a href="/despacho-juridico/andrea-solis" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Andrea Solis" width="300" height="375" loading="lazy">
+          <h4>Lic. Andrea Solis</h4>
+          <span>Derecho Familiar</span>
+        </a>
+        <a href="/despacho-juridico/mariana-ortega" class="equipo-mini reveal">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&h=375&fit=crop&crop=face&fm=webp&q=75" alt="Lic. Mariana Ortega" width="300" height="375" loading="lazy">
+          <h4>Lic. Mariana Ortega</h4>
+          <span>Derecho Civil</span>
+        </a>
+      </div>
+      <a href="/equipo-legal-cdmx" class="text-link" style="margin-top:32px;display:inline-block;">Ver equipo completo →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .perfil-hero { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: center; padding-top: 30px; padding-bottom: 40px; }
+  .perfil-hero__img { overflow: hidden; }
+  .perfil-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .perfil-hero__role { font-size: 20px; color: var(--color-secondary); font-weight: 600; margin-bottom: 16px; }
+  .perfil-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .perfil-hero__contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.5); }
+  .perfil-hero__contact a { color: var(--color-secondary); }
+
+  .servicios-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servicio-item { padding: 32px; background: var(--color-light); border-left: 3px solid var(--color-secondary); }
+  .servicio-item__num { font-family: var(--font-heading); font-size: 32px; color: var(--color-secondary); display: block; margin-bottom: 8px; line-height: 1; }
+  .servicio-item h3 { font-size: 22px; margin-bottom: 10px; }
+  .servicio-item p { font-size: 15px; line-height: 1.65; margin-bottom: 0; }
+
+  .diferenciador-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .diferenciador-cards { display: flex; flex-direction: column; gap: 20px; }
+  .diferenciador-card { background: var(--color-white); padding: 28px; border-left: 3px solid var(--color-secondary); }
+  .diferenciador-card h4 { font-size: 20px; margin-bottom: 8px; }
+  .diferenciador-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+  .equipo-mini-grid { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+  .equipo-mini { text-align: center; max-width: 260px; }
+  .equipo-mini img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 16px; transition: transform .4s var(--ease); }
+  .equipo-mini:hover img { transform: scale(1.03); }
+  .equipo-mini h4 { font-size: 22px; margin-bottom: 4px; }
+  .equipo-mini span { font-size: 15px; color: var(--color-secondary); font-weight: 500; }
+
+  @media (max-width: 991px) {
+    .perfil-hero { grid-template-columns: 1fr; }
+    .perfil-hero__img { max-width: 350px; }
+    .servicios-grid-3col { grid-template-columns: 1fr 1fr; }
+    .diferenciador-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .servicios-grid-3col { grid-template-columns: 1fr; }
+    .equipo-mini-grid { flex-direction: column; align-items: center; }
+  }
+</style>
