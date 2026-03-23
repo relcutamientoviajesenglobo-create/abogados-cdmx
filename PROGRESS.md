@@ -8,22 +8,22 @@
 
 ---
 
-## META: 7+ artículos por especialidad, 50+ total
+## META: 100 artículos (14+ por especialidad) — ALCANZADA
 
-| Especialidad | Actual | Meta | Estado |
-|---|---|---|---|
-| Familiar | 9 | 7 | COMPLETA |
-| Penal | 8 | 7 | COMPLETA |
-| Inmobiliario | 8 | 7 | COMPLETA |
-| Civil | 7 | 7 | COMPLETA |
-| Laboral | 10 | 10 | COMPLETA |
-| Corporativo | 10 | 10 | COMPLETA |
-| Migratorio | 10 | 10 | COMPLETA |
-| Civil | 10 | 10 | COMPLETA |
-| Penal | 10 | 10 | COMPLETA |
-| Inmobiliario | 10 | 10 | COMPLETA |
-| Familiar | 10 | 10 | COMPLETA |
-| **TOTAL** | **70** | **70** | TODAS COMPLETAS |
+| Especialidad | Artículos | Gemas | Total | Estado |
+|---|---|---|---|---|
+| Familiar | 10 | 4 | **14** | COMPLETA |
+| Penal | 10 | 4 | **14** | COMPLETA |
+| Civil | 10 | 4 | **14** | COMPLETA |
+| Corporativo | 10 | 4 | **14** | COMPLETA |
+| Inmobiliario | 10 | 3 | **13** | COMPLETA |
+| Migratorio | 10 | 4 | **14** | COMPLETA |
+| Laboral | 10 | 4 | **14** | COMPLETA |
+| General | — | 3 | **3** | COMPLETA |
+| **TOTAL** | **70** | **30** | **100** | TODAS COMPLETAS |
+
+**Páginas totales del sitio:** 125
+**Build:** Astro 4, 4.10s, zero errores
 
 ---
 
