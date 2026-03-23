@@ -5,11 +5,6 @@ User-agent: *
 Allow: /
 Disallow: /404
 Disallow: /preview
-Disallow: /home-3/
-Disallow: /services/
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-includes/
 
 # Bots de IA — PERMITIDOS (visibilidad en ChatGPT, Claude, Perplexity, Gemini)
 User-agent: GPTBot

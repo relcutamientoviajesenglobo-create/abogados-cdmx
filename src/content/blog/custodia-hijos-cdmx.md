@@ -10,8 +10,6 @@ keywords: "custodia hijos CDMX, guarda y custodia CDMX, derecho familiar CDMX"
 
 > **Dato Clave:** En la Ciudad de México, el 78% de los casos de custodia se resuelven mediante acuerdo previo entre los padres, evitando litigios prolongados y costosos. Sin embargo, cuando no hay acuerdo, el juez debe decidir basándose en criterios específicos establecidos en el Código Civil CDMX.
 
----
-
 ## ¿Qué es la Guarda y Custodia en CDMX?
 
 La guarda y custodia en la Ciudad de México es la facultad legal que otorga un juez a uno o ambos padres para vivir con los hijos menores de edad y tomar decisiones sobre su educación, salud y bienestar general. Esta institución jurídica se encuentra regulada en los artículos 282 al 291 del Código Civil para la Ciudad de México.

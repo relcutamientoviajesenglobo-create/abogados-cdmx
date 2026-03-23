@@ -10,8 +10,6 @@ keywords: "despido injustificado CDMX, demanda laboral CDMX, liquidación por de
 
 Acabas de ser despedido sin causa justificada en la Ciudad de México. El sitio tiene 60 días desde el despido para que presentes una demanda laboral ante la Junta de Conciliación y Arbitraje. Durante este tiempo, tienes derecho a recibir indemnización equivalente a 3 meses de salario más 20 días por cada año de antigüedad, conforme a los artículos 47 y 48 de la Ley Federal del Trabajo. No estás solo: aproximadamente 385,000 trabajadores presentan demandas por despido injustificado cada año en México, según el Instituto Mexicano del Seguro Social.
 
----
-
 ## ¿Qué es realmente un despido injustificado en la CDMX?
 
 Un despido injustificado ocurre cuando el empleador resuelve la relación laboral sin una causa legal que lo justifique conforme a la Ley Federal del Trabajo. La ley establece causas muy específicas y concretas para despedir legalmente a un trabajador. Si tu empleador te despidió sin presentar ninguna de estas causas —o sin seguir el procedimiento correcto— entonces has sufrido un despido injustificado.

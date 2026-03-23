@@ -10,8 +10,6 @@ keywords: "pensión alimenticia cómo se calcula México, pensión alimenticia C
 
 En la Ciudad de México, la pensión alimenticia se calcula considerando los ingresos del obligado, las necesidades del acreedor y el número de beneficiarios. Los porcentajes varían entre 10% y 30% del salario base según el número de hijos: 10-15% para un hijo, 15-20% para dos hijos, 20-25% para tres hijos y 25-30% para cuatro o más. El Código Civil de la CDMX (artículos 292 a 302) establece estos parámetros. Los juzgados de lo Familiar en CDMX resuelven estas controversias, con plazos de notificación de 5 días hábiles y sentencia dentro de 6 meses.
 
----
-
 ## Contenido
 
 1. [¿Qué es la pensión alimenticia?](#qué-es)

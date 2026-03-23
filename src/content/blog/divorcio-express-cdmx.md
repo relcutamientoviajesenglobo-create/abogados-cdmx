@@ -10,8 +10,6 @@ keywords: "divorcio express CDMX, divorcio voluntario CDMX, trámite divorcio r�
 
 > **Dato Clave:** En la Ciudad de México, el divorcio express (voluntario) representa el 85% de todas las disoluciones de matrimonio tramitadas en 2025. Esta modalidad toma en promedio 45-60 días desde presentación de solicitud hasta ejecutoria de sentencia, en comparación con 18-24 meses que requiere un divorcio contencioso litigado.
 
----
-
 ## ¿Qué es el Divorcio Express en CDMX?
 
 El divorcio express en la Ciudad de México, también denominado **divorcio voluntario** o **divorcio administrativo de mutuo consentimiento**, es procedimiento judicial simplificado en el cual ambos cónyuges acuerdan terminar el matrimonio y resuelven de forma amistosa todos los asuntos patrimoniales, de custodia y manutención.
