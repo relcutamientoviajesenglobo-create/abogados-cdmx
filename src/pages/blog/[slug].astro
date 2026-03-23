@@ -132,21 +132,81 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
       <div class="article-layout">
         <div class="article-content">
 
-          {toc.length > 3 && (
-            <nav class="article-toc" aria-label="Tabla de contenidos">
-              <h2 class="article-toc__title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                Contenido del artículo
-              </h2>
-              <ol class="article-toc__list">
-                {toc.map((h) => (
-                  <li class={h.depth === 3 ? 'toc-sub' : ''}>
-                    <a href={`#${h.slug}`}>{h.text}</a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          )}
+          {toc.length > 3 && (() => {
+            // Separate main sections (H2) from sub-items (H3)
+            const mainSections = toc.filter(h => h.depth === 2);
+            // Group: find FAQ-like headings vs content headings
+            const faqPattern = /^\u00bf|^¿|pregunt|frecuent|también.*interesar/i;
+            const contentHeadings = mainSections.filter(h => !faqPattern.test(h.text));
+            const faqHeadings = mainSections.filter(h => faqPattern.test(h.text));
+            let counter = 0;
+
+            return (
+              <nav class="article-toc" aria-label="Tabla de contenidos" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <div class="toc-header">
+                  <div class="toc-header__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  </div>
+                  <div>
+                    <h2 class="toc-header__title">Contenido del artículo</h2>
+                    <span class="toc-header__count">{mainSections.length} secciones · {readingTime} min de lectura</span>
+                  </div>
+                </div>
+
+                {contentHeadings.length > 0 && (
+                  <div class="toc-group">
+                    <ol class="toc-list">
+                      {contentHeadings.map((h) => {
+                        counter++;
+                        const subItems = toc.filter(sub => sub.depth === 3 && (() => {
+                          const hIdx = toc.indexOf(h);
+                          const subIdx = toc.indexOf(sub);
+                          const nextH2Idx = toc.findIndex((t, i) => i > hIdx && t.depth === 2);
+                          return subIdx > hIdx && (nextH2Idx === -1 || subIdx < nextH2Idx);
+                        })());
+                        return (
+                          <li class="toc-item" itemprop="name">
+                            <a href={`#${h.slug}`} class="toc-link" itemprop="url">
+                              <span class="toc-number">{String(counter).padStart(2, '0')}</span>
+                              <span class="toc-text">{h.text}</span>
+                            </a>
+                            {subItems.length > 0 && (
+                              <ul class="toc-sublist">
+                                {subItems.map((sub) => (
+                                  <li class="toc-subitem">
+                                    <a href={`#${sub.slug}`} class="toc-sublink">
+                                      <span class="toc-subdash">—</span>
+                                      {sub.text}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </div>
+                )}
+
+                {faqHeadings.length > 0 && (
+                  <div class="toc-faq-group">
+                    <div class="toc-faq-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                      Preguntas frecuentes
+                    </div>
+                    <ul class="toc-faq-list">
+                      {faqHeadings.map((h) => (
+                        <li>
+                          <a href={`#${h.slug}`} class="toc-faq-link">{h.text}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </nav>
+            );
+          })()}
 
           <div class="prose">
             <Content />
@@ -302,28 +362,119 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   /* ═══ TOC ═══ */
   .article-toc {
-    background: var(--color-light);
-    padding: 28px 32px;
-    margin-bottom: 40px;
-    border-left: 4px solid var(--color-secondary);
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    padding: 0;
+    margin-bottom: 48px;
+    overflow: hidden;
   }
-  .article-toc__title {
-    font-size: 18px;
-    margin-bottom: 16px;
+
+  /* Header */
+  .toc-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--color-primary);
+    gap: 14px;
+    padding: 20px 28px;
+    background: var(--color-primary);
+    color: #fff;
   }
-  .article-toc__title svg {
-    color: var(--color-secondary);
+  .toc-header__icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1.5px solid var(--color-secondary);
     flex-shrink: 0;
   }
-  .article-toc__list { padding-left: 20px; }
-  .article-toc__list li { margin-bottom: 8px; font-size: 15px; }
-  .article-toc__list li a { color: var(--color-primary); transition: color 0.2s; }
-  .article-toc__list li a:hover { color: var(--color-secondary); }
-  .toc-sub { padding-left: 20px; font-size: 14px; }
+  .toc-header__icon svg { color: var(--color-secondary); }
+  .toc-header__title {
+    font-size: 18px; font-weight: 700; color: #fff; margin: 0;
+  }
+  .toc-header__count {
+    font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 500;
+  }
+
+  /* Main list */
+  .toc-group { padding: 24px 28px; }
+  .toc-list {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: none;
+  }
+  .toc-item {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .toc-item:last-child { border-bottom: none; }
+
+  .toc-link {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0;
+    color: var(--color-primary);
+    font-size: 15px; font-weight: 500;
+    line-height: 1.4;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .toc-link:hover { color: var(--color-secondary); }
+  .toc-link:hover .toc-number {
+    background: var(--color-secondary); color: #fff;
+  }
+
+  .toc-number {
+    display: flex; align-items: center; justify-content: center;
+    min-width: 30px; height: 30px;
+    background: var(--color-light);
+    color: var(--color-primary);
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    font-family: var(--font-heading);
+  }
+  .toc-text { padding-top: 4px; }
+
+  /* Sub-items */
+  .toc-sublist {
+    list-style: none; padding: 0 0 8px 44px; margin: 0;
+  }
+  .toc-subitem { margin-bottom: 4px; }
+  .toc-sublink {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--color-paragraph);
+    padding: 4px 0; transition: color 0.2s;
+    text-decoration: none;
+  }
+  .toc-sublink:hover { color: var(--color-secondary); }
+  .toc-subdash {
+    color: var(--color-secondary); font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* FAQ section */
+  .toc-faq-group {
+    padding: 20px 28px;
+    background: var(--color-light);
+    border-top: 1px solid #e4e4e4;
+  }
+  .toc-faq-label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+  }
+  .toc-faq-label svg { flex-shrink: 0; }
+  .toc-faq-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px;
+  }
+  .toc-faq-link {
+    font-size: 13px; color: var(--color-primary);
+    padding: 6px 0; display: block;
+    line-height: 1.35; transition: color 0.2s;
+    text-decoration: none;
+  }
+  .toc-faq-link:hover { color: var(--color-secondary); }
+  .toc-faq-link::before {
+    content: '→ '; color: var(--color-secondary);
+    font-weight: 600;
+  }
 
   /* ═══ PROSE ═══ */
   .prose {
@@ -405,7 +556,13 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
     .prose :global(h2) { font-size: 26px; }
     .prose :global(h3) { font-size: 20px; }
     .article-cta { padding: 28px 20px; }
-    .article-toc { padding: 20px; }
+    .toc-header { padding: 16px 20px; }
+    .toc-group { padding: 16px 20px; }
+    .toc-faq-group { padding: 16px 20px; }
+    .toc-faq-list { grid-template-columns: 1fr; }
+    .toc-sublist { padding-left: 36px; }
+    .toc-link { font-size: 14px; gap: 10px; }
+    .toc-number { min-width: 26px; height: 26px; font-size: 11px; }
   }
 
   @media (max-width: 479px) {
