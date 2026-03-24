@@ -1,0 +1,867 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Calculadora de Finiquito CDMX 2026 | Abogados en CDMX';
+const description = 'Calcule el monto estimado de su finiquito por renuncia voluntaria en la Ciudad de México. Aguinaldo, vacaciones, prima vacacional y prima de antigüedad actualizados 2026 según la LFT.';
+const canonical = 'https://abogadosencdmx.com/calcular-finiquito';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Calculadora de Finiquito CDMX",
+      "url": canonical,
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": description,
+      "provider": { "@type": "LegalService", "name": "Abogados en CDMX", "url": "https://abogadosencdmx.com" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Calculadora de Finiquito", "item": canonical }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es un finiquito?", "acceptedAnswer": { "@type": "Answer", "text": "El finiquito es la cantidad que el patrón debe pagar al trabajador cuando la relación laboral termina por renuncia voluntaria. Incluye las prestaciones devengadas y no pagadas hasta la fecha de separación, conforme a los artículos 76, 80, 87 y 162 de la Ley Federal del Trabajo." } },
+        { "@type": "Question", "name": "¿Qué incluye el finiquito en México?", "acceptedAnswer": { "@type": "Answer", "text": "El finiquito incluye: aguinaldo proporcional (parte proporcional de 15 días de salario), vacaciones proporcionales según antigüedad (art. 76 LFT, reforma 2023), prima vacacional del 25% sobre las vacaciones, salarios pendientes de pago y, si el trabajador tiene 15 o más años de antigüedad, prima de antigüedad de 12 días por año trabajado." } },
+        { "@type": "Question", "name": "¿Cuántos días de vacaciones me corresponden?", "acceptedAnswer": { "@type": "Answer", "text": "Según el artículo 76 de la LFT (reforma 2023): 1 año = 12 días, 2 años = 14 días, 3 años = 16 días, 4 años = 18 días, 5 años = 20 días, 6-10 años = 22 días, 11-15 años = 24 días, 16-20 años = 26 días, 21-25 años = 28 días, 26-30 años = 30 días." } },
+        { "@type": "Question", "name": "¿Me corresponde prima de antigüedad en el finiquito?", "acceptedAnswer": { "@type": "Answer", "text": "La prima de antigüedad en caso de renuncia voluntaria solo se paga si el trabajador tiene 15 o más años de servicio (art. 162 LFT). Se calcula a razón de 12 días de salario por cada año trabajado, con un tope de 2 veces el salario mínimo diario ($278.80 × 2 = $557.60 en 2026)." } },
+        { "@type": "Question", "name": "¿Cuánto tiempo tiene el patrón para pagar el finiquito?", "acceptedAnswer": { "@type": "Answer", "text": "La Ley Federal del Trabajo no establece un plazo específico, pero los tribunales laborales han determinado que el finiquito debe pagarse al momento de la terminación de la relación laboral o a más tardar dentro de los 3 días hábiles siguientes a la fecha de separación." } },
+        { "@type": "Question", "name": "¿Cuál es la diferencia entre finiquito y liquidación?", "acceptedAnswer": { "@type": "Answer", "text": "El finiquito se paga cuando el trabajador renuncia voluntariamente e incluye prestaciones devengadas. La liquidación se paga cuando el patrón despide al trabajador e incluye, además de las prestaciones del finiquito, una indemnización de 3 meses de salario, 20 días por año trabajado y otros conceptos según el tipo de despido." } }
+      ]
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="calc-page">
+    <!-- HERO -->
+    <div class="calc-hero">
+      <div class="container">
+        <nav class="calc-crumb"><a href="/">Inicio</a><span>/</span><span>Calculadora de Finiquito</span></nav>
+        <div class="calc-hero__badge">Actualizada marzo 2026 · Basada en la Ley Federal del Trabajo</div>
+        <h1>Calculadora de<br><span>Finiquito</span><br>Ciudad de México</h1>
+        <p>Mueva los controles para obtener un estimado instantáneo de su finiquito por renuncia voluntaria, basado en la Ley Federal del Trabajo vigente en 2026.</p>
+      </div>
+    </div>
+
+    <!-- CALCULATOR CARD -->
+    <div class="container">
+      <div class="calc-card">
+        <!-- LEFT: Controls -->
+        <div class="calc-controls">
+
+          <!-- Salario Slider -->
+          <div class="ctrl-group">
+            <div class="ctrl-label">
+              <span class="ctrl-icon">💰</span>
+              <span class="ctrl-label__text">Salario mensual bruto</span>
+              <span class="ctrl-label__value" id="salaryDisplay">$25,000</span>
+            </div>
+            <div class="slider-wrap">
+              <div class="slider-tooltip" id="salaryTooltip">$25,000</div>
+              <input type="range" id="salarySlider" class="slider" min="5000" max="150000" step="500" value="25000">
+            </div>
+            <div class="slider-range">
+              <span>$5,000</span><span>$150,000</span>
+            </div>
+          </div>
+
+          <!-- Años trabajados Slider -->
+          <div class="ctrl-group">
+            <div class="ctrl-label">
+              <span class="ctrl-icon">📅</span>
+              <span class="ctrl-label__text">Años trabajados</span>
+              <span class="ctrl-label__value" id="yearsDisplay">3</span>
+            </div>
+            <div class="slider-wrap">
+              <div class="slider-tooltip" id="yearsTooltip">3 años</div>
+              <input type="range" id="yearsSlider" class="slider" min="0.5" max="30" step="0.5" value="3">
+            </div>
+            <div class="slider-range">
+              <span>6 meses</span><span>30 años</span>
+            </div>
+          </div>
+
+          <!-- Mes de salida -->
+          <div class="ctrl-group">
+            <div class="ctrl-label">
+              <span class="ctrl-icon">📆</span>
+              <span class="ctrl-label__text">Mes de salida</span>
+            </div>
+            <div class="month-grid" id="monthChips">
+              <button class="month-card" data-val="1"><span class="month-card__label">Ene</span><span class="month-card__days">31</span></button>
+              <button class="month-card" data-val="2"><span class="month-card__label">Feb</span><span class="month-card__days">59</span></button>
+              <button class="month-card active" data-val="3"><span class="month-card__label">Mar</span><span class="month-card__days">90</span></button>
+              <button class="month-card" data-val="4"><span class="month-card__label">Abr</span><span class="month-card__days">120</span></button>
+              <button class="month-card" data-val="5"><span class="month-card__label">May</span><span class="month-card__days">151</span></button>
+              <button class="month-card" data-val="6"><span class="month-card__label">Jun</span><span class="month-card__days">181</span></button>
+              <button class="month-card" data-val="7"><span class="month-card__label">Jul</span><span class="month-card__days">212</span></button>
+              <button class="month-card" data-val="8"><span class="month-card__label">Ago</span><span class="month-card__days">243</span></button>
+              <button class="month-card" data-val="9"><span class="month-card__label">Sep</span><span class="month-card__days">273</span></button>
+              <button class="month-card" data-val="10"><span class="month-card__label">Oct</span><span class="month-card__days">304</span></button>
+              <button class="month-card" data-val="11"><span class="month-card__label">Nov</span><span class="month-card__days">334</span></button>
+              <button class="month-card" data-val="12"><span class="month-card__label">Dic</span><span class="month-card__days">365</span></button>
+            </div>
+          </div>
+
+          <!-- Extras Toggles -->
+          <div class="ctrl-group">
+            <div class="ctrl-label">
+              <span class="ctrl-icon">🎁</span>
+              <span class="ctrl-label__text">Prestaciones adicionales</span>
+              <span class="ctrl-label__optional">Opcional</span>
+            </div>
+            <div class="extras-grid" id="extrasChips">
+              <button class="extra-card" data-val="fondo" data-pct="5">
+                <span class="extra-card__emoji">🏦</span>
+                <span class="extra-card__label">Fondo de ahorro</span>
+                <span class="extra-card__pct">+5% salario</span>
+              </button>
+              <button class="extra-card" data-val="vales" data-pct="10">
+                <span class="extra-card__emoji">🛒</span>
+                <span class="extra-card__label">Vales de despensa</span>
+                <span class="extra-card__pct">+10% salario</span>
+              </button>
+              <button class="extra-card" data-val="comisiones" data-pct="0">
+                <span class="extra-card__emoji">💼</span>
+                <span class="extra-card__label">Comisiones pendientes</span>
+                <span class="extra-card__pct">Variable</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Live Results -->
+        <div class="calc-result">
+          <div class="result-top">
+            <span class="result-tag">Finiquito estimado total</span>
+            <div class="result-amount-wrap">
+              <div class="result-col">
+                <span class="result-label">Total neto estimado</span>
+                <span class="result-amount result-amount--max" id="resTotal">$0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donut Chart -->
+          <div class="result-donut-section">
+            <div class="result-donut">
+              <svg viewBox="0 0 120 120" class="donut-svg">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                <circle id="donutAguinaldo" cx="60" cy="60" r="54" fill="none" stroke="var(--color-secondary)" stroke-width="10"
+                  stroke-dasharray="339.29" stroke-dashoffset="339.29" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="donut-fill"/>
+                <circle id="donutVacaciones" cx="60" cy="60" r="54" fill="none" stroke="#3498db" stroke-width="10"
+                  stroke-dasharray="339.29" stroke-dashoffset="339.29" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="donut-fill"/>
+                <circle id="donutPrima" cx="60" cy="60" r="54" fill="none" stroke="#2ecc71" stroke-width="10"
+                  stroke-dasharray="339.29" stroke-dashoffset="339.29" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="donut-fill"/>
+              </svg>
+              <div class="donut-center">
+                <span class="donut-pct" id="donutPct">0%</span>
+                <span class="donut-label">mayor concepto</span>
+              </div>
+            </div>
+            <div class="result-pct-detail">
+              <span class="result-pct-label">Concepto principal</span>
+              <strong id="resPctLabel">Aguinaldo</strong>
+            </div>
+          </div>
+
+          <!-- Bracket indicator -->
+          <div id="bracketLabel" class="bracket-label bracket-mid">📋 3 años de antigüedad — Sin prima de antigüedad (requiere 15+ años)</div>
+
+          <!-- Breakdown -->
+          <div class="result-breakdown">
+            <div class="result-row"><span>Aguinaldo proporcional</span><strong id="brkAguinaldo">$0</strong></div>
+            <div class="result-row"><span>Vacaciones proporcionales</span><strong id="brkVacaciones">$0</strong></div>
+            <div class="result-row"><span>Prima vacacional (25%)</span><strong id="brkPrimaVac">$0</strong></div>
+            <div class="result-row"><span>Salarios pendientes</span><strong id="brkSalarios">$0</strong></div>
+            <div class="result-row" id="brkPrimaAntRow" style="display:none"><span>Prima de antigüedad</span><strong id="brkPrimaAnt">$0</strong></div>
+            <div class="result-row" id="brkFondoRow" style="display:none"><span>Fondo de ahorro</span><strong id="brkFondo">$0</strong></div>
+            <div class="result-row" id="brkValesRow" style="display:none"><span>Vales de despensa</span><strong id="brkVales">$0</strong></div>
+            <div class="result-row result-row--total"><span>Total finiquito</span><strong id="brkTotal">$0</strong></div>
+          </div>
+
+          <!-- CTA -->
+          <a href="/asesoria-inicial" class="result-cta">
+            <span>Consultar con abogado laboralista</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <!-- WhatsApp Share -->
+          <button class="result-whatsapp" id="shareWhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Compartir resultado por WhatsApp
+          </button>
+
+          <!-- Disclaimer -->
+          <p class="result-disclaimer">Cálculo orientativo basado en arts. 76, 80, 87 y 162 de la Ley Federal del Trabajo. El monto definitivo depende de las condiciones específicas de cada relación laboral.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERENCE TABLE -->
+    <div class="container">
+      <div class="calc-ref">
+        <h2>Días de vacaciones por antigüedad (LFT art. 76)</h2>
+        <p>Tabla actualizada con la reforma de 2023 que incrementó significativamente los días de vacaciones para los trabajadores en México.</p>
+
+        <div class="calc-ref__table-wrap">
+          <table>
+            <thead>
+              <tr><th>Antigüedad</th><th>Días de vacaciones</th><th>Prima vacacional (25%)</th><th>Total días pagados</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1 año</strong></td><td>12 días</td><td>3 días</td><td>15 días</td></tr>
+              <tr><td><strong>2 años</strong></td><td>14 días</td><td>3.5 días</td><td>17.5 días</td></tr>
+              <tr><td><strong>3 años</strong></td><td>16 días</td><td>4 días</td><td>20 días</td></tr>
+              <tr><td><strong>4 años</strong></td><td>18 días</td><td>4.5 días</td><td>22.5 días</td></tr>
+              <tr><td><strong>5 años</strong></td><td>20 días</td><td>5 días</td><td>25 días</td></tr>
+              <tr><td><strong>6-10 años</strong></td><td>22 días</td><td>5.5 días</td><td>27.5 días</td></tr>
+              <tr><td><strong>11-15 años</strong></td><td>24 días</td><td>6 días</td><td>30 días</td></tr>
+              <tr><td><strong>16-20 años</strong></td><td>26 días</td><td>6.5 días</td><td>32.5 días</td></tr>
+              <tr><td><strong>21-25 años</strong></td><td>28 días</td><td>7 días</td><td>35 días</td></tr>
+              <tr><td><strong>26-30 años</strong></td><td>30 días</td><td>7.5 días</td><td>37.5 días</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;color:var(--color-secondary);">Finiquito vs. Liquidación</h3>
+        <div class="calc-ref__table-wrap">
+          <table>
+            <thead>
+              <tr><th>Concepto</th><th>Finiquito (renuncia)</th><th>Liquidación (despido)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Aguinaldo proporcional</strong></td><td>Sí</td><td>Sí</td></tr>
+              <tr><td><strong>Vacaciones proporcionales</strong></td><td>Sí</td><td>Sí</td></tr>
+              <tr><td><strong>Prima vacacional</strong></td><td>Sí (25%)</td><td>Sí (25%)</td></tr>
+              <tr><td><strong>Salarios pendientes</strong></td><td>Sí</td><td>Sí</td></tr>
+              <tr><td><strong>Prima de antigüedad</strong></td><td>Solo 15+ años</td><td>Siempre</td></tr>
+              <tr><td><strong>Indemnización 3 meses</strong></td><td>No</td><td>Sí</td></tr>
+              <tr><td><strong>20 días por año</strong></td><td>No</td><td>Sí</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="calc-ref__note">Fuente: Ley Federal del Trabajo, arts. 76, 80, 87 y 162. Salario mínimo CDMX 2026: $278.80 MXN diario. UMA 2026: $113.14 MXN diario.</p>
+      </div>
+
+      <!-- CTA Block -->
+      <div class="calc-final-cta">
+        <h2>¿No le pagaron su finiquito completo?</h2>
+        <p>Nuestros abogados laboralistas en CDMX pueden revisar su caso y reclamar lo que le corresponde. La consulta inicial es gratuita.</p>
+        <div class="calc-final-cta__btns">
+          <a href="/asesoria-inicial" class="btn-primary-wrap">Agendar consulta gratuita →</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap">Llamar al 55 6465 5501</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<script>
+  // === STATE ===
+  let salary = 25000;
+  let years = 3;
+  let exitMonth = 3;
+  let extras: Set<string> = new Set();
+
+  // === DÍAS DE VACACIONES POR ANTIGÜEDAD (LFT art. 76, reforma 2023) ===
+  function getVacationDays(yrs: number): number {
+    const y = Math.floor(yrs);
+    if (y <= 0) return 12;
+    if (y === 1) return 12;
+    if (y === 2) return 14;
+    if (y === 3) return 16;
+    if (y === 4) return 18;
+    if (y === 5) return 20;
+    if (y >= 6 && y <= 10) return 22;
+    if (y >= 11 && y <= 15) return 24;
+    if (y >= 16 && y <= 20) return 26;
+    if (y >= 21 && y <= 25) return 28;
+    return 30;
+  }
+
+  // Días acumulados por mes (para cálculos proporcionales)
+  const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  function getDaysInYear(month: number): number {
+    let total = 0;
+    for (let i = 0; i < month; i++) total += daysPerMonth[i];
+    return total;
+  }
+
+  // Salario mínimo diario CDMX 2026
+  const SALARIO_MINIMO_DIARIO = 278.80;
+
+  // === ELEMENTS ===
+  const $ = (s: string) => document.querySelector(s)!;
+  const salarySlider = $('#salarySlider') as HTMLInputElement;
+  const yearsSlider = $('#yearsSlider') as HTMLInputElement;
+
+  // === FORMAT (MXN pesos mexicanos) ===
+  const fmt = (n: number) => {
+    const parts = Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return '$' + parts + ' MXN';
+  };
+  const fmtShort = (n: number) => {
+    return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  // === CALCULATE ===
+  let prevTotal = 0;
+
+  function calculate() {
+    const salarioDiario = salary / 30;
+    const diasTrabajadosAnio = getDaysInYear(exitMonth);
+    const diasVacaciones = getVacationDays(years);
+
+    // 1. Aguinaldo proporcional: (salario_diario × 15) × (días_trabajados_año / 365)
+    const aguinaldo = (salarioDiario * 15) * (diasTrabajadosAnio / 365);
+
+    // 2. Vacaciones proporcionales: salario_diario × días_vacaciones × (días_trabajados_año / 365)
+    const vacaciones = salarioDiario * diasVacaciones * (diasTrabajadosAnio / 365);
+
+    // 3. Prima vacacional: vacaciones × 25%
+    const primaVacacional = vacaciones * 0.25;
+
+    // 4. Salarios pendientes: ~15 días del mes actual
+    const salariosPendientes = salarioDiario * 15;
+
+    // 5. Prima de antigüedad (solo 15+ años): salario_diario × 12 × años
+    //    Tope: 2 × salario mínimo diario
+    let primaAntiguedad = 0;
+    const hasPrimaAnt = years >= 15;
+    if (hasPrimaAnt) {
+      const salarioTopado = Math.min(salarioDiario, SALARIO_MINIMO_DIARIO * 2);
+      primaAntiguedad = salarioTopado * 12 * Math.floor(years);
+    }
+
+    // 6. Extras
+    let fondoAhorro = 0;
+    let valesDespensa = 0;
+    if (extras.has('fondo')) {
+      fondoAhorro = salary * 0.05 * Math.min(years, 12); // acumulado
+    }
+    if (extras.has('vales')) {
+      valesDespensa = salary * 0.10 * (diasTrabajadosAnio / 365); // proporcional año
+    }
+
+    // Total
+    const total = aguinaldo + vacaciones + primaVacacional + salariosPendientes + primaAntiguedad + fondoAhorro + valesDespensa;
+
+    // Animate total counter
+    countTo('resTotal', prevTotal, Math.round(total), fmtShort);
+    prevTotal = Math.round(total);
+
+    // Update displays
+    $('#salaryDisplay')!.textContent = fmtShort(salary) + ' MXN';
+    const yrsText = years === 1 ? '1 año' : (years % 1 === 0 ? `${years} años` : `${years} años`);
+    $('#yearsDisplay')!.textContent = yrsText;
+
+    // Breakdown
+    $('#brkAguinaldo')!.textContent = fmtShort(aguinaldo);
+    $('#brkVacaciones')!.textContent = fmtShort(vacaciones);
+    $('#brkPrimaVac')!.textContent = fmtShort(primaVacacional);
+    $('#brkSalarios')!.textContent = fmtShort(salariosPendientes);
+    $('#brkTotal')!.textContent = fmtShort(total) + ' MXN';
+
+    // Prima antigüedad
+    const primaAntRow = document.getElementById('brkPrimaAntRow')!;
+    if (hasPrimaAnt) {
+      primaAntRow.style.display = 'flex';
+      $('#brkPrimaAnt')!.textContent = fmtShort(primaAntiguedad);
+    } else {
+      primaAntRow.style.display = 'none';
+    }
+
+    // Extras rows
+    const fondoRow = document.getElementById('brkFondoRow')!;
+    if (extras.has('fondo')) {
+      fondoRow.style.display = 'flex';
+      $('#brkFondo')!.textContent = fmtShort(fondoAhorro);
+    } else {
+      fondoRow.style.display = 'none';
+    }
+    const valesRow = document.getElementById('brkValesRow')!;
+    if (extras.has('vales')) {
+      valesRow.style.display = 'flex';
+      $('#brkVales')!.textContent = fmtShort(valesDespensa);
+    } else {
+      valesRow.style.display = 'none';
+    }
+
+    // Bracket label
+    const bracketLabel = document.getElementById('bracketLabel');
+    if (bracketLabel) {
+      if (hasPrimaAnt) {
+        bracketLabel.textContent = `📋 ${Math.floor(years)} años de antigüedad — Incluye prima de antigüedad (15+ años, art. 162 LFT)`;
+        bracketLabel.className = 'bracket-label bracket-high';
+      } else {
+        bracketLabel.textContent = `📋 ${years % 1 === 0 ? Math.floor(years) : years} años de antigüedad — Sin prima de antigüedad (requiere 15+ años)`;
+        bracketLabel.className = 'bracket-label bracket-mid';
+      }
+    }
+
+    // Donut chart — show largest component percentage
+    const components = [
+      { name: 'Aguinaldo', value: aguinaldo, color: 'var(--color-secondary)' },
+      { name: 'Vacaciones + Prima', value: vacaciones + primaVacacional, color: '#3498db' },
+      { name: 'Salarios', value: salariosPendientes, color: '#2ecc71' },
+    ];
+    if (hasPrimaAnt) components.push({ name: 'Prima antigüedad', value: primaAntiguedad, color: '#9b59b6' });
+    if (extras.has('fondo')) components.push({ name: 'Fondo ahorro', value: fondoAhorro, color: '#e67e22' });
+    if (extras.has('vales')) components.push({ name: 'Vales despensa', value: valesDespensa, color: '#1abc9c' });
+
+    const maxComp = components.reduce((a, b) => a.value > b.value ? a : b);
+    const maxPct = total > 0 ? Math.round((maxComp.value / total) * 100) : 0;
+
+    const donutPct = document.getElementById('donutPct');
+    if (donutPct) donutPct.textContent = maxPct + '%';
+    const resPctLabel = document.getElementById('resPctLabel');
+    if (resPctLabel) resPctLabel.textContent = maxComp.name;
+
+    // Multi-segment donut
+    const circumference = 2 * Math.PI * 54;
+    let offset = 0;
+    const donutIds = ['donutAguinaldo', 'donutVacaciones', 'donutPrima'];
+    const segments = [
+      aguinaldo / (total || 1),
+      (vacaciones + primaVacacional) / (total || 1),
+      salariosPendientes / (total || 1)
+    ];
+
+    donutIds.forEach((id, i) => {
+      const el = document.getElementById(id) as SVGCircleElement;
+      if (el) {
+        const segLen = segments[i] * circumference;
+        el.style.strokeDasharray = `${segLen} ${circumference - segLen}`;
+        el.style.strokeDashoffset = String(-offset);
+        offset += segLen;
+      }
+    });
+
+    // Update slider tracks
+    updateSliderTrack(salarySlider);
+    updateSliderTrack(yearsSlider);
+  }
+
+  function countTo(id: string, from: number, to: number, formatter: (n: number) => string) {
+    const el = document.getElementById(id)!;
+    if (from === to) { el.textContent = formatter(to); return; }
+    const duration = 400;
+    const start = performance.now();
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(from + (to - from) * eased);
+      el.textContent = formatter(current);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function updateSliderTrack(slider: HTMLInputElement) {
+    const pctVal = ((parseFloat(slider.value) - parseFloat(slider.min)) / (parseFloat(slider.max) - parseFloat(slider.min))) * 100;
+    slider.style.setProperty('--pct', `${pctVal}%`);
+  }
+
+  // === SALARY SLIDER + TOOLTIP ===
+  const salaryTooltip = document.getElementById('salaryTooltip')!;
+  function updateSalaryTooltip() {
+    const s = salarySlider;
+    const pctVal = ((parseFloat(s.value) - parseFloat(s.min)) / (parseFloat(s.max) - parseFloat(s.min)));
+    salaryTooltip.style.left = `calc(${pctVal * 100}% + ${(0.5 - pctVal) * 28}px)`;
+    salaryTooltip.textContent = fmtShort(salary) + ' MXN';
+  }
+  salarySlider.addEventListener('input', () => {
+    salary = parseInt(salarySlider.value);
+    updateSalaryTooltip();
+    calculate();
+  });
+
+  // === YEARS SLIDER + TOOLTIP ===
+  const yearsTooltip = document.getElementById('yearsTooltip')!;
+  function updateYearsTooltip() {
+    const s = yearsSlider;
+    const pctVal = ((parseFloat(s.value) - parseFloat(s.min)) / (parseFloat(s.max) - parseFloat(s.min)));
+    yearsTooltip.style.left = `calc(${pctVal * 100}% + ${(0.5 - pctVal) * 28}px)`;
+    const y = parseFloat(s.value);
+    yearsTooltip.textContent = y === 1 ? '1 año' : (y % 1 === 0 ? `${y} años` : `${y} años`);
+  }
+  yearsSlider.addEventListener('input', () => {
+    years = parseFloat(yearsSlider.value);
+    updateYearsTooltip();
+    calculate();
+  });
+
+  // === MONTH CARDS ===
+  document.querySelectorAll('#monthChips .month-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#monthChips .month-card').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      exitMonth = parseInt(btn.getAttribute('data-val') || '3');
+      calculate();
+    });
+  });
+
+  // === EXTRAS CARDS ===
+  document.querySelectorAll('#extrasChips .extra-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const val = btn.getAttribute('data-val')!;
+      if (extras.has(val)) extras.delete(val); else extras.add(val);
+      calculate();
+    });
+  });
+
+  // === WHATSAPP SHARE ===
+  document.getElementById('shareWhatsApp')?.addEventListener('click', () => {
+    const total = document.getElementById('resTotal')?.textContent || '';
+    const aguinaldo = document.getElementById('brkAguinaldo')?.textContent || '';
+    const vacaciones = document.getElementById('brkVacaciones')?.textContent || '';
+    const primaVac = document.getElementById('brkPrimaVac')?.textContent || '';
+    const salarios = document.getElementById('brkSalarios')?.textContent || '';
+    const msg = encodeURIComponent(
+      `📋 *Cálculo de Finiquito CDMX 2026*\n\n` +
+      `💰 Salario: ${fmtShort(salary)} MXN\n` +
+      `📅 Antigüedad: ${years} años\n\n` +
+      `📊 *Desglose:*\n` +
+      `• Aguinaldo proporcional: ${aguinaldo}\n` +
+      `• Vacaciones proporcionales: ${vacaciones}\n` +
+      `• Prima vacacional: ${primaVac}\n` +
+      `• Salarios pendientes: ${salarios}\n\n` +
+      `💵 *Total finiquito: ${total} MXN*\n\n` +
+      `Calculado en: https://abogadosencdmx.com/calcular-finiquito\n` +
+      `📞 Consulta gratuita: 55 6465 5501`
+    );
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
+  });
+
+  // === INIT ===
+  updateSalaryTooltip();
+  updateYearsTooltip();
+  calculate();
+</script>
+
+<style>
+  .calc-page { background: #f8f7f5; }
+
+  /* HERO */
+  .calc-hero {
+    background: var(--color-primary); color: #fff;
+    padding: 160px 0 80px;
+  }
+  .calc-crumb { display: flex; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+  .calc-crumb a { color: rgba(255,255,255,0.5); }
+  .calc-crumb a:hover { color: var(--color-secondary); }
+  .calc-hero__badge {
+    display: inline-block; background: rgba(193,127,62,0.12); border: 1px solid rgba(193,127,62,0.25);
+    color: var(--color-secondary); padding: 6px 16px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+  }
+  .calc-hero h1 {
+    font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 16px;
+    color: #fff;
+  }
+  .calc-hero h1 span { color: var(--color-secondary); }
+  .calc-hero p { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 580px; line-height: 1.6; }
+
+  /* CARD */
+  .calc-card {
+    display: grid; grid-template-columns: 1fr 400px; gap: 0;
+    background: #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    margin-top: -40px; position: relative; z-index: 2;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* CONTROLS */
+  .calc-controls { padding: 40px; }
+  .ctrl-group { margin-bottom: 36px; }
+  .ctrl-group:last-child { margin-bottom: 0; }
+  .ctrl-label {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  }
+  .ctrl-icon { font-size: 20px; }
+  .ctrl-label__text { font-size: 13px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.8px; flex: 1; }
+  .ctrl-label__value {
+    font-size: 24px; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading);
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  .ctrl-label__optional {
+    font-size: 11px; font-weight: 600; color: var(--color-secondary);
+    background: rgba(193,127,62,0.1); padding: 3px 10px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  /* Slider */
+  .slider-wrap { position: relative; padding: 16px 0 0; }
+  .slider-tooltip {
+    position: absolute; top: -6px;
+    background: var(--color-primary); color: #fff;
+    padding: 4px 12px; font-size: 12px; font-weight: 700;
+    white-space: nowrap; pointer-events: none;
+    transform: translateX(-50%); left: 50%;
+    opacity: 0; transition: opacity 0.2s;
+    font-family: var(--font-heading);
+  }
+  .slider-tooltip::after {
+    content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+    border-left: 5px solid transparent; border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-primary);
+  }
+  .slider-wrap:hover .slider-tooltip,
+  .slider-wrap:active .slider-tooltip { opacity: 1; }
+
+  .slider {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 8px; border-radius: 4px;
+    background: linear-gradient(to right, var(--color-secondary) var(--pct, 50%), #e8e8e8 var(--pct, 50%));
+    outline: none; cursor: pointer;
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 4px solid var(--color-secondary);
+    cursor: grab; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(193,127,62,0.25);
+  }
+  .slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 16px rgba(193,127,62,0.4);
+  }
+  .slider::-webkit-slider-thumb:active {
+    cursor: grabbing; transform: scale(1.25);
+    box-shadow: 0 4px 20px rgba(193,127,62,0.5);
+  }
+  .slider::-moz-range-thumb {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 4px solid var(--color-secondary);
+    cursor: grab;
+  }
+  .slider-range { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 8px; }
+
+  /* Month Cards */
+  .month-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .month-card {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    padding: 12px 4px 10px; border: 2px solid #e8e8e8; background: #fff;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    font-family: var(--font-body); position: relative; overflow: hidden;
+  }
+  .month-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at center, rgba(193,127,62,0.08), transparent 70%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .month-card:hover { border-color: var(--color-secondary); transform: translateY(-2px); }
+  .month-card:hover::before { opacity: 1; }
+  .month-card:active { transform: scale(0.96); }
+  .month-card.active {
+    border-color: var(--color-secondary); background: rgba(193,127,62,0.04);
+    box-shadow: 0 4px 20px rgba(193,127,62,0.15);
+    transform: translateY(-2px);
+  }
+  .month-card__label { font-size: 13px; font-weight: 700; color: var(--color-primary); position: relative; z-index: 1; }
+  .month-card__days {
+    font-size: 10px; font-weight: 600; color: var(--color-secondary);
+    opacity: 0; transform: translateY(4px); transition: all 0.2s;
+    position: relative; z-index: 1;
+  }
+  .month-card.active .month-card__days,
+  .month-card:hover .month-card__days { opacity: 1; transform: translateY(0); }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.3); }
+    50% { transform: scale(1.15); }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  /* Extra Cards */
+  .extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .extra-card {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 16px 10px; border: 2px solid #e8e8e8; background: #fff;
+    cursor: pointer; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    font-family: var(--font-body); text-align: center;
+  }
+  .extra-card:hover { border-color: var(--color-secondary); transform: translateY(-2px); }
+  .extra-card:active { transform: scale(0.96); }
+  .extra-card.active {
+    border-color: var(--color-secondary); background: rgba(193,127,62,0.06);
+    box-shadow: 0 4px 16px rgba(193,127,62,0.12);
+  }
+  .extra-card.active .extra-card__emoji { animation: bounceIn 0.35s; }
+  .extra-card__emoji { font-size: 28px; transition: transform 0.2s; }
+  .extra-card:hover .extra-card__emoji { transform: scale(1.2) rotate(-5deg); }
+  .extra-card__label { font-size: 12px; font-weight: 600; color: var(--color-primary); }
+  .extra-card__pct {
+    font-size: 11px; font-weight: 700; color: var(--color-secondary);
+    background: rgba(193,127,62,0.1); padding: 2px 8px;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .extra-card.active .extra-card__pct,
+  .extra-card:hover .extra-card__pct { opacity: 1; }
+
+  /* RESULT PANEL */
+  .calc-result {
+    background: var(--color-primary); color: #fff; padding: 0;
+    display: flex; flex-direction: column;
+  }
+  .result-top { padding: 36px 32px 24px; }
+  .result-tag {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-secondary);
+    margin-bottom: 16px;
+  }
+  .result-amount-wrap {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .result-col { display: flex; flex-direction: column; gap: 2px; }
+  .result-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+  .result-amount {
+    font-size: 28px; font-weight: 800; font-family: var(--font-heading);
+    transition: all 0.15s ease;
+  }
+  .result-amount--max { color: var(--color-secondary); font-size: 34px; }
+
+  /* Donut */
+  .result-donut-section {
+    display: flex; align-items: center; gap: 20px; padding: 20px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .result-donut { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
+  .donut-svg { width: 100%; height: 100%; }
+  .donut-fill { transition: stroke-dashoffset 0.6s cubic-bezier(0.4,0,0.2,1), stroke-dasharray 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .donut-center {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .donut-pct { font-size: 24px; font-weight: 800; color: var(--color-secondary); font-family: var(--font-heading); }
+  .donut-label { font-size: 10px; color: rgba(255,255,255,0.4); }
+  .result-pct-detail { display: flex; flex-direction: column; gap: 4px; }
+  .result-pct-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+  .result-pct-detail strong { font-size: 18px; color: var(--color-secondary); }
+
+  /* Bracket label */
+  .bracket-label {
+    margin: 0 32px 12px; padding: 10px 16px;
+    font-size: 12px; border-left: 3px solid; line-height: 1.4;
+    transition: all 0.4s ease;
+  }
+  .bracket-low { border-color: #e67e22; background: rgba(230,126,34,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-mid { border-color: #2ecc71; background: rgba(46,204,113,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-high { border-color: #3498db; background: rgba(52,152,219,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-vhigh { border-color: #9b59b6; background: rgba(155,89,182,0.08); color: rgba(255,255,255,0.7); }
+
+  /* Breakdown */
+  .result-breakdown { padding: 0 32px 20px; }
+  .result-row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px;
+  }
+  .result-row span { color: rgba(255,255,255,0.45); }
+  .result-row strong { color: rgba(255,255,255,0.8); }
+  .result-row--total {
+    border-top: 2px solid rgba(193,127,62,0.3); border-bottom: none;
+    padding-top: 12px; margin-top: 4px;
+  }
+  .result-row--total span { color: var(--color-secondary); font-weight: 700; }
+  .result-row--total strong { color: var(--color-secondary); font-size: 16px; }
+
+  /* CTA */
+  .result-cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin: 0 32px 20px; padding: 16px;
+    background: var(--color-secondary); color: #fff;
+    font-weight: 700; font-size: 14px; transition: all 0.3s;
+  }
+  .result-cta:hover { background: #d4956a; transform: translateY(-2px); }
+
+  /* WhatsApp */
+  .result-whatsapp {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin: 0 32px 20px; padding: 14px;
+    background: transparent; border: 1.5px solid rgba(37,211,102,0.4);
+    color: #25d366; font-size: 13px; font-weight: 700;
+    cursor: pointer; transition: all 0.3s; font-family: var(--font-body);
+  }
+  .result-whatsapp:hover {
+    background: #25d366; color: #fff; border-color: #25d366;
+    transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+  }
+
+  /* Disclaimer */
+  .result-disclaimer {
+    padding: 16px 32px; font-size: 11px; color: rgba(255,255,255,0.3);
+    line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: auto;
+  }
+
+  /* REFERENCE TABLE */
+  .calc-ref { margin-top: 80px; }
+  .calc-ref h2 { font-size: 28px; color: var(--color-primary); margin-bottom: 8px; }
+  .calc-ref > p { font-size: 15px; color: var(--color-paragraph); margin-bottom: 24px; }
+  .calc-ref__table-wrap { overflow-x: auto; }
+  .calc-ref__table-wrap table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .calc-ref__table-wrap th { background: var(--color-primary); color: #fff; padding: 14px 20px; text-align: left; font-weight: 600; }
+  .calc-ref__table-wrap td { padding: 14px 20px; border-bottom: 1px solid #eee; }
+  .calc-ref__table-wrap tr:nth-child(even) { background: #fff; }
+  .calc-ref__note { font-size: 12px; color: var(--color-paragraph); margin-top: 12px; font-style: italic; }
+
+  /* FINAL CTA */
+  .calc-final-cta {
+    margin-top: 60px; margin-bottom: 80px; background: var(--color-primary);
+    color: #fff; padding: 48px; text-align: center;
+  }
+  .calc-final-cta h2 { color: #fff; margin-bottom: 12px; font-size: 26px; }
+  .calc-final-cta p { color: rgba(255,255,255,0.55); margin-bottom: 28px; }
+  .calc-final-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* RESPONSIVE */
+  @media (max-width: 991px) {
+    .calc-card { grid-template-columns: 1fr; }
+    .calc-hero { padding: 120px 0 60px; }
+    .calc-hero h1 br { display: none; }
+  }
+  @media (max-width: 767px) {
+    .calc-hero { padding: 100px 0 48px; }
+    .calc-controls { padding: 24px 20px; }
+    .result-top { padding: 28px 20px 20px; }
+    .result-donut-section { padding: 16px 20px; }
+    .result-donut { width: 80px; height: 80px; }
+    .donut-pct { font-size: 20px; }
+    .result-breakdown { padding: 0 20px 16px; }
+    .result-whatsapp { margin: 0 20px 16px; }
+    .result-cta { margin: 0 20px 16px; }
+    .result-disclaimer { padding: 12px 20px; }
+    .result-amount { font-size: 24px; }
+    .result-amount--max { font-size: 28px; }
+    .ctrl-label__value { font-size: 18px; }
+    .calc-final-cta { padding: 32px 20px; }
+    .month-grid { grid-template-columns: repeat(4, 1fr); }
+    .extras-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 479px) {
+    .result-amount-wrap { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .month-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .month-card { padding: 10px 4px 8px; }
+  }
+</style>

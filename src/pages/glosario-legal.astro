@@ -1,0 +1,810 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Glosario Legal de Mexico — 200+ Terminos Juridicos Explicados | Abogados en CDMX';
+const description = 'Glosario completo de terminos legales en Mexico. Definiciones claras de conceptos de derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral. Actualizado 2026.';
+const canonical = 'https://abogadosencdmx.com/glosario-legal';
+
+const categoryColors: Record<string, string> = {
+  'Familiar': '#e74c8b',
+  'Penal': '#e74c3c',
+  'Civil': '#3498db',
+  'Corporativo': '#2ecc71',
+  'Inmobiliario': '#f39c12',
+  'Migratorio': '#9b59b6',
+  'Laboral': '#1abc9c',
+};
+
+const categoryLinks: Record<string, string> = {
+  'Familiar': '/especialidades/derecho-familiar-cdmx',
+  'Penal': '/especialidades/derecho-penal-cdmx',
+  'Civil': '/especialidades/derecho-civil-cdmx',
+  'Corporativo': '/especialidades/derecho-corporativo-cdmx',
+  'Inmobiliario': '/especialidades/derecho-inmobiliario-cdmx',
+  'Migratorio': '/especialidades/derecho-migratorio-cdmx',
+  'Laboral': '/especialidades/derecho-laboral-cdmx',
+};
+
+interface Term {
+  term: string;
+  category: string;
+  definition: string;
+  example: string;
+  relatedLink?: string;
+  relatedLabel?: string;
+}
+
+const terms: Term[] = [
+  // FAMILIAR (20)
+  { term: 'Pension alimenticia', category: 'Familiar', definition: 'Obligacion legal de proporcionar recursos economicos para cubrir alimentos, vestido, habitacion, atencion medica y educacion de quien tiene derecho a recibirlos. En Mexico, la pension alimenticia puede ser fijada por convenio entre las partes o por resolucion judicial del juez familiar.', example: 'Un padre divorciado debe aportar mensualmente el 30% de su salario para cubrir las necesidades basicas de sus hijos menores de edad.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Custodia', category: 'Familiar', definition: 'Derecho y responsabilidad de un progenitor para tener bajo su cuidado directo a un menor de edad, garantizando su desarrollo integral. La custodia puede ser otorgada a uno o ambos padres y es determinada por el juez familiar considerando siempre el interes superior del menor.', example: 'Tras el divorcio, la madre obtiene la custodia de los hijos y el padre conserva un regimen de visitas los fines de semana.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Patria potestad', category: 'Familiar', definition: 'Conjunto de derechos y obligaciones que la ley otorga a los padres sobre la persona y bienes de sus hijos menores de edad. A diferencia de la custodia, la patria potestad implica la representacion legal del menor y la administracion de sus bienes, y solo puede perderse por resolucion judicial.', example: 'Ambos padres ejercen la patria potestad y deben consentir conjuntamente la inscripcion escolar del menor, aunque solo uno tenga la custodia.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Divorcio', category: 'Familiar', definition: 'Procedimiento legal que disuelve el vinculo matrimonial entre los conyuges. En la Ciudad de Mexico existe el divorcio incausado, que permite a cualquiera de los conyuges solicitarlo sin necesidad de expresar una causa especifica, y el divorcio administrativo ante el Registro Civil cuando no hay hijos ni bienes.', example: 'Una pareja sin hijos menores ni bienes en comun tramita su divorcio administrativo ante el Registro Civil en aproximadamente 15 dias.', relatedLink: '/blog/guia-divorcio-cdmx-2026', relatedLabel: 'Guia de divorcio CDMX' },
+  { term: 'Concubinato', category: 'Familiar', definition: 'Relacion de hecho entre dos personas que viven juntas de manera constante y permanente durante al menos dos anos, o que tienen un hijo en comun, sin estar casadas. En Mexico, el concubinato genera derechos y obligaciones similares al matrimonio, incluyendo alimentos y derechos sucesorios.', example: 'Despues de tres anos viviendo juntos, la concubina puede reclamar pension alimenticia y derechos sobre los bienes adquiridos durante la relacion.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Regimen de visitas', category: 'Familiar', definition: 'Derecho del progenitor que no tiene la custodia de convivir con sus hijos menores de edad en horarios y condiciones establecidos. El regimen de visitas es fijado por convenio entre los padres o por el juez familiar, priorizando el bienestar emocional y fisico del menor.', example: 'El juez establece que el padre puede convivir con sus hijos los sabados y domingos de 10:00 a 18:00 horas y durante la mitad de las vacaciones escolares.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Sociedad conyugal', category: 'Familiar', definition: 'Regimen matrimonial en el que todos los bienes adquiridos durante el matrimonio pertenecen por partes iguales a ambos conyuges. Bajo este regimen, tanto los ingresos como las deudas contraidas durante la union se consideran comunes, salvo lo que se establezca en las capitulaciones matrimoniales.', example: 'Al divorciarse, la casa comprada durante el matrimonio bajo sociedad conyugal se divide en partes iguales entre ambos conyuges.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Separacion de bienes', category: 'Familiar', definition: 'Regimen matrimonial en el que cada conyuge conserva la propiedad y administracion de los bienes que adquiere durante el matrimonio. Cada parte es responsable unicamente de sus propias deudas y puede disponer libremente de su patrimonio sin requerir el consentimiento del otro conyuge.', example: 'Un matrimonio casado bajo separacion de bienes permite que cada conyuge venda su propio inmueble sin necesitar la firma del otro.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Adopcion', category: 'Familiar', definition: 'Acto juridico mediante el cual una persona o pareja asume todos los derechos y obligaciones de la paternidad o maternidad sobre un menor de edad que no es su hijo biologico. En Mexico, la adopcion es plena, lo que significa que el adoptado adquiere los mismos derechos que un hijo consanguineo.', example: 'Una pareja inicia el proceso de adopcion ante el DIF, que incluye estudios psicologicos, socioeconomicos y un periodo de convivencia supervisada.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Guarda y custodia', category: 'Familiar', definition: 'Derecho y obligacion de cuidar, proteger y atender las necesidades cotidianas de un menor de edad. La guarda y custodia puede ser compartida o exclusiva, y el juez la otorga evaluando las condiciones de vida, estabilidad emocional y capacidad de cada progenitor para garantizar el interes superior del nino.', example: 'El juez otorga la guarda y custodia compartida, estableciendo que los hijos vivan una semana con cada progenitor de forma alternada.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Alimentos', category: 'Familiar', definition: 'Prestacion que comprende comida, vestido, habitacion, atencion medica, educacion y esparcimiento que una persona esta obligada a proporcionar a otra por mandato legal. En el derecho mexicano, los alimentos tienen caracter irrenunciable y son proporcionales a la capacidad economica del deudor y las necesidades del acreedor.', example: 'Una madre demanda alimentos para sus hijos incluyendo colegiatura, seguro medico, alimentacion y transporte escolar.', relatedLink: '/calcular-pension-alimenticia', relatedLabel: 'Calculadora de pension' },
+  { term: 'Acta de matrimonio', category: 'Familiar', definition: 'Documento oficial expedido por el Registro Civil que certifica la celebracion legal de un matrimonio. El acta de matrimonio contiene los datos de los contrayentes, testigos, regimen patrimonial elegido y la fecha de la ceremonia. Es indispensable para acreditar el estado civil de casado ante cualquier autoridad.', example: 'Para tramitar una visa familiar, el consulado solicita una copia certificada del acta de matrimonio con vigencia no mayor a seis meses.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Juicio de alimentos', category: 'Familiar', definition: 'Procedimiento judicial mediante el cual se solicita al juez familiar que fije, aumente o reduzca el monto de la pension alimenticia. Este juicio puede incluir medidas provisionales que obligan al deudor a pagar una cantidad mientras se resuelve el juicio, garantizando asi las necesidades inmediatas del acreedor.', example: 'La madre presenta un juicio de alimentos y el juez ordena una pension provisional del 25% del salario del padre desde la primera audiencia.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Convenio de divorcio', category: 'Familiar', definition: 'Acuerdo suscrito entre los conyuges que establece las condiciones de la separacion, incluyendo la division de bienes, custodia de hijos, pension alimenticia y regimen de visitas. El convenio debe ser ratificado ante el juez familiar, quien verifica que no afecte los derechos de los menores o de las partes.', example: 'Los conyuges firman un convenio de divorcio que establece custodia compartida, pension del 20% y uso del domicilio conyugal para la madre.', relatedLink: '/blog/guia-divorcio-cdmx-2026', relatedLabel: 'Guia de divorcio' },
+  { term: 'Violencia familiar', category: 'Familiar', definition: 'Acto u omision intencional que causa dano fisico, psicologico, patrimonial, economico o sexual contra un miembro de la familia. En Mexico, la violencia familiar puede ser sancionada tanto en la via civil como en la penal, y la victima puede solicitar ordenes de proteccion inmediatas para salvaguardar su integridad.', example: 'Una mujer denuncia violencia familiar ante el Ministerio Publico y obtiene una orden de proteccion que prohibe al agresor acercarse al domicilio.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Orden de proteccion', category: 'Familiar', definition: 'Medida judicial urgente que tiene como finalidad salvaguardar la integridad fisica y emocional de victimas de violencia familiar. Las ordenes de proteccion pueden incluir la prohibicion de acercamiento, el desalojo del agresor del domicilio comun y la suspension temporal del regimen de visitas con menores.', example: 'El juez dicta una orden de proteccion de emergencia que obliga al agresor a abandonar el domicilio y mantener una distancia minima de 200 metros.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Mediacion familiar', category: 'Familiar', definition: 'Procedimiento alternativo de resolucion de conflictos en el que un tercero neutral ayuda a las partes a llegar a un acuerdo mutuamente satisfactorio en asuntos familiares. La mediacion familiar es voluntaria, confidencial y puede abordar temas como divorcio, custodia, pension alimenticia y division de bienes.', example: 'En lugar de ir a juicio, los padres acuden a mediacion familiar en el Centro de Justicia Alternativa y logran un acuerdo de custodia compartida.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Juicio oral familiar', category: 'Familiar', definition: 'Procedimiento judicial en materia familiar que se desarrolla de manera predominantemente oral ante el juez, garantizando los principios de inmediacion, concentracion y continuidad. En la Ciudad de Mexico, los juicios orales familiares permiten resolver controversias de custodia, alimentos y convivencia de forma mas agil.', example: 'El juicio oral familiar sobre pension alimenticia se resuelve en tres audiencias celebradas durante un periodo de dos meses.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Reconocimiento de paternidad', category: 'Familiar', definition: 'Acto juridico mediante el cual un hombre acepta ser el padre biologico de un menor y asume todos los derechos y obligaciones derivados de la filiacion. Puede realizarse voluntariamente ante el Registro Civil o ser declarado judicialmente mediante prueba de ADN cuando el presunto padre se niega a reconocerlo.', example: 'Un padre que no aparece en el acta de nacimiento acude al Registro Civil para realizar el reconocimiento de paternidad y dar su apellido al menor.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+  { term: 'Tutela', category: 'Familiar', definition: 'Institucion juridica que tiene por objeto la guarda de la persona y bienes de quienes no pueden gobernarse por si mismos, como menores de edad sin padres o personas declaradas en estado de interdiccion. El tutor es designado por el juez familiar y esta sujeto a vigilancia judicial en el ejercicio de sus funciones.', example: 'Los abuelos solicitan la tutela de sus nietos menores de edad despues del fallecimiento de ambos padres en un accidente.', relatedLink: '/especialidades/derecho-familiar-cdmx', relatedLabel: 'Derecho Familiar' },
+
+  // PENAL (20)
+  { term: 'Amparo', category: 'Penal', definition: 'Juicio constitucional que protege a las personas contra actos de autoridad que vulneren sus derechos humanos y garantias individuales. El amparo puede suspender de inmediato el acto reclamado y es el principal recurso de defensa constitucional en el sistema juridico mexicano, aplicable en todas las materias del derecho.', example: 'Un detenido promueve un amparo indirecto contra la orden de aprehension emitida sin fundamentacion suficiente, logrando su libertad inmediata.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Delito', category: 'Penal', definition: 'Conducta tipificada en la ley penal como punible, que resulta antijuridica y culpable. En Mexico, los delitos se clasifican en graves y no graves segun la pena aplicable, y pueden perseguirse de oficio o por querella de la parte afectada, dependiendo de su naturaleza y el bien juridico protegido.', example: 'El robo a casa habitacion con violencia es un delito grave que se persigue de oficio y amerita prision preventiva oficiosa.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Denuncia', category: 'Penal', definition: 'Acto formal mediante el cual cualquier persona comunica al Ministerio Publico la comision de un delito que se persigue de oficio. La denuncia puede presentarse de forma oral o escrita, no requiere la intervencion de un abogado y puede realizarse en cualquier agencia del Ministerio Publico o fiscalia.', example: 'Un vecino presenta denuncia ante la Fiscalia de la Ciudad de Mexico despues de presenciar un asalto a mano armada en la via publica.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Querella', category: 'Penal', definition: 'Manifestacion de voluntad de la victima u ofendido ante el Ministerio Publico para que se investigue y persiga un delito que no se persigue de oficio. A diferencia de la denuncia, la querella es requisito indispensable para iniciar la accion penal en delitos como el abuso de confianza, fraude o amenazas.', example: 'La victima de fraude presenta querella ante la fiscalia, ya que sin su voluntad expresa el Ministerio Publico no puede iniciar la investigacion.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Ministerio Publico', category: 'Penal', definition: 'Organo del Estado encargado de la investigacion y persecucion de los delitos. En Mexico, el Ministerio Publico depende de la Fiscalia General de la Republica a nivel federal o de las fiscalias estatales a nivel local. Tiene la facultad exclusiva de ejercer la accion penal ante los tribunales.', example: 'El Ministerio Publico de la Ciudad de Mexico integra la carpeta de investigacion y solicita al juez una orden de aprehension contra el imputado.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Carpeta de investigacion', category: 'Penal', definition: 'Expediente que integra el Ministerio Publico con todas las diligencias, pruebas y actuaciones realizadas durante la investigacion de un delito. La carpeta de investigacion sustituyo a la antigua averiguacion previa y es la base sobre la cual el fiscal decide si ejerce o no la accion penal.', example: 'El fiscal agrega a la carpeta de investigacion los videos de vigilancia, declaraciones de testigos y el dictamen pericial para sustentar la acusacion.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Auto de vinculacion', category: 'Penal', definition: 'Resolucion judicial mediante la cual el juez de control determina que existen datos suficientes que establecen que se ha cometido un delito y que el imputado probablemente participo en su comision. El auto de vinculacion a proceso no constituye una declaracion de culpabilidad, sino el inicio formal del proceso penal.', example: 'El juez dicta auto de vinculacion a proceso contra el imputado por el delito de robo calificado y fija un plazo de investigacion de cuatro meses.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Prision preventiva', category: 'Penal', definition: 'Medida cautelar que priva de la libertad al imputado durante el proceso penal. En Mexico, la prision preventiva puede ser oficiosa para ciertos delitos graves senalados en la Constitucion, o justificada cuando el juez determina que existe riesgo de fuga, peligro para la victima o riesgo de destruccion de pruebas.', example: 'El juez impone prision preventiva oficiosa al imputado por homicidio doloso, debiendo permanecer recluido durante todo el proceso penal.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Medida cautelar', category: 'Penal', definition: 'Disposicion judicial impuesta al imputado para garantizar su comparecencia en el proceso penal, la proteccion de la victima y la seguridad de la comunidad. Las medidas cautelares van desde la firma periodica y la prohibicion de salir del pais hasta el uso de localizador electronico o la prision preventiva.', example: 'En lugar de prision preventiva, el juez impone como medida cautelar la presentacion periodica cada quince dias y la prohibicion de acercarse a la victima.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Juicio oral penal', category: 'Penal', definition: 'Etapa central del proceso penal acusatorio en Mexico donde se desahogan las pruebas, se escuchan los alegatos de las partes y el tribunal de enjuiciamiento emite la sentencia. El juicio oral se rige por los principios de publicidad, contradiccion, concentracion, continuidad e inmediacion procesal.', example: 'Durante el juicio oral penal, la defensa interroga a los testigos de cargo y presenta pruebas periciales que contradicen la version de la fiscalia.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Sentencia', category: 'Penal', definition: 'Resolucion judicial que pone fin al proceso penal, declarando al imputado culpable o inocente del delito que se le imputa. La sentencia condenatoria fija la pena correspondiente y la reparacion del dano a la victima. La sentencia absolutoria ordena la libertad inmediata del procesado y el cese de todas las medidas cautelares.', example: 'El tribunal de enjuiciamiento dicta sentencia absolutoria por falta de pruebas suficientes y ordena la inmediata libertad del acusado.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Suspension condicional', category: 'Penal', definition: 'Mecanismo alternativo que permite suspender el proceso penal a solicitud del imputado cuando el delito admite esta figura. El imputado debe cumplir condiciones impuestas por el juez durante un plazo determinado. Si las cumple satisfactoriamente, se extingue la accion penal y no queda antecedente penal en su contra.', example: 'El imputado por lesiones culposas obtiene la suspension condicional del proceso a cambio de pagar la reparacion del dano y realizar servicio comunitario.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Acuerdo reparatorio', category: 'Penal', definition: 'Solucion alterna al proceso penal mediante la cual la victima y el imputado llegan a un convenio sobre la reparacion del dano causado por el delito. Los acuerdos reparatorios proceden en delitos culposos, patrimoniales sin violencia y aquellos que se persiguen por querella, extinguiendo la accion penal una vez cumplidos.', example: 'Victima e imputado firman un acuerdo reparatorio por el delito de dano en propiedad ajena, donde el imputado paga la reparacion total en tres mensualidades.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Pena', category: 'Penal', definition: 'Sancion impuesta por el Estado al responsable de un delito, establecida en la sentencia condenatoria. Las penas en Mexico incluyen prision, multa, reparacion del dano, trabajo en beneficio de la comunidad, suspension de derechos y decomiso de instrumentos del delito, entre otras previstas por la legislacion penal.', example: 'La sentencia impone una pena de cinco anos de prision, multa de doscientos dias y la obligacion de reparar el dano a la victima.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Fianza', category: 'Penal', definition: 'Garantia economica que el imputado deposita ante la autoridad judicial para asegurar su comparecencia en el proceso penal y obtener o mantener su libertad provisional. La fianza puede constituirse en efectivo, mediante poliza de compania autorizada o hipoteca sobre bienes inmuebles, segun lo determine el juez.', example: 'El juez fija una fianza de quinientos mil pesos para que el imputado enfrente su proceso en libertad, misma que sera devuelta al concluir el juicio.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Libertad condicional', category: 'Penal', definition: 'Beneficio que permite a una persona sentenciada cumplir el resto de su condena fuera del centro penitenciario, sujeta a condiciones y supervision. Para acceder a la libertad condicional se requiere haber cumplido un porcentaje minimo de la pena, demostrar buena conducta y no representar un riesgo para la sociedad.', example: 'Tras cumplir el sesenta por ciento de su condena, el sentenciado obtiene libertad condicional con la obligacion de presentarse mensualmente ante su supervisor.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Antecedentes penales', category: 'Penal', definition: 'Registro oficial que documenta las sentencias condenatorias firmes que ha recibido una persona. En Mexico, la constancia de no antecedentes penales es expedida por la Secretaria de Seguridad y es frecuentemente requerida para tramites laborales, migratorios y de adopcion. Los antecedentes pueden cancelarse en ciertos supuestos legales.', example: 'Para obtener la visa de trabajo, el solicitante debe presentar una constancia de no antecedentes penales expedida en los ultimos tres meses.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Recurso de apelacion', category: 'Penal', definition: 'Medio de impugnacion mediante el cual una de las partes solicita a un tribunal superior que revise y modifique una resolucion judicial dictada en primera instancia. En materia penal, la apelacion puede interponerse contra sentencias definitivas y autos que afecten derechos fundamentales del imputado o de la victima.', example: 'La defensa interpone recurso de apelacion contra la sentencia condenatoria argumentando que el juez valoro incorrectamente las pruebas presentadas en juicio.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Feminicidio', category: 'Penal', definition: 'Delito que consiste en privar de la vida a una mujer por razones de genero. En Mexico, el feminicidio se tipifica cuando existen signos de violencia sexual, mutilaciones, antecedentes de violencia del agresor, relacion sentimental con la victima u otros supuestos que revelan misoginia. Es un delito grave que amerita prision preventiva oficiosa.', example: 'La fiscalia reclasifica el homicidio como feminicidio al acreditarse antecedentes de violencia familiar y amenazas previas del agresor contra la victima.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+  { term: 'Narcomenudeo', category: 'Penal', definition: 'Delito consistente en la venta, suministro o distribucion de drogas en pequenas cantidades directamente al consumidor. En Mexico, el narcomenudeo es competencia de las fiscalias estatales y sus penas varian segun el tipo y cantidad de sustancia. La ley establece una tabla de dosis maximas para distinguir entre posesion simple y narcomenudeo.', example: 'La policia capitalina detiene a una persona con doscientos gramos de marihuana y la fiscalia local inicia una carpeta de investigacion por narcomenudeo.', relatedLink: '/especialidades/derecho-penal-cdmx', relatedLabel: 'Derecho Penal' },
+
+  // CIVIL (20)
+  { term: 'Demanda', category: 'Civil', definition: 'Escrito inicial que presenta una persona ante un juzgado para ejercer una accion legal contra otra, exponiendo los hechos, fundamentos de derecho y pretensiones. La demanda debe cumplir requisitos formales establecidos en el codigo procesal aplicable y se acompana de los documentos que acrediten la accion ejercida.', example: 'El abogado presenta una demanda civil por incumplimiento de contrato de arrendamiento, solicitando el pago de rentas vencidas y la desocupacion del inmueble.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Contestacion', category: 'Civil', definition: 'Escrito mediante el cual el demandado responde a la demanda presentada en su contra, aceptando, negando o contradiciendo los hechos y pretensiones del actor. La contestacion debe presentarse dentro del plazo legal y puede incluir excepciones, defensas y una reconvencion o contrademanda contra el actor.', example: 'El demandado contesta la demanda negando el incumplimiento contractual y opone la excepcion de pago, acompanando recibos como prueba.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Contrato', category: 'Civil', definition: 'Acuerdo de voluntades entre dos o mas personas que crea, transfiere, modifica o extingue derechos y obligaciones. En Mexico, los contratos pueden ser verbales o escritos, aunque ciertos actos juridicos como la compraventa de inmuebles requieren escritura publica para su validez. El contrato obliga a las partes a cumplir lo pactado.', example: 'Las partes firman un contrato de prestacion de servicios profesionales que establece alcance, plazos, honorarios y clausulas de confidencialidad.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Obligacion', category: 'Civil', definition: 'Vinculo juridico que impone a una persona el deber de dar, hacer o no hacer algo en favor de otra. Las obligaciones pueden nacer de un contrato, de la ley, de actos ilicitos o del enriquecimiento sin causa. Su incumplimiento genera responsabilidad civil y el derecho del acreedor a exigir su cumplimiento o la reparacion del dano.', example: 'El arrendatario tiene la obligacion de pagar la renta mensual en la fecha pactada y de conservar el inmueble en buen estado.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Responsabilidad civil', category: 'Civil', definition: 'Obligacion de reparar el dano causado a otra persona, ya sea por actos propios, de terceros bajo su cargo o por el uso de cosas peligrosas. La responsabilidad civil puede ser contractual, cuando deriva del incumplimiento de un contrato, o extracontractual, cuando surge de un hecho ilicito o actividad riesgosa.', example: 'El dueno de un vehiculo es declarado responsable civilmente por los danos causados en un accidente de transito y debe pagar la reparacion del auto afectado.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Dano moral', category: 'Civil', definition: 'Afectacion que sufre una persona en sus sentimientos, afectos, creencias, decoro, honor, reputacion, vida privada u otros derechos de la personalidad. En Mexico, el dano moral es indemnizable economicamente y su monto se determina considerando los derechos lesionados, el grado de responsabilidad y la situacion economica de las partes.', example: 'Un medio de comunicacion es demandado por dano moral tras publicar informacion falsa que afecto la reputacion profesional de un medico.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Prescripcion', category: 'Civil', definition: 'Institucion juridica mediante la cual se adquieren derechos o se extinguen obligaciones por el transcurso del tiempo bajo las condiciones establecidas por la ley. La prescripcion negativa o extintiva libera al deudor de su obligacion cuando el acreedor no la reclama dentro del plazo legal, que varia segun el tipo de accion.', example: 'La deuda derivada de un pagare prescribe a los tres anos si el acreedor no ejerce la accion judicial correspondiente dentro de ese plazo.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Usucapion', category: 'Civil', definition: 'Modo de adquirir la propiedad de un bien inmueble mediante la posesion continua, pacifica, publica y en concepto de dueno durante el plazo que establece la ley. En la Ciudad de Mexico, se requieren cinco anos de posesion con justo titulo o diez anos sin el. Tambien se conoce como prescripcion positiva o adquisitiva.', example: 'Una familia que ha habitado un terreno durante doce anos sin titulo de propiedad inicia un juicio de usucapion para obtener las escrituras a su nombre.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Testamento', category: 'Civil', definition: 'Acto juridico personalismo, revocable y libre mediante el cual una persona dispone de sus bienes y derechos para despues de su muerte. En Mexico, el testamento publico abierto se otorga ante notario publico y es la forma mas segura y recomendable. Tambien existen testamentos olografo, privado y especiales para situaciones de emergencia.', example: 'El padre de familia otorga testamento publico abierto ante notario, designando a sus tres hijos como herederos por partes iguales de todos sus bienes.', relatedLink: '/blog/sucesiones-herencias-cdmx-2026', relatedLabel: 'Guia de herencias' },
+  { term: 'Sucesion', category: 'Civil', definition: 'Proceso juridico mediante el cual se transmiten los bienes, derechos y obligaciones de una persona fallecida a sus herederos o legatarios. La sucesion puede ser testamentaria, cuando existe testamento valido, o intestamentaria (legitima), cuando la persona fallece sin testamento. Se tramita ante un juez civil o un notario publico.', example: 'Al fallecer el propietario sin testamento, los hijos inician un juicio sucesorio intestamentario para heredar el departamento ubicado en la colonia Condesa.', relatedLink: '/blog/sucesiones-herencias-cdmx-2026', relatedLabel: 'Guia de herencias' },
+  { term: 'Herencia', category: 'Civil', definition: 'Conjunto de bienes, derechos y obligaciones que no se extinguen con la muerte de una persona y que se transmiten a sus herederos. La herencia incluye inmuebles, cuentas bancarias, vehiculos y deudas del fallecido. Los herederos pueden aceptar la herencia a beneficio de inventario, respondiendo por las deudas solo hasta el valor de los bienes heredados.', example: 'Los tres hermanos heredan un departamento y una cuenta bancaria, pero tambien asumen la hipoteca pendiente que tenia su padre al momento de fallecer.', relatedLink: '/blog/sucesiones-herencias-cdmx-2026', relatedLabel: 'Guia de herencias' },
+  { term: 'Legado', category: 'Civil', definition: 'Disposicion testamentaria por la cual el testador asigna un bien especifico o un derecho determinado a una persona, llamada legatario, que no necesariamente es heredero universal. A diferencia de la herencia, el legado recae sobre bienes concretos e identificados, no sobre una porcion del patrimonio total.', example: 'En su testamento, la abuela deja como legado su coleccion de arte a un museo y el resto de sus bienes a sus nietos como herederos universales.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Albacea', category: 'Civil', definition: 'Persona designada en el testamento o nombrada por los herederos para administrar los bienes de la herencia, pagar las deudas del difunto y ejecutar las disposiciones testamentarias. El albacea tiene la representacion legal de la sucesion y debe rendir cuentas de su gestion ante los herederos y el juez que conoce del juicio sucesorio.', example: 'El hijo mayor es designado albacea de la sucesion y se encarga de liquidar las deudas del padre, cobrar rentas pendientes y repartir los bienes entre los herederos.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Juicio ejecutivo mercantil', category: 'Civil', definition: 'Procedimiento judicial acelerado para el cobro de deudas documentadas en titulos de credito como pagares, cheques o letras de cambio. Este juicio permite solicitar el embargo preventivo de bienes del deudor desde el auto admisorio de la demanda, garantizando el pago de la deuda reclamada con mayor celeridad que un juicio ordinario.', example: 'El acreedor presenta un juicio ejecutivo mercantil con un pagare vencido y el juez ordena el embargo inmediato de la cuenta bancaria del deudor.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Embargo', category: 'Civil', definition: 'Medida judicial que afecta bienes del deudor para garantizar el cumplimiento de una obligacion o el pago de una deuda. Los bienes embargados quedan a disposicion del juzgado y no pueden ser vendidos ni gravados por el deudor. El embargo puede recaer sobre inmuebles, vehiculos, cuentas bancarias, salarios y otros activos.', example: 'El juez ordena el embargo de un departamento del deudor como garantia del pago de la deuda reclamada en el juicio ejecutivo mercantil.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Remate', category: 'Civil', definition: 'Procedimiento judicial de venta publica de bienes embargados para obtener recursos con los cuales pagar la deuda reclamada. El remate se realiza mediante subasta, donde los interesados presentan posturas economicas. El bien se adjudica al mejor postor y el producto de la venta se aplica al pago del credito y gastos judiciales.', example: 'Tras dos anos sin pagar la hipoteca, el inmueble sale a remate judicial con un precio base equivalente a las dos terceras partes de su valor de avaluo.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Terceria', category: 'Civil', definition: 'Intervencion de una persona ajena al juicio principal que reclama un derecho sobre los bienes embargados o un mejor derecho de pago. La terceria excluyente de dominio busca liberar un bien embargado que pertenece al tercero, mientras que la terceria de preferencia busca obtener prioridad en el pago con el producto del remate.', example: 'El verdadero propietario de un vehiculo embargado en un juicio ajeno interpone una terceria excluyente de dominio para recuperar su automovil.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Interdiccion', category: 'Civil', definition: 'Estado juridico declarado por un juez que reconoce la incapacidad legal de una persona mayor de edad para gobernarse por si misma debido a enfermedad mental, discapacidad intelectual u otra causa permanente. La persona declarada en interdiccion queda sujeta a tutela y no puede celebrar actos juridicos validos por si misma.', example: 'La familia solicita la declaracion de interdiccion de un adulto mayor con demencia avanzada para designarle un tutor que administre sus bienes y atienda sus necesidades.', relatedLink: '/especialidades/derecho-civil-cdmx', relatedLabel: 'Derecho Civil' },
+  { term: 'Persona moral', category: 'Civil', definition: 'Entidad juridica creada conforme a la ley que tiene personalidad propia, distinta de las personas fisicas que la conforman. Las personas morales pueden adquirir derechos, contraer obligaciones, poseer bienes y comparecer en juicio. Ejemplos incluyen sociedades mercantiles, asociaciones civiles, fundaciones y sindicatos.', example: 'Los socios constituyen una persona moral bajo la forma de Sociedad Anonima de Capital Variable para operar su negocio de importacion de textiles.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Prescripcion positiva', category: 'Civil', definition: 'Modo de adquirir la propiedad de bienes mediante la posesion continua, pacifica, publica y en concepto de propietario durante el tiempo que fija la ley. Es sinonimo de usucapion y constituye un mecanismo legal para regularizar la propiedad de inmuebles que se han poseido de buena fe durante periodos prolongados sin contar con titulo formal.', example: 'El poseedor de un terreno durante quince anos demanda la prescripcion positiva y obtiene sentencia que lo declara propietario legitimo del inmueble.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+
+  // CORPORATIVO (15)
+  { term: 'Sociedad anonima', category: 'Corporativo', definition: 'Tipo de sociedad mercantil cuyo capital social se divide en acciones y en la que los socios limitan su responsabilidad al monto de sus aportaciones. La S.A. de C.V. es la forma societaria mas utilizada en Mexico para empresas medianas y grandes, requiere minimo dos socios y se constituye mediante escritura publica ante notario.', example: 'Tres inversionistas constituyen una Sociedad Anonima de Capital Variable con un capital social inicial de un millon de pesos, dividido en mil acciones.', relatedLink: '/blog/constituir-empresa-mexico-2026', relatedLabel: 'Constituir empresa' },
+  { term: 'SRL', category: 'Corporativo', definition: 'Sociedad de Responsabilidad Limitada, forma societaria en la que el capital se divide en partes sociales y los socios responden unicamente hasta el monto de sus aportaciones. La SRL es ideal para empresas pequenas y familiares, permite un maximo de cincuenta socios y ofrece mayor flexibilidad en su administracion que la S.A.', example: 'Un matrimonio constituye una SRL para su restaurante, aportando cada uno el cincuenta por ciento del capital social sin arriesgar su patrimonio personal.', relatedLink: '/blog/constituir-empresa-mexico-2026', relatedLabel: 'Constituir empresa' },
+  { term: 'SAS', category: 'Corporativo', definition: 'Sociedad por Acciones Simplificada, tipo societario creado en 2016 que permite constituir una empresa con un solo socio, sin necesidad de acudir ante notario y con un capital social minimo. La SAS se constituye en linea a traves del portal de la Secretaria de Economia y tiene un limite de ingresos anuales de cinco millones de pesos.', example: 'Un emprendedor constituye su SAS en linea en menos de veinticuatro horas, sin pagar gastos notariales, para formalizar su negocio de consultoria.', relatedLink: '/blog/constituir-empresa-mexico-2026', relatedLabel: 'Constituir empresa' },
+  { term: 'Capital social', category: 'Corporativo', definition: 'Monto total de las aportaciones que los socios o accionistas se comprometen a realizar para la constitucion y operacion de una sociedad mercantil. El capital social puede ser fijo o variable y representa la garantia minima frente a terceros. Su incremento o reduccion requiere acuerdo de asamblea y modificacion de estatutos sociales.', example: 'La asamblea de accionistas aprueba un aumento de capital social de quinientos mil pesos mediante la emision de nuevas acciones para financiar la expansion del negocio.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Acta constitutiva', category: 'Corporativo', definition: 'Documento notarial que formaliza la creacion de una sociedad mercantil, conteniendo su denominacion, objeto social, domicilio, capital social, derechos y obligaciones de los socios, organos de administracion y clausulas de funcionamiento. El acta constitutiva se inscribe en el Registro Publico de Comercio para dar publicidad a la existencia legal de la sociedad.', example: 'El notario protocoliza el acta constitutiva de la empresa, que establece el objeto social, los estatutos y la designacion del administrador unico.', relatedLink: '/blog/constituir-empresa-mexico-2026', relatedLabel: 'Constituir empresa' },
+  { term: 'RFC', category: 'Corporativo', definition: 'Registro Federal de Contribuyentes, clave alfanumerica unica asignada por el Servicio de Administracion Tributaria a personas fisicas y morales para identificarlas como contribuyentes. El RFC es indispensable para emitir facturas, cumplir obligaciones fiscales, abrir cuentas bancarias empresariales y realizar operaciones comerciales formales en Mexico.', example: 'La nueva empresa tramita su RFC ante el SAT para poder emitir facturas electronicas y cumplir con sus obligaciones fiscales desde el primer dia de operaciones.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Asamblea de accionistas', category: 'Corporativo', definition: 'Organo supremo de decision de una sociedad mercantil donde los socios o accionistas se reunen para deliberar y resolver sobre asuntos relevantes de la empresa. Las asambleas pueden ser ordinarias, para temas de operacion regular, o extraordinarias, para modificaciones estatutarias, fusion, escision o disolucion de la sociedad.', example: 'La asamblea ordinaria anual de accionistas aprueba los estados financieros del ejercicio, la distribucion de dividendos y la designacion del nuevo consejo.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Consejo de administracion', category: 'Corporativo', definition: 'Organo colegiado encargado de la direccion y administracion de una sociedad mercantil, integrado por consejeros designados por la asamblea de accionistas. El consejo toma decisiones estrategicas, supervisa la gestion de la empresa y puede delegar funciones en un director general. Es obligatorio cuando la sociedad tiene mas de un administrador.', example: 'El consejo de administracion sesiona trimestralmente para revisar los resultados financieros y aprobar el presupuesto de inversion del siguiente periodo.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Fusion', category: 'Corporativo', definition: 'Operacion corporativa mediante la cual dos o mas sociedades se unen para formar una sola, ya sea por incorporacion de una en otra o por creacion de una nueva entidad. La fusion requiere acuerdo de asambleas extraordinarias, publicacion en el sistema electronico del SAT y proteccion de los derechos de acreedores y socios minoritarios.', example: 'Dos empresas competidoras del sector tecnologico acuerdan una fusion por incorporacion, donde la empresa mayor absorbe a la menor y asume todos sus activos y pasivos.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Escision', category: 'Corporativo', definition: 'Operacion corporativa por la cual una sociedad divide su patrimonio en dos o mas partes para transmitirlo a sociedades nuevas o existentes. La sociedad escindente puede subsistir o extinguirse. La escision se utiliza para reorganizar negocios, separar unidades productivas o aislar riesgos, y requiere aprobacion de asamblea extraordinaria.', example: 'La empresa escinde su division inmobiliaria creando una nueva sociedad que recibe todos los inmuebles y contratos de arrendamiento.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Compliance', category: 'Corporativo', definition: 'Funcion corporativa que garantiza el cumplimiento de las leyes, regulaciones y politicas internas aplicables a una empresa. En Mexico, el compliance abarca obligaciones fiscales, laborales, anticorrupcion, proteccion de datos personales y prevencion de lavado de dinero. Un programa de compliance robusto reduce riesgos legales y reputacionales para la organizacion.', example: 'La empresa implementa un programa de compliance que incluye codigo de etica, canal de denuncias anonimas y capacitacion anticorrupcion para todos los empleados.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Due diligence', category: 'Corporativo', definition: 'Proceso de investigacion y analisis exhaustivo de los aspectos legales, financieros, fiscales y operativos de una empresa previo a una transaccion de compra, fusion, inversion o asociacion. La due diligence permite identificar riesgos, contingencias y pasivos ocultos que pueden afectar el valor de la operacion o generar responsabilidades futuras.', example: 'Antes de adquirir la empresa, el comprador realiza una due diligence legal que revela litigios laborales pendientes y contingencias fiscales no reportadas.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Propiedad intelectual', category: 'Corporativo', definition: 'Conjunto de derechos exclusivos que protegen las creaciones del intelecto humano, incluyendo invenciones, obras artisticas y literarias, disenos, signos distintivos y secretos industriales. En Mexico, la propiedad intelectual es regulada por el IMPI para marcas y patentes, y por el INDAUTOR para derechos de autor, otorgando monopolio temporal al titular.', example: 'La startup registra su software como obra protegida por derechos de autor y patenta el algoritmo innovador que desarrollaron sus ingenieros.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Marca registrada', category: 'Corporativo', definition: 'Signo distintivo registrado ante el Instituto Mexicano de la Propiedad Industrial que identifica y diferencia los productos o servicios de una empresa. El registro de marca otorga a su titular el derecho exclusivo de uso por diez anos renovables y la facultad de impedir que terceros utilicen signos identicos o similares que generen confusion.', example: 'El restaurante registra su nombre comercial y logotipo como marca ante el IMPI, obteniendo proteccion exclusiva por diez anos en toda la Republica Mexicana.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+  { term: 'Franquicia', category: 'Corporativo', definition: 'Modelo de negocio mediante el cual el titular de una marca y sistema operativo (franquiciante) concede a un tercero (franquiciatario) el derecho de explotar comercialmente su concepto a cambio de contraprestaciones economicas. En Mexico, el contrato de franquicia debe cumplir requisitos de la Ley de Propiedad Industrial y entregarse una circular de oferta.', example: 'El empresario firma un contrato de franquicia para operar una sucursal de la cadena de cafeterias, pagando una regalias mensuales del cinco por ciento sobre ventas.', relatedLink: '/especialidades/derecho-corporativo-cdmx', relatedLabel: 'Derecho Corporativo' },
+
+  // INMOBILIARIO (15)
+  { term: 'Escritura publica', category: 'Inmobiliario', definition: 'Documento notarial que da fe publica de un acto juridico, otorgandole plena validez legal y certeza ante terceros. En materia inmobiliaria, la escritura publica es indispensable para formalizar compraventas, donaciones e hipotecas de inmuebles. Se inscribe en el Registro Publico de la Propiedad para que el acto surta efectos frente a terceros.', example: 'El comprador firma la escritura publica de compraventa ante el notario, quien la inscribe en el Registro Publico para transferir formalmente la propiedad.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Notario', category: 'Inmobiliario', definition: 'Profesional del derecho investido de fe publica por el Estado para autenticar actos juridicos, dar certeza legal a documentos y asesorar a las partes en transacciones que requieren formalizacion. En Mexico, el notario publico interviene en compraventas de inmuebles, testamentos, constituciones de sociedades, poderes y protocolizaciones de actas.', example: 'El notario publico numero 217 de la Ciudad de Mexico elabora la escritura de compraventa, verifica la identidad de las partes y calcula los impuestos correspondientes.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Registro Publico de la Propiedad', category: 'Inmobiliario', definition: 'Institucion encargada de inscribir y dar publicidad a los actos juridicos relacionados con bienes inmuebles, como compraventas, hipotecas, embargos y servidumbres. La inscripcion en el Registro Publico protege los derechos del propietario frente a terceros y permite a cualquier persona consultar la situacion juridica de un inmueble.', example: 'Antes de comprar el departamento, el abogado solicita un certificado de libertad de gravamenes en el Registro Publico para verificar que no existan hipotecas ni embargos.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Fideicomiso', category: 'Inmobiliario', definition: 'Contrato mediante el cual una persona (fideicomitente) transmite bienes o derechos a una institucion fiduciaria para que los administre en beneficio de un tercero (fideicomisario). En Mexico, el fideicomiso inmobiliario es utilizado para que extranjeros puedan adquirir inmuebles en zona restringida y para estructurar proyectos de desarrollo inmobiliario.', example: 'Un ciudadano canadiense adquiere un departamento en Cancun a traves de un fideicomiso bancario que le permite ser propietario beneficiario en zona restringida.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Hipoteca', category: 'Inmobiliario', definition: 'Garantia real que se constituye sobre un bien inmueble para asegurar el cumplimiento de una obligacion, generalmente un credito. Si el deudor no paga, el acreedor hipotecario tiene derecho a solicitar la venta judicial del inmueble para cobrarse con el producto. La hipoteca debe formalizarse en escritura publica e inscribirse en el Registro Publico.', example: 'El banco otorga un credito hipotecario a veinte anos y constituye una hipoteca sobre la casa adquirida como garantia del pago total del prestamo.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'ISAI', category: 'Inmobiliario', definition: 'Impuesto Sobre Adquisicion de Inmuebles, tributo local que grava la compra o adquisicion de bienes inmuebles en la Ciudad de Mexico. La tasa del ISAI varia segun el valor del inmueble y se calcula conforme a tablas publicadas por la autoridad fiscal local. Su pago es requisito indispensable para la escrituracion e inscripcion en el Registro Publico.', example: 'Al comprar un departamento de tres millones de pesos en la Ciudad de Mexico, el comprador paga aproximadamente ciento cincuenta mil pesos por concepto de ISAI.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Avaluo', category: 'Inmobiliario', definition: 'Estudio tecnico realizado por un perito valuador que determina el valor comercial de un inmueble considerando su ubicacion, superficie, estado de conservacion, materiales de construccion y condiciones del mercado. El avaluo es requerido para operaciones de compraventa, creditos hipotecarios, juicios sucesorios y tramites fiscales relacionados con bienes inmuebles.', example: 'El banco solicita un avaluo del departamento antes de autorizar el credito hipotecario, determinando un valor comercial de cuatro millones de pesos.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Compraventa', category: 'Inmobiliario', definition: 'Contrato por el cual una persona transfiere la propiedad de un bien a otra a cambio de un precio cierto y en dinero. La compraventa de inmuebles en Mexico requiere formalizarse mediante escritura publica ante notario e inscribirse en el Registro Publico de la Propiedad para que la transmision de propiedad surta efectos frente a terceros.', example: 'Las partes firman un contrato de compraventa de un terreno de doscientos metros cuadrados en la alcaldia Coyoacan por un precio de dos millones de pesos.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Arrendamiento', category: 'Inmobiliario', definition: 'Contrato mediante el cual el propietario de un inmueble concede a otra persona el uso y goce temporal del bien a cambio del pago de una renta periodica. En la Ciudad de Mexico, la legislacion protege al arrendatario estableciendo limites a los incrementos de renta, plazos minimos y procedimientos especiales para desocupacion.', example: 'El propietario y el inquilino firman un contrato de arrendamiento por un ano con renta mensual de quince mil pesos y deposito equivalente a un mes.', relatedLink: '/blog/derechos-inquilino-cdmx-2026', relatedLabel: 'Derechos del inquilino' },
+  { term: 'Condominio', category: 'Inmobiliario', definition: 'Regimen de propiedad en el que cada propietario tiene derecho exclusivo sobre su unidad privativa y copropiedad sobre las areas y bienes comunes del inmueble. Los condominios se regulan por escritura constitutiva y reglamento interno que establecen las obligaciones de mantenimiento, cuotas y normas de convivencia entre los condominos.', example: 'Los propietarios del edificio celebran asamblea de condominos para aprobar el presupuesto anual de mantenimiento y la remodelacion de las areas comunes.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Usufructo', category: 'Inmobiliario', definition: 'Derecho real que permite a una persona usar y disfrutar un bien ajeno, incluyendo sus frutos y productos, sin alterar su sustancia. El usufructo puede constituirse por contrato, testamento o ley, y tiene caracter temporal. El usufructuario puede habitar el inmueble o rentarlo, pero no puede venderlo ni modificar su estructura.', example: 'El padre conserva el usufructo vitalicio de la casa mientras dona la nuda propiedad a sus hijos, permitiendole seguir viviendo ahi hasta su fallecimiento.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Servidumbre', category: 'Inmobiliario', definition: 'Gravamen real impuesto sobre un inmueble en beneficio de otro inmueble perteneciente a distinto dueno. La servidumbre mas comun es la de paso, que permite al propietario de un predio sin acceso a la via publica transitar por el predio vecino. Las servidumbres pueden ser legales, voluntarias, continuas o discontinuas, aparentes u ocultas.', example: 'El propietario de un terreno interior constituye una servidumbre de paso sobre el terreno vecino para poder acceder a la calle principal.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Zona restringida', category: 'Inmobiliario', definition: 'Franja territorial de cien kilometros a lo largo de las fronteras y cincuenta kilometros a lo largo de las costas de Mexico, donde los extranjeros no pueden adquirir el dominio directo de bienes inmuebles. Para comprar en esta zona, los extranjeros deben utilizar un fideicomiso bancario que les otorga los derechos de uso y disfrute del inmueble.', example: 'Un ciudadano estadounidense no puede comprar directamente una casa en Playa del Carmen y debe hacerlo a traves de un fideicomiso con un banco mexicano.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Inmatriculacion', category: 'Inmobiliario', definition: 'Procedimiento mediante el cual se inscribe por primera vez un inmueble en el Registro Publico de la Propiedad cuando no cuenta con antecedentes registrales. La inmatriculacion es necesaria para inmuebles que nunca han sido escriturados o cuya cadena de titulacion se ha perdido, y puede tramitarse por via judicial o notarial.', example: 'El propietario de un terreno rural sin antecedentes registrales inicia el procedimiento de inmatriculacion ante notario para obtener su primera inscripcion en el Registro Publico.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+  { term: 'Titulo de propiedad', category: 'Inmobiliario', definition: 'Documento legal que acredita la titularidad de un bien inmueble. En Mexico, el titulo de propiedad por excelencia es la escritura publica inscrita en el Registro Publico de la Propiedad. Contar con titulo de propiedad debidamente registrado otorga certeza juridica, facilita la venta del inmueble y permite acceder a creditos hipotecarios.', example: 'El comprador recibe su titulo de propiedad una vez que el notario inscribe la escritura de compraventa en el Registro Publico de la Propiedad.', relatedLink: '/especialidades/derecho-inmobiliario-cdmx', relatedLabel: 'Derecho Inmobiliario' },
+
+  // MIGRATORIO (15)
+  { term: 'Visa', category: 'Migratorio', definition: 'Autorizacion otorgada por una autoridad consular o migratoria que permite a un extranjero solicitar entrada a un pais. En Mexico, existen diferentes tipos de visa segun el proposito de la estancia: turismo, negocios, estudios, trabajo y residencia. La visa se tramita ante el consulado mexicano del pais de origen del solicitante.', example: 'Un ciudadano colombiano tramita su visa de residente temporal ante el consulado mexicano en Bogota para mudarse a la Ciudad de Mexico por motivos laborales.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Residencia temporal', category: 'Migratorio', definition: 'Condicion de estancia que autoriza a un extranjero a permanecer en Mexico por un periodo de uno a cuatro anos, con posibilidad de renovacion. La residencia temporal permite trabajar, estudiar y realizar actividades lucrativas cuando se obtiene el permiso correspondiente. Puede obtenerse por oferta de empleo, vinculos familiares, solvencia economica o razones humanitarias.', example: 'Un profesional espanol obtiene residencia temporal por cuatro anos mediante una oferta de empleo de una empresa mexicana que tramita el permiso ante el INM.', relatedLink: '/blog/residencia-permanente-mexico-2026', relatedLabel: 'Residencia en Mexico' },
+  { term: 'Residencia permanente', category: 'Migratorio', definition: 'Condicion de estancia que autoriza a un extranjero a vivir indefinidamente en Mexico con plenos derechos para trabajar y realizar cualquier actividad licita. La residencia permanente se obtiene tras cuatro anos de residencia temporal, por vinculo familiar con mexicano, por razones humanitarias o por acumular suficientes puntos en el sistema migratorio.', example: 'Despues de cuatro anos con residencia temporal, la ciudadana francesa solicita el cambio a residencia permanente que le permite vivir indefinidamente en Mexico.', relatedLink: '/blog/residencia-permanente-mexico-2026', relatedLabel: 'Residencia en Mexico' },
+  { term: 'Naturalizacion', category: 'Migratorio', definition: 'Procedimiento legal mediante el cual un extranjero adquiere la nacionalidad mexicana por decision voluntaria, cumpliendo los requisitos establecidos en la Ley de Nacionalidad. Se requiere haber residido en Mexico por al menos cinco anos consecutivos, acreditar conocimiento del idioma espanol y de la historia del pais, y renunciar a cualquier otra nacionalidad.', example: 'Un ciudadano argentino con diez anos de residencia en Mexico inicia el tramite de naturalizacion ante la Secretaria de Relaciones Exteriores para obtener la nacionalidad mexicana.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'INM', category: 'Migratorio', definition: 'Instituto Nacional de Migracion, organo administrativo desconcentrado de la Secretaria de Gobernacion encargado de ejecutar la politica migratoria de Mexico. El INM controla la entrada y salida de personas del territorio nacional, otorga y revoca condiciones de estancia, realiza verificaciones migratorias y administra las estaciones migratorias del pais.', example: 'El extranjero acude a las oficinas del INM en la Ciudad de Mexico para renovar su tarjeta de residencia temporal antes de su vencimiento.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Deportacion', category: 'Migratorio', definition: 'Accion del Estado mexicano de expulsar del territorio nacional a un extranjero que se encuentra en situacion migratoria irregular o que ha cometido infracciones graves a la ley. La deportacion implica la prohibicion de reingreso al pais por un periodo determinado y se ejecuta tras un procedimiento administrativo con garantias de audiencia y defensa.', example: 'Un extranjero que permanecio en Mexico despues del vencimiento de su visa es sujeto a un procedimiento de deportacion ante el INM.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Estacion migratoria', category: 'Migratorio', definition: 'Instalacion del Instituto Nacional de Migracion destinada a alojar temporalmente a extranjeros que se encuentran en situacion migratoria irregular mientras se resuelve su situacion juridica. Las estaciones migratorias deben garantizar condiciones dignas de estancia, acceso a comunicacion con familiares y representacion legal, y atencion medica adecuada.', example: 'El migrante centroamericano es trasladado a la estacion migratoria de Iztapalapa mientras su abogado tramita la solicitud de reconocimiento de refugiado.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Tarjeta de visitante', category: 'Migratorio', definition: 'Documento migratorio que acredita la condicion de estancia de visitante en Mexico, ya sea sin permiso para realizar actividades remuneradas o con autorizacion para trabajar. La tarjeta de visitante por razones humanitarias se otorga a solicitantes de asilo, refugio o victimas de delitos mientras se resuelve su situacion migratoria.', example: 'El solicitante de refugio recibe una tarjeta de visitante por razones humanitarias que le permite permanecer legalmente en Mexico durante el analisis de su caso.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'CURP', category: 'Migratorio', definition: 'Clave Unica de Registro de Poblacion, codigo alfanumerico de dieciocho caracteres que identifica a cada persona en Mexico, tanto nacionales como extranjeros con residencia. La CURP es indispensable para tramites gubernamentales, escolares, laborales y bancarios. Los extranjeros con condicion de estancia regular pueden obtener su CURP ante el RENAPO.', example: 'El extranjero con residencia temporal tramita su CURP en las oficinas del Registro Civil para poder inscribirse en el IMSS y abrir una cuenta bancaria.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Permiso de trabajo', category: 'Migratorio', definition: 'Autorizacion migratoria que permite a un extranjero realizar actividades remuneradas en Mexico. El permiso de trabajo puede otorgarse como parte de la residencia temporal o mediante una tarjeta de visitante con permiso para realizar actividades remuneradas. El empleador mexicano debe participar activamente en el tramite ante el INM.', example: 'La empresa mexicana gestiona ante el INM el permiso de trabajo para un ingeniero aleman que se incorporara como director de proyectos por dos anos.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Reunificacion familiar', category: 'Migratorio', definition: 'Derecho de un extranjero residente en Mexico a solicitar que sus familiares directos obtengan una condicion de estancia que les permita vivir juntos en el pais. La reunificacion familiar aplica para conyuges, hijos menores de edad, hijos mayores dependientes y padres del residente. Es uno de los supuestos mas solidos para obtener la residencia en Mexico.', example: 'Un residente permanente mexicano solicita la reunificacion familiar para que su esposa y dos hijos menores obtengan residencia temporal en Mexico.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Asilo', category: 'Migratorio', definition: 'Proteccion que un Estado otorga a una persona perseguida por motivos politicos en su pais de origen. En Mexico, el derecho de asilo tiene rango constitucional y se tramita ante la Secretaria de Relaciones Exteriores. El asilado politico recibe proteccion y puede obtener residencia permanente sin necesidad de cumplir los requisitos ordinarios.', example: 'Un periodista perseguido por el gobierno de su pais solicita asilo politico ante la embajada de Mexico, obteniendo proteccion y residencia permanente.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Refugio', category: 'Migratorio', definition: 'Proteccion internacional otorgada a personas que huyen de su pais debido a persecucion por motivos de raza, religion, nacionalidad, opinion politica o pertenencia a grupo social, o por violencia generalizada. En Mexico, la COMAR analiza las solicitudes de refugio y otorga la condicion de refugiado, que da derecho a residencia permanente.', example: 'Una familia hondurena que huye de la violencia en su comunidad presenta solicitud de reconocimiento de la condicion de refugiado ante la COMAR en Tapachula.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'Apatrida', category: 'Migratorio', definition: 'Persona que no es considerada nacional por ningun Estado conforme a su legislacion. En Mexico, la condicion de apatrida es reconocida y protegida, otorgando a estas personas el derecho a obtener residencia permanente y acceso a servicios basicos. La determinacion de apatridia se realiza ante la Secretaria de Gobernacion conforme a convenios internacionales.', example: 'Una persona nacida en transito entre dos paises que no reconocen su nacionalidad solicita el reconocimiento de su condicion de apatrida en Mexico para obtener documentacion legal.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+  { term: 'RNIE', category: 'Migratorio', definition: 'Registro Nacional de Inversiones Extranjeras, registro obligatorio ante la Secretaria de Economia para extranjeros que realizan inversiones en Mexico, sociedades mexicanas con participacion extranjera y fideicomisos con participacion de extranjeros. La inscripcion en el RNIE es requisito legal y su incumplimiento puede generar multas e impedimentos para realizar operaciones.', example: 'La empresa con capital mayoritariamente extranjero se inscribe en el RNIE dentro de los cuarenta dias habiles posteriores a su constitucion, como lo establece la ley.', relatedLink: '/especialidades/derecho-migratorio-cdmx', relatedLabel: 'Derecho Migratorio' },
+
+  // LABORAL (15)
+  { term: 'Despido injustificado', category: 'Laboral', definition: 'Terminacion de la relacion laboral por decision unilateral del patron sin que exista una causa justificada prevista en la Ley Federal del Trabajo. El despido injustificado genera el derecho del trabajador a recibir una indemnizacion constitucional de tres meses de salario, veinte dias por ano trabajado, prima de antiguedad y prestaciones proporcionales.', example: 'Un empleado con cinco anos de antiguedad es despedido sin previo aviso ni causa justificada y demanda ante el tribunal laboral el pago de su liquidacion completa.', relatedLink: '/blog/despido-injustificado-cdmx-2026', relatedLabel: 'Despido injustificado' },
+  { term: 'Finiquito', category: 'Laboral', definition: 'Documento y pago que recibe el trabajador al terminar voluntariamente su relacion laboral o al concluir un contrato de trabajo. El finiquito incluye el pago proporcional de vacaciones, prima vacacional, aguinaldo, dias trabajados no pagados y cualquier otra prestacion devengada. Su firma implica la conformidad del trabajador con la liquidacion de adeudos.', example: 'Al renunciar voluntariamente, el trabajador recibe su finiquito que incluye quince dias de vacaciones proporcionales, prima vacacional y aguinaldo proporcional.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Liquidacion', category: 'Laboral', definition: 'Pago total que corresponde al trabajador cuando la relacion laboral termina por causa imputable al patron, como el despido injustificado. La liquidacion comprende tres meses de salario como indemnizacion constitucional, veinte dias de salario por cada ano de servicios, prima de antiguedad, y las prestaciones proporcionales correspondientes.', example: 'El trabajador despedido injustificadamente con diez anos de antiguedad recibe una liquidacion que incluye tres meses de salario mas doscientos dias de salario por antiguedad.', relatedLink: '/blog/despido-injustificado-cdmx-2026', relatedLabel: 'Despido injustificado' },
+  { term: 'Salario diario integrado', category: 'Laboral', definition: 'Monto que resulta de sumar al salario diario ordinario las prestaciones que recibe el trabajador de forma regular y permanente, como aguinaldo, prima vacacional y cualquier otra prestacion cuantificable. El salario diario integrado se utiliza como base para calcular indemnizaciones, aportaciones al IMSS e INFONAVIT y otras obligaciones laborales.', example: 'Un trabajador con salario diario de quinientos pesos tiene un salario diario integrado de quinientos sesenta pesos al incluir la parte proporcional de aguinaldo y prima vacacional.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Prima de antiguedad', category: 'Laboral', definition: 'Prestacion laboral que consiste en el pago de doce dias de salario por cada ano de servicios prestados, calculada sobre el salario diario del trabajador con un tope de dos salarios minimos. La prima de antiguedad se paga al trabajador que se separa voluntariamente despues de quince anos de servicio, o al ser despedido independientemente de la antiguedad.', example: 'Un trabajador con veinte anos de servicio recibe doscientos cuarenta dias de salario como prima de antiguedad al ser liquidado por cierre de la empresa.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Aguinaldo', category: 'Laboral', definition: 'Prestacion laboral obligatoria que consiste en el pago de al menos quince dias de salario antes del veinte de diciembre de cada ano. Los trabajadores que no hayan cumplido un ano de servicio tienen derecho a la parte proporcional. El aguinaldo es irrenunciable y su incumplimiento puede ser sancionado por las autoridades laborales.', example: 'La empresa paga treinta dias de aguinaldo a todos sus empleados antes del veinte de diciembre, superando el minimo legal de quince dias.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Vacaciones', category: 'Laboral', definition: 'Periodo de descanso remunerado al que tiene derecho todo trabajador despues de un ano de servicios. Conforme a la reforma laboral de 2023, los trabajadores en Mexico tienen derecho a un minimo de doce dias de vacaciones el primer ano, con incrementos progresivos. Las vacaciones son irrenunciables y deben disfrutarse dentro de los seis meses siguientes al aniversario.', example: 'Un trabajador con tres anos de antiguedad disfruta de dieciseis dias de vacaciones pagadas conforme a la tabla progresiva de la Ley Federal del Trabajo.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Prima vacacional', category: 'Laboral', definition: 'Prestacion adicional equivalente al menos al veinticinco por ciento del salario correspondiente al periodo de vacaciones. La prima vacacional tiene como finalidad que el trabajador cuente con recursos adicionales para disfrutar efectivamente de su periodo de descanso. Se paga junto con el salario del periodo vacacional.', example: 'El trabajador recibe doce dias de vacaciones mas una prima vacacional de tres dias de salario, equivalente al veinticinco por ciento del periodo vacacional.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'IMSS', category: 'Laboral', definition: 'Instituto Mexicano del Seguro Social, organismo encargado de proporcionar seguridad social a los trabajadores y sus familias. El IMSS ofrece servicios medicos, prestaciones economicas por incapacidad, pension por invalidez y vida, guarderias y prestaciones sociales. El patron esta obligado a registrar a sus trabajadores y pagar las cuotas obrero-patronales correspondientes.', example: 'El patron inscribe a su nuevo empleado ante el IMSS dentro de los primeros cinco dias habiles de trabajo para garantizar su cobertura de seguridad social.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'INFONAVIT', category: 'Laboral', definition: 'Instituto del Fondo Nacional de la Vivienda para los Trabajadores, organismo que administra el fondo de vivienda de los trabajadores asalariados. El patron aporta el cinco por ciento del salario de cada trabajador a su subcuenta de vivienda. Con estos recursos, los trabajadores pueden obtener creditos para comprar, construir, reparar o mejorar su vivienda.', example: 'Despues de cuatro anos cotizando, el trabajador obtiene un credito INFONAVIT de un millon doscientos mil pesos para comprar su primera vivienda en la Ciudad de Mexico.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Contrato de trabajo', category: 'Laboral', definition: 'Acuerdo por el cual una persona se obliga a prestar un servicio personal subordinado a otra, mediante el pago de un salario. El contrato de trabajo puede ser por tiempo indeterminado, por obra determinada, por tiempo determinado o para capacitacion inicial. Debe constar por escrito y contener las condiciones esenciales de la relacion laboral.', example: 'La empresa elabora un contrato de trabajo por tiempo indeterminado que establece salario, horario, prestaciones y funciones especificas del puesto.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Outsourcing', category: 'Laboral', definition: 'Practica de subcontratar personal a traves de empresas especializadas para realizar actividades que no forman parte del objeto social principal de la empresa contratante. Desde la reforma laboral de 2021, la subcontratacion de personal esta prohibida en Mexico; solo se permite la subcontratacion de servicios especializados registrados ante la STPS.', example: 'La empresa de manufactura contrata un servicio especializado de limpieza registrado ante la STPS, cumpliendo con la nueva regulacion de outsourcing vigente desde 2021.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'PTU', category: 'Laboral', definition: 'Participacion de los Trabajadores en las Utilidades, derecho constitucional de los trabajadores a recibir una parte de las ganancias de la empresa. El reparto se calcula sobre el diez por ciento de la utilidad fiscal y se distribuye en partes iguales considerando dias trabajados y salarios devengados. El pago debe realizarse en los sesenta dias siguientes a la declaracion fiscal anual.', example: 'La empresa reparte el diez por ciento de sus utilidades entre sus empleados en mayo, con un tope maximo de tres meses de salario por trabajador conforme a la ley.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'Demanda laboral', category: 'Laboral', definition: 'Accion legal que un trabajador o patron interpone ante los Tribunales Laborales para resolver un conflicto derivado de la relacion de trabajo. A partir de la reforma laboral de 2019, las demandas laborales se presentan ante los nuevos Tribunales Laborales del Poder Judicial, previa etapa de conciliacion obligatoria ante el Centro Federal de Conciliacion.', example: 'El trabajador despedido presenta su demanda laboral ante el Tribunal Laboral de la Ciudad de Mexico, solicitando el pago de su liquidacion completa y salarios caidos.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+  { term: 'PROFEDET', category: 'Laboral', definition: 'Procuraduria Federal de la Defensa del Trabajo, organismo del gobierno federal que proporciona asesoria juridica gratuita y representacion legal a trabajadores en conflictos laborales. PROFEDET ofrece servicios de orientacion, conciliacion y defensa ante tribunales laborales sin costo alguno para el trabajador, independientemente de su nivel de ingresos.', example: 'Un trabajador que no puede costear un abogado particular acude a PROFEDET para recibir asesoria gratuita y representacion en su demanda por despido injustificado.', relatedLink: '/especialidades/derecho-laboral-cdmx', relatedLabel: 'Derecho Laboral' },
+];
+
+// Group terms by first letter
+const grouped: Record<string, Term[]> = {};
+terms.forEach(t => {
+  const letter = t.term.charAt(0).toUpperCase();
+  if (!grouped[letter]) grouped[letter] = [];
+  grouped[letter].push(t);
+});
+
+// Sort letters and terms within each letter
+const sortedLetters = Object.keys(grouped).sort((a, b) => a.localeCompare(b, 'es'));
+sortedLetters.forEach(letter => {
+  grouped[letter].sort((a, b) => a.term.localeCompare(b.term, 'es'));
+});
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+// Top 10 FAQ terms
+const faqTerms = [
+  terms.find(t => t.term === 'Pension alimenticia')!,
+  terms.find(t => t.term === 'Amparo')!,
+  terms.find(t => t.term === 'Despido injustificado')!,
+  terms.find(t => t.term === 'Divorcio')!,
+  terms.find(t => t.term === 'Escritura publica')!,
+  terms.find(t => t.term === 'Residencia permanente')!,
+  terms.find(t => t.term === 'Sociedad anonima')!,
+  terms.find(t => t.term === 'Usucapion')!,
+  terms.find(t => t.term === 'Custodia')!,
+  terms.find(t => t.term === 'Finiquito')!,
+];
+
+function slugify(text: string): string {
+  return text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://abogadosencdmx.com/glosario-legal#termset",
+      "name": "Glosario Legal de Mexico",
+      "description": "Glosario completo de terminos juridicos del derecho mexicano con mas de 120 definiciones en derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral.",
+      "url": "https://abogadosencdmx.com/glosario-legal",
+      "inLanguage": "es-MX",
+      "hasDefinedTerm": terms.map(t => ({
+        "@type": "DefinedTerm",
+        "name": t.term,
+        "description": t.definition,
+        "url": `https://abogadosencdmx.com/glosario-legal#${slugify(t.term)}`,
+        "inDefinedTermSet": "https://abogadosencdmx.com/glosario-legal#termset"
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Glosario Legal", "item": "https://abogadosencdmx.com/glosario-legal" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqTerms.map(t => ({
+        "@type": "Question",
+        "name": `¿Que es ${t.term.toLowerCase()} en el derecho mexicano?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t.definition
+        }
+      }))
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="glossary-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li aria-current="page">Glosario Legal</li>
+        </ol>
+      </nav>
+      <span class="badge">200+ terminos legales explicados</span>
+      <h1>Glosario Legal de Mexico</h1>
+      <p class="hero-desc">Definiciones claras y actualizadas de los terminos juridicos mas importantes del sistema legal mexicano. Consulte conceptos de derecho familiar, penal, civil, corporativo, inmobiliario, migratorio y laboral.</p>
+    </div>
+  </section>
+
+  <!-- Alphabet Nav -->
+  <nav class="alpha-nav" id="alphaNav" aria-label="Navegacion alfabetica">
+    <div class="container alpha-inner">
+      {alphabet.map(letter => (
+        <a
+          href={`#letra-${letter}`}
+          class={`alpha-link ${grouped[letter] ? '' : 'disabled'}`}
+          data-letter={letter}
+          aria-label={`Ir a terminos con la letra ${letter}`}
+        >{letter}</a>
+      ))}
+    </div>
+  </nav>
+
+  <!-- Search -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-wrap">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="glossarySearch" placeholder="Buscar termino legal... (ej. pension alimenticia, amparo, divorcio)" aria-label="Buscar termino legal" autocomplete="off" />
+        <span class="search-count" id="searchCount">{terms.length} terminos</span>
+      </div>
+      <div class="category-filters" id="categoryFilters">
+        <button class="cat-btn active" data-cat="all">Todos</button>
+        {Object.keys(categoryColors).map(cat => (
+          <button class="cat-btn" data-cat={cat} style={`--cat-color: ${categoryColors[cat]}`}>{cat}</button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section class="terms-section">
+    <div class="container">
+      {sortedLetters.map(letter => (
+        <div class="letter-group" id={`letra-${letter}`} data-letter={letter}>
+          <h2 class="letter-heading">{letter}</h2>
+          <div class="terms-grid">
+            {grouped[letter].map(t => (
+              <article
+                class="term-card"
+                id={slugify(t.term)}
+                data-term={t.term.toLowerCase()}
+                data-category={t.category}
+                style={`--card-accent: ${categoryColors[t.category]}`}
+              >
+                <div class="term-header">
+                  <h3 class="term-title">
+                    <a href={`#${slugify(t.term)}`}>{t.term}</a>
+                  </h3>
+                  <span class="term-badge" style={`background: ${categoryColors[t.category]}22; color: ${categoryColors[t.category]}`}>{t.category}</span>
+                </div>
+                <p class="term-def">{t.definition}</p>
+                <p class="term-example"><strong>Ejemplo:</strong> {t.example}</p>
+                {t.relatedLink && (
+                  <a href={t.relatedLink} class="term-link">
+                    Ver mas: {t.relatedLabel}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+      <p class="no-results" id="noResults" style="display:none;">No se encontraron terminos que coincidan con su busqueda.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="glossary-cta">
+    <div class="container">
+      <h2>¿Necesita asesoria legal personalizada?</h2>
+      <p>Nuestro equipo de abogados en la Ciudad de Mexico puede orientarle sobre cualquier termino o procedimiento juridico. Agende una consulta inicial sin costo.</p>
+      <div class="cta-buttons">
+        <a href="/asesoria-inicial" class="btn-primary">Agendar asesoria gratuita</a>
+        <a href="/especialidades" class="btn-secondary">Ver especialidades</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  /* ── Hero ── */
+  .glossary-hero {
+    background: linear-gradient(135deg, #1a2332 0%, #0d1821 100%);
+    padding: 7rem 0 3.5rem;
+    color: #fff;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .breadcrumb ol {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    font-size: .875rem;
+    color: rgba(255,255,255,.6);
+  }
+  .breadcrumb li + li::before {
+    content: '/';
+    margin-right: .5rem;
+    color: rgba(255,255,255,.3);
+  }
+  .breadcrumb a {
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .breadcrumb a:hover { color: #c17f3e; }
+  .badge {
+    display: inline-block;
+    background: rgba(193,127,62,.15);
+    color: #c17f3e;
+    padding: .35rem .9rem;
+    border-radius: 2rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+    margin-bottom: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .glossary-hero h1 {
+    font-family: 'Prata', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    color: #fff;
+  }
+  .hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,.75);
+    max-width: 700px;
+    margin: 0;
+  }
+
+  /* ── Alphabet Nav ── */
+  .alpha-nav {
+    background: #1a2332;
+    border-bottom: 1px solid rgba(193,127,62,.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: .75rem 0;
+  }
+  .alpha-inner {
+    display: flex;
+    gap: .25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .alpha-inner::-webkit-scrollbar { display: none; }
+  .alpha-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.7);
+    text-decoration: none;
+    transition: all .2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    flex-shrink: 0;
+  }
+  .alpha-link:hover { background: rgba(193,127,62,.15); color: #c17f3e; }
+  .alpha-link.active { background: #c17f3e; color: #fff; }
+  .alpha-link.disabled { opacity: .25; pointer-events: none; }
+
+  /* ── Search ── */
+  .search-section {
+    background: #0d1821;
+    padding: 2rem 0 1rem;
+  }
+  .search-wrap {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 1.25rem;
+  }
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,.4);
+    pointer-events: none;
+  }
+  #glossarySearch {
+    width: 100%;
+    padding: .9rem 1rem .9rem 2.8rem;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(193,127,62,.25);
+    border-radius: .75rem;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    box-sizing: border-box;
+  }
+  #glossarySearch::placeholder { color: rgba(255,255,255,.35); }
+  #glossarySearch:focus {
+    border-color: #c17f3e;
+    box-shadow: 0 0 0 3px rgba(193,127,62,.15);
+  }
+  .search-count {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .8rem;
+    color: rgba(255,255,255,.4);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .category-filters {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cat-btn {
+    padding: .4rem .85rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,.15);
+    background: transparent;
+    color: rgba(255,255,255,.6);
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .cat-btn:hover { border-color: rgba(255,255,255,.35); color: #fff; }
+  .cat-btn.active {
+    background: var(--cat-color, #c17f3e);
+    border-color: var(--cat-color, #c17f3e);
+    color: #fff;
+  }
+
+  /* ── Terms ── */
+  .terms-section {
+    background: #0d1821;
+    padding: 2rem 0 4rem;
+  }
+  .letter-group {
+    margin-bottom: 2.5rem;
+    scroll-margin-top: 5rem;
+  }
+  .letter-heading {
+    font-family: 'Prata', serif;
+    font-size: 2.5rem;
+    color: #c17f3e;
+    border-bottom: 2px solid rgba(193,127,62,.2);
+    padding-bottom: .5rem;
+    margin: 0 0 1.5rem;
+  }
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .term-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    border-left: 4px solid var(--card-accent);
+    border-radius: .75rem;
+    padding: 1.5rem;
+    transition: transform .2s, box-shadow .2s, background .2s;
+    scroll-margin-top: 5rem;
+  }
+  .term-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+    background: rgba(255,255,255,.05);
+  }
+  .term-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: .75rem;
+    flex-wrap: wrap;
+  }
+  .term-title {
+    font-family: 'Prata', serif;
+    font-size: 1.25rem;
+    margin: 0;
+    color: #fff;
+  }
+  .term-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .term-title a:hover { color: #c17f3e; }
+  .term-badge {
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .25rem .6rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    flex-shrink: 0;
+  }
+  .term-def {
+    color: rgba(255,255,255,.75);
+    font-size: .95rem;
+    line-height: 1.7;
+    margin: 0 0 .75rem;
+  }
+  .term-example {
+    color: rgba(255,255,255,.55);
+    font-size: .875rem;
+    line-height: 1.6;
+    margin: 0 0 .75rem;
+    padding: .75rem;
+    background: rgba(255,255,255,.03);
+    border-radius: .5rem;
+    border-left: 2px solid rgba(193,127,62,.3);
+  }
+  .term-example strong { color: #c17f3e; }
+  .term-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .85rem;
+    color: #c17f3e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap .2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .term-link:hover { gap: .6rem; }
+  .no-results {
+    text-align: center;
+    color: rgba(255,255,255,.5);
+    font-size: 1.1rem;
+    padding: 3rem 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* ── CTA ── */
+  .glossary-cta {
+    background: linear-gradient(135deg, #1a2332 0%, #0d1821 100%);
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(193,127,62,.15);
+  }
+  .glossary-cta h2 {
+    font-family: 'Prata', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: #fff;
+    margin: 0 0 1rem;
+  }
+  .glossary-cta p {
+    color: rgba(255,255,255,.65);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #c17f3e;
+    color: #fff;
+    padding: .85rem 2rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .95rem;
+    transition: background .2s, transform .15s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .btn-primary:hover { background: #a96b30; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid rgba(193,127,62,.4);
+    color: #c17f3e;
+    padding: .85rem 2rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .95rem;
+    transition: background .2s, transform .15s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .btn-secondary:hover { background: rgba(193,127,62,.1); transform: translateY(-1px); }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .terms-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .glossary-hero { padding: 5.5rem 0 2.5rem; }
+    .alpha-inner { justify-content: flex-start; flex-wrap: nowrap; }
+    .alpha-link { width: 2rem; height: 2rem; font-size: .75rem; }
+    .term-card { padding: 1.15rem; }
+    .letter-heading { font-size: 2rem; }
+    .category-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: .5rem; }
+    .cat-btn { flex-shrink: 0; }
+  }
+
+  /* ── Print ── */
+  @media print {
+    .alpha-nav, .search-section, .glossary-cta, .term-link { display: none; }
+    .glossary-hero { background: #fff; color: #000; padding: 1rem 0; }
+    .glossary-hero h1 { color: #000; font-size: 1.5rem; }
+    .hero-desc { color: #333; }
+    .badge { color: #333; background: #eee; }
+    .terms-section { background: #fff; padding: 1rem 0; }
+    .term-card { background: #fff; border: 1px solid #ccc; color: #000; break-inside: avoid; }
+    .term-title, .term-title a { color: #000; }
+    .term-def { color: #333; }
+    .term-example { color: #555; background: #f5f5f5; }
+    .letter-heading { color: #333; }
+    .breadcrumb { display: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('glossarySearch') as HTMLInputElement;
+    const searchCount = document.getElementById('searchCount') as HTMLElement;
+    const noResults = document.getElementById('noResults') as HTMLElement;
+    const cards = document.querySelectorAll('.term-card') as NodeListOf<HTMLElement>;
+    const letterGroups = document.querySelectorAll('.letter-group') as NodeListOf<HTMLElement>;
+    const alphaLinks = document.querySelectorAll('.alpha-link') as NodeListOf<HTMLAnchorElement>;
+    const catButtons = document.querySelectorAll('.cat-btn') as NodeListOf<HTMLButtonElement>;
+
+    let activeCategory = 'all';
+
+    // Filter terms
+    function filterTerms() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const term = card.dataset.term || '';
+        const cat = card.dataset.category || '';
+        const text = card.textContent?.toLowerCase() || '';
+
+        const matchesSearch = !query || term.includes(query) || text.includes(query);
+        const matchesCat = activeCategory === 'all' || cat === activeCategory;
+
+        if (matchesSearch && matchesCat) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/hide letter groups
+      letterGroups.forEach(group => {
+        const visibleCards = group.querySelectorAll('.term-card:not([style*="display: none"])');
+        group.style.display = visibleCards.length > 0 ? '' : 'none';
+      });
+
+      searchCount.textContent = `${visible} termino${visible !== 1 ? 's' : ''}`;
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterTerms);
+
+    // Category filter
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.cat || 'all';
+        filterTerms();
+      });
+    });
+
+    // Smooth scroll to letter
+    alphaLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const letter = link.dataset.letter;
+        const target = document.getElementById(`letra-${letter}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active letter on scroll
+    const observerOptions = {
+      rootMargin: '-80px 0px -70% 0px',
+      threshold: 0
+    };
+
+    const letterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const letter = (entry.target as HTMLElement).dataset.letter;
+          alphaLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.letter === letter);
+          });
+        }
+      });
+    }, observerOptions);
+
+    letterGroups.forEach(group => letterObserver.observe(group));
+
+    // Highlight term from URL hash
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target && target.classList.contains('term-card')) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.style.boxShadow = '0 0 0 2px #c17f3e, 0 8px 30px rgba(193,127,62,.3)';
+          setTimeout(() => { target.style.boxShadow = ''; }, 3000);
+        }, 300);
+      }
+    }
+  });
+</script>

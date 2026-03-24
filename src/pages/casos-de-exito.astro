@@ -1,0 +1,495 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Casos de Éxito — Resultados Reales de Nuestro Despacho | Abogados en CDMX';
+const description = 'Conozca los casos de éxito de Abogados en CDMX. Más de 300 casos resueltos en derecho familiar, penal, civil, corporativo, inmobiliario y migratorio con resultados comprobables.';
+const canonical = 'https://abogadosencdmx.com/casos-de-exito';
+
+const specialtyColors: Record<string, { bg: string; text: string }> = {
+  'Derecho Familiar': { bg: '#e8f0fe', text: '#1a56db' },
+  'Derecho Penal': { bg: '#fde8e8', text: '#c81e1e' },
+  'Derecho Civil': { bg: '#e8f5e9', text: '#276749' },
+  'Derecho Corporativo': { bg: '#fef3c7', text: '#92400e' },
+  'Derecho Inmobiliario': { bg: '#ede9fe', text: '#5b21b6' },
+  'Derecho Migratorio': { bg: '#e0f2fe', text: '#0369a1' },
+  'Derecho Laboral': { bg: '#fce7f3', text: '#9d174d' },
+};
+
+const casos = [
+  {
+    categoria: 'Derecho Familiar',
+    titulo: 'Pensión alimenticia para madre de dos hijos en Benito Juárez',
+    ubicacion: 'Alcaldía Benito Juárez, CDMX',
+    desafio: 'Una madre de dos menores enfrentaba incumplimiento total de pensión alimenticia por parte del padre, quien ocultaba ingresos mediante una empresa familiar. Los hijos carecían de recursos para alimentación, educación y atención médica. El padre argumentaba ingresos mínimos pese a mantener un nivel de vida elevado.',
+    solucion: 'El equipo de derecho familiar realizó una investigación patrimonial completa, identificando cuentas bancarias, propiedades y vehículos a nombre del obligado alimentario. Se presentó demanda ante el Juzgado Familiar de la Ciudad de México con pruebas contundentes del nivel socioeconómico real del padre y se solicitaron medidas provisionales.',
+    resultado: 'Se obtuvo sentencia favorable que fijó una pensión alimenticia de $18,500 mensuales para ambos menores, retroactiva desde la fecha de la demanda. El juez ordenó además el aseguramiento de bienes como garantía de pago.',
+    metrica: '$18,500/mes',
+    metricaLabel: 'Pensión mensual obtenida',
+    tiempo: '45 días',
+    abogado: 'Lic. Andrea Solís',
+    abogadoSlug: '/despacho-juridico/andrea-solis',
+  },
+  {
+    categoria: 'Derecho Familiar',
+    titulo: 'Custodia compartida para padre en Coyoacán',
+    ubicacion: 'Alcaldía Coyoacán, CDMX',
+    desafio: 'Un padre buscaba obtener la custodia compartida de su hija de 6 años tras la separación. La madre se oponía alegando que el padre no podía encargarse del cuidado cotidiano. El cliente enfrentaba el prejuicio histórico de los juzgados familiares que tienden a otorgar la custodia exclusiva a la madre.',
+    solucion: 'Se preparó un expediente sólido que demostró la participación activa del padre en la crianza: registros escolares, citas médicas, actividades extracurriculares y testimonios de vecinos y maestros. Se solicitó la intervención del equipo de psicología del juzgado para evaluar el vínculo paterno-filial y se presentó un plan de convivencia detallado.',
+    resultado: 'El Juzgado Familiar otorgó custodia compartida con un régimen de convivencia equitativo. La menor reside con cada progenitor en periodos alternados, preservando la estabilidad emocional y el contacto frecuente con ambos padres.',
+    metrica: 'Custodia compartida',
+    metricaLabel: 'Régimen de convivencia equitativo',
+    tiempo: '3 meses',
+    abogado: 'Lic. Andrea Solís',
+    abogadoSlug: '/despacho-juridico/andrea-solis',
+  },
+  {
+    categoria: 'Derecho Penal',
+    titulo: 'Defensa por acusación de robo: cliente liberado en 72 horas',
+    ubicacion: 'Alcaldía Cuauhtémoc, CDMX',
+    desafio: 'Un comerciante fue detenido y acusado de robo agravado con base en una identificación errónea por parte de la víctima. El cliente fue puesto a disposición del Ministerio Público y enfrentaba la posibilidad de prisión preventiva oficiosa al tratarse de un delito grave según el Código Penal de CDMX.',
+    solucion: 'El equipo de defensa penal acudió de inmediato a la audiencia inicial. Se presentaron pruebas de coartada — registros de videovigilancia de su negocio, comprobantes de venta y testimonios de clientes — que demostraban que el acusado se encontraba en su local comercial al momento de los hechos. Se solicitó la no vinculación a proceso.',
+    resultado: 'El juez de control determinó que no existían datos de prueba suficientes para vincular al cliente con el delito. Se decretó la no vinculación a proceso y el cliente fue liberado dentro del plazo constitucional de 72 horas, sin antecedentes penales.',
+    metrica: '72 horas',
+    metricaLabel: 'Tiempo hasta la liberación',
+    tiempo: '72 horas',
+    abogado: 'Lic. Roberto Fuentes',
+    abogadoSlug: '/despacho-juridico/roberto-fuentes',
+  },
+  {
+    categoria: 'Derecho Penal',
+    titulo: 'Orden de protección por violencia familiar en Roma Norte',
+    ubicacion: 'Colonia Roma Norte, CDMX',
+    desafio: 'Una mujer víctima de violencia familiar requería protección inmediata frente a su pareja. Había sufrido agresiones físicas y amenazas que ponían en riesgo su integridad y la de sus hijos. Necesitaba una orden de protección urgente y orientación para iniciar el proceso penal correspondiente.',
+    solucion: 'Se acudió a la Fiscalía Especializada en Delitos de Género para presentar la denuncia y se solicitó simultáneamente una orden de protección ante el juez de control. Se acompañó a la víctima durante todo el proceso de denuncia, certificación de lesiones y declaración ministerial.',
+    resultado: 'Se obtuvo una orden de protección de emergencia en menos de 24 horas que prohibía al agresor acercarse a la víctima y a sus hijos. Posteriormente se dictó vinculación a proceso contra el agresor y se aseguraron medidas cautelares permanentes durante el proceso penal.',
+    metrica: '24 horas',
+    metricaLabel: 'Orden de protección obtenida',
+    tiempo: '24 horas',
+    abogado: 'Lic. Roberto Fuentes',
+    abogadoSlug: '/despacho-juridico/roberto-fuentes',
+  },
+  {
+    categoria: 'Derecho Civil',
+    titulo: 'Cobro de deuda de $1.2 millones vía juicio ejecutivo mercantil',
+    ubicacion: 'Alcaldía Miguel Hidalgo, CDMX',
+    desafio: 'Una empresa proveedora de servicios tenía una deuda de $1,200,000 MXN respaldada por pagarés que el deudor se negaba a pagar pese a múltiples requerimientos extrajudiciales. El deudor había comenzado a transferir bienes a terceros para evitar un posible embargo.',
+    solucion: 'Se interpuso juicio ejecutivo mercantil con base en los pagarés como títulos de crédito. Se solicitó embargo precautorio sobre las cuentas bancarias y un inmueble del deudor antes de que completara la transferencia fraudulenta de bienes. Se obtuvo sentencia de remate en primera instancia.',
+    resultado: 'Se logró la recuperación completa de los $1,200,000 MXN más intereses moratorios y gastos judiciales. El cobro se ejecutó mediante el embargo de cuentas bancarias del deudor, evitando la necesidad de llegar al remate del inmueble.',
+    metrica: '$1.2M',
+    metricaLabel: 'Monto total recuperado',
+    tiempo: '6 meses',
+    abogado: 'Lic. Mariana Ortega',
+    abogadoSlug: '/despacho-juridico/mariana-ortega',
+  },
+  {
+    categoria: 'Derecho Civil',
+    titulo: 'Sucesión testamentaria: patrimonio de $8 millones distribuido entre 4 herederos',
+    ubicacion: 'Alcaldía Tlalpan, CDMX',
+    desafio: 'Cuatro hermanos herederos de un patrimonio valuado en $8,000,000 MXN — que incluía dos inmuebles, cuentas bancarias y un vehículo — no lograban ponerse de acuerdo sobre la partición de los bienes. Uno de los herederos ocupaba uno de los inmuebles y se negaba a desocuparlo o a compensar a los demás.',
+    solucion: 'Se inició juicio sucesorio testamentario ante el Juzgado Civil de la Ciudad de México. Se realizó el inventario y avalúo de todos los bienes del acervo hereditario. El equipo legal diseñó una propuesta de partición equitativa que fue sometida a aprobación judicial, incluyendo la compensación económica por el uso exclusivo del inmueble.',
+    resultado: 'Se logró la partición del patrimonio de $8,000,000 MXN entre los 4 herederos de manera equitativa. Cada heredero recibió su porción legal, se escrituraron los inmuebles a nombre de los nuevos propietarios y se liquidaron las cuentas bancarias conforme a las proporciones testamentarias.',
+    metrica: '$8M distribuidos',
+    metricaLabel: 'Patrimonio hereditario repartido',
+    tiempo: '8 meses',
+    abogado: 'Lic. Mariana Ortega',
+    abogadoSlug: '/despacho-juridico/mariana-ortega',
+  },
+  {
+    categoria: 'Derecho Corporativo',
+    titulo: 'Constitución de SA de CV para startup tecnológica en Condesa',
+    ubicacion: 'Colonia Condesa, CDMX',
+    desafio: 'Tres socios fundadores de una startup de tecnología financiera necesitaban constituir una sociedad que protegiera sus intereses, definiera la participación accionaria de forma diferenciada y previera la entrada futura de inversionistas. Requerían una estructura societaria que cumpliera con la regulación de la CNBV para operar como plataforma de pagos.',
+    solucion: 'El equipo corporativo diseñó los estatutos de una S.A. de C.V. con cláusulas de vesting, tag-along, drag-along y anti-dilución. Se estructuró un pacto de socios complementario y se preparó la documentación para el registro ante el SAT, IMSS e INFONAVIT. Se anticipó la estructura regulatoria para cumplir con los requisitos de la CNBV.',
+    resultado: 'La sociedad quedó legalmente constituida e inscrita en el Registro Público de Comercio en 15 días hábiles. Los estatutos fueron diseñados para facilitar rondas de inversión posteriores, lo que permitió a la empresa cerrar su primera ronda semilla tres meses después.',
+    metrica: '15 días hábiles',
+    metricaLabel: 'Constitución completada',
+    tiempo: '15 días hábiles',
+    abogado: 'Lic. Ian Montiel',
+    abogadoSlug: '/despacho-juridico/ian-montiel',
+  },
+  {
+    categoria: 'Derecho Corporativo',
+    titulo: 'Fusión de dos empresas de servicios sin objeciones de COFECE',
+    ubicacion: 'Alcaldía Cuauhtémoc, CDMX',
+    desafio: 'Dos empresas del sector de servicios profesionales con operaciones en la Ciudad de México decidieron fusionarse para fortalecer su posición en el mercado. La operación requería aprobación regulatoria, reorganización fiscal, transferencia de contratos laborales y migración de licencias y permisos.',
+    solucion: 'Se coordinó un proceso de due diligence integral que abarcó aspectos corporativos, fiscales, laborales y regulatorios. Se diseñó la estructura de fusión por absorción, se preparó la notificación a COFECE y se negoció la transferencia de todos los contratos comerciales y laborales vigentes sin interrupción de operaciones.',
+    resultado: 'La fusión se completó sin objeciones de COFECE y sin contingencias fiscales o laborales. Los 85 empleados de ambas empresas fueron transferidos sin pérdida de antigüedad y todos los contratos comerciales migraron a la entidad resultante sin interrupción del servicio.',
+    metrica: '0 objeciones COFECE',
+    metricaLabel: 'Fusión aprobada sin observaciones',
+    tiempo: '4 meses',
+    abogado: 'Lic. Ian Montiel',
+    abogadoSlug: '/despacho-juridico/ian-montiel',
+  },
+  {
+    categoria: 'Derecho Inmobiliario',
+    titulo: 'Desalojo de inquilino moroso en Polanco',
+    ubicacion: 'Colonia Polanco, CDMX',
+    desafio: 'El propietario de un departamento en Polanco llevaba 8 meses sin recibir el pago de renta por parte de su inquilino, quien se negaba a desocupar el inmueble. Los intentos de negociación extrajudicial habían fracasado y el inquilino aprovechaba las protecciones legales del Código Civil para dilatar el proceso.',
+    solucion: 'Se interpuso juicio especial de desahucio ante el Juzgado Civil de la Ciudad de México con base en el incumplimiento del contrato de arrendamiento. Se presentaron como pruebas los recibos de pago incumplidos, el contrato original y los requerimientos extrajudiciales notariales. Se solicitó el lanzamiento del inmueble como medida de ejecución.',
+    resultado: 'Se obtuvo sentencia favorable que ordenó la desocupación del inmueble y el pago de las rentas vencidas más daños y perjuicios. El propietario recuperó la posesión total de su departamento y obtuvo una condena por las rentas adeudadas.',
+    metrica: '3 meses',
+    metricaLabel: 'Propiedad recuperada',
+    tiempo: '3 meses',
+    abogado: 'Lic. Tania Mendoza',
+    abogadoSlug: '/despacho-juridico/tania-mendoza',
+  },
+  {
+    categoria: 'Derecho Inmobiliario',
+    titulo: 'Detección de irregularidad en título de propiedad: cliente ahorró $2.5M',
+    ubicacion: 'Alcaldía Benito Juárez, CDMX',
+    desafio: 'Un inversionista estaba por adquirir un inmueble comercial valuado en $2,500,000 MXN en la Alcaldía Benito Juárez. La operación parecía normal hasta que el equipo legal de Abogados en CDMX fue contratado para realizar el due diligence inmobiliario previo a la firma ante notario.',
+    solucion: 'Durante la revisión documental se detectó que el título de propiedad presentaba una irregularidad en la cadena traslativa de dominio: una compraventa previa no había sido inscrita correctamente en el Registro Público de la Propiedad, lo que generaba un defecto que hacía impugnable el título. Adicionalmente, se identificó un gravamen hipotecario no revelado por el vendedor.',
+    resultado: 'Se detuvo la operación antes de la firma y el pago. El cliente evitó la pérdida potencial de $2,500,000 MXN al no adquirir un inmueble con vicios en el título. El vendedor fue obligado a regularizar la situación antes de poder ofrecer nuevamente el inmueble en el mercado.',
+    metrica: '$2.5M ahorrados',
+    metricaLabel: 'Pérdida evitada al cliente',
+    tiempo: 'Due diligence preventivo',
+    abogado: 'Lic. Tania Mendoza',
+    abogadoSlug: '/despacho-juridico/tania-mendoza',
+  },
+  {
+    categoria: 'Derecho Migratorio',
+    titulo: 'Residencia permanente para familia venezolana de 4 integrantes',
+    ubicacion: 'Alcaldía Cuauhtémoc, CDMX',
+    desafio: 'Una familia de cuatro integrantes proveniente de Venezuela buscaba obtener la residencia permanente en México. Los padres y dos hijos menores llevaban más de dos años en el país con residencia temporal y necesitaban regularizar su situación migratoria de forma definitiva para acceder a empleo formal, seguro social y estabilidad para los menores.',
+    solucion: 'Se preparó cada expediente individual con documentación completa: pasaportes vigentes, tarjetas de residencia temporal, comprobantes de domicilio, constancias de solvencia económica y actas de nacimiento apostilladas. Se coordinó la presentación simultánea ante la Oficina de Representación del INM en la Ciudad de México para agilizar el proceso familiar.',
+    resultado: 'Los cuatro integrantes de la familia obtuvieron su tarjeta de residente permanente en 60 días. La familia ahora cuenta con acceso pleno al mercado laboral, servicios de salud del IMSS y estabilidad migratoria indefinida en México.',
+    metrica: '60 días',
+    metricaLabel: 'Residencia permanente aprobada',
+    tiempo: '60 días',
+    abogado: 'Lic. Diego Navarro',
+    abogadoSlug: '/despacho-juridico/diego-navarro',
+  },
+  {
+    categoria: 'Derecho Migratorio',
+    titulo: 'Visa de inversionista para empresario estadounidense',
+    ubicacion: 'Colonia Roma Norte, CDMX',
+    desafio: 'Un empresario estadounidense buscaba establecer una empresa de consultoría en la Ciudad de México y obtener la visa de residente temporal por inversión. Necesitaba constituir la sociedad, obtener el permiso de trabajo y regularizar su situación migratoria de forma simultánea para comenzar operaciones lo antes posible.',
+    solucion: 'Se coordinó un proceso integral que combinó la constitución de una S.A. de C.V. con capital de inversión calificado ante la Secretaría de Economía, la obtención de la constancia de inscripción en el Registro Nacional de Inversiones Extranjeras y la gestión del trámite migratorio ante el INM. El equipo corporativo y migratorio trabajó en paralelo para reducir tiempos.',
+    resultado: 'La empresa quedó constituida y la visa de residente temporal por inversión fue aprobada en 45 días. El empresario obtuvo su tarjeta de residente con permiso de trabajo y la empresa comenzó operaciones formales con alta ante el SAT, IMSS e INFONAVIT.',
+    metrica: '45 días',
+    metricaLabel: 'Empresa + visa aprobadas',
+    tiempo: '45 días',
+    abogado: 'Lic. Diego Navarro',
+    abogadoSlug: '/despacho-juridico/diego-navarro',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Casos de Éxito", "item": "https://abogadosencdmx.com/casos-de-exito" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Casos de éxito — Abogados en CDMX",
+      "description": "Resultados reales de nuestro despacho jurídico en la Ciudad de México.",
+      "url": "https://abogadosencdmx.com/casos-de-exito",
+      "numberOfItems": casos.length,
+      "itemListElement": casos.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": c.titulo,
+        "description": c.resultado
+      }))
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Casos de Éxito'}]} />
+      <div class="hero-pillar__content reveal">
+        <span class="casos-badge">Más de 300 casos resueltos desde 2014</span>
+        <h1 class="text-white">Casos de Éxito</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">Cada caso que presentamos representa una historia real de un cliente que confió en Abogados en CDMX para resolver su situación legal. Los nombres y datos identificatorios han sido modificados para proteger la confidencialidad de nuestros clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="casos-stats-bar">
+    <div class="container">
+      <div class="casos-stats-grid">
+        <div class="casos-stat">
+          <span class="casos-stat__number">300+</span>
+          <span class="casos-stat__label">Casos resueltos</span>
+        </div>
+        <div class="casos-stat">
+          <span class="casos-stat__number">4.9<small>/5</small></span>
+          <span class="casos-stat__label">Calificación de clientes</span>
+        </div>
+        <div class="casos-stat">
+          <span class="casos-stat__number">12</span>
+          <span class="casos-stat__label">Años de experiencia</span>
+        </div>
+        <div class="casos-stat">
+          <span class="casos-stat__number">95%</span>
+          <span class="casos-stat__label">Resolución favorable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="text-center mb-50 reveal">
+        <p class="section-tag">Resultados comprobables</p>
+        <h2>Casos reales, resultados reales</h2>
+        <p style="max-width:680px; margin:0 auto; font-size:17px; line-height:1.7; color:#555;">Estos son algunos de los casos más representativos que hemos resuelto en nuestro despacho. Cada resultado refleja el trabajo especializado de nuestros abogados en la Ciudad de México.</p>
+      </div>
+
+      <div class="casos-grid">
+        {casos.map((caso, i) => (
+          <article class="caso-card reveal" style={`--delay:${(i % 4) * 0.08}s`}>
+            <div class="caso-card__header">
+              <span
+                class="caso-card__badge"
+                style={`background:${specialtyColors[caso.categoria]?.bg}; color:${specialtyColors[caso.categoria]?.text};`}
+              >
+                {caso.categoria}
+              </span>
+              <span class="caso-card__tiempo">{caso.tiempo}</span>
+            </div>
+
+            <h3 class="caso-card__title">{caso.titulo}</h3>
+            <p class="caso-card__ubicacion">{caso.ubicacion}</p>
+
+            <div class="caso-card__section">
+              <h4>El desafío</h4>
+              <p>{caso.desafio}</p>
+            </div>
+
+            <div class="caso-card__section">
+              <h4>Nuestra solución</h4>
+              <p>{caso.solucion}</p>
+            </div>
+
+            <div class="caso-card__section">
+              <h4>El resultado</h4>
+              <p>{caso.resultado}</p>
+            </div>
+
+            <div class="caso-card__resultado">
+              <span class="caso-card__resultado-number">{caso.metrica}</span>
+              <span class="caso-card__resultado-label">{caso.metricaLabel}</span>
+            </div>
+
+            <div class="caso-card__footer">
+              <span class="caso-card__abogado-label">Caso atendido por:</span>
+              <a href={caso.abogadoSlug} class="caso-card__abogado-link">{caso.abogado}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding" style="background-color: var(--color-primary);">
+    <div class="container">
+      <div class="text-center reveal" style="max-width:700px; margin:0 auto;">
+        <p class="section-tag" style="color:var(--color-secondary);">Agende su consulta</p>
+        <h2 class="text-white" style="margin-bottom:16px;">¿Tiene un caso similar?</h2>
+        <p class="text-white-soft" style="font-size:18px; line-height:1.7; margin-bottom:32px;">Si enfrenta una situación legal parecida a alguno de estos casos, permítanos evaluarla sin compromiso. La asesoría inicial en Abogados en CDMX es sin costo y le permitirá conocer sus opciones reales.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="/asesoria-inicial" class="btn-primary" style="background:var(--color-secondary); color:#fff; padding:16px 36px; text-decoration:none; font-weight:600; display:inline-block;">Agendar asesoría gratuita</a>
+          <a href="tel:+525564655501" class="btn-secondary-wrap" style="border:1px solid rgba(255,255,255,.3); color:#fff; padding:16px 36px; text-decoration:none; font-weight:600; display:inline-block;">Llamar: 55 6465 5501</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .casos-badge {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Stats Bar */
+  .casos-stats-bar {
+    background: #fff;
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+    padding: 32px 0;
+  }
+  .casos-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .casos-stat__number {
+    display: block;
+    font-family: 'Prata', serif;
+    font-size: 36px;
+    color: var(--color-primary);
+    line-height: 1.1;
+  }
+  .casos-stat__number small {
+    font-size: 20px;
+    opacity: .6;
+  }
+  .casos-stat__label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* Cases Grid */
+  .casos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Case Card */
+  .caso-card {
+    background: #fff;
+    border: 1px solid var(--color-border, #e5e5e5);
+    padding: 32px;
+    transition: box-shadow 0.3s ease;
+  }
+  .caso-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  }
+  .caso-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .caso-card__badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .caso-card__tiempo {
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+  }
+  .caso-card__title {
+    font-size: 20px;
+    font-family: 'Prata', serif;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    line-height: 1.35;
+  }
+  .caso-card__ubicacion {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+  .caso-card__section {
+    margin-bottom: 16px;
+  }
+  .caso-card__section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+    margin-bottom: 6px;
+  }
+  .caso-card__section p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+  }
+
+  /* Resultado Highlight */
+  .caso-card__resultado {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+    margin: 20px 0 16px;
+  }
+  .caso-card__resultado-number {
+    display: block;
+    font-family: 'Prata', serif;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .caso-card__resultado-label {
+    display: block;
+    font-size: 13px;
+    opacity: .8;
+    margin-top: 4px;
+  }
+
+  /* Footer */
+  .caso-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border, #e5e5e5);
+  }
+  .caso-card__abogado-label {
+    font-size: 13px;
+    color: #999;
+  }
+  .caso-card__abogado-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+  .caso-card__abogado-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .casos-grid {
+      grid-template-columns: 1fr;
+    }
+    .casos-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+  @media (max-width: 500px) {
+    .casos-stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .caso-card {
+      padding: 24px 20px;
+    }
+    .caso-card__title {
+      font-size: 18px;
+    }
+    .casos-stat__number {
+      font-size: 28px;
+    }
+  }
+</style>

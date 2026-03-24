@@ -1,0 +1,392 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Mapa del Sitio — Abogados en CDMX';
+const description = 'Mapa del sitio de Abogados en CDMX. Navegue todas las páginas de nuestro despacho jurídico: especialidades, equipo legal, blog jurídico, herramientas y más.';
+const canonical = 'https://abogadosencdmx.com/mapa-del-sitio';
+
+/* ---------- Site structure ---------- */
+
+const paginasPrincipales = [
+  { titulo: 'Inicio', url: '/' },
+  { titulo: 'Quiénes Somos', url: '/quienes-somos' },
+  { titulo: 'Qué Ofrecemos', url: '/que-ofrecemos' },
+  { titulo: 'Especialidades', url: '/especialidades' },
+  { titulo: 'Equipo Legal', url: '/equipo-legal-cdmx' },
+  { titulo: 'Casos de Éxito', url: '/casos-de-exito' },
+  { titulo: 'Blog Jurídico', url: '/blog' },
+  { titulo: 'Preguntas Frecuentes', url: '/preguntas-frecuentes' },
+  { titulo: 'Asesoría Inicial Gratuita', url: '/asesoria-inicial' },
+  { titulo: 'Contacto', url: '/contacto' },
+];
+
+const especialidades = [
+  { titulo: 'Derecho Familiar en CDMX', url: '/especialidades/derecho-familiar-cdmx' },
+  { titulo: 'Derecho Penal en CDMX', url: '/especialidades/derecho-penal-cdmx' },
+  { titulo: 'Derecho Civil en CDMX', url: '/especialidades/derecho-civil-cdmx' },
+  { titulo: 'Derecho Corporativo en CDMX', url: '/especialidades/derecho-corporativo-cdmx' },
+  { titulo: 'Derecho Inmobiliario en CDMX', url: '/especialidades/derecho-inmobiliario-cdmx' },
+  { titulo: 'Derecho Laboral en CDMX', url: '/especialidades/derecho-laboral-cdmx' },
+  { titulo: 'Derecho Migratorio en CDMX', url: '/especialidades/derecho-migratorio-cdmx' },
+];
+
+const equipoLegal = [
+  { titulo: 'Lic. Tania Mendoza — Derecho Inmobiliario', url: '/despacho-juridico/tania-mendoza' },
+  { titulo: 'Lic. Luciana Valle — Derecho Laboral', url: '/despacho-juridico/luciana-valle' },
+  { titulo: 'Lic. Ian Montiel — Derecho Corporativo', url: '/despacho-juridico/ian-montiel' },
+  { titulo: 'Lic. Andrea Solís — Derecho Familiar', url: '/despacho-juridico/andrea-solis' },
+  { titulo: 'Lic. Roberto Fuentes — Derecho Penal', url: '/despacho-juridico/roberto-fuentes' },
+  { titulo: 'Lic. Mariana Ortega — Derecho Civil', url: '/despacho-juridico/mariana-ortega' },
+  { titulo: 'Lic. Diego Navarro — Derecho Migratorio', url: '/despacho-juridico/diego-navarro' },
+];
+
+const herramientas = [
+  { titulo: 'Calculadora de Pensión Alimenticia', url: '/calcular-pension-alimenticia' },
+];
+
+const legal = [
+  { titulo: 'Aviso de Privacidad', url: '/aviso-de-privacidad' },
+  { titulo: 'Mapa del Sitio', url: '/mapa-del-sitio' },
+];
+
+const blogPorEspecialidad: Record<string, { titulo: string; url: string }[]> = {
+  'Derecho Familiar': [
+    { titulo: '¿Cuánto cuesta un divorcio en CDMX? Guía completa 2026', url: '/blog/cuanto-cuesta-divorcio-cdmx' },
+    { titulo: 'Guarda y custodia en CDMX — Todo lo que necesitas saber en 2026', url: '/blog/custodia-hijos-cdmx' },
+    { titulo: 'Divorcio express en CDMX — Requisitos, costo y tiempo en 2026', url: '/blog/divorcio-express-cdmx' },
+    { titulo: 'Pensión alimenticia en México: cómo se calcula y cuánto corresponde en 2026', url: '/blog/pension-alimenticia-cdmx' },
+    { titulo: 'Nuevo Código Nacional de Procedimientos Civiles y Familiares 2026', url: '/blog/nuevo-codigo-procedimientos-civiles-familiares-2026' },
+    { titulo: 'Guía completa para tramitar un divorcio en CDMX en 2026', url: '/blog/guia-divorcio-cdmx-2026' },
+    { titulo: 'Patria potestad en CDMX: diferencias con custodia y cómo se pierde', url: '/blog/patria-potestad-cdmx' },
+    { titulo: 'Derechos del concubinato en CDMX: pensión, herencia y custodia', url: '/blog/concubinato-derechos-cdmx' },
+    { titulo: 'Violencia familiar en CDMX: medidas de protección y denuncia civil', url: '/blog/violencia-familiar-cdmx' },
+    { titulo: 'Adopción en CDMX: requisitos, proceso y costos 2026', url: '/blog/adopcion-cdmx' },
+    { titulo: 'Cómo se calcula la pensión alimenticia en CDMX: tabla de porcentajes 2026', url: '/blog/guia-completa-pension-alimenticia-calculo-cdmx' },
+    { titulo: 'Orden de protección por violencia doméstica en CDMX', url: '/blog/violencia-domestica-orden-proteccion-cdmx' },
+    { titulo: 'Régimen matrimonial en CDMX: bienes separados vs sociedad conyugal', url: '/blog/matrimonio-bienes-separados-vs-sociedad-conyugal-cdmx' },
+    { titulo: 'Guarda y custodia compartida en CDMX: requisitos y proceso 2026', url: '/blog/guarda-custodia-compartida-cdmx' },
+  ],
+  'Derecho Penal': [
+    { titulo: 'Amparo penal en CDMX: cuándo procede y cómo tramitarlo', url: '/blog/amparo-penal-cdmx' },
+    { titulo: 'Defensa penal en CDMX: cómo elegir abogado penalista', url: '/blog/defensa-penal-cdmx' },
+    { titulo: 'Fraude, robo y abuso de confianza en CDMX: guía legal completa', url: '/blog/delitos-patrimoniales-cdmx' },
+    { titulo: '¿Qué hacer si lo detienen en la Ciudad de México? Guía de derechos del detenido', url: '/blog/derechos-detenido-cdmx' },
+    { titulo: 'Violencia familiar como delito en CDMX: denuncia y proceso penal', url: '/blog/violencia-familiar-cdmx-penal' },
+    { titulo: 'Libertad bajo caución en CDMX: requisitos y costos 2026', url: '/blog/libertad-bajo-caucion-cdmx' },
+    { titulo: 'El juicio oral penal en CDMX: etapas y derechos del acusado', url: '/blog/juicio-oral-penal-cdmx' },
+    { titulo: 'Recursos de apelación en materia penal: guía práctica CDMX', url: '/blog/recursos-apelacion-penal-cdmx' },
+    { titulo: 'Prescripción de delitos en CDMX: plazos y cómo opera', url: '/blog/prescripcion-delitos-cdmx' },
+    { titulo: 'Mediación y justicia restaurativa en CDMX: alternativas al juicio penal', url: '/blog/mediacion-penal-cdmx' },
+  ],
+  'Derecho Civil': [
+    { titulo: 'Contratos civiles en CDMX: tipos, requisitos y validez legal', url: '/blog/contratos-civiles-cdmx' },
+    { titulo: 'Responsabilidad civil en CDMX: daños, perjuicios e indemnización', url: '/blog/responsabilidad-civil-cdmx' },
+    { titulo: 'Usucapión en CDMX: cómo obtener la propiedad por prescripción adquisitiva', url: '/blog/usucapion-cdmx' },
+    { titulo: 'Sucesiones y herencias en CDMX 2026: guía completa del juicio sucesorio', url: '/blog/sucesiones-herencias-cdmx-2026' },
+    { titulo: 'Cómo hacer un testamento en CDMX: tipos, costos y requisitos 2026', url: '/blog/testamento-cdmx' },
+    { titulo: 'Juicio ejecutivo mercantil en CDMX: cobro de pagarés y deudas', url: '/blog/juicio-ejecutivo-mercantil-cdmx' },
+    { titulo: 'Cómo presentar una demanda civil en CDMX: paso a paso 2026', url: '/blog/demanda-civil-cdmx' },
+    { titulo: 'Embargo de bienes en CDMX: proceso, tipos y cómo defenderse', url: '/blog/embargo-bienes-cdmx' },
+    { titulo: 'Mediación y conciliación civil en CDMX: alternativa al juicio', url: '/blog/mediacion-civil-cdmx' },
+    { titulo: 'Prescripción civil en CDMX: plazos para demandar y reclamar derechos', url: '/blog/prescripcion-civil-cdmx' },
+  ],
+  'Derecho Corporativo': [
+    { titulo: 'Cómo constituir una empresa en México 2026: tipos de sociedad, costos y trámites', url: '/blog/constituir-empresa-mexico-2026' },
+    { titulo: 'Compliance empresarial en México: obligaciones legales 2026', url: '/blog/compliance-empresarial-mexico' },
+    { titulo: 'S.A. de C.V. vs S. de R.L. de C.V.: cuál conviene para tu negocio', url: '/blog/sa-de-cv-vs-srl-cdmx' },
+    { titulo: 'Contratos mercantiles en México: tipos y cláusulas esenciales', url: '/blog/contratos-mercantiles-cdmx' },
+    { titulo: 'Fusiones y adquisiciones de empresas en México: guía legal 2026', url: '/blog/fusiones-adquisiciones-mexico' },
+    { titulo: 'Gobierno corporativo en México: obligaciones y mejores prácticas', url: '/blog/gobierno-corporativo-mexico' },
+    { titulo: 'Protección de marca y propiedad intelectual para empresas en CDMX', url: '/blog/propiedad-intelectual-empresas-cdmx' },
+    { titulo: 'Disolución y liquidación de empresas en México: proceso legal completo', url: '/blog/disolucion-liquidacion-empresa-mexico' },
+    { titulo: 'Franquicias en México: marco legal, contratos y obligaciones 2026', url: '/blog/franquicias-mexico' },
+    { titulo: 'Protección de datos personales para empresas en México: LFPDPPP', url: '/blog/proteccion-datos-personales-empresas' },
+  ],
+  'Derecho Inmobiliario': [
+    { titulo: 'Compraventa de inmuebles en CDMX: guía legal completa 2026', url: '/blog/compraventa-inmueble-cdmx' },
+    { titulo: 'Escrituración en CDMX: proceso, costos y requisitos notariales 2026', url: '/blog/escrituracion-cdmx' },
+    { titulo: 'Contrato de arrendamiento en CDMX: cláusulas esenciales 2026', url: '/blog/contrato-arrendamiento-cdmx' },
+    { titulo: 'Derechos del inquilino en CDMX: lo que todo arrendatario debe conocer', url: '/blog/derechos-inquilino-cdmx-2026' },
+    { titulo: 'Conflictos de arrendamiento en CDMX: desalojos y rentas impagadas', url: '/blog/arrendamiento-conflictos-cdmx' },
+    { titulo: 'Regularización de propiedad en CDMX: cómo obtener escrituras sin título', url: '/blog/regularizacion-propiedad-cdmx' },
+    { titulo: 'Due diligence inmobiliario en CDMX: qué revisar antes de comprar', url: '/blog/due-diligence-inmobiliario-cdmx' },
+    { titulo: 'Derechos y obligaciones de condóminos en CDMX: guía legal 2026', url: '/blog/condominos-administracion-cdmx' },
+    { titulo: 'Fideicomiso inmobiliario en México: guía para compradores y extranjeros', url: '/blog/fideicomiso-inmobiliario-cdmx' },
+    { titulo: 'Avalúo inmobiliario en CDMX: tipos, costos y cuándo es obligatorio', url: '/blog/avaluo-inmobiliario-cdmx' },
+  ],
+  'Derecho Laboral': [
+    { titulo: 'Despido injustificado en CDMX — Tus derechos y cómo demandar en 2026', url: '/blog/despido-injustificado-cdmx' },
+    { titulo: 'Despido injustificado en CDMX 2026: qué le corresponde y cómo demandar', url: '/blog/despido-injustificado-cdmx-2026' },
+    { titulo: 'Acoso laboral (mobbing) en CDMX: cómo denunciar y qué pruebas necesitas', url: '/blog/acoso-laboral-cdmx' },
+    { titulo: 'Contrato de trabajo en México: tipos, derechos y obligaciones', url: '/blog/contrato-trabajo-mexico' },
+    { titulo: 'Liquidación laboral en CDMX: cómo calcular lo que te corresponde', url: '/blog/liquidacion-laboral-cdmx' },
+    { titulo: 'Subcontratación y outsourcing en México: nueva ley y obligaciones 2026', url: '/blog/outsourcing-subcontratacion-mexico' },
+    { titulo: 'Cómo presentar una demanda laboral en CDMX: proceso ante el Tribunal Laboral 2026', url: '/blog/demanda-laboral-cdmx' },
+    { titulo: 'Accidente de trabajo en CDMX: derechos, incapacidad e indemnización IMSS', url: '/blog/accidente-trabajo-cdmx' },
+    { titulo: 'Horas extras y jornada laboral en México: derechos y límites legales', url: '/blog/horas-extras-jornada-laboral-mexico' },
+    { titulo: 'Sindicatos y negociación colectiva en México: reforma laboral 2026', url: '/blog/sindicatos-negociacion-colectiva-mexico' },
+  ],
+  'Derecho Migratorio': [
+    { titulo: 'Cómo obtener la residencia permanente en México 2026: guía completa', url: '/blog/residencia-permanente-mexico-2026' },
+    { titulo: 'Residencia temporal en México: guía completa de trámite 2026', url: '/blog/residencia-temporal-mexico' },
+    { titulo: 'Naturalización mexicana: requisitos, examen y costos 2026', url: '/blog/naturalizacion-mexico' },
+    { titulo: 'Visa de trabajo en México: tipos, requisitos y proceso 2026', url: '/blog/visa-trabajo-mexico' },
+    { titulo: 'Visa de inversionista en México: requisitos, montos y proceso 2026', url: '/blog/visa-inversionista-mexico' },
+    { titulo: 'Reunificación familiar en México: visa por matrimonio y vínculo familiar', url: '/blog/reunificacion-familiar-mexico' },
+    { titulo: 'Regularización migratoria en México: opciones para migrantes en situación irregular', url: '/blog/regularizacion-migratoria-mexico' },
+    { titulo: 'Asilo y refugio en México: derechos, proceso ante COMAR y protección 2026', url: '/blog/asilo-refugio-mexico' },
+    { titulo: 'Doble nacionalidad en México: derechos, obligaciones y trámites', url: '/blog/doble-nacionalidad-mexico' },
+    { titulo: 'Permiso de trabajo para extranjeros en México: opciones legales 2026', url: '/blog/permiso-trabajo-extranjeros-mexico' },
+  ],
+};
+
+/* Count total pages */
+const totalBlog = Object.values(blogPorEspecialidad).reduce((acc, arr) => acc + arr.length, 0);
+const totalPaginas = paginasPrincipales.length + especialidades.length + equipoLegal.length + herramientas.length + legal.length + totalBlog;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Mapa del Sitio", "item": "https://abogadosencdmx.com/mapa-del-sitio" }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Mapa del Sitio — Abogados en CDMX",
+      "url": "https://abogadosencdmx.com/mapa-del-sitio"
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="hero-pillar" style="background-color: var(--color-primary);">
+    <div class="container">
+      <Breadcrumb items={[{label: 'Mapa del Sitio'}]} />
+      <div class="hero-pillar__content reveal">
+        <p class="section-tag" style="color:var(--color-secondary);">Navegación</p>
+        <h1 class="text-white">Mapa del Sitio</h1>
+        <p class="text-white-soft" style="font-size:19px; line-height:1.7; max-width:746px;">{totalPaginas} páginas en este sitio. Encuentre rápidamente cualquier sección, artículo o perfil de nuestro despacho jurídico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sitemap Content -->
+  <section class="section-padding" style="background-color: var(--color-light);">
+    <div class="container">
+      <div class="sitemap-layout">
+
+        <!-- Páginas principales -->
+        <div class="sitemap-section reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#127968;</span>
+            <h2 class="sitemap-section__title">Páginas Principales</h2>
+          </div>
+          <ul class="sitemap-list">
+            {paginasPrincipales.map(p => (
+              <li><a href={p.url}>{p.titulo}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Especialidades -->
+        <div class="sitemap-section reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#9878;&#65039;</span>
+            <h2 class="sitemap-section__title">Especialidades</h2>
+          </div>
+          <ul class="sitemap-list">
+            {especialidades.map(e => (
+              <li><a href={e.url}>{e.titulo}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Equipo Legal -->
+        <div class="sitemap-section reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#128104;&#8205;&#9878;&#65039;</span>
+            <h2 class="sitemap-section__title">Equipo Legal</h2>
+          </div>
+          <ul class="sitemap-list">
+            {equipoLegal.map(l => (
+              <li><a href={l.url}>{l.titulo}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="sitemap-section reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#129518;</span>
+            <h2 class="sitemap-section__title">Herramientas</h2>
+          </div>
+          <ul class="sitemap-list">
+            {herramientas.map(h => (
+              <li><a href={h.url}>{h.titulo}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="sitemap-section reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#128196;</span>
+            <h2 class="sitemap-section__title">Legal</h2>
+          </div>
+          <ul class="sitemap-list">
+            {legal.map(l => (
+              <li><a href={l.url}>{l.titulo}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Blog por Especialidad -->
+        <div class="sitemap-section sitemap-section--full reveal">
+          <div class="sitemap-section__header">
+            <span class="sitemap-section__icon" aria-hidden="true">&#128221;</span>
+            <h2 class="sitemap-section__title">Blog Jurídico por Especialidad</h2>
+            <span class="sitemap-section__count">{totalBlog} artículos</span>
+          </div>
+
+          <div class="sitemap-blog-grid">
+            {Object.entries(blogPorEspecialidad).map(([categoria, posts]) => (
+              <div class="sitemap-blog-category">
+                <h3>{categoria} <span class="sitemap-blog-count">({posts.length})</span></h3>
+                <ul class="sitemap-list sitemap-list--compact">
+                  {posts.map(post => (
+                    <li><a href={post.url}>{post.titulo}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .sitemap-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .sitemap-section {
+    background: #fff;
+    border: 1px solid var(--color-border, #e5e5e5);
+    padding: 28px 32px;
+  }
+  .sitemap-section--full {
+    grid-column: 1 / -1;
+  }
+
+  .sitemap-section__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--color-primary);
+  }
+  .sitemap-section__icon {
+    font-size: 24px;
+    line-height: 1;
+  }
+  .sitemap-section__title {
+    font-family: 'Prata', serif;
+    font-size: 20px;
+    color: var(--color-primary);
+    margin: 0;
+    flex: 1;
+  }
+  .sitemap-section__count {
+    font-size: 13px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sitemap-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .sitemap-list li:last-child {
+    border-bottom: none;
+  }
+  .sitemap-list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+    display: inline-block;
+  }
+  .sitemap-list a:hover {
+    color: var(--color-secondary);
+  }
+
+  .sitemap-list--compact li {
+    padding: 4px 0;
+  }
+  .sitemap-list--compact a {
+    font-size: 14px;
+  }
+
+  /* Blog grid */
+  .sitemap-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .sitemap-blog-category h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-secondary);
+  }
+  .sitemap-blog-count {
+    font-weight: 400;
+    color: #999;
+    font-size: 14px;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .sitemap-blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .sitemap-layout {
+      grid-template-columns: 1fr;
+    }
+    .sitemap-blog-grid {
+      grid-template-columns: 1fr;
+    }
+    .sitemap-section {
+      padding: 24px 20px;
+    }
+  }
+</style>
