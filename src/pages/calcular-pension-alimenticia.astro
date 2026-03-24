@@ -83,17 +83,17 @@ const schema = {
               <button class="child-card" data-val="1">
                 <span class="child-card__emoji">👶</span>
                 <span class="child-card__label">1 hijo</span>
-                <span class="child-card__pct">15-20%</span>
+                <span class="child-card__pct">10-25%</span>
               </button>
               <button class="child-card active" data-val="2">
                 <span class="child-card__emoji">👶👶</span>
                 <span class="child-card__label">2 hijos</span>
-                <span class="child-card__pct">25-30%</span>
+                <span class="child-card__pct">18-35%</span>
               </button>
               <button class="child-card" data-val="3">
                 <span class="child-card__emoji">👶👶👶</span>
                 <span class="child-card__label">3 hijos</span>
-                <span class="child-card__pct">30-35%</span>
+                <span class="child-card__pct">22-40%</span>
               </button>
               <button class="child-card" data-val="4">
                 <span class="child-card__emoji">👨‍👩‍👧‍👦</span>
@@ -201,6 +201,9 @@ const schema = {
             </div>
           </div>
 
+          <!-- Bracket indicator -->
+          <div id="bracketLabel" class="bracket-label bracket-mid">📊 Ingreso medio — rango estándar de sentencias TSJCDMX</div>
+
           <!-- Breakdown -->
           <div class="result-breakdown">
             <div class="result-row"><span>Ingreso neto</span><strong id="brkIncome">$25,000</strong></div>
@@ -231,21 +234,53 @@ const schema = {
     <div class="container">
       <div class="calc-ref">
         <h2>Tabla de porcentajes CDMX 2026</h2>
-        <p>Rangos orientativos de los juzgados familiares de la Ciudad de México.</p>
+        <p>Rangos orientativos de los juzgados familiares de la Ciudad de México. Los porcentajes varían según el tramo de ingreso del obligado (principio de proporcionalidad, art. 311 CCCDMX).</p>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;color:var(--color-secondary);">Custodia exclusiva (un solo padre)</h3>
         <div class="calc-ref__table-wrap">
           <table>
             <thead>
-              <tr><th>Hijos</th><th>Custodia exclusiva</th><th>Custodia compartida</th><th>Con gastos especiales</th></tr>
+              <tr><th>Hijos</th><th>Bajo<br><small>$5K–$15K</small></th><th>Medio<br><small>$15K–$40K</small></th><th>Alto<br><small>$40K–$80K</small></th><th>Muy alto<br><small>$80K+</small></th></tr>
             </thead>
             <tbody>
-              <tr><td><strong>1 hijo</strong></td><td>15% – 20%</td><td>10% – 15%</td><td>20% – 25%</td></tr>
-              <tr><td><strong>2 hijos</strong></td><td>25% – 30%</td><td>18% – 22%</td><td>30% – 35%</td></tr>
-              <tr><td><strong>3 hijos</strong></td><td>30% – 35%</td><td>22% – 28%</td><td>35% – 40%</td></tr>
-              <tr><td><strong>4+ hijos</strong></td><td>35% – 40%</td><td>28% – 33%</td><td>40% – 45%</td></tr>
+              <tr><td><strong>1 hijo</strong></td><td>20–25%</td><td>15–20%</td><td>13–17%</td><td>10–15%</td></tr>
+              <tr><td><strong>2 hijos</strong></td><td>30–35%</td><td>25–30%</td><td>22–27%</td><td>18–23%</td></tr>
+              <tr><td><strong>3 hijos</strong></td><td>35–40%</td><td>30–35%</td><td>27–32%</td><td>23–28%</td></tr>
+              <tr><td><strong>4+ hijos</strong></td><td>40–45%</td><td>35–40%</td><td>32–37%</td><td>28–33%</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="calc-ref__note">Fuente: Criterios orientadores del TSJCDMX. Arts. 308-311 Código Civil CDMX.</p>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;color:var(--color-secondary);">Custodia compartida</h3>
+        <div class="calc-ref__table-wrap">
+          <table>
+            <thead>
+              <tr><th>Hijos</th><th>Bajo<br><small>$5K–$15K</small></th><th>Medio<br><small>$15K–$40K</small></th><th>Alto<br><small>$40K–$80K</small></th><th>Muy alto<br><small>$80K+</small></th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1 hijo</strong></td><td>15–18%</td><td>10–15%</td><td>8–12%</td><td>7–10%</td></tr>
+              <tr><td><strong>2 hijos</strong></td><td>22–27%</td><td>18–22%</td><td>15–19%</td><td>12–16%</td></tr>
+              <tr><td><strong>3 hijos</strong></td><td>27–32%</td><td>22–28%</td><td>19–24%</td><td>16–20%</td></tr>
+              <tr><td><strong>4+ hijos</strong></td><td>32–37%</td><td>28–33%</td><td>24–29%</td><td>20–25%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-size:16px;margin:20px 0 8px;color:var(--color-secondary);">Ajuste por gastos especiales</h3>
+        <div class="calc-ref__table-wrap">
+          <table>
+            <thead>
+              <tr><th>Concepto</th><th>Bajo</th><th>Medio</th><th>Alto</th><th>Muy alto</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Gastos escolares</strong></td><td>+5%</td><td>+3%</td><td>+2%</td><td>+1.5%</td></tr>
+              <tr><td><strong>Gastos médicos</strong></td><td>+6%</td><td>+4%</td><td>+3%</td><td>+2%</td></tr>
+              <tr><td><strong>Actividades extra</strong></td><td>+3%</td><td>+2%</td><td>+1.5%</td><td>+1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="calc-ref__note">Fuente: Criterios orientadores del TSJCDMX, arts. 301-323 y 308-311 del Código Civil para la Ciudad de México. El mínimo vital del obligado (salario mínimo CDMX 2026: $8,294 MXN/mes) se protege automáticamente.</p>
       </div>
 
       <!-- CTA Block -->
@@ -270,12 +305,52 @@ const schema = {
   let custody: 'exclusive' | 'shared' = 'exclusive';
   let extras: Set<string> = new Set();
 
-  // === PERCENTAGE TABLE ===
-  const pct: Record<string, Record<number, [number, number]>> = {
-    exclusive: { 1: [15,20], 2: [25,30], 3: [30,35], 4: [35,40] },
-    shared:    { 1: [10,15], 2: [18,22], 3: [22,28], 4: [28,33] }
+  // === PERCENTAGE TABLE (CDMX 2026) ===
+  // Basada en criterios orientativos del TSJCDMX, arts. 301-323 CCCDMX.
+  // Los porcentajes BASE aplican a ingresos medianos (~$15K-$30K MXN).
+  // A ingresos más altos, los jueces reducen el % porque la cantidad
+  // absoluta ya cubre las necesidades del menor (principio de proporcionalidad).
+  // A ingresos más bajos, el juez protege el mínimo vital del obligado.
+  //
+  // Rangos por tramo de ingreso neto mensual:
+  //   Bajo  ($5K-$15K):   % más alto (el menor necesita un mínimo)
+  //   Medio ($15K-$40K):  % estándar (rango más común en sentencias)
+  //   Alto  ($40K-$80K):  % moderado (cantidad absoluta ya es suficiente)
+  //   Muy alto ($80K+):   % menor (proporcionalidad, no enriquecimiento)
+
+  const pctByIncome: Record<string, Record<number, Record<string, [number, number]>>> = {
+    exclusive: {
+      1: { low: [20,25], mid: [15,20], high: [13,17], vhigh: [10,15] },
+      2: { low: [30,35], mid: [25,30], high: [22,27], vhigh: [18,23] },
+      3: { low: [35,40], mid: [30,35], high: [27,32], vhigh: [23,28] },
+      4: { low: [40,45], mid: [35,40], high: [32,37], vhigh: [28,33] }
+    },
+    shared: {
+      1: { low: [15,18], mid: [10,15], high: [8,12],  vhigh: [7,10] },
+      2: { low: [22,27], mid: [18,22], high: [15,19], vhigh: [12,16] },
+      3: { low: [27,32], mid: [22,28], high: [19,24], vhigh: [16,20] },
+      4: { low: [32,37], mid: [28,33], high: [24,29], vhigh: [20,25] }
+    }
   };
-  const extraPcts: Record<string, number> = { school: 3, medical: 4, activities: 2 };
+
+  // Gastos especiales: % adicional progresivo por tramo
+  // En ingresos bajos el gasto escolar/médico pesa más proporcionalmente
+  const extraPctsByIncome: Record<string, Record<string, number>> = {
+    school:     { low: 5, mid: 3, high: 2, vhigh: 1.5 },
+    medical:    { low: 6, mid: 4, high: 3, vhigh: 2 },
+    activities: { low: 3, mid: 2, high: 1.5, vhigh: 1 }
+  };
+
+  // Salario mínimo CDMX 2026: ~$8,294 MXN mensuales (UMA × 30)
+  // El obligado no puede quedar por debajo de este monto tras la pensión
+  const SALARIO_MINIMO = 8294;
+
+  function getIncomeBracket(income: number): string {
+    if (income <= 15000) return 'low';
+    if (income <= 40000) return 'mid';
+    if (income <= 80000) return 'high';
+    return 'vhigh';
+  }
 
   // === ELEMENTS ===
   const $ = (s: string) => document.querySelector(s)!;
@@ -293,13 +368,35 @@ const schema = {
   // === CALCULATE (runs on every change) ===
   function calculate() {
     const c = Math.min(children, 4);
-    const [lo, hi] = pct[custody][c];
+    const bracket = getIncomeBracket(income);
+    const [lo, hi] = pctByIncome[custody][c][bracket];
     let extraPct = 0;
-    extras.forEach(e => { extraPct += (extraPcts[e] || 0); });
+    extras.forEach(e => { extraPct += (extraPctsByIncome[e]?.[bracket] || 0); });
     const fLo = lo + extraPct;
     const fHi = hi + extraPct;
-    const minAmt = Math.round(income * fLo / 100);
-    const maxAmt = Math.round(income * fHi / 100);
+    let minAmt = Math.round(income * fLo / 100);
+    let maxAmt = Math.round(income * fHi / 100);
+
+    // === PROTECCIÓN DE MÍNIMO VITAL ===
+    // El obligado no puede quedar por debajo del salario mínimo (art. 311 CCCDMX)
+    const maxPension = income - SALARIO_MINIMO;
+    if (maxPension > 0) {
+      if (maxAmt > maxPension) maxAmt = maxPension;
+      if (minAmt > maxPension) minAmt = maxPension;
+    }
+
+    // Indicador de tramo de ingreso
+    const bracketLabel = document.getElementById('bracketLabel');
+    if (bracketLabel) {
+      const labels: Record<string, string> = {
+        low: '📊 Ingreso bajo — el juez protege necesidades mínimas del menor',
+        mid: '📊 Ingreso medio — rango estándar de sentencias TSJCDMX',
+        high: '📊 Ingreso alto — % moderado, cantidad absoluta suficiente',
+        vhigh: '📊 Ingreso muy alto — proporcionalidad, no enriquecimiento'
+      };
+      bracketLabel.textContent = labels[bracket];
+      bracketLabel.className = 'bracket-label bracket-' + bracket;
+    }
 
     // Animate counters
     countTo('resMin', prevMin, minAmt, fmtShort);
@@ -685,6 +782,17 @@ const schema = {
   .result-pct-detail { display: flex; flex-direction: column; gap: 4px; }
   .result-pct-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
   .result-pct-detail strong { font-size: 18px; color: var(--color-secondary); }
+
+  /* Bracket label */
+  .bracket-label {
+    margin: 0 32px 12px; padding: 10px 16px;
+    font-size: 12px; border-left: 3px solid; line-height: 1.4;
+    transition: all 0.4s ease;
+  }
+  .bracket-low { border-color: #e67e22; background: rgba(230,126,34,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-mid { border-color: #2ecc71; background: rgba(46,204,113,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-high { border-color: #3498db; background: rgba(52,152,219,0.08); color: rgba(255,255,255,0.7); }
+  .bracket-vhigh { border-color: #9b59b6; background: rgba(155,89,182,0.08); color: rgba(255,255,255,0.7); }
 
   /* Breakdown */
   .result-breakdown { padding: 0 32px 20px; }
