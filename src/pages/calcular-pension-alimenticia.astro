@@ -181,19 +181,23 @@ const schema = {
             </div>
           </div>
 
-          <!-- Percentage bar -->
-          <div class="result-bar-section">
-            <div class="result-bar-header">
-              <span>Porcentaje del ingreso</span>
-              <strong id="resPct">15% – 20%</strong>
+          <!-- Donut Chart + Percentage -->
+          <div class="result-donut-section">
+            <div class="result-donut">
+              <svg viewBox="0 0 120 120" class="donut-svg">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                <circle id="donutFill" cx="60" cy="60" r="54" fill="none" stroke="var(--color-secondary)" stroke-width="10"
+                  stroke-dasharray="339.29" stroke-dashoffset="220" stroke-linecap="round"
+                  transform="rotate(-90 60 60)" class="donut-fill"/>
+              </svg>
+              <div class="donut-center">
+                <span class="donut-pct" id="donutPct">28%</span>
+                <span class="donut-label">del ingreso</span>
+              </div>
             </div>
-            <div class="result-bar">
-              <div class="result-bar__track">
-                <div class="result-bar__fill" id="barFill" style="width:35%"></div>
-              </div>
-              <div class="result-bar__labels">
-                <span>0%</span><span>25%</span><span>50%</span>
-              </div>
+            <div class="result-pct-detail">
+              <span class="result-pct-label">Rango aplicable</span>
+              <strong id="resPct">15% – 20%</strong>
             </div>
           </div>
 
@@ -210,6 +214,12 @@ const schema = {
             <span>Consultar con abogado familiarista</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+
+          <!-- WhatsApp Share -->
+          <button class="result-whatsapp" id="shareWhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Compartir resultado por WhatsApp
+          </button>
 
           <!-- Disclaimer -->
           <p class="result-disclaimer">Cálculo orientativo basado en arts. 301-323 CCCDMX y criterios del TSJCDMX. El monto definitivo lo determina el juez familiar.</p>
@@ -271,8 +281,14 @@ const schema = {
   const $ = (s: string) => document.querySelector(s)!;
   const incomeSlider = $('#incomeSlider') as HTMLInputElement;
 
-  // === FORMAT ===
-  const fmt = (n: number) => '$' + n.toLocaleString('es-MX');
+  // === FORMAT (MXN pesos mexicanos — nunca euros) ===
+  const fmt = (n: number) => {
+    const parts = Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return '$' + parts + ' MXN';
+  };
+  const fmtShort = (n: number) => {
+    return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
 
   // === CALCULATE (runs on every change) ===
   function calculate() {
@@ -285,19 +301,28 @@ const schema = {
     const minAmt = Math.round(income * fLo / 100);
     const maxAmt = Math.round(income * fHi / 100);
 
-    // Animate numbers
-    animateValue('resMin', fmt(minAmt));
-    animateValue('resMax', fmt(maxAmt));
-    animateValue('resAnnual', `${fmt(minAmt * 12)} – ${fmt(maxAmt * 12)}`);
+    // Animate counters
+    countTo('resMin', prevMin, minAmt, fmtShort);
+    countTo('resMax', prevMax, maxAmt, fmtShort);
+    prevMin = minAmt;
+    prevMax = maxAmt;
+    animateValue('resAnnual', `${fmtShort(minAmt * 12)} – ${fmtShort(maxAmt * 12)} MXN`);
     $('#resPct')!.textContent = `${fLo}% – ${fHi}%`;
-    $('#incomeDisplay')!.textContent = fmt(income);
+    $('#incomeDisplay')!.textContent = fmtShort(income) + ' MXN';
 
-    // Bar
+    // Donut chart
     const avg = (fLo + fHi) / 2;
-    (document.getElementById('barFill') as HTMLElement).style.width = `${Math.min(avg * 2, 100)}%`;
+    const donut = document.getElementById('donutFill') as SVGCircleElement;
+    if (donut) {
+      const circumference = 2 * Math.PI * 54;
+      const offset = circumference - (avg / 50) * circumference;
+      donut.style.strokeDashoffset = String(offset);
+    }
+    const donutPct = document.getElementById('donutPct');
+    if (donutPct) donutPct.textContent = Math.round(avg) + '%';
 
     // Breakdown
-    $('#brkIncome')!.textContent = fmt(income);
+    $('#brkIncome')!.textContent = fmtShort(income) + ' MXN';
     $('#brkChildren')!.textContent = c >= 4 ? '4 o más' : String(c);
     $('#brkCustody')!.textContent = custody === 'exclusive' ? 'Exclusiva' : 'Compartida';
     const extrasRow = document.getElementById('brkExtrasRow')!;
@@ -310,6 +335,25 @@ const schema = {
 
     // Update slider track fill
     updateSliderTrack();
+  }
+
+  let prevMin = 6250;
+  let prevMax = 7500;
+
+  function countTo(id: string, from: number, to: number, formatter: (n: number) => string) {
+    const el = document.getElementById(id)!;
+    if (from === to) { el.textContent = formatter(to); return; }
+    const duration = 400;
+    const start = performance.now();
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      const current = Math.round(from + (to - from) * eased);
+      el.textContent = formatter(current);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   function animateValue(id: string, newVal: string) {
@@ -338,7 +382,7 @@ const schema = {
     const s = incomeSlider;
     const pctVal = ((parseInt(s.value) - parseInt(s.min)) / (parseInt(s.max) - parseInt(s.min)));
     tooltip.style.left = `calc(${pctVal * 100}% + ${(0.5 - pctVal) * 28}px)`;
-    tooltip.textContent = fmt(income);
+    tooltip.textContent = fmtShort(income) + ' MXN';
   }
   incomeSlider.addEventListener('input', () => {
     income = parseInt(incomeSlider.value);
@@ -374,6 +418,26 @@ const schema = {
       if (extras.has(val)) extras.delete(val); else extras.add(val);
       calculate();
     });
+  });
+
+  // === WHATSAPP SHARE ===
+  document.getElementById('shareWhatsApp')?.addEventListener('click', () => {
+    const min = document.getElementById('resMin')?.textContent || '';
+    const max = document.getElementById('resMax')?.textContent || '';
+    const pctText = document.getElementById('resPct')?.textContent || '';
+    const msg = encodeURIComponent(
+      `📋 *Cálculo de Pensión Alimenticia CDMX 2026*\n\n` +
+      `💰 Ingreso: ${fmtShort(income)} MXN\n` +
+      `👶 Hijos: ${children}\n` +
+      `⚖️ Custodia: ${custody === 'exclusive' ? 'Exclusiva' : 'Compartida'}\n\n` +
+      `📊 *Pensión estimada:*\n` +
+      `Mínimo: ${min} MXN\n` +
+      `Máximo: ${max} MXN\n` +
+      `Porcentaje: ${pctText}\n\n` +
+      `Calculado en: https://abogadosencdmx.com/calcular-pension-alimenticia\n` +
+      `📞 Consulta gratuita: 55 6465 5501`
+    );
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
   });
 
   // === INIT ===
@@ -603,17 +667,23 @@ const schema = {
   .result-annual__label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
   .result-annual__amount { font-size: 16px; font-weight: 700; color: var(--color-secondary); transition: all 0.15s; }
 
-  /* Bar */
-  .result-bar-section { padding: 24px 32px; }
-  .result-bar-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 13px; }
-  .result-bar-header span { color: rgba(255,255,255,0.45); }
-  .result-bar-header strong { color: var(--color-secondary); }
-  .result-bar__track { height: 6px; background: rgba(255,255,255,0.1); overflow: hidden; }
-  .result-bar__fill {
-    height: 100%; background: linear-gradient(90deg, var(--color-secondary), #e8b87a);
-    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  /* Donut */
+  .result-donut-section {
+    display: flex; align-items: center; gap: 20px; padding: 20px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .result-bar__labels { display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 4px; }
+  .result-donut { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
+  .donut-svg { width: 100%; height: 100%; }
+  .donut-fill { transition: stroke-dashoffset 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .donut-center {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .donut-pct { font-size: 24px; font-weight: 800; color: var(--color-secondary); font-family: var(--font-heading); }
+  .donut-label { font-size: 10px; color: rgba(255,255,255,0.4); }
+  .result-pct-detail { display: flex; flex-direction: column; gap: 4px; }
+  .result-pct-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+  .result-pct-detail strong { font-size: 18px; color: var(--color-secondary); }
 
   /* Breakdown */
   .result-breakdown { padding: 0 32px 20px; }
@@ -632,6 +702,19 @@ const schema = {
     font-weight: 700; font-size: 14px; transition: all 0.3s;
   }
   .result-cta:hover { background: #d4956a; transform: translateY(-2px); }
+
+  /* WhatsApp */
+  .result-whatsapp {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin: 0 32px 20px; padding: 14px;
+    background: transparent; border: 1.5px solid rgba(37,211,102,0.4);
+    color: #25d366; font-size: 13px; font-weight: 700;
+    cursor: pointer; transition: all 0.3s; font-family: var(--font-body);
+  }
+  .result-whatsapp:hover {
+    background: #25d366; color: #fff; border-color: #25d366;
+    transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+  }
 
   /* Disclaimer */
   .result-disclaimer {
@@ -671,8 +754,11 @@ const schema = {
     .calc-controls { padding: 24px 20px; }
     .result-top { padding: 28px 20px 20px; }
     .result-annual { padding: 0 20px; }
-    .result-bar-section { padding: 20px; }
+    .result-donut-section { padding: 16px 20px; }
+    .result-donut { width: 80px; height: 80px; }
+    .donut-pct { font-size: 20px; }
     .result-breakdown { padding: 0 20px 16px; }
+    .result-whatsapp { margin: 0 20px 16px; }
     .result-cta { margin: 0 20px 16px; }
     .result-disclaimer { padding: 12px 20px; }
     .result-amount { font-size: 24px; }
