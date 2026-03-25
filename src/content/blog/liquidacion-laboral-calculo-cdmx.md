@@ -144,7 +144,7 @@ Este ejemplo ilustra que para ejecutivos con alta antigüedad, la liquidación p
 | Proporcionales (aguinaldo, vac., PV) | $2,716.44 | $7,711.39 | $27,278.51 |
 | **Total** | **$70,178.64** | **$271,495.39** | **$792,288.53** |
 
-La diferencia entre recibir una liquidación calculada correctamente y una calculada con errores puede significar decenas o cientos de miles de pesos. Si tu patrón te ofrece un finiquito que parece bajo respecto a lo que aquí se calcula, es momento de buscar [asesoría legal especializada](/asesoria-inicial).
+La diferencia entre recibir una liquidación calculada correctamente y una calculada con errores puede significar decenas o cientos de miles de pesos. Utiliza nuestra [Calculadora de Liquidación Laboral](/calcular-liquidacion-laboral) para obtener un estimado inmediato con base en tu salario y antigüedad. Si tu patrón te ofrece un finiquito que parece bajo respecto a lo que aquí se calcula, es momento de buscar [asesoría legal especializada](/asesoria-inicial).
 
 ## Errores frecuentes que reducen tu liquidación
 
@@ -164,7 +164,7 @@ Si te encuentras en proceso de negociación de tu liquidación o consideras que 
 
 ## Cómo sé si me corresponde liquidación o solo finiquito?
 
-Si renuncias voluntariamente, solo te corresponde finiquito (proporcionales de aguinaldo, vacaciones, prima vacacional y, si tienes más de 15 años, prima de antigüedad). Si te despiden injustificadamente o si rescindas el contrato por causas imputables al patrón (artículo 51 LFT), te corresponde liquidación completa: finiquito más 3 meses constitucionales, 20 días por año y prima de antigüedad. Para identificar si tu despido fue justificado o no, consulta nuestra guía sobre [despido injustificado en CDMX](/blog/despido-injustificado-cdmx).
+Si renuncias voluntariamente, solo te corresponde finiquito (proporcionales de aguinaldo, vacaciones, prima vacacional y, si tienes más de 15 años, prima de antigüedad) — puedes calcularlo con nuestra [Calculadora de Finiquito](/calcular-finiquito). Si te despiden injustificadamente o si rescindas el contrato por causas imputables al patrón (artículo 51 LFT), te corresponde liquidación completa: finiquito más 3 meses constitucionales, 20 días por año y prima de antigüedad — usa la [Calculadora de Liquidación Laboral](/calcular-liquidacion-laboral) para estimar el monto total. Para identificar si tu despido fue justificado o no, consulta nuestra guía sobre [despido injustificado en CDMX](/blog/despido-injustificado-cdmx).
 
 ## El patrón puede pagarme la liquidación en parcialidades?
 

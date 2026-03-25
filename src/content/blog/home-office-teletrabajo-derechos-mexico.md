@@ -137,7 +137,7 @@ La denuncia puede ser **anónima** cuando se presenta ante la STPS para solicita
 
 ## Mi empresa me pide trabajar desde casa pero no me da equipo ni paga internet, es legal?
 
-No. Si trabajas más del 40 % de tu jornada desde casa, tu patrón está obligado por el artículo 330-E de la LFT a proporcionarte el equipo necesario y a cubrir la parte proporcional de los servicios de internet y electricidad. Si la empresa no cumple con estas obligaciones, puedes denunciar ante la STPS o solicitar asesoría en PROFEDET. En casos graves, el incumplimiento puede constituir una causa de rescisión imputable al patrón con derecho a liquidación completa.
+No. Si trabajas más del 40 % de tu jornada desde casa, tu patrón está obligado por el artículo 330-E de la LFT a proporcionarte el equipo necesario y a cubrir la parte proporcional de los servicios de internet y electricidad. Si la empresa no cumple con estas obligaciones, puedes denunciar ante la STPS o solicitar asesoría en PROFEDET. En casos graves, el incumplimiento puede constituir una causa de rescisión imputable al patrón con derecho a liquidación completa. Si decides terminar la relación laboral por estas causas, calcula lo que te corresponde con nuestra [Calculadora de Finiquito](/calcular-finiquito).
 
 ## Pueden obligarme a regresar a la oficina después de haber trabajado en home office?
 

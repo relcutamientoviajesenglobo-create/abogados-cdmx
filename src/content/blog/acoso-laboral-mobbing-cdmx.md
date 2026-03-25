@@ -83,7 +83,7 @@ Cuando el trabajador rescinde la relación laboral por acoso (artículo 51, frac
 | Daño moral (vía civil) | Art. 1916 Código Civil CDMX | Determinado por juez civil |
 | Gastos médicos y psicológicos | Reparación integral del daño | Comprobables documentalmente |
 
-Para estimar tu indemnización total, puedes consultar nuestra [guía detallada de cálculo de liquidación laboral](/blog/liquidacion-laboral-calculo-cdmx) que incluye fórmulas paso a paso y tres ejemplos con diferentes niveles salariales.
+Para estimar tu indemnización total, puedes utilizar nuestra [Calculadora de Liquidación Laboral](/calcular-liquidacion-laboral) que genera un estimado inmediato, o consultar nuestra [guía detallada de cálculo de liquidación laboral](/blog/liquidacion-laboral-calculo-cdmx) que incluye fórmulas paso a paso y tres ejemplos con diferentes niveles salariales.
 
 Las multas que la STPS puede imponer al patrón por incumplimiento de la NOM-035 también son un factor de presión en las negociaciones. En 2026, estas multas pueden alcanzar de 250 a 5,000 veces la UMA por trabajador afectado, lo que equivale a rangos de aproximadamente $28,285 a $565,700 por trabajador.
 

@@ -109,7 +109,11 @@ const schema = {
         "areaServed": { "@type": "City", "name": "Ciudad de México" }
       },
       "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 20 },
-      "sameAs": []
+      "sameAs": [
+        "https://facebook.com/abogadosencdmx",
+        "https://instagram.com/abogadosencdmx",
+        "https://linkedin.com/company/abogadosencdmx"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -310,16 +314,34 @@ const equipo = [
     </div>
   </section>
 
-  <!-- ═══ HERRAMIENTA: CALCULADORA PENSIÓN ═══ -->
+  <!-- ═══ HERRAMIENTAS: CALCULADORAS JURÍDICAS ═══ -->
   <section style="background:linear-gradient(135deg,#001d3d,#003366);padding:0;">
     <div class="container">
-      <div style="padding:32px 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:250px;">
-          <span style="display:inline-block;background:var(--color-secondary);color:#fff;padding:3px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Herramienta gratuita</span>
-          <h3 style="color:#fff;font-size:22px;margin-bottom:8px;">Calculadora de Pensión Alimenticia CDMX</h3>
-          <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:0;">Obtenga un estimado del monto de pensión alimenticia con porcentajes actualizados 2026.</p>
+      <div style="padding:32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <span style="display:inline-block;background:var(--color-secondary);color:#fff;padding:3px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Herramienta gratuita</span>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:4px;">Calculadora de Pensión Alimenticia</h3>
+            <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:0;">Porcentajes actualizados 2026.</p>
+          </div>
+          <a href="/calcular-pension-alimenticia" style="display:inline-flex;align-items:center;gap:8px;background:var(--color-secondary);color:#fff;padding:12px 22px;font-weight:700;font-size:14px;white-space:nowrap;transition:background .3s;">Calcular →</a>
         </div>
-        <a href="/calcular-pension-alimenticia" style="display:inline-flex;align-items:center;gap:8px;background:var(--color-secondary);color:#fff;padding:14px 28px;font-weight:700;font-size:15px;white-space:nowrap;transition:background .3s;">Calcular pensión →</a>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <span style="display:inline-block;background:var(--color-secondary);color:#fff;padding:3px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Herramienta gratuita</span>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:4px;">Calculadora de Finiquito</h3>
+            <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:0;">Calcule su finiquito conforme a la LFT.</p>
+          </div>
+          <a href="/calcular-finiquito" style="display:inline-flex;align-items:center;gap:8px;background:var(--color-secondary);color:#fff;padding:12px 22px;font-weight:700;font-size:14px;white-space:nowrap;transition:background .3s;">Calcular →</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <span style="display:inline-block;background:var(--color-secondary);color:#fff;padding:3px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Herramienta gratuita</span>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:4px;">Calculadora de Liquidación Laboral</h3>
+            <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:0;">Indemnización por despido injustificado.</p>
+          </div>
+          <a href="/calcular-liquidacion-laboral" style="display:inline-flex;align-items:center;gap:8px;background:var(--color-secondary);color:#fff;padding:12px 22px;font-weight:700;font-size:14px;white-space:nowrap;transition:background .3s;">Calcular →</a>
+        </div>
       </div>
     </div>
   </section>

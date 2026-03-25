@@ -51,40 +51,51 @@ const schema = {
           <p>Nos reunimos en nuestras oficinas de Guanajuato 224, Colonia Roma Norte, Alcaldía Cuauhtémoc, C.P. 06700, Ciudad de México. También ofrecemos consultas por videollamada para quienes no puedan acudir presencialmente. Para agendar, llame al 55 6465 5501 o use el formulario de esta página.</p>
         </div>
         <div class="form-card reveal">
-          <h3 style="font-size:24px; margin-bottom:20px;">Solicite su asesoría</h3>
-          <form class="contact-form" action="#" method="post">
-            <div class="form-group">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required placeholder="Su nombre" />
+          {Astro.url.searchParams.get('enviado') === 'true' ? (
+            <div class="success-message">
+              <div class="success-icon">&#10003;</div>
+              <h3 style="font-size:24px; margin-bottom:12px;">Solicitud enviada</h3>
+              <p>Gracias por su interés. Un abogado especialista se comunicará con usted a la brevedad para agendar su asesoría inicial.</p>
+              <a href="/asesoria-inicial" class="btn-primary" style="width:100%; justify-content:center;">Enviar otra solicitud →</a>
             </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
-            </div>
-            <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" required placeholder="su@correo.com" />
-            </div>
-            <div class="form-group">
-              <label for="especialidad">Área legal de interés</label>
-              <select id="especialidad" name="especialidad" required>
-                <option value="">Seleccione una opción</option>
-                <option value="familiar">Derecho Familiar</option>
-                <option value="penal">Derecho Penal</option>
-                <option value="civil">Derecho Civil</option>
-                <option value="corporativo">Derecho Corporativo</option>
-                <option value="inmobiliario">Derecho Inmobiliario</option>
-                <option value="migratorio">Derecho Migratorio</option>
-                <option value="laboral">Derecho Laboral</option>
-                <option value="otro">Otro / No estoy seguro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensaje">Describa brevemente su caso</label>
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntenos su situación..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Solicitar asesoría inicial →</button>
-          </form>
+          ) : (
+            <Fragment>
+              <h3 style="font-size:24px; margin-bottom:20px;">Solicite su asesoría</h3>
+              <form class="contact-form" action="https://formsubmit.co/contacto@abogadosencdmx.com" method="POST">
+                <input type="hidden" name="_subject" value="Nueva solicitud de asesoría inicial - abogadosencdmx.com">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_next" value="https://abogadosencdmx.com/asesoria-inicial?enviado=true">
+                <input type="text" name="_honey" style="display:none">
+                <div class="form-group">
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" required placeholder="Su nombre" />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
+                </div>
+                <div class="form-group">
+                  <label for="especialidad">Especialidad</label>
+                  <select id="especialidad" name="especialidad" required>
+                    <option value="">Seleccione una especialidad</option>
+                    <option value="familiar">Derecho Familiar</option>
+                    <option value="penal">Derecho Penal</option>
+                    <option value="civil">Derecho Civil</option>
+                    <option value="corporativo">Derecho Corporativo</option>
+                    <option value="inmobiliario">Derecho Inmobiliario</option>
+                    <option value="migratorio">Derecho Migratorio</option>
+                    <option value="laboral">Derecho Laboral</option>
+                    <option value="otro">Otro / No estoy seguro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="caso">Breve descripcion del caso</label>
+                  <textarea id="caso" name="descripcion_caso" rows="4" required placeholder="Describa brevemente su situacion juridica..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Solicitar asesoria inicial →</button>
+              </form>
+            </Fragment>
+          )}
         </div>
       </div>
     </div>
@@ -174,6 +185,16 @@ const schema = {
   .faq-item__q::after { content: '+'; font-size: 24px; color: var(--color-secondary); flex-shrink: 0; margin-left: 16px; }
   .faq-item[open] .faq-item__q::after { content: '−'; }
   .faq-item__a { padding: 0 0 24px; font-size: 16px; line-height: 1.7; }
+
+  .success-message { text-align: center; padding: 20px 0; }
+  .success-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--color-secondary); color: var(--color-white);
+    font-size: 32px; line-height: 64px; text-align: center;
+    margin: 0 auto 20px;
+  }
+  .success-message h3 { color: var(--color-primary); }
+  .success-message p { font-size: 16px; line-height: 1.7; color: var(--color-paragraph); margin-bottom: 24px; }
 
   @media (max-width: 991px) {
     .two-col { grid-template-columns: 1fr; }

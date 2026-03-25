@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Abogados en Santa Fe, CDMX — Despacho Jurídico Cerca de Santa Fe | Abogados en CDMX';
+const description = 'Abogados cerca de Santa Fe, CDMX. Despacho jurídico a 25 minutos de Santa Fe especializado en derecho corporativo, familiar, civil, penal, inmobiliario, migratorio y laboral.';
+const canonical = 'https://abogadosencdmx.com/abogados-santa-fe-cdmx';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "name": "Abogados Cerca de Santa Fe, CDMX",
+      "description": "Despacho jurídico que atiende a clientes y empresas de Santa Fe, Alcaldía Álvaro Obregón y Cuajimalpa, CDMX. Oficina en Roma Norte con consultas por videollamada disponibles.",
+      "url": "https://abogadosencdmx.com/abogados-santa-fe-cdmx",
+      "telephone": "+525564655501",
+      "email": "contacto@abogadosencdmx.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Guanajuato 224",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "postalCode": "06700",
+        "addressCountry": "MX",
+        "name": "Colonia Roma Norte, Alcaldía Cuauhtémoc"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 19.3597, "longitude": -99.2620 },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Santa Fe, Ciudad de México",
+        "geo": { "@type": "GeoCoordinates", "latitude": 19.3597, "longitude": -99.2620 }
+      },
+      "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      "priceRange": "$$"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://abogadosencdmx.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Abogados en Santa Fe", "item": "https://abogadosencdmx.com/abogados-santa-fe-cdmx" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Hay abogados que atiendan clientes de Santa Fe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestro despacho en Roma Norte atiende a empresas y ejecutivos de Santa Fe. Ofrecemos consultas presenciales en nuestra oficina y por videollamada. El trayecto desde Santa Fe es de 25 a 35 minutos por la autopista urbana o Constituyentes." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de asuntos legales manejan para empresas de Santa Fe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Santa Fe concentra corporativos nacionales e internacionales. Atendemos derecho corporativo, contratos comerciales, compliance, fusiones y adquisiciones, derecho laboral patronal, contratos inmobiliarios de oficinas y trámites migratorios para ejecutivos extranjeros." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo llego desde Santa Fe al despacho?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Desde Santa Fe tome la Autopista Urbana Sur o Constituyentes hacia Reforma, y de Reforma hacia Insurgentes Sur hasta la calle Guanajuato. En transporte público, el Tren Interurbano (Línea 12 del Metro) conecta Santa Fe con Mixcoac, donde puede transbordar." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ofrecen consultas por videollamada para clientes de Santa Fe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. Para clientes de Santa Fe ofrecemos consultas por videollamada que evitan el traslado. También programamos citas presenciales en horarios fuera de hora pico para mayor comodidad. La primera consulta es gratuita en cualquier modalidad." }
+        }
+      ]
+    }
+  ]
+};
+
+const especialidades = [
+  { nombre: 'Derecho Familiar', href: '/especialidades/derecho-familiar-cdmx', icono: '&#9825;', desc: 'Divorcios, custodia, pensión alimenticia y adopciones.' },
+  { nombre: 'Derecho Penal', href: '/especialidades/derecho-penal-cdmx', icono: '&#9878;', desc: 'Defensa penal, amparos y delitos patrimoniales.' },
+  { nombre: 'Derecho Civil', href: '/especialidades/derecho-civil-cdmx', icono: '&#9998;', desc: 'Contratos, responsabilidad civil y sucesiones.' },
+  { nombre: 'Derecho Corporativo', href: '/especialidades/derecho-corporativo-cdmx', icono: '&#9881;', desc: 'Constitución de empresas, compliance y gobierno corporativo.' },
+  { nombre: 'Derecho Inmobiliario', href: '/especialidades/derecho-inmobiliario-cdmx', icono: '&#8962;', desc: 'Compraventa, escrituración y arrendamiento.' },
+  { nombre: 'Derecho Migratorio', href: '/especialidades/derecho-migratorio-cdmx', icono: '&#9992;', desc: 'Visas, residencia temporal y permanente, naturalización.' },
+  { nombre: 'Derecho Laboral', href: '/especialidades/derecho-laboral-cdmx', icono: '&#9874;', desc: 'Despidos injustificados, liquidaciones y demandas laborales.' },
+];
+---
+
+<Base title={title} description={description} canonical={canonical} schema={schema}>
+  <Header slot="header" />
+
+  <section class="loc-hero">
+    <div class="loc-container">
+      <nav class="loc-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a> &rsaquo; <span>Abogados en Santa Fe</span>
+      </nav>
+      <span class="loc-badge">Despacho jur&iacute;dico a 25 minutos de Santa Fe</span>
+      <h1>Abogados en Santa Fe, Ciudad de M&eacute;xico</h1>
+      <p class="loc-hero-desc">Atendemos a empresas, ejecutivos y residentes de Santa Fe desde nuestro despacho en Roma Norte. Especialistas en derecho corporativo, laboral patronal, inmobiliario y las 7 &aacute;reas de pr&aacute;ctica jur&iacute;dica. Consultas presenciales y por videollamada.</p>
+    </div>
+  </section>
+
+  <section class="loc-section">
+    <div class="loc-container">
+      <h2>Servicios legales para Santa Fe y zona poniente de CDMX</h2>
+      <p>Santa Fe es el distrito financiero y corporativo m&aacute;s importante de la Ciudad de M&eacute;xico. Alberga las sedes de corporativos multinacionales, firmas de consultor&iacute;a, centros comerciales de alta gama y desarrollos residenciales verticales. Las necesidades jur&iacute;dicas de la zona se concentran en derecho corporativo, contratos mercantiles, compliance regulatorio, derecho laboral patronal y tr&aacute;mites migratorios para ejecutivos internacionales.</p>
+      <p>Nuestro despacho atiende a empresas de Santa Fe en la constituci&oacute;n y reestructura de sociedades, negociaci&oacute;n de contratos de arrendamiento de oficinas, auditor&iacute;as de cumplimiento normativo, conflictos laborales y asesor&iacute;a en operaciones inmobiliarias comerciales. Tambi&eacute;n asistimos a residentes de la zona en asuntos de derecho familiar, civil y sucesorio. Para mayor comodidad, ofrecemos consultas por videollamada.</p>
+    </div>
+  </section>
+
+  <section class="loc-section loc-section--alt">
+    <div class="loc-container">
+      <h2>C&oacute;mo llegar desde Santa Fe a nuestro despacho</h2>
+      <p>Nuestra oficina est&aacute; en <strong>Guanajuato 224, Colonia Roma Norte</strong>, a aproximadamente 25 minutos de Santa Fe fuera de hora pico.</p>
+      <div class="loc-directions">
+        <div class="loc-dir-card">
+          <h3>En auto</h3>
+          <p>Tome la <strong>Autopista Urbana Sur</strong> o <strong>Av. Constituyentes</strong> hacia <strong>Paseo de la Reforma</strong>. Contin&uacute;e por Reforma hasta <strong>Insurgentes</strong> y gire al sur hasta la calle Guanajuato. Trayecto de 25 a 40 minutos seg&uacute;n tr&aacute;fico.</p>
+        </div>
+        <div class="loc-dir-card">
+          <h3>En transporte p&uacute;blico</h3>
+          <p>El <strong>Tren Interurbano</strong> conecta Santa Fe con <strong>Mixcoac</strong>. Desde Mixcoac, transborde al <strong>Metro L&iacute;nea 7</strong> hasta <strong>Tacubaya</strong> y luego a la <strong>L&iacute;nea 1</strong> hasta <strong>Insurgentes</strong>. Tiempo total: 40 a 50 minutos.</p>
+        </div>
+        <div class="loc-dir-card">
+          <h3>Videollamada</h3>
+          <p>Para evitar el traslado, ofrecemos <strong>consultas por videollamada</strong> con la misma calidad de atenci&oacute;n. Ideal para ejecutivos de Santa Fe con agendas apretadas. Programe su cita al 55 6465 5501.</p>
+        </div>
+      </div>
+      <p class="loc-landmarks"><strong>Referencias:</strong> Nuestro despacho est&aacute; a 25 minutos del Centro Comercial Santa Fe, a 30 minutos de la Universidad Iberoamericana y a 20 minutos del Bosque de Chapultepec.</p>
+    </div>
+  </section>
+
+  <section class="loc-section">
+    <div class="loc-container">
+      <h2>&Aacute;reas del derecho para empresas y residentes de Santa Fe</h2>
+      <div class="loc-specs-grid">
+        {especialidades.map(e => (
+          <a href={e.href} class="loc-spec-card">
+            <span class="loc-spec-icon" set:html={e.icono} />
+            <h3>{e.nombre}</h3>
+            <p>{e.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="loc-section loc-section--alt">
+    <div class="loc-container">
+      <div class="loc-testimonial">
+        <blockquote>
+          <p>&ldquo;Mi empresa tiene oficinas en Santa Fe y necesit&aacute;bamos asesor&iacute;a urgente por un conflicto laboral colectivo. El equipo del despacho nos atendi&oacute; r&aacute;pidamente, incluso por videollamada cuando no pod&iacute;amos trasladarnos. Resolvieron el conflicto antes de que escalara a demanda. Excelente servicio para corporativos.&rdquo;</p>
+          <cite>&mdash; Ing. M&oacute;nica Herrera, Directora de RH, Santa Fe</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="loc-section">
+    <div class="loc-container">
+      <h2>Preguntas frecuentes — Abogados cerca de Santa Fe</h2>
+      <div class="loc-faq">
+        <details>
+          <summary>&iquest;Hay abogados que atiendan clientes de Santa Fe?</summary>
+          <p>S&iacute;. Nuestro despacho en Roma Norte atiende a empresas y ejecutivos de Santa Fe. Ofrecemos consultas presenciales y por videollamada. El trayecto desde Santa Fe es de 25 a 35 minutos por la autopista urbana.</p>
+        </details>
+        <details>
+          <summary>&iquest;Qu&eacute; tipo de asuntos legales manejan para empresas de Santa Fe?</summary>
+          <p>Atendemos derecho corporativo, contratos comerciales, compliance, derecho laboral patronal, contratos inmobiliarios de oficinas y tr&aacute;mites migratorios para ejecutivos extranjeros.</p>
+        </details>
+        <details>
+          <summary>&iquest;C&oacute;mo llego desde Santa Fe al despacho?</summary>
+          <p>Tome la Autopista Urbana Sur o Constituyentes hacia Reforma, luego Insurgentes al sur hasta Guanajuato. En transporte p&uacute;blico, el Tren Interurbano conecta con Mixcoac y el Metro.</p>
+        </details>
+        <details>
+          <summary>&iquest;Ofrecen consultas por videollamada?</summary>
+          <p>S&iacute;. Para clientes de Santa Fe ofrecemos consultas por videollamada con la misma calidad de atenci&oacute;n. La primera consulta es gratuita en cualquier modalidad.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="loc-cta">
+    <div class="loc-container">
+      <h2>Agende su consulta gratuita desde Santa Fe</h2>
+      <p>Presencial o por videollamada. Ll&aacute;menos, escr&iacute;banos por WhatsApp o solicite cita en l&iacute;nea.</p>
+      <div class="loc-cta-buttons">
+        <a href="tel:+525564655501" class="loc-btn loc-btn--primary">Llamar: 55 6465 5501</a>
+        <a href="https://wa.me/525564655501?text=Hola%2C%20soy%20de%20Santa%20Fe%20y%20quiero%20agendar%20una%20consulta%20legal" class="loc-btn loc-btn--whatsapp">WhatsApp</a>
+        <a href="/asesoria-inicial" class="loc-btn loc-btn--outline">Asesor&iacute;a inicial gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>
+
+<style>
+  .loc-hero{background:#1a1f3d;color:#fff;padding:80px 0 60px;text-align:center}
+  .loc-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:16px 0;line-height:1.2}
+  .loc-hero-desc{max-width:700px;margin:0 auto;font-size:1.1rem;opacity:.9;line-height:1.7}
+  .loc-container{max-width:1100px;margin:0 auto;padding:0 20px}
+  .loc-breadcrumb{font-size:.9rem;margin-bottom:16px;opacity:.7}
+  .loc-breadcrumb a{color:#c9a84c;text-decoration:none}
+  .loc-badge{display:inline-block;background:#c9a84c;color:#1a1f3d;padding:6px 18px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:10px}
+  .loc-section{padding:60px 0}
+  .loc-section--alt{background:#f8f7f4}
+  .loc-section h2{font-size:clamp(1.4rem,3vw,2rem);color:#1a1f3d;margin-bottom:20px}
+  .loc-section p{line-height:1.8;color:#333;max-width:800px;margin-bottom:16px}
+  .loc-directions{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:30px}
+  .loc-dir-card{background:#fff;border:1px solid #e8e6e1;border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .loc-dir-card h3{color:#1a1f3d;margin-bottom:10px;font-size:1.1rem}
+  .loc-dir-card p{font-size:.95rem;margin:0}
+  .loc-landmarks{margin-top:24px;padding:16px 20px;background:#fff;border-left:4px solid #c9a84c;border-radius:0 8px 8px 0;font-size:.95rem}
+  .loc-specs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-top:30px}
+  .loc-spec-card{display:block;background:#fff;border:1px solid #e8e6e1;border-radius:12px;padding:24px;text-decoration:none;transition:box-shadow .2s,border-color .2s}
+  .loc-spec-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);border-color:#c9a84c}
+  .loc-spec-icon{font-size:1.6rem;display:block;margin-bottom:8px}
+  .loc-spec-card h3{color:#1a1f3d;font-size:1rem;margin-bottom:6px}
+  .loc-spec-card p{color:#555;font-size:.9rem;margin:0;line-height:1.5}
+  .loc-testimonial{max-width:700px;margin:0 auto;text-align:center}
+  .loc-testimonial blockquote{border:none;margin:0;padding:0}
+  .loc-testimonial p{font-size:1.15rem;font-style:italic;color:#1a1f3d;line-height:1.8}
+  .loc-testimonial cite{display:block;margin-top:16px;font-size:.95rem;color:#666;font-style:normal}
+  .loc-faq{max-width:800px;margin-top:24px}
+  .loc-faq details{border:1px solid #e8e6e1;border-radius:10px;margin-bottom:12px;overflow:hidden}
+  .loc-faq summary{padding:18px 24px;cursor:pointer;font-weight:600;color:#1a1f3d;background:#fff;font-size:1rem;list-style:none}
+  .loc-faq summary::-webkit-details-marker{display:none}
+  .loc-faq summary::before{content:'+ ';color:#c9a84c;font-weight:700}
+  .loc-faq details[open] summary::before{content:'- '}
+  .loc-faq details p{padding:0 24px 18px;margin:0;color:#444;line-height:1.7;font-size:.95rem}
+  .loc-cta{background:#1a1f3d;color:#fff;padding:60px 0;text-align:center}
+  .loc-cta h2{color:#fff;margin-bottom:12px;font-size:clamp(1.4rem,3vw,2rem)}
+  .loc-cta p{color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 28px}
+  .loc-cta-buttons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .loc-btn{display:inline-block;padding:14px 28px;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;transition:opacity .2s}
+  .loc-btn:hover{opacity:.9}
+  .loc-btn--primary{background:#c9a84c;color:#1a1f3d}
+  .loc-btn--whatsapp{background:#25d366;color:#fff}
+  .loc-btn--outline{border:2px solid #fff;color:#fff;background:transparent}
+  @media(max-width:600px){.loc-hero{padding:60px 0 40px}.loc-section{padding:40px 0}.loc-cta{padding:40px 0}.loc-cta-buttons{flex-direction:column;align-items:center}}
+</style>

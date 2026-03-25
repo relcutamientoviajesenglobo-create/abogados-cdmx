@@ -138,7 +138,7 @@ No. La ausencia de contrato escrito no elimina tus derechos. El artículo 26 de 
 
 ## El patrón puede cambiar mi tipo de contrato sin mi consentimiento?
 
-No. Cualquier modificación sustancial a las condiciones de trabajo requiere el acuerdo del trabajador. Un cambio unilateral de contrato indefinido a temporal, o una reducción de salario o prestaciones, constituye una violación a las condiciones de trabajo que te faculta a rescindir la relación por causa imputable al patrón (artículo 51 LFT) y exigir la liquidación completa.
+No. Cualquier modificación sustancial a las condiciones de trabajo requiere el acuerdo del trabajador. Un cambio unilateral de contrato indefinido a temporal, o una reducción de salario o prestaciones, constituye una violación a las condiciones de trabajo que te faculta a rescindir la relación por causa imputable al patrón (artículo 51 LFT) y exigir la liquidación completa. Si te encuentras en esta situación, utiliza nuestra [Calculadora de Finiquito](/calcular-finiquito) para estimar los montos que te corresponden al terminar la relación laboral.
 
 ## Cuántas veces puede renovarse un contrato temporal antes de ser indefinido?
 

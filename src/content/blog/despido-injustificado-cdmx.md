@@ -59,7 +59,7 @@ Un trabajador con 5 años de antigüedad y salario de $15,000 mensuales tendría
 - Intereses: aproximadamente $210,000
 - **Total estimado: $665,000**
 
-Estos montos son antes de impuestos y pueden variar según cada caso específico.
+Estos montos son antes de impuestos y pueden variar según cada caso específico. Utiliza nuestra [Calculadora de Liquidación Laboral](/calcular-liquidacion-laboral) para obtener un estimado personalizado con base en tu salario y antigüedad.
 
 ## Los artículos clave de la Ley Federal del Trabajo que te protegen
 
